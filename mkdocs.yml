@@ -1,0 +1,56 @@
+site_name: UPG.Pataky — Guía de Estudio
+site_description: Documentación técnica del sistema de integración ERP-PIM-Shopify
+
+theme:
+  name: material
+  language: es
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Cambiar a modo oscuro
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Cambiar a modo claro
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+
+markdown_extensions:
+  - tables
+  - fenced_code
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - toc:
+      permalink: true
+
+nav:
+  - Inicio: index.md
+  - Arquitectura ETL: 01-arquitectura-etl.md
+  - Motor de Workflows (Elsa): 02-elsa-workflows.md
+  - Workflows del sistema: 03-workflows-detalle.md
+  - Extractors:
+    - Visión general: 04-extractors.md
+    - Detalle completo: 04b-extractors-detalle.md
+  - Transformers:
+    - Visión general: 05-transformers.md
+    - Detalle completo: 05b-transformers-detalle.md
+  - Modelos de datos: 06-modelos.md
+  - Infraestructura y despliegue: 07-infraestructura.md
+  - Configuración: 08-configuracion.md
+  - Elsa Studio: 09-elsa-studio.md
+  - Loaders y Mirror: 10-loaders.md
