@@ -1,6 +1,19 @@
+---
+tags:
+  - Loaders
+  - Mirror
+  - Shopify
+---
+
 # 10 — Loaders y Mirror: escritura y reconciliación
 
 Este documento cubre las dos capas finales del sistema: los **Loaders** (que escriben en Shopify) y las actividades **Mirror** (que reconcilian la base de datos de transacciones con el estado real de Shopify).
+
+> **¿Quieres ver los campos de los modelos de input o el detalle de cada sub-operación?**
+> → [`10b-loaders-detalle.md`](10b-loaders-detalle.md) — input models, sub-operaciones con referencias cruzadas y resumen de Mirrors.
+>
+> **¿Quieres ver el código fuente de los métodos más complejos?**
+> → [`10c-loaders-metodos.md`](10c-loaders-metodos.md) — `CreateProductsAndVariants`, `RebuildProductOptions`, `RemoveProductsIfLastVariants`, `CreateCompanies`, `CreateMetafields`, `SyncCompanies`.
 
 ---
 
@@ -34,7 +47,7 @@ Las actividades **Mirror** leen el estado real de Shopify y lo vuelcan en la bas
 
 Por eso algunas workflows arrancan con un Mirror. La secuencia real es:
 
-```
+```text
 Mirror (reconciliar BD con el estado actual de Shopify)
      ↓
 Extract (leer datos del origen: PIM o ERP)
@@ -167,7 +180,7 @@ Gestiona las listas de precios B2B en Shopify. Es el loader con mayor variedad d
 
 En Shopify B2B una lista de precios tiene tres objetos relacionados:
 
-```
+```text
 Catalog (catálogo B2B, agrupa productos visibles para esa tarifa)
   └── PriceList (la tarifa con moneda y precios fijos)
   └── Publication (permite publicar/despublicar productos de esa tarifa)
@@ -434,3 +447,14 @@ A diferencia de `SyncProductMedias` (que solo mira Shopify), `MirrorMediasLoad` 
 | **Pedidos** | Ninguno | Los pedidos van en dirección inversa (Shopify → ERP) |
 | **Imágenes PIM** | Ninguno | Solo genera un CSV para el PIM, no escribe en Shopify |
 | **Imágenes Shopify** | `SyncProductMedias` | Reconcilia las imágenes existentes antes de decidir qué crear/borrar/asociar |
+
+---
+
+## Documentos relacionados
+
+| Documento | Contenido |
+|---|---|
+| [`10b-loaders-detalle.md`](10b-loaders-detalle.md) | Campos de los modelos de input, sub-operaciones con referencias a métodos, detalle de Mirrors |
+| [`10c-loaders-metodos.md`](10c-loaders-metodos.md) | Código fuente completo con anotaciones paso a paso |
+| [`05-transformers.md`](05-transformers.md) | Los Transformers que producen los inputs que reciben los Loaders |
+| [`04d-decisions.md`](04d-decisions.md) | Los Decisions cuya clasificación dirige qué operaciones hace cada Loader |
