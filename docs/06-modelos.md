@@ -1,3 +1,12 @@
+---
+tags:
+  - Modelos
+  - ERP
+  - PIM
+  - Shopify
+  - B2B
+---
+
 # 06 — Los modelos de datos
 
 Este documento describe en detalle todos los modelos de datos del sistema: las interfaces que definen los contratos, los modelos del origen (ERP y PIM), los modelos intermedios que circulan entre capas, los modelos de salida al ERP y las entidades que persisten en la base de datos de transacciones.
@@ -20,6 +29,63 @@ Este documento describe en detalle todos los modelos de datos del sistema: las i
 ## 1. Interfaces del dominio
 
 Las interfaces están en el proyecto `UPG.Pataky.Shared`, en la carpeta `Shared/Interfaces/`. Son contratos abstractos que describen qué puede hacer cada entidad del dominio, sin atarse a ninguna implementación concreta. El extractor de Provalliance devuelve `ClientResponseModel`, que implementa `ICompany`. El extractor de SalesLayer construye objetos `Product` que implementan `IProduct`. Las diferencias de implementación quedan ocultas detrás de la interfaz.
+
+```mermaid
+classDiagram
+    class IStatus {
+        <<interface>>
+        +EntityStatus Status
+    }
+    class IProduct {
+        <<interface>>
+        +string OriginId
+        +GetVariants() ICollection~IVariant~
+        +GetSortedOptions() IDictionary
+    }
+    class ITranslatableProduct {
+        <<interface>>
+        +GetTranslations() IDictionary
+    }
+    class IVariant {
+        <<interface>>
+        +string ProductOriginId
+        +string OriginId
+        +GetSelectedOptions() IDictionary
+    }
+    class IVariantStock {
+        <<interface>>
+        +string VariantOriginId
+        +GetStock() int
+    }
+    class ICompany {
+        <<interface>>
+        +string OriginId
+    }
+    class ILocation {
+        <<interface>>
+        +string OriginId
+    }
+    class ICustomer {
+        <<interface>>
+        +string OriginId
+    }
+    class Product {
+        implementa ITranslatableProduct
+    }
+    class ClientResponseModel {
+        implementa ICompany
+    }
+
+    IStatus <|-- IProduct
+    IStatus <|-- IVariant
+    IStatus <|-- ICompany
+    IStatus <|-- ILocation
+    IStatus <|-- ICustomer
+    IProduct <|-- ITranslatableProduct
+    ITranslatableProduct <|.. Product : implementa
+    ICompany <|.. ClientResponseModel : implementa
+    IProduct "1" o-- "many" IVariant : tiene
+```
 
 ---
 
@@ -256,7 +322,7 @@ Los modelos del ERP viven en `Extractors/Models/` y representan la respuesta de 
 
 Es el objeto raíz de un cliente. Implementa `ICompany`. La API del ERP devuelve un array de estos objetos paginado.
 
-```
+```text
 ClientResponseModel
 ├── Company (BPC0_1) → CompanyResponseModel
 │   ├── CodCom (BPCNUM) → "C0001"              ← OriginId de la empresa
@@ -790,7 +856,7 @@ Estos modelos son la "carga" que el transformer entrega al loader. Cada uno desc
 
 Para la actividad de **creación de productos**.
 
-```
+```text
 ProductsWithVariantsCreateLoaderInput
 ├── Products: List<(product, variants[])>?
 │   └── Cada tupla: OriginInput<ProductCreateInput> + OriginInput<ProductVariantsBulkInput>[]
@@ -810,7 +876,7 @@ ProductsWithVariantsCreateLoaderInput
 
 Para la actividad de **actualización de productos**. Es el input más complejo.
 
-```
+```text
 ProductsWithVariantsUpdateLoaderInput
 ├── Products: List<OriginInput<ProductUpdateInput>>?
 │   └── Actualiza campos del producto (título, descripción, metafields...)
@@ -834,7 +900,7 @@ ProductsWithVariantsUpdateLoaderInput
 
 Para la actividad de **borrado de variantes y productos**.
 
-```
+```text
 ProductsWithVariantsDeleteLoaderInput
 ├── VariantsToDelete: Dictionary<ShopifyId (producto), ShopifyId[] (variantes)>?
 │   └── Agrupa las variantes a borrar por producto padre
@@ -850,7 +916,7 @@ En Shopify, borrar variantes requiere conocer el producto padre porque la mutaci
 
 Para la actividad de **sincronización de inventario**.
 
-```
+```text
 SyncStockInput
 └── Variants: Dictionary<ShopifyId (producto), VariantStockUpdate[]>?
 ```
@@ -872,7 +938,7 @@ SyncStockInput
 
 Para la actividad de **sincronización de tarifas B2B**. Es el input más rico en operaciones.
 
-```
+```text
 PriceListsB2BLoaderInput
 ├── PriceListsToCreate: Dictionary<string, CurrencyCode>?
 │   └── Clave: nombre de la tarifa. Valor: divisa (EUR, USD...)
@@ -902,7 +968,7 @@ PriceListsB2BLoaderInput
 
 Para la actividad de **traducciones**.
 
-```
+```text
 TranslationsInput
 ├── ProductsToTranslate: Dictionary<ShopifyId, Dictionary<string, ProductTranslateModel>>?
 │   └── Clave externa: GID del producto. Clave interna: locale (ej: "en")
@@ -943,7 +1009,7 @@ public class BaseEntity
 
 ### `TipoEntidad` — enumerado de tipos de entidad
 
-```
+```text
 Producto, Opciones, Variante, VarianteImagen, Stock,
 Company, Location, Customer, CompanyContact,
 Imagen, PriceList, ProductoPriceList, Pedido, Rol
@@ -1082,7 +1148,7 @@ Estados del pedido: `CREADO → PAGADO → ENVIADO_PARCIAL → ENVIADO → ENTRE
 
 ## Cómo se relacionan todos los modelos
 
-```
+```text
 Origen (ERP/PIM)          Dominio                   BD Transacciones
 ──────────────────────    ──────────────────────    ──────────────────────────
 SalonSpaceProduct     →   Product / Variant     →   Product + Variant + Media
@@ -1101,17 +1167,22 @@ IPriceList            →   (sin BD propia)        →   PriceList + PriceListVa
 
 El flujo de datos completo de una sincronización de productos es:
 
-```
-SalonSpaceProduct[] (PIM)
-  └─ construye → Product[] + Variant[]
-       └─ transformer lee → IProduct / IVariant
-            └─ transformer produce → ProductsWithVariantsCreateLoaderInput
-                 │   (contiene OriginInput<ProductCreateInput>)
-                 │   (contiene OriginInput<ProductVariantsBulkInput>[])
-                 └─ loader crea en Shopify → recibe GIDs
-                      └─ loader registra en BD → Product(OrigenId, DestinoId)
-                                              → Variant(OrigenId, DestinoId, Referencia=EAN)
-                                              → Media(OrigenId, DestinoId)
+```mermaid
+flowchart TD
+    PIM["SalonSpaceProduct[] (PIM)"]
+    PR["Product[] + Variant[]\nimplementan IProduct / IVariant"]
+    TR["Transformer\nProductsCreateTransform"]
+    LI["ProductsWithVariantsCreateLoaderInput\nOriginInput&lt;ProductCreateInput&gt;\nOriginInput&lt;ProductVariantsBulkInput&gt;[]"]
+    LO["Loader\nProductsWithVariantsCreate"]
+    SH["Shopify\nrecibe GIDs"]
+    DB[("TransactionsDB\nProduct(OrigenId, DestinoId)\nVariant(OrigenId, DestinoId, Referencia=EAN)\nMedia(OrigenId, DestinoId)")]
+
+    PIM -->|"construye"| PR
+    PR -->|"transformer lee"| TR
+    TR -->|"produce"| LI
+    LI -->|"loader recibe"| LO
+    LO -->|"crea en Shopify"| SH
+    LO -->|"registra pares"| DB
 ```
 
 ---
@@ -1119,3 +1190,15 @@ SalonSpaceProduct[] (PIM)
 ## Siguiente paso
 
 → [`07-infraestructura.md`](07-infraestructura.md) — Docker Compose, contenedores y variables de entorno
+
+---
+
+## Documentos relacionados
+
+| Documento | Relación |
+|---|---|
+| [04 — Extractors](04-extractors.md) | Produce los modelos de origen (`ClientResponseModel`, `Product`) |
+| [04d — Decisions](04d-decisions.md) | Compara modelos con la TransactionsDB para clasificar operaciones |
+| [05 — Transformers](05-transformers.md) | Consume `IProduct`/`IVariant` y produce inputs de Loader |
+| [10 — Loaders y Mirror](10-loaders.md) | Escribe en Shopify y registra entidades en la TransactionsDB |
+| [07 — Infraestructura](07-infraestructura.md) | Aloja la BD de transacciones (PostgreSQL) |

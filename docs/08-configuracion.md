@@ -1,3 +1,11 @@
+---
+tags:
+  - Configuración
+  - ERP
+  - Shopify
+  - Elsa
+---
+
 # 08 — Configuración del sistema
 
 Toda la configuración del sistema vive en `ElsaServer/appsettings.json` y sus variantes por entorno (`appsettings.Development.json`, `appsettings.Production.SalonSpace.json`). ASP.NET Core fusiona estos ficheros en tiempo de arranque: el base pone los defaults, cada variante de entorno sobreescribe solo lo que cambia.
@@ -634,22 +642,25 @@ Si `Recipients` está vacío `[]`, no se envía ningún email al terminar el wor
 
 ## Resumen: relación entre configuración y arquitectura
 
-```
-appsettings.json
-│
-├── Elsa:Persistence         → BD interna de Elsa (historial de workflows)
-├── Transactions             → BD de sincronización (OriginId↔DestinoId)
-├── ShopifyCredentials       → Shopify API (GraphQL + LeakyBucket)
-├── PIM:CanalSalida          → SalesLayer (leer catálogo de productos)
-├── PIM:CanalEntrada         → SalesLayer (subir imágenes)
-├── FtpImages                → FTP (descargar imágenes para el PIM)
-├── Provalliance:Middleware  → Azure APIM → ERP Sage X3
-│   └── Authentication       → Azure AD OAuth2 (client_credentials)
-├── EmailSettingsGraph       → Microsoft Graph (enviar emails)
-├── GraphClient              → Azure AD OAuth2 para Graph
-├── WorkflowEmailNotifications → buffer y reintentos de emails
-├── FilterOrders             → tag de Shopify para filtrar pedidos procesados
-└── Workflows                → crons + destinatarios por workflow
+```mermaid
+flowchart TD
+    CFG["appsettings.json"]
+
+    EL["Elsa:Persistence\nBD interna de Elsa"]
+    TR["Transactions\nBD de sincronización"]
+    SH["ShopifyCredentials\nShopify API GraphQL"]
+    PI["PIM:CanalSalida / CanalEntrada\nSalesLayer"]
+    FT["FtpImages\nServidor FTP de imágenes"]
+    PR["Provalliance:Middleware\nAzure APIM → ERP Sage X3"]
+    AU["Authentication\nAzure AD OAuth2\nclient_credentials"]
+    EG["EmailSettingsGraph\nMicrosoft Graph (emails)"]
+    GC["GraphClient\nAzure AD OAuth2 para Graph"]
+    WN["WorkflowEmailNotifications\nbuffer y reintentos"]
+    FO["FilterOrders\ntag Shopify filtro pedidos"]
+    WF["Workflows\ncrons + destinatarios"]
+
+    CFG --> EL & TR & SH & PI & FT & PR & EG & GC & WN & FO & WF
+    PR --> AU
 ```
 
 ---
@@ -657,3 +668,14 @@ appsettings.json
 ## Siguiente paso
 
 → [`09-elsa-studio.md`](09-elsa-studio.md) — La interfaz visual de Elsa Studio
+
+---
+
+## Documentos relacionados
+
+| Documento | Relación |
+|---|---|
+| [07 — Infraestructura](07-infraestructura.md) | Los contenedores que leen estas variables de entorno |
+| [02 — El motor Elsa](02-elsa-workflows.md) | Sección `Elsa:Persistence` y `SchedulingWorkflow` con los crons |
+| [04 — Extractors](04-extractors.md) | Usan `ShopifyCredentials`, `PIM` y `Provalliance` de la configuración |
+| [09 — Elsa Studio](09-elsa-studio.md) | Lee `Elsa:Identity` para autenticación de la interfaz visual |

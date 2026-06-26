@@ -1,3 +1,10 @@
+---
+tags:
+  - Elsa
+  - Studio
+  - Workflows
+---
+
 # 09 — Elsa Studio: la interfaz visual
 
 Elsa Studio es la interfaz web que permite observar, controlar y depurar el sistema de sincronización sin tocar el código. Desde ella puedes ver qué workflows están definidos, cuándo se han ejecutado, qué pasó en cada paso y lanzar ejecuciones manualmente.
@@ -20,15 +27,16 @@ Elsa Studio es la interfaz web que permite observar, controlar y depurar el sist
 
 Elsa Studio es una aplicación **Blazor WebAssembly** — todo el código se ejecuta en el **navegador del usuario**, no en el servidor. El servidor solo sirve los ficheros estáticos (HTML, CSS, JavaScript compilado). Una vez cargada en el navegador, la aplicación hace llamadas directamente a la API del servidor Elsa (`pataky-server`).
 
-```
-Navegador del usuario
-┌─────────────────────────────────────────────────────┐
-│  Elsa Studio (Blazor WebAssembly)                   │
-│  ← descargado de pataky-studio:5270                 │
-│                                                     │
-│  Hace peticiones HTTP a ──────────────────────────► │ pataky-server:5271/elsa/api
-│  (JWT en cabecera Authorization)                    │
-└─────────────────────────────────────────────────────┘
+```mermaid
+flowchart LR
+    BR["Navegador del usuario"]
+    ST["pataky-studio:5270\nficheros estáticos\nBlazor WASM"]
+    WASM["Elsa Studio\n(ejecuta en el navegador)\nBlazor WebAssembly"]
+    API["pataky-server:5271\n/elsa/api"]
+
+    BR -->|"1. carga app"| ST
+    ST -->|"2. descarga WASM"| WASM
+    WASM -->|"3. peticiones HTTP + JWT"| API
 ```
 
 Por eso la variable `ElsaServerUrl` debe ser una dirección accesible desde la máquina del usuario (no desde dentro de la red Docker). Si el usuario abre el navegador en su portátil y el servidor está en una IP `<IP_SERVIDOR>`, la URL debe ser `http://<IP_SERVIDOR>:5271/elsa/api`.
@@ -386,16 +394,27 @@ El freno es un flag en memoria — al reiniciar el contenedor (`docker restart p
 
 Has llegado al final de la guía. Con estos 9 apartados tienes una visión completa del sistema, desde los fundamentos hasta los detalles de cada capa:
 
-```
-01 — Arquitectura ETL       → el marco mental de todo el sistema
-02 — Elsa Workflows         → el motor que orquesta la automatización
-03 — Los workflows          → los 6 flujos de sincronización
-04 — Los Extractors         → cómo se leen los datos del origen
-05 — Los Transformers       → cómo se convierten los datos
-06 — Los modelos de datos   → las estructuras que circulan por el sistema
-07 — Infraestructura        → Docker, contenedores y despliegue
-08 — Configuración          → el appsettings.json explicado
-09 — Elsa Studio            → la interfaz para operar el sistema
+```mermaid
+flowchart LR
+    A1["01 — Arquitectura ETL\nel marco mental"] --> A2["02 — Elsa Workflows\nel motor"]
+    A2 --> A3["03 — Los workflows\n6 flujos de sincronización"]
+    A3 --> A4["04 — Extractors\nleer del origen"]
+    A4 --> A5["05 — Transformers\nconvertir los datos"]
+    A5 --> A6["06 — Modelos\nestructuras del sistema"]
+    A6 --> A7["07 — Infraestructura\nDocker y despliegue"]
+    A7 --> A8["08 — Configuración\nappsettings.json"]
+    A8 --> A9["09 — Elsa Studio\noperar el sistema"]
 ```
 
 → [Volver al índice](index.md)
+
+---
+
+## Documentos relacionados
+
+| Documento | Relación |
+|---|---|
+| [07 — Infraestructura](07-infraestructura.md) | Contenedor `pataky-studio` que sirve esta interfaz |
+| [08 — Configuración](08-configuracion.md) | Sección `Elsa:Identity` que configura el login de Studio |
+| [02 — El motor Elsa](02-elsa-workflows.md) | Workflows, instancias y actividades que se visualizan desde Studio |
+| [03 — Workflows del sistema](03-workflows-detalle.md) | Los 6 workflows que puedes monitorizar y lanzar desde Studio |

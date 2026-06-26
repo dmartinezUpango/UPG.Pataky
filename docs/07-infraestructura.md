@@ -1,3 +1,9 @@
+---
+tags:
+  - Infraestructura
+  - Docker
+---
+
 # 07 — Infraestructura y despliegue
 
 Este documento describe cómo se construye, empaqueta y despliega el sistema. Cubre Docker Compose, cada contenedor, la cadena de imágenes Docker, las variables de entorno, el sistema de logging y las diferencias entre el entorno de desarrollo y producción.
@@ -32,24 +38,16 @@ El sistema corre completamente en **Docker**. Hay dos ficheros Docker Compose:
 
 En ejecución normal hay **tres contenedores activos** (los dos de producción):
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│  Host (servidor Linux o Windows)                                │
-│                                                                 │
-│  ┌──────────────────┐   ┌──────────────────┐                   │
-│  │  pataky-server   │   │  pataky-studio   │                   │
-│  │  :5271           │   │  :5270           │                   │
-│  │  (API + Elsa)    │   │  (UI visual)     │                   │
-│  └────────┬─────────┘   └────────┬─────────┘                   │
-│           │                      │                             │
-│           └──────────┬───────────┘                             │
-│                      │                                         │
-│           ┌──────────▼──────────┐                              │
-│           │  pataky-postgres    │                              │
-│           │  :5432              │                              │
-│           │  (PostgreSQL 17.2)  │                              │
-│           └─────────────────────┘                              │
-└─────────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph Host["Host (servidor Linux o Windows)"]
+        PS["pataky-server\n:5271\nAPI + Elsa"]
+        ST["pataky-studio\n:5270\nUI visual (Blazor WASM)"]
+        PG[("pataky-postgres\n:5432\nPostgreSQL 17.2")]
+    end
+
+    PS -->|"persiste estado"| PG
+    ST -->|"API REST / JWT"| PS
 ```
 
 El contenedor `pataky-studio` se conecta al API de `pataky-server` para mostrar la UI. El `pataky-server` se conecta a `pataky-postgres` para persistir el estado de Elsa y las transacciones.
@@ -60,25 +58,29 @@ El contenedor `pataky-studio` se conecta al API de `pataky-server` para mostrar 
 
 La construcción del `pataky-server` usa una cadena de imágenes en capas. Es importante entender el orden porque cada capa depende de las anteriores.
 
-```
-upango/dotnet-builder:ci          ← imagen base de CI con .NET SDK
-         │
-         ├── upango/shared-utils        ← librería SharedUtils
-         ├── upango/shopify-sdk         ← SDK de Shopify
-         ├── upango/saleslayer          ← conector SalesLayer PIM
-         ├── upango/connector-google    ← conector Google
-         └── upango/graph-library       ← librería Graph (Microsoft)
-                    │
-                    └── upango/comunes      ← une todos los anteriores en un FS
-                                 │
-         ┌───────────────────────┤
-         │                       │
-upango/pataky-partial         upango/comunes
-(el código de UPG.Pataky)    (todas las libs comunes)
-         │                       │
-         └───────────────────────┘
-                       │
-               upango/pataky-server    ← la imagen final del servidor
+```mermaid
+graph TD
+    BASE["upango/dotnet-builder:ci\nimagen base CI con .NET SDK"]
+
+    SU["upango/shared-utils"]
+    SS["upango/shopify-sdk"]
+    SL["upango/saleslayer"]
+    CG["upango/connector-google"]
+    GL["upango/graph-library"]
+
+    CO["upango/comunes\n(une todos los anteriores)"]
+    PP["upango/pataky-partial\n(código UPG.Pataky)"]
+
+    SRV["upango/pataky-server\nimagen final del servidor"]
+
+    BASE --> SU
+    BASE --> SS
+    BASE --> SL
+    BASE --> CG
+    BASE --> GL
+    SU & SS & SL & CG & GL --> CO
+    BASE --> PP
+    PP & CO --> SRV
 ```
 
 Cada nivel del árbol es una imagen Docker independiente. Las imágenes de nivel bajo (`shared-utils`, `shopify-sdk`, etc.) se construyen en sus propios repositorios y se publican al registry de Upango. El `pataky-server` las consume como capas.
@@ -127,51 +129,49 @@ La imagen resultante se llama `upango/comunes`.
 
 Este es el Dockerfile más complejo. Usa **multi-stage build** con seis etapas:
 
-```dockerfile
-# Etapa 1: base de runtime (imagen pequeña, solo aspnet)
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+```dockerfile title="Dockerfile"
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base # (1)!
 WORKDIR /app
 EXPOSE 8080
 EXPOSE 8081
-# Optimizaciones de memoria del GC
 ENV DOTNET_gcServer=1
 ENV DOTNET_gcConcurrent=1
-ENV DOTNET_GCHeapHardLimitPercent=0x55   # 85% de la RAM disponible
+ENV DOTNET_GCHeapHardLimitPercent=0x55 # (2)!
 
-# Etapa 2: importar las librerías comunes
-FROM upango/comunes AS comunes
+FROM upango/comunes AS comunes # (3)!
 
-# Etapa 3: importar el código específico del cliente
-FROM upango/pataky-partial AS pataky-partial
+FROM upango/pataky-partial AS pataky-partial # (4)!
 
-# Etapa 4: montar la estructura de ficheros completa
-FROM scratch AS estructura-pataky
+FROM scratch AS estructura-pataky # (5)!
 COPY --from=comunes        /src  /src/Comunes
 COPY .                           /src/Comunes/UPG.Pataky.Shared
 COPY --from=pataky-partial /src  /src/UPANGO/Elsa/UPG.Pataky
 
-# Etapa 5: compilar
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build # (6)!
 COPY --from=estructura-pataky /src /src
 WORKDIR /src/UPANGO/Elsa/UPG.Pataky/ElsaServer
 RUN dotnet restore "ElsaServer.csproj"
 RUN dotnet build   "ElsaServer.csproj" -c Release -o /app/build
 
-# Etapa 6: publicar
-FROM build AS publish
+FROM build AS publish # (7)!
 RUN dotnet publish "ElsaServer.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
-# Etapa final: imagen mínima con solo el binario publicado
-FROM base AS final
+FROM base AS final # (8)!
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "ElsaServer.dll"]
 ```
-
-**Por qué multi-stage:** Docker construye la imagen en etapas pero solo la etapa `final` va al contenedor. Las etapas intermedias de build y compilación (con el SDK de .NET, que pesa ~800 MB) se descartan. La imagen final solo contiene el runtime de ASP.NET (~220 MB) y los binarios compilados.
+1. **base** — imagen `aspnet:8.0` (runtime solo, ~220 MB). Sin SDK ni herramientas de compilación.
+2. **Heap al 85%** — el GC no usará más del 85% de la RAM del contenedor para evitar OOM kills del SO durante sincronizaciones masivas.
+3. **comunes** — importa los proyectos de `C:\Repos\Comunes` como capa de sistema de ficheros. No compila nada aquí.
+4. **pataky-partial** — importa el código de `UPG.Pataky`. No compila nada aquí.
+5. **estructura-pataky** — imagen `scratch` (vacía) que monta el árbol de directorios que espera el `.csproj`. Espeja `C:\Repos\` para que los `<ProjectReference>` funcionen igual en Docker que en local.
+6. **build** — descarga paquetes NuGet y compila en Release con el SDK completo de .NET (~800 MB). Esta etapa se descarta: no aparece en la imagen final.
+7. **publish** — ejecuta `dotnet publish` para generar los binarios optimizados sin temporales de compilación.
+8. **final** — copia solo los binarios publicados en la imagen `base`. La imagen resultante es mínima (~220 MB + binarios) y lista para producción.
 
 **La estructura de carpetas montada en `estructura-pataky`:**
 
-```
+```text
 /src/
 ├── Comunes/
 │   ├── UPG.SharedUtils/
@@ -387,35 +387,35 @@ Construye la imagen con el código de `UPG.Pataky` (este repositorio). El `conte
 
 El fichero `.env` en la raíz del repositorio define todas las variables de entorno que usa Docker Compose. Hay **dos ficheros `.env`** según el entorno:
 
-### `.env` — Desarrollo local
+=== ":material-laptop-account: Desarrollo"
 
-```
-TIME_ZONE=Europe/Madrid
-ASPNETCORE_ENVIRONMENT=Development
-HOST=localhost
-POSTGRES_HOST=pataky-postgres   # nombre del contenedor (DNS interno de Docker)
-POSTGRES_PORT=5432
-POSTGRES_USER=root
-POSTGRES_PASSWORD=root
-ELSA_DB=elsa-b2b
-TRANSACTIONS_DB=transactions-b2b
-BUSINESS_TYPE=B2B
-```
+    ```bash title=".env"
+    TIME_ZONE=Europe/Madrid
+    ASPNETCORE_ENVIRONMENT=Development
+    HOST=localhost
+    POSTGRES_HOST=pataky-postgres   # nombre del contenedor (DNS interno de Docker)
+    POSTGRES_PORT=5432
+    POSTGRES_USER=root
+    POSTGRES_PASSWORD=root
+    ELSA_DB=elsa-b2b
+    TRANSACTIONS_DB=transactions-b2b
+    BUSINESS_TYPE=B2B
+    ```
 
-### `.env.Production.SalonSpace` — Producción
+=== ":material-server: Producción"
 
-```
-TIME_ZONE=Europe/Madrid
-ASPNETCORE_ENVIRONMENT=Production
-HOST=<IP_SERVIDOR>                  # IP del servidor en producción
-POSTGRES_HOST=<IP_SERVIDOR>         # PostgreSQL externo
-POSTGRES_PORT=5432
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=<POSTGRES_PASSWORD>
-ELSA_DB=elsa
-TRANSACTIONS_DB=transactions
-BUSINESS_TYPE=SalonSpace
-```
+    ```bash title=".env.Production.SalonSpace"
+    TIME_ZONE=Europe/Madrid
+    ASPNETCORE_ENVIRONMENT=Production
+    HOST=<IP_SERVIDOR>                  # IP del servidor en producción
+    POSTGRES_HOST=<IP_SERVIDOR>         # PostgreSQL externo
+    POSTGRES_PORT=5432
+    POSTGRES_USER=postgres
+    POSTGRES_PASSWORD=<POSTGRES_PASSWORD>
+    ELSA_DB=elsa
+    TRANSACTIONS_DB=transactions
+    BUSINESS_TYPE=SalonSpace
+    ```
 
 **Descripción de cada variable:**
 
@@ -438,7 +438,7 @@ BUSINESS_TYPE=SalonSpace
 
 El sistema usa el mecanismo estándar de ASP.NET Core: el fichero `appsettings.json` es la base, y `appsettings.{Environment}.json` sobreescribe solo los valores específicos de ese entorno.
 
-```
+```text
 appsettings.json                         ← valores base y defaults
   ├── appsettings.Development.json       ← sobreescribe para Development
   └── appsettings.Production.SalonSpace.json  ← sobreescribe para Production
@@ -483,7 +483,7 @@ appsettings.json                         ← valores base y defaults
 
 Docker Compose crea automáticamente una **red interna** para todos los servicios definidos en el mismo fichero. Dentro de esta red, cada contenedor puede acceder a los demás usando el **nombre del servicio** como nombre DNS.
 
-```
+```text
 pataky-server → "pataky-postgres" → resuelve a la IP del contenedor PostgreSQL
 pataky-studio → "pataky-server"   → pero ¡CUIDADO! (ver abajo)
 ```
@@ -494,7 +494,7 @@ pataky-studio → "pataky-server"   → pero ¡CUIDADO! (ver abajo)
 
 Por eso `ElsaServerUrl` usa la variable `${HOST}` (una IP o DNS accesible desde el exterior) en lugar de `pataky-server` (que solo funcionaría dentro de la red Docker):
 
-```
+```text
 # Mal (solo funciona dentro de Docker):
 ElsaServerUrl: "http://pataky-server:8080/elsa/api"
 
@@ -658,3 +658,14 @@ docker-compose down
 ## Siguiente paso
 
 → [`08-configuracion.md`](08-configuracion.md) — Explicación detallada de todos los bloques del `appsettings.json`
+
+---
+
+## Documentos relacionados
+
+| Documento | Relación |
+|---|---|
+| [08 — Configuración](08-configuracion.md) | Variables de entorno y `appsettings.json` que configuran los contenedores |
+| [09 — Elsa Studio](09-elsa-studio.md) | La interfaz `pataky-studio` y cómo se conecta a `pataky-server` |
+| [02 — El motor Elsa](02-elsa-workflows.md) | BD de Elsa y BD de transacciones que persisten en `pataky-postgres` |
+| [06 — Modelos de datos](06-modelos.md) | Las entidades que se persisten en la base de datos de transacciones |
