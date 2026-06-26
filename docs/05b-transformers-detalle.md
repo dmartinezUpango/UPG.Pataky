@@ -1,6 +1,16 @@
+---
+tags:
+  - Transformers
+  - Shopify
+  - AutoMapper
+---
+
 # 05b — Transformers: detalle completo
 
 Este documento entra en profundidad en cada transformer: qué campos mapea exactamente, qué lógica aplica, qué metafields genera y cómo resuelve los IDs de Shopify.
+
+> **¿Quieres ver el código completo de un método?**
+> → [`05c-transformers-metodos.md`](05c-transformers-metodos.md) — cada función explicada con su código fuente completo.
 
 ---
 
@@ -61,7 +71,7 @@ El perfil `ProductosMappingTransforms` define este mapeo:
 
 #### Metafields del producto
 
-Se generan de forma automática en `GetMetafieldsProducto`. Los metafields vacíos (valor `null` o `""`) se omiten.
+Se generan de forma automática en [`GetMetafieldsProducto`](05c-transformers-metodos.md#13-productosmappingtransforms-getmetafieldsproducto). Los metafields vacíos (valor `null` o `""`) se omiten.
 
 | Namespace | Key | Tipo | Valor |
 |---|---|---|---|
@@ -96,7 +106,7 @@ Se generan de forma automática en `GetMetafieldsProducto`. Los metafields vací
 
 #### Metafields de la variante
 
-Definidos en `GetMetafieldsVariante`:
+Definidos en [`GetMetafieldsVariante`](05c-transformers-metodos.md#14-productosmappingtransforms-getmetafieldsvariante):
 
 | Namespace | Key | Tipo | Valor |
 |---|---|---|---|
@@ -196,7 +206,7 @@ Este transformer genera el input completo para esa operación: el ID de Shopify 
 
 No usa AutoMapper. Solo resuelve IDs:
 
-```
+```text
 OriginId de producto  →  transactionsService.Products.FindShopifyIds(...)  →  DestinoId
 OriginId de variante  →  transactionsService.Products.Variants.FindShopifyIds(...)  →  DestinoId
 
@@ -390,7 +400,7 @@ Para actualización, añade campos adicionales:
 | `Email` | `Email` del location (este es el identificador único del contacto) |
 | `Phone` | Teléfono (null si vacío) |
 
-### `BuildAddress` — la conversión de dirección
+### [`BuildAddress`](05c-transformers-metodos.md#3-buildaddress-conversion-de-direccion) — la conversión de dirección
 
 La conversión de dirección es más compleja que un simple mapeo porque Shopify requiere códigos ISO estrictos, y el ERP puede enviar valores en formatos distintos.
 
@@ -421,7 +431,7 @@ public static CompanyAddressInput BuildAddress(ILogger logger, LocationResponseM
 }
 ```
 
-El `ZoneCodes.TryGetZoneCode` es una utilidad que traduce los códigos de provincia del ERP (formato interno de Sage X3) al formato ISO 3166-2 que requiere Shopify. Si no encuentra la traducción, se loguea un error y la dirección se crea sin código de provincia.
+El [`ZoneCodes.TryGetZoneCode`](05c-transformers-metodos.md#4-zonecodestrygetzonecode-tabla-de-provincias-iso) es una utilidad que traduce los códigos de provincia del ERP (formato interno de Sage X3) al formato ISO 3166-2 que requiere Shopify. Si no encuentra la traducción, se loguea un error y la dirección se crea sin código de provincia.
 
 ### Las tarifas de precios por defecto
 
@@ -471,9 +481,9 @@ contactInput.Metafields.Add(new MetafieldInput
 
 ### La lógica de descuentos (header)
 
-Los descuentos se calculan en `SetHeaderDiscountFields`:
+Los descuentos se calculan en [`SetHeaderDiscountFields`](05c-transformers-metodos.md#10-ordersmappingprofile-logica-de-descuentos):
 
-```
+```text
 TotalDiscount     = suma de descuentos de importe fijo (DiscountApplicationAllocationMethod.ACROSS + valor fijo)
 TotalDiscountPrcnt = suma de descuentos de porcentaje (DiscountApplicationAllocationMethod.ACROSS + PricingPercentageValue)
 ```
@@ -494,7 +504,7 @@ Si no hay descuentos de porcentaje, `TotalDiscountPrcnt = null`. Si no hay descu
 
 ### La detección de dropshipping
 
-Antes del mapeo se ejecuta `IsDropshipping(order)`:
+Antes del mapeo se ejecuta [`IsDropshipping(order)`](05c-transformers-metodos.md#11-ordersmappingprofile-isdropshipping-y-normalizacion):
 
 ```csharp
 private static bool IsDropshipping(Order order)
@@ -525,7 +535,7 @@ El transformer gestiona tres tipos de cambios en una misma pasada:
 
 #### Creación de tarifas (`_tarifasCrear`)
 
-```
+```text
 Para cada tarifa nueva:
   1. Añadir la tarifa al diccionario priceListsToCreate {OriginId → CurrencyCode}
   2. Para cada precio de la tarifa:
@@ -586,7 +596,7 @@ TranslationsInput
 
 ## Resumen de la capa de transformación
 
-```
+```text
 Origen (modelos internos)            Transformer                    Destino (inputs de Shopify)
 ───────────────────────────────────  ─────────────────────────────  ──────────────────────────────────
 Product + Variant (del PIM)     →    ProductsCreateTransform    →   ProductCreateInput
@@ -621,3 +631,12 @@ IPriceList                      →    PriceListTransform         →   PriceLis
 ITranslatable                   →    TranslationsTransform      →   TranslationsInput
                                                                       (traducciones por idioma)
 ```
+
+---
+
+## Documentos relacionados
+
+| Documento | Contenido |
+|---|---|
+| [`05-transformers.md`](05-transformers.md) | Visión general de los 9 transformers y el papel de AutoMapper |
+| [`05c-transformers-metodos.md`](05c-transformers-metodos.md) | Código fuente completo y explicación de cada método y función |

@@ -1,6 +1,16 @@
+---
+tags:
+  - Transformers
+  - Shopify
+  - AutoMapper
+---
+
 # 05 — Los Transformers: visión general
 
-Los transformers son la segunda capa del patrón ETL. Reciben los modelos que han producido los extractors (datos en formato del sistema origen) y los convierten al formato que necesitan los loaders (datos en formato de Shopify). No leen de ningún sistema externo, no escriben en ningún destino: **solo transforman**.
+Los transformers son la tercera capa del patrón ETL. Reciben los modelos **ya clasificados** por los [Decisions](04d-decisions.md) (listas separadas de qué crear, actualizar y borrar) y los convierten al formato que necesitan los loaders (inputs de la API de Shopify). No leen de ningún sistema externo, no escriben en ningún destino: **solo transforman**.
+
+> **¿Quieres entender cómo funciona un método concreto?**
+> → [`05c-transformers-metodos.md`](05c-transformers-metodos.md) — explicación paso a paso de cada función y método de esta capa.
 
 Sin embargo, sí necesitan acceder a la **base de datos de transacciones** durante la transformación, porque necesitan resolver los `OriginId` (códigos del ERP o del PIM) a `DestinoId` (IDs de Shopify). Este es el papel fundamental de `TransactionsService` en la capa de transformación.
 
@@ -46,9 +56,9 @@ var company = mapper.Map<CompanyInput>(cliente);
 ```
 
 Los tres perfiles de AutoMapper del proyecto son:
-- `CustomersMappingProfile` — clientes del ERP a estructuras B2B de Shopify
-- `OrdersMappingProfile` — pedidos de Shopify al formato del ERP
-- `ProductosMappingTransforms` — productos del PIM a inputs de producto/variante de Shopify
+- [`CustomersMappingProfile`](05c-transformers-metodos.md#2-customersmappingprofile-mapeos-automapper) — clientes del ERP a estructuras B2B de Shopify
+- [`OrdersMappingProfile`](05c-transformers-metodos.md#8-ordersmappingprofile-mapeos-automapper) — pedidos de Shopify al formato del ERP
+- [`ProductosMappingTransforms`](05c-transformers-metodos.md#12-productosmappingtransforms-mapeos-automapper) — productos del PIM a inputs de producto/variante de Shopify
 
 ---
 
@@ -58,7 +68,7 @@ La BD de transacciones (`transactions-provalliance`) actúa como el **diccionari
 
 Todos los transformers la usan para resolver IDs antes de generar los inputs de Shopify:
 
-```
+```text
 ERP/PIM                 BD Transacciones              Shopify
 ─────────────────       ──────────────────────        ─────────────────────────────────
 Sku = "GHD001"    →     OriginId="GHD001"       →     DestinoId="gid://shopify/Product/123"
@@ -179,3 +189,13 @@ Transforma el contenido multilingüe de los productos y metafields para su sincr
 El siguiente documento entra en profundidad en cada transformer: la lógica campo a campo, todos los metafields que se generan, cómo se calculan los descuentos y cómo se resuelven los IDs.
 
 → [05b — Transformers: detalle completo](05b-transformers-detalle.md)
+
+---
+
+## Documentos relacionados
+
+| Documento | Contenido |
+|---|---|
+| [`05b-transformers-detalle.md`](05b-transformers-detalle.md) | Estructura campo a campo de cada transformer: qué mapea, qué metafields genera |
+| [`05c-transformers-metodos.md`](05c-transformers-metodos.md) | Explicación paso a paso de cada método y función de esta capa |
+| [`10-loaders.md`](10-loaders.md) | Los Loaders que reciben los outputs de los Transformers y escriben en Shopify |
