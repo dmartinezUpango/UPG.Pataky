@@ -1,0 +1,22 @@
+/* Ampliar área de contenido en páginas de referencia largas (métodos, detalle) */
+.md-grid {
+  max-width: 1440px;
+}
+
+/* Mejorar visibilidad de los marcadores de anotación de código */
+.md-annotation__index {
+  font-size: 0.75em;
+  vertical-align: middle;
+}
+
+/* Reducir el peso visual de los números de línea en bloques de código */
+.md-code__content .linenos {
+  opacity: 0.45;
+  user-select: none;
+}
+
+/* Asegurar que las tablas de referencia anchas no rompan el layout */
+.md-typeset table:not([class]) {
+  display: block;
+  overflow-x: auto;
+}

@@ -4,53 +4,176 @@ site_description: Documentación técnica del sistema de integración ERP-PIM-Sh
 theme:
   name: material
   language: es
+  font:
+    text: Inter
+    code: JetBrains Mono
   palette:
-    - scheme: default
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
       primary: indigo
       accent: indigo
       toggle:
         icon: material/brightness-7
         name: Cambiar a modo oscuro
-    - scheme: slate
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       primary: indigo
       accent: indigo
       toggle:
         icon: material/brightness-4
         name: Cambiar a modo claro
   features:
+    # ── Tabs ─────────────────────────────────────────────────────────────
     - navigation.tabs
-    - navigation.sections
+    - navigation.tabs.sticky
+    # ── Navegación avanzada ──────────────────────────────────────────────
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.instant.prefetch
+    - navigation.instant.preview
+    - navigation.indexes
+    - navigation.path
+    - navigation.tracking
+    - navigation.prune
     - navigation.top
     - navigation.footer
+    # ── Tabla de contenidos ──────────────────────────────────────────────
+    - toc.follow
+    # ── Búsqueda ─────────────────────────────────────────────────────────
     - search.highlight
     - search.suggest
+    - search.share
+    # ── Contenido ────────────────────────────────────────────────────────
     - content.code.copy
+    - content.code.annotate
+    - content.code.select
+    - content.action.edit
+    - content.action.view
+    - content.tabs.link
+    - content.tooltips
+    # ── Header ───────────────────────────────────────────────────────────
+    - header.autohide
 
 markdown_extensions:
   - tables
-  - fenced_code
   - admonition
-  - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
+  - footnotes
+  - attr_list
+  - md_in_html
   - toc:
       permalink: true
+      title: En esta página
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+        - name: reactflow
+          class: reactflow
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.caret
+  - pymdownx.tilde
+  - pymdownx.smartsymbols
+
+plugins:
+  - search:
+      lang: es
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+  - tags
+  - meta
+  - typeset
+  # ── Plugins externos (requieren instalación adicional) ────────────────
+  # pip install mkdocs-git-revision-date-localized-plugin
+  # - git-revision-date-localized:
+  #     enable_creation_date: true
+  #     type: timeago
+  #     fallback_to_build_date: true
+  #
+  # pip install mkdocs-glightbox
+  # - glightbox
+  #
+  # pip install mkdocs-minify-plugin
+  # - minify:
+  #     minify_html: true
+  #
+  # pip install "mkdocs-material[imaging]"
+  # - social
+
+extra_css:
+  - stylesheets/extra.css
+extra_javascript:
+  - path: assets/javascripts/reactflow/bundle.reactflow.js
+    defer: true
 
 nav:
   - Inicio: index.md
-  - Arquitectura ETL: 01-arquitectura-etl.md
-  - Motor de Workflows (Elsa): 02-elsa-workflows.md
-  - Workflows del sistema: 03-workflows-detalle.md
-  - Extractors:
-    - Visión general: 04-extractors.md
-    - Detalle completo: 04b-extractors-detalle.md
-  - Transformers:
-    - Visión general: 05-transformers.md
-    - Detalle completo: 05b-transformers-detalle.md
-  - Modelos de datos: 06-modelos.md
-  - Infraestructura y despliegue: 07-infraestructura.md
-  - Configuración: 08-configuracion.md
-  - Elsa Studio: 09-elsa-studio.md
-  - Loaders y Mirror: 10-loaders.md
+  - Arquitectura:
+    - Arquitectura ETL: 01-arquitectura-etl.md
+    - Motor de Workflows (Elsa): 02-elsa-workflows.md
+    - Workflows del sistema: 03-workflows-detalle.md
+  - Procesos:
+    - Productos:
+      - Visión general: wf-productos.md
+      - Detalle completo: wf-productos-detalle.md
+      - Métodos y funciones: wf-productos-metodos.md
+    - Stock:
+      - Visión general: wf-stock.md
+      - Detalle completo: wf-stock-detalle.md
+      - Métodos y funciones: wf-stock-metodos.md
+    - Clientes:
+      - Visión general: wf-clientes.md
+      - Detalle completo: wf-clientes-detalle.md
+      - Métodos y funciones: wf-clientes-metodos.md
+    - Pedidos:
+      - Visión general: wf-pedidos.md
+      - Detalle completo: wf-pedidos-detalle.md
+      - Métodos y funciones: wf-pedidos-metodos.md
+    - Imágenes PIM:
+      - Visión general: wf-imagenes-pim.md
+      - Detalle completo: wf-imagenes-pim-detalle.md
+      - Métodos y funciones: wf-imagenes-pim-metodos.md
+    - Imágenes Shopify:
+      - Visión general: wf-imagenes-shopify.md
+      - Detalle completo: wf-imagenes-shopify-detalle.md
+      - Métodos y funciones: wf-imagenes-shopify-metodos.md
+    - Tarifas B2B: wf-tarifas.md
+    - Scheduling: wf-scheduling.md
+  - Pipeline ETL:
+    - Extractors:
+      - Visión general: 04-extractors.md
+      - Detalle completo: 04b-extractors-detalle.md
+      - Métodos y funciones: 04c-extractors-metodos.md
+    - Decisions:
+      - Visión general: 04d-decisions.md
+      - Métodos y funciones: 04d-decisions-metodos.md
+    - Transformers:
+      - Visión general: 05-transformers.md
+      - Detalle completo: 05b-transformers-detalle.md
+      - Métodos y funciones: 05c-transformers-metodos.md
+    - Loaders y Mirror:
+      - Visión general: 10-loaders.md
+      - Detalle completo: 10b-loaders-detalle.md
+      - Métodos y funciones: 10c-loaders-metodos.md
+  - Sistema:
+    - Modelos de datos: 06-modelos.md
+    - Infraestructura y despliegue: 07-infraestructura.md
+    - Configuración: 08-configuracion.md
+    - Elsa Studio: 09-elsa-studio.md
+    - Índice de etiquetas: tags.md
