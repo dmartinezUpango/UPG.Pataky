@@ -1,11 +1,18 @@
+---
+tags:
+  - Arquitectura
+  - ETL
+---
+
 # 01 — Arquitectura general: el patrón ETL
 
 ## ¿Qué es ETL?
 
 **ETL** son las siglas de **Extract, Transform, Load** (Extraer, Transformar, Cargar). Es un patrón de diseño muy usado en sistemas de integración de datos. La idea es simple: cuando tienes dos sistemas que manejan los mismos datos de forma diferente, necesitas un proceso en el medio que los sincronice.
 
-```
-[Sistema origen]  ──►  Extraer  ──►  Transformar  ──►  Cargar  ──►  [Sistema destino]
+```mermaid
+flowchart LR
+    A["Sistema origen"] --> B[Extraer] --> C[Transformar] --> D[Cargar] --> E["Sistema destino"]
 ```
 
 En este proyecto:
@@ -19,8 +26,9 @@ En este proyecto:
 
 En la práctica, este proyecto añade un paso extra entre Extraer y Transformar: la **Decisión**. Esto es porque no basta con coger todos los datos del origen y volcarlos en el destino — hay que comparar qué hay en cada sistema para saber qué crear, qué actualizar y qué eliminar.
 
-```
-Extraer ──► Decidir ──► Transformar ──► Cargar
+```mermaid
+flowchart LR
+    A[Extraer] --> B[Decidir] --> C[Transformar] --> D[Cargar]
 ```
 
 Cada uno de estos pasos está implementado en un proyecto .NET separado.
@@ -64,42 +72,19 @@ Comunes/
 
 ### Ejemplo: sincronización de Productos
 
-```
-SalesLayer (PIM)
-       │
-       ▼
-[1. EXTRAER]
-ProductsWithImagesExtract
-  → Llama a la API de SalesLayer
-  → Devuelve lista de IProduct
+```mermaid
+flowchart TD
+    PIM["SalesLayer (PIM)"]
+    EX["**1. EXTRAER**\nProductsWithImagesExtract\nLee productos e imágenes del PIM"]
+    DE["**2. DECIDIR**\nProductsRebuildDecision\nClasifica: Crear / Actualizar / Archivar / Borrar\n+ Variantes: Crear / Actualizar / Borrar"]
+    TR["**3. TRANSFORMAR**\nProductsCreate/Update/DeleteTransform\nConvierte modelos PIM → formato Shopify API"]
+    LO["**4. CARGAR**\nProductsWithVariants Create / Update / Delete\nEscribe en la API de Shopify"]
+    SH["Shopify (destino)"]
+    DB[("TransactionsDB\nOriginId ↔ DestinoId")]
 
-       │
-       ▼
-[2. DECIDIR]
-ProductsRebuildDecision
-  → Compara la lista del PIM con Shopify
-  → Clasifica cada producto en:
-     · productosCrear
-     · productosActualizar
-     · productosArchivar / productosBorrar
-     · variantesCrear / variantesActualizar / variantesBorrar
-
-       │
-       ▼
-[3. TRANSFORMAR]
-ProductsCreateTransform / ProductsUpdateTransform / ProductsDeleteTransform
-  → Convierte los modelos del PIM al formato que espera la API de Shopify
-
-       │
-       ▼
-[4. CARGAR]
-ProductsWithVariantsCreate / Update / Delete
-  → Llama a la API de Shopify para aplicar los cambios
-  → Vive en el proyecto Loaders (compartido)
-
-       │
-       ▼
-Shopify (destino)
+    PIM --> EX --> DE --> TR --> LO --> SH
+    DE -. "consulta estado" .-> DB
+    LO -. "registra pares" .-> DB
 ```
 
 ### Ejemplo: sincronización de Stock (más sencilla)
@@ -205,25 +190,36 @@ Además, como los `Loaders` y `ElsaShared` son compartidos entre proyectos, un b
 
 ## Diagrama de dependencias entre proyectos
 
-```
-ElsaServer
-  ├── Extractors
-  │     ├── ElsaShared       (común)
-  │     ├── Loaders          (común)
-  │     ├── ShopifySDK       (común)
-  │     └── UPG.Connector.SalesLayer  (común)
-  ├── Decisions
-  │     └── (independiente, solo referencias base)
-  ├── Transformers
-  │     ├── Extractors
-  │     ├── Loaders          (común)
-  │     ├── ElsaShared       (común)
-  │     └── ShopifySDK       (común)
-  ├── ElsaShared             (común)
-  ├── Loaders                (común)
-  ├── ShopifySDK             (común)
-  ├── UPG.Connector.SalesLayer  (común)
-  └── GraphLibrary           (común) ← para envío de emails de notificación
+```mermaid
+graph TD
+    ES[ElsaServer]
+    EX[Extractors]
+    DE[Decisions]
+    TR[Transformers]
+    ESH["ElsaShared (común)"]
+    LO["Loaders (común)"]
+    SDK["ShopifySDK (común)"]
+    SL["UPG.Connector.SalesLayer (común)"]
+    GL["GraphLibrary (común)"]
+
+    ES --> EX
+    ES --> DE
+    ES --> TR
+    ES --> ESH
+    ES --> LO
+    ES --> SDK
+    ES --> SL
+    ES --> GL
+
+    EX --> ESH
+    EX --> LO
+    EX --> SDK
+    EX --> SL
+
+    TR --> EX
+    TR --> LO
+    TR --> ESH
+    TR --> SDK
 ```
 
 > El sentido de las dependencias es siempre "hacia abajo": ElsaServer conoce todo, Extractors no conoce Transformers, Transformers no conoce Loaders directamente.

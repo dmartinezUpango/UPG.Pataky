@@ -1,3 +1,10 @@
+---
+tags:
+  - Arquitectura
+  - Elsa
+  - Workflows
+---
+
 # 02 — El motor de workflows: Elsa
 
 ## ¿Qué es Elsa?
@@ -103,8 +110,9 @@ public override ICollection<Connection> ConnectionsDefinitions(...)
 
 Cuando defines esos tres métodos, `BaseWorkflow` construye el workflow completo por ti. Entre otras cosas, añade automáticamente al principio del grafo:
 
-```
-[Trigger de inicio]  →  [Delay 15s]  →  [StartActivity]  →  tus actividades...
+```mermaid
+flowchart LR
+    T["Trigger de inicio\n(Event / directo)"] --> D["Delay 15s\ninicialización Elsa"] --> S[StartActivity] --> A["tus actividades..."] --> J[FlowJoin]
 ```
 
 - **Trigger de inicio**: en producción es un `Event` (recibe la señal del planificador); en debug es directo.
@@ -190,7 +198,7 @@ Los workflows no se disparan directamente por un cron. Hay un workflow especial 
 
 ### Cómo funciona
 
-```
+```text
 SchedulingWorkflow
   ├── Cron("0 */4 * * *")  →  PublishEvent("Productos", payload: false)
   ├── Cron("0 * * * *")    →  PublishEvent("Productos", payload: true)   ← incremental
@@ -209,7 +217,7 @@ Si en `appsettings.json` el campo `Cron` de un workflow está a `null`, ese work
 
 ## El ciclo de vida de una ejecución
 
-```
+```text
 1. TRIGGER
    └── Evento recibido (desde SchedulingWorkflow) o lanzamiento manual
 
@@ -246,27 +254,22 @@ Hay dos bases de datos en el sistema:
 
 ## Resumen visual
 
-```
-appsettings.json
-  └── Cron: "0 */4 * * *"
-           │
-           ▼
-SchedulingWorkflow        ← workflow especial, siempre corriendo
-  └── Cron  →  PublishEvent("Productos")
-                      │
-                      ▼
-ProductsWorkflow          ← escucha el evento y se activa
-  ├── Variables: productos, productosCrear, ...
-  ├── Actividades: Extractor → Decisión → Transformer × 3 → Loader × 3
-  └── Conexiones: definen el orden del grafo
-           │
-           ▼
-  Cada actividad hereda de BaseActivity<T>
-  └── InitInputs + ShouldRunAsync + RunAsync
-           │
-           ▼
-  Estado guardado en PostgreSQL
-  Notificaciones enviadas por Microsoft Graph
+```mermaid
+flowchart TD
+    CFG["appsettings.json\nCron: '0 */4 * * *'"]
+    SW["SchedulingWorkflow\n(siempre corriendo)"]
+    PE["PublishEvent('Productos')"]
+    PW["ProductsWorkflow\nVariables + Actividades + Conexiones"]
+    BA["BaseActivity&lt;T&gt;\nInitInputs → ShouldRunAsync → RunAsync"]
+    PG[("PostgreSQL\nEstado de workflows")]
+    MG["Microsoft Graph\nNotificaciones por email"]
+
+    CFG -->|"dispara según cron"| SW
+    SW -->|"cada ciclo"| PE
+    PE -->|"activa"| PW
+    PW -->|"ejecuta actividades"| BA
+    BA -->|"persiste estado"| PG
+    BA -->|"acumula resultados"| MG
 ```
 
 ---

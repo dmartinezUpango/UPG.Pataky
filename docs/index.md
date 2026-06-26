@@ -52,8 +52,9 @@ Descripción detallada de cada uno de los **6 workflows** disponibles:
 ### 4. Los Extractors — cómo se leen los datos del origen
 > [`04-extractors.md`](04-extractors.md) — visión general
 > [`04b-extractors-detalle.md`](04b-extractors-detalle.md) — detalle completo campo a campo
+> [`04c-extractors-metodos.md`](04c-extractors-metodos.md) — métodos y funciones explicados paso a paso
 
-Cómo funciona la capa de extracción. Qué APIs consume (Provalliance, SalesLayer, FTP), cómo se autentica, y qué modelos de datos devuelve cada extractor con su estructura completa.
+Cómo funciona la capa de extracción. Qué APIs consume (Provalliance, SalesLayer, FTP), cómo se autentica, y qué modelos de datos devuelve cada extractor con su estructura completa. El tercer documento explica cada método y función individualmente para poder seguir el código línea a línea.
 
 ---
 
