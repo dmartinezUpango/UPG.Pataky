@@ -1,3 +1,10 @@
+---
+tags:
+  - Extractors
+  - ERP
+  - PIM
+---
+
 # 04 — Los Extractors
 
 Los extractors son la primera capa del patrón ETL. Su única responsabilidad es **leer datos del sistema origen** y devolverlos en un modelo intermedio que el resto del sistema pueda procesar. No transforman, no deciden, no escriben.
@@ -7,6 +14,9 @@ En este proyecto hay extractors que leen de tres orígenes distintos:
 - El **PIM SalesLayer** (a través del conector UPG.Connector.SalesLayer)
 - **Shopify** (a través del ShopifySDK)
 - Un **servidor FTP** (para imágenes)
+
+> **¿Quieres entender cómo funciona un método concreto?**
+> → [`04c-extractors-metodos.md`](04c-extractors-metodos.md) — explicación paso a paso de cada función y método de esta capa.
 
 ---
 
@@ -18,9 +28,9 @@ Antes de ver cada extractor, conviene entender cómo se autentica cada sistema, 
 
 La API de Provalliance está detrás de **Azure API Management**. Para acceder hay que obtener primero un token Bearer mediante el flujo OAuth2 `client_credentials`.
 
-Esto lo gestiona `ProvallianceAuthenticationHelperService`:
+Esto lo gestiona [`ProvallianceAuthenticationHelperService`](04c-extractors-metodos.md#3-provallianceauthenticationhelperservice):
 
-```
+```text
 1. Primera llamada → POST a la URL de autenticación de Azure AD
    con client_id, client_secret, resource y scope
 
@@ -75,7 +85,7 @@ Llama al canal de salida de SalesLayer para obtener el catálogo completo de pro
 
 SalesLayer devuelve todos los artículos "planos" como una lista. Los artículos con el mismo `CodigoAgrupacion` son variantes del mismo producto. El extractor los agrupa:
 
-```
+```text
 SalesLayer devuelve:
   · SKU: GHD001-NEGRO,   CodigoAgrupacion: GHD001
   · SKU: GHD001-BLANCO,  CodigoAgrupacion: GHD001
@@ -109,7 +119,7 @@ El workflow de Productos ignora las imágenes. El workflow de Imágenes ignora l
 
 ### Caché en debug
 
-Tanto este extractor como otros usan `FuncUtils.WithCachedRun(...)`. En entorno de desarrollo, si ya existe el resultado de una llamada guardado en disco (`tmp/debug/...`), no vuelve a llamar a la API y devuelve el fichero cacheado. Esto ahorra tiempo y evita consumir cuota de la API durante el desarrollo.
+Tanto este extractor como otros usan [`FuncUtils.WithCachedRun(...)`](04c-extractors-metodos.md#2-funcutilswithcachedrun-la-cache-de-desarrollo). En entorno de desarrollo, si ya existe el resultado de una llamada guardado en disco (`tmp/debug/...`), no vuelve a llamar a la API y devuelve el fichero cacheado. Esto ahorra tiempo y evita consumir cuota de la API durante el desarrollo.
 
 ---
 
@@ -122,7 +132,7 @@ Tanto este extractor como otros usan `FuncUtils.WithCachedRun(...)`. En entorno 
 
 ### Qué hace
 
-Llama al endpoint `/clients/client` de la API de Provalliance para obtener la lista completa de clientes y los entrega como `ICompany`.
+Llama al endpoint `/clients/client` de la API de Provalliance para obtener la lista completa de clientes y los entrega como `ICompany`. El servicio [`ProvallianceService.GetClients()`](04c-extractors-metodos.md#getclients) gestiona la paginación automáticamente.
 
 ### Paginación de la respuesta
 
@@ -224,7 +234,7 @@ Para cada fichero de imagen aplica una convención de nombrado: `REFERENCIA-ORDE
 
 Además de listar los ficheros, genera un fichero `CSV_CargaImages.csv` con los nombres de todas las imágenes encontradas y lo sube al mismo FTP:
 
-```
+```csv
 Imagen
 GHD001-1.jpg
 GHD001-2.jpg
@@ -309,6 +319,16 @@ Está permanentemente desactivado (`ShouldRunAsync() => false`) porque ya no es 
 
 ## Siguiente paso
 
-Con los extractors claros, el siguiente documento explica la capa de transformación: cómo se convierten los modelos del ERP al formato de Shopify y cómo funciona AutoMapper en este contexto.
+Con los extractors claros, el siguiente documento explica la capa de Decisions: cómo se clasifican los datos extraídos en operaciones concretas (crear / actualizar / borrar) consultando la BD de transacciones.
 
-→ [05 — Los Transformers](05-transformers.md)
+→ [04d — Los Decisions](04d-decisions.md)
+
+---
+
+## Documentos relacionados
+
+| Documento | Contenido |
+|---|---|
+| [`04b-extractors-detalle.md`](04b-extractors-detalle.md) | Estructura campo a campo de cada objeto que produce cada extractor |
+| [`04c-extractors-metodos.md`](04c-extractors-metodos.md) | Explicación paso a paso de cada método y función |
+| [`04d-decisions.md`](04d-decisions.md) | La siguiente capa: clasificación de entidades para Shopify |

@@ -1,6 +1,16 @@
+---
+tags:
+  - Extractors
+  - ERP
+  - PIM
+---
+
 # 04b — Extractors: detalle completo de cada uno
 
 Este documento entra en profundidad en cada extractor: qué objeto produce, cómo llega del sistema origen, cuál es su estructura campo a campo y qué transformaciones iniciales aplica el propio extractor antes de entregar los datos.
+
+> **¿Quieres entender cómo funciona un método concreto?**
+> → [`04c-extractors-metodos.md`](04c-extractors-metodos.md) — explicación paso a paso de cada función y método de esta capa.
 
 ---
 
@@ -58,7 +68,7 @@ Cada elemento de la lista `products` es un `SalonSpaceProduct`. Esta clase tiene
 
 El `Estatus` se mapea a `EntityStatus` en la variante:
 
-```
+```text
 Visible   → EntityStatus.Active
 Borrador  → EntityStatus.Inactive
 Invisible → EntityStatus.Deleted
@@ -107,7 +117,7 @@ Los campos traducibles son:
 
 Hay una cantidad muy grande de campos de clasificación (todos de tipo `string`) que reflejan la taxonomía de productos del sector de peluquería:
 
-```
+```text
 shopify_category, shopify_subcategory, shopify_linea_marca,
 brand, brand_family, brand_subfamily, brand_line,
 tipo_lacas_styling_lacas, tipo_cera_styling_ceras,
@@ -202,6 +212,49 @@ Hay dos tipos de imágenes:
 
 ---
 
+### Limpieza de duplicados
+
+Antes de emitir los outputs, el extractor realiza dos pasadas de deduplicación (ver [`RemoveDuplicatedVariants()`](04c-extractors-metodos.md#removeduplicatedvariants) para el detalle del método):
+
+#### 1. Productos con `OriginId` duplicado
+
+Si dos productos tienen el mismo `OriginId`, se conserva solo el primero y se emite un `LogError` por cada grupo de duplicados eliminados.
+
+#### 2. Variantes duplicadas dentro de un producto
+
+Dentro de cada `Product`, si hay variantes con el mismo `OriginId`, se conserva solo la primera. Se emite un `LogError` indicando cuántas variantes duplicadas tenía ese producto.
+
+---
+
+### Outputs del workflow
+
+| Output | Tipo | Contenido |
+|---|---|---|
+| `ProductsOutput` | `Box<IProduct>` | Lista de todos los productos (simples y con variantes) ya limpios de duplicados. |
+| `ProductsImagesOutput` | `Box<IProductImage>` | Lista plana de todas las imágenes, deduplicadas por `ImageOriginId`. |
+
+Las imágenes se emiten como output **independiente** aunque el producto ya tiene acceso a ellas vía [`GetParentImages()`](04c-extractors-metodos.md#getparentimages) y [`GetVariantsImages()`](04c-extractors-metodos.md#getvariantsimages). El motivo es que la rama del workflow que gestiona imágenes (subida, sincronización) pueda procesarlas directamente sin tener que recorrer la jerarquía producto → variante en cada paso.
+
+---
+
+### Flujo resumido
+
+```text
+SalesLayer API
+    └── SalonSpaceResponse
+            ├── Marcar Visibles+Obsoletos como Invisibles
+            ├── Productos sin CodigoAgrupacion  ──► Product (simple, 1 variante)
+            ├── Productos con CodigoAgrupacion  ──► Product (agrupado, N variantes)
+            ├── Eliminar Products con OriginId duplicado
+            ├── Eliminar Variants duplicadas dentro de cada Product
+            └── Extraer imágenes (parent + variants, deduplicadas por ImageOriginId)
+                    │
+                    ├── ProductsOutput        ──► actividades de sincronización de productos
+                    └── ProductsImagesOutput  ──► actividades de sincronización de imágenes
+```
+
+---
+
 ## Extractor 2 — Clientes del ERP (`CustomerExtract`)
 
 ### Sistema origen
@@ -226,7 +279,7 @@ public class ClientResponseModelContainer
 }
 ```
 
-El extractor itera páginas hasta recibir una con menos de 50 elementos.
+El extractor itera páginas hasta recibir una con menos de 50 elementos (ver [`GetClients()`](04c-extractors-metodos.md#getclients) para el detalle de la paginación).
 
 ---
 
@@ -298,7 +351,7 @@ Este es el campo más importante. Es un array de direcciones del cliente. Cada d
 
 ##### Los dos OriginId de `LocationResponseModel`
 
-La misma clase actúa como dos entidades distintas en Shopify, con dos `OriginId` diferentes:
+La misma clase actúa como dos entidades distintas en Shopify, con dos `OriginId` diferentes (ver [`ILocation.OriginId` e `ICustomer.OriginId` en sección 15](04c-extractors-metodos.md#15-locationresponsemodel-metodos-de-ilocation-e-icustomer)):
 
 ```csharp
 // Como ILocation (sucursal):
@@ -339,14 +392,13 @@ Contiene información sobre el pagador (`BPCINV`, `BPCPYR`) y el grupo de client
 
 Entrega una `Box<ICompany>` donde cada elemento es un `ClientResponseModel`. Desde el punto de vista del sistema:
 
-```
-ClientResponseModel (ICompany)
-  · OriginId = Company.CodCom              → ej: "C0001"
-  · GetLocations() = Locations[]           → array de LocationResponseModel como ILocation
-  · GetCustomers() = Locations[]           → mismo array como ICustomer
-  · GetMainContact() = Locations.First()   → la primera dirección es el contacto principal
-  · GetFiscalZone() = ZonaFiscal.zonaFiscal
-```
+| Propiedad / Método | Valor / Resultado |
+|---|---|
+| `OriginId` | `Company.CodCom` — ej: `"C0001"` |
+| [`GetLocations()`](04c-extractors-metodos.md#getlocations) | Array de `LocationResponseModel` como `ILocation` |
+| [`GetCustomers()`](04c-extractors-metodos.md#getcustomers) | El mismo array como `ICustomer` |
+| [`GetMainContact()`](04c-extractors-metodos.md#getmaincontact) | La primera dirección como contacto principal |
+| [`GetFiscalZone()`](04c-extractors-metodos.md#getfiscalzone) | `ZonaFiscal.zonaFiscal` — código de zona fiscal |
 
 ---
 
@@ -393,7 +445,7 @@ Entrega una `Box<Stock>` con todos los registros sin ningún filtrado adicional.
 ## Extractor 4 — Pedidos de Shopify (`OrdersExtractor`)
 
 ### Sistema origen
-**Shopify** — accedido a través del `ShopifySDK`. Método: `Orders.Retrieve(query)`.
+**Shopify** — accedido a través del `ShopifySDK`. Método: [`Orders.Retrieve(query)`](04c-extractors-metodos.md#16-ordersretrieve-shopifysdk).
 
 ### Cómo llega la respuesta
 
@@ -401,7 +453,7 @@ El SDK ejecuta una query de la API de Shopify usando el filtro de configuración
 
 El objeto `Order` de Shopify es complejo y contiene toda la información del pedido tal como existe en Shopify. Los campos más relevantes para este proyecto son:
 
-```
+```text
 Order
   · Id           → ID de GraphQL del pedido en Shopify  (ej: "gid://shopify/Order/123456")
   · Name         → Nombre legible del pedido            (ej: "#SS4185")
@@ -425,7 +477,7 @@ Entrega una `Box<Order>` con los pedidos en crudo tal como vienen de Shopify. La
 
 ### Lo que hace `OrderTransform` inmediatamente después
 
-Aunque no es un extractor, es relevante entender qué pasa justo después:
+Aunque no es un extractor, es relevante entender qué pasa justo después. El método [`GetCompanyDetailsForCustomer()`](04c-extractors-metodos.md#17-getcompanydetailsforcustomer-shopifysdk) extrae la empresa B2B del campo polimórfico `PurchasingEntity` del pedido:
 
 ```csharp
 // Para cada Order de Shopify:
@@ -520,7 +572,7 @@ public class OrderShippingAddressModel
 
 El nombre del fichero codifica dos datos:
 
-```
+```text
 GHD001-3.jpg
   │      │
   │      └── Orden de visualización (último segmento tras el último guión)
@@ -572,7 +624,7 @@ No llama a ninguna API. Recibe como **input** la lista de `IProduct` ya extraíd
 
 ### Qué hace
 
-Filtra los productos que implementen la interfaz `ITranslatable`:
+Filtra los productos que implementen la interfaz `ITranslatable` usando [`OfType<ITranslatable>()`](04c-extractors-metodos.md#11-translationsextract-initinputs-y-runasync) (ver sección 11 del documento de métodos):
 
 ```csharp
 List<ITranslatable> translations = _productos.OfType<ITranslatable>().ToList();
@@ -593,7 +645,7 @@ Entrega una `Box<ITranslatable>` con los productos que tienen contenido multilin
 ## Extractor 7 — Tarifas de precios (`ExtractTarifas`)
 
 ### Estado
-**Stub no implementado.** El método `RunAsync` siempre devuelve una lista vacía:
+**Stub no implementado.** El método [`RunAsync`](04c-extractors-metodos.md#12-extracttarifas-runasync-stub) siempre devuelve una lista vacía:
 
 ```csharp
 PriceLists.Set(context, new Box<IPriceList>(new List<IPriceList>()));
@@ -610,7 +662,7 @@ Sin embargo, en la implementación actual las tarifas se gestionan de otra forma
 ## Extractor 8 — Migración desde Shopify (`ShopifyExtract`)
 
 ### Estado
-**Desactivado permanentemente** mediante `ShouldRunAsync() => false`.
+**Desactivado permanentemente** mediante [`ShouldRunAsync() => false`](04c-extractors-metodos.md#shouldrunasync).
 
 ### Para qué se usó
 
@@ -618,7 +670,7 @@ Al arrancar el proyecto, Shopify ya tenía productos y variantes que habían sid
 
 Este extractor se usó en la puesta en marcha para **poblar la BD de transacciones desde Shopify**:
 
-1. Descargó todos los productos y variantes de Shopify mediante una query bulk.
+1. Descargó todos los productos y variantes de Shopify mediante [`BulkGetAllWithVariantsExtended()`](04c-extractors-metodos.md#18-bulkgetallwithvariantsextended-shopifysdk) (una query bulk de Shopify).
 2. Para cada producto y variante, leyó el metafield `originId` (que contiene el código del ERP).
 3. Registró en la BD de transacciones la relación `DestinoId` (ID en Shopify) ↔ `OrigenId` (código en el ERP).
 
@@ -634,6 +686,17 @@ Luego cruza los metafields `originId` con productos y variantes para obtener los
 ### Por qué se conserva en el código
 
 Se mantiene por si en algún momento hace falta repetir una migración inicial: si se borra la BD de transacciones, o si se hace una instalación nueva en otro cliente. Está desactivado pero disponible.
+
+---
+
+---
+
+## Documentos relacionados
+
+| Documento | Contenido |
+|---|---|
+| [`04-extractors.md`](04-extractors.md) | Visión general de cada extractor: qué hace, de dónde lee, por qué existe |
+| [`04c-extractors-metodos.md`](04c-extractors-metodos.md) | Explicación paso a paso de cada método y función |
 
 ---
 
