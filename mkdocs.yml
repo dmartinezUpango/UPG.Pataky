@@ -179,3 +179,17 @@ nav:
     - Configuración: 08-configuracion.md
     - Elsa Studio: 09-elsa-studio.md
     - Índice de etiquetas: tags.md
+  - Marketplaces:
+    - Visión general: mp-index.md
+    - Arquitectura del conector: mp-arquitectura.md
+    - Servicios:
+      - eWheel (ERP TEES): mp-ewheel.md
+      - ShoppingFeed: mp-shoppingfeed.md
+    - Procesos (Workers):
+      - Stock · ERP → SF: mp-wf-stock.md
+      - Pedidos · SF → ERP: mp-wf-pedidos-sf-erp.md
+      - Pedidos · ERP → SF: mp-wf-pedidos-erp-sf.md
+      - Precios · ERP → SF: mp-wf-precios.md
+    - Mapeo y transformación: mp-mapeo.md
+    - Modelos de datos: mp-modelos.md
+    - Configuración: mp-configuracion.md
