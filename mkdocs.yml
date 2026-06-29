@@ -121,6 +121,8 @@ extra_css:
 extra_javascript:
   - path: assets/javascripts/reactflow/bundle.reactflow.js
     defer: true
+  - path: assets/javascripts/mermaid-zoom.js
+    defer: true
 
 nav:
   - Inicio: index.md
