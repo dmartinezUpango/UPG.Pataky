@@ -1,80 +1,122 @@
+/*
+ * Zoom controls for Mermaid diagrams under MkDocs Material.
+ *
+ * IMPORTANT — two things make this tricky:
+ *
+ * 1. Material renders each Mermaid diagram by REPLACING the original
+ *    `<pre class="mermaid">` with a fresh `<div class="mermaid">` whose SVG
+ *    lives inside a CLOSED shadow root (attachShadow({mode:"closed"})).
+ *    That shadow root is unreachable from outside, so we cannot touch the
+ *    SVG or its viewBox. Instead we apply CSS `transform: scale()` to the
+ *    host <div> itself — transforms cascade into shadow DOM content.
+ *
+ * 2. Many diagrams live inside the "Estático" tab of a content-tabs block.
+ *    When that tab is not selected it is display:none, so the host reports
+ *    offsetHeight === 0 until the tab is shown. We therefore wire up the UI
+ *    immediately but capture the diagram's natural size lazily (via a
+ *    ResizeObserver) the first time it actually becomes visible.
+ */
 (function () {
   "use strict";
 
   const STEP = 1.25;
-  const MIN  = 0.25;
+  const MIN  = 0.5;
   const MAX  = 4;
 
-  function initZoom(wrapper) {
-    if (wrapper.dataset.zoomReady) return;
-    const svg = wrapper.querySelector("svg");
-    if (!svg) return;
-    wrapper.dataset.zoomReady = "1";
+  function initZoom(host) {
+    if (host.dataset.mzoom) return;
+    host.dataset.mzoom = "1";
 
-    const vb = svg.viewBox.baseVal;
-    let ox = vb.x, oy = vb.y, ow = vb.width, oh = vb.height;
+    // Wrapper structure (built now, even if the host is in a hidden tab):
+    //   .mermaid-zoom-bar   (the +/-/reset buttons)
+    //   .mzoom-viewport     (overflow:auto — provides scroll/pan)
+    //     .mzoom-sizer      (reserves baseW*scale × baseH*scale)
+    //       .mermaid (host) (transform: scale(scale), origin 0 0)
+    const parent = host.parentNode;
+    const viewport = document.createElement("div");
+    viewport.className = "mzoom-viewport";
+    const sizer = document.createElement("div");
+    sizer.className = "mzoom-sizer";
 
-    // Fallback: read width/height attributes if viewBox is empty
-    if (!ow) ow = parseFloat(svg.getAttribute("width"))  || 800;
-    if (!oh) oh = parseFloat(svg.getAttribute("height")) || 400;
+    parent.insertBefore(viewport, host);
+    viewport.appendChild(sizer);
+    sizer.appendChild(host);
 
-    console.log("[MZ] initZoom — viewBox:", ox, oy, ow, oh);
+    host.style.transformOrigin = "0 0";
 
+    let base = null;   // natural { w, h }, captured once visible
     let scale = 1;
 
-    const apply = () => {
-      const nw = ow / scale, nh = oh / scale;
-      svg.setAttribute(
-        "viewBox",
-        `${ox + (ow - nw) / 2} ${oy + (oh - nh) / 2} ${nw} ${nh}`
-      );
+    // Capture the scale-1 footprint the first time the host has real size.
+    const ensureBase = function () {
+      if (base || !host.offsetWidth || !host.offsetHeight) return false;
+      base = { w: host.offsetWidth, h: host.offsetHeight };
+      host.style.width = base.w + "px";   // pin width so transform is the
+                                          // only thing that scales it
+      apply();
+      return true;
     };
+
+    const apply = function () {
+      if (!base) return;
+      host.style.transform = scale === 1 ? "" : "scale(" + scale + ")";
+      sizer.style.width  = base.w * scale + "px";
+      sizer.style.height = base.h * scale + "px";
+    };
+
+    // Fires when the tab becomes visible (0 → real size).
+    const ro = new ResizeObserver(function () { ensureBase(); });
+    ro.observe(host);
+    ensureBase(); // in case it's already visible
 
     const bar = document.createElement("div");
     bar.className = "mermaid-zoom-bar";
-    bar.innerHTML = `
-      <button class="mermaid-zoom-btn" data-action="out"   title="Alejar">−</button>
-      <button class="mermaid-zoom-btn" data-action="reset" title="Restablecer">⟳</button>
-      <button class="mermaid-zoom-btn" data-action="in"    title="Acercar">+</button>
-    `;
-    bar.addEventListener("click", (e) => {
+    bar.innerHTML =
+      '<button class="mermaid-zoom-btn" data-action="out"   title="Alejar" aria-label="Alejar">−</button>' +
+      '<button class="mermaid-zoom-btn" data-action="reset" title="Restablecer" aria-label="Restablecer">↻</button>' +
+      '<button class="mermaid-zoom-btn" data-action="in"    title="Acercar" aria-label="Acercar">+</button>';
+
+    bar.addEventListener("click", function (e) {
       const btn = e.target.closest("[data-action]");
       if (!btn) return;
-      if      (btn.dataset.action === "in")    scale = Math.min(MAX, scale * STEP);
-      else if (btn.dataset.action === "out")   scale = Math.max(MIN, scale / STEP);
-      else                                      scale = 1;
+      ensureBase(); // the tab is visible if the user can click — safe to size
+      const action = btn.dataset.action;
+      if      (action === "in")  scale = Math.min(MAX, scale * STEP);
+      else if (action === "out") scale = Math.max(MIN, scale / STEP);
+      else                       scale = 1;
       apply();
     });
 
-    // Insert BEFORE the <pre class="mermaid">, not inside it
-    wrapper.parentNode.insertBefore(bar, wrapper);
+    parent.insertBefore(bar, viewport);
   }
 
+  // Material replaces <pre class="mermaid"> with <div class="mermaid"> after
+  // rendering, so we target the DIV form specifically.
   function scan() {
-    const wrappers = document.querySelectorAll(".mermaid");
-    console.log("[MZ] scan — .mermaid elements:", wrappers.length);
-    wrappers.forEach((w) => {
-      const hasSvg = !!w.querySelector("svg");
-      console.log("[MZ]   element:", w.tagName, "has-svg:", hasSvg, "ready:", w.dataset.zoomReady);
-      if (hasSvg) initZoom(w);
-    });
+    document.querySelectorAll("div.mermaid").forEach(initZoom);
   }
 
-  // Watch for Mermaid's async SVG injection
-  const mo = new MutationObserver(scan);
+  // Debounced rescan driven by DOM mutations (catches Material's async
+  // <pre> → <div> swap).
+  let raf = 0;
+  const debouncedScan = function () {
+    if (raf) return;
+    raf = requestAnimationFrame(function () { raf = 0; scan(); });
+  };
+
+  const mo = new MutationObserver(debouncedScan);
   mo.observe(document.body, { childList: true, subtree: true });
 
-  // Also scan immediately and on DOMContentLoaded (in case Mermaid ran first)
   scan();
   document.addEventListener("DOMContentLoaded", scan);
 
-  // Reset on instant navigation
+  // Re-run after instant navigation: content is swapped and Mermaid
+  // re-renders fresh hosts that need wiring up again.
   if (typeof document$ !== "undefined") {
-    document$.subscribe(() => {
-      document.querySelectorAll(".mermaid[data-zoom-ready]").forEach(
-        (el) => delete el.dataset.zoomReady
-      );
+    document$.subscribe(function () {
       scan();
+      setTimeout(scan, 300);
+      setTimeout(scan, 900);
     });
   }
 })();

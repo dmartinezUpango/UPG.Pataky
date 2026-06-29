@@ -33,20 +33,41 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   border: 1px solid var(--md-default-fg-color--lighter);
   border-radius: 4px;
   background: var(--md-default-bg-color);
   color: var(--md-default-fg-color);
-  font-size: 1rem;
+  font-size: 1.05rem;
   line-height: 1;
   cursor: pointer;
-  transition: background 0.15s, border-color 0.15s;
+  user-select: none;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
 }
 
 .mermaid-zoom-btn:hover {
   background: var(--md-accent-fg-color--transparent);
   border-color: var(--md-accent-fg-color);
   color: var(--md-accent-fg-color);
+}
+
+.mermaid-zoom-btn:active {
+  transform: translateY(1px);
+}
+
+/* Scrollable viewport that lets a zoomed-in diagram be panned. */
+.mzoom-viewport {
+  overflow: auto;
+  max-width: 100%;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  /* Cap height so a large zoom scrolls inside the box instead of
+     stretching the whole page. */
+  max-height: 80vh;
+}
+
+/* Reserves the scaled footprint so scrollbars appear when zoomed. */
+.mzoom-sizer {
+  position: relative;
 }
