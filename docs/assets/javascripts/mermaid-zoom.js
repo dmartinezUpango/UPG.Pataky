@@ -12,8 +12,13 @@
     wrapper.dataset.zoomReady = "1";
 
     const vb = svg.viewBox.baseVal;
-    const ox = vb.x, oy = vb.y, ow = vb.width, oh = vb.height;
-    if (!ow || !oh) return;
+    let ox = vb.x, oy = vb.y, ow = vb.width, oh = vb.height;
+
+    // Fallback: read width/height attributes if viewBox is empty
+    if (!ow) ow = parseFloat(svg.getAttribute("width"))  || 800;
+    if (!oh) oh = parseFloat(svg.getAttribute("height")) || 400;
+
+    console.log("[MZ] initZoom — viewBox:", ox, oy, ow, oh);
 
     let scale = 1;
 
@@ -41,26 +46,35 @@
       apply();
     });
 
-    wrapper.style.position = "relative";
-    wrapper.insertBefore(bar, wrapper.firstChild);
+    // Insert BEFORE the <pre class="mermaid">, not inside it
+    wrapper.parentNode.insertBefore(bar, wrapper);
   }
 
-  // Global observer: fires whenever anything is added to the DOM.
-  // Catches Mermaid's async SVG injection regardless of timing.
-  const mo = new MutationObserver(() => {
-    document.querySelectorAll(".mermaid svg").forEach((svg) => {
-      const wrapper = svg.closest(".mermaid");
-      if (wrapper) initZoom(wrapper);
+  function scan() {
+    const wrappers = document.querySelectorAll(".mermaid");
+    console.log("[MZ] scan — .mermaid elements:", wrappers.length);
+    wrappers.forEach((w) => {
+      const hasSvg = !!w.querySelector("svg");
+      console.log("[MZ]   element:", w.tagName, "has-svg:", hasSvg, "ready:", w.dataset.zoomReady);
+      if (hasSvg) initZoom(w);
     });
-  });
+  }
+
+  // Watch for Mermaid's async SVG injection
+  const mo = new MutationObserver(scan);
   mo.observe(document.body, { childList: true, subtree: true });
 
-  // Re-scan after instant navigation (MkDocs Material)
+  // Also scan immediately and on DOMContentLoaded (in case Mermaid ran first)
+  scan();
+  document.addEventListener("DOMContentLoaded", scan);
+
+  // Reset on instant navigation
   if (typeof document$ !== "undefined") {
     document$.subscribe(() => {
       document.querySelectorAll(".mermaid[data-zoom-ready]").forEach(
         (el) => delete el.dataset.zoomReady
       );
+      scan();
     });
   }
 })();
