@@ -458,7 +458,7 @@ appsettings.json                         ← valores base y defaults
 - Todo lo demás hereda del base
 
 **`appsettings.Production.SalonSpace.json` — sobreescrituras de producción:**
-- Conexión a Elsa BD y Transactions en el servidor de producción (<IP_SERVIDOR>)
+- Conexión a Elsa BD y Transactions en el servidor de producción (`<IP_SERVIDOR>`)
 - `SigningKey` de Elsa Identity (llave real, más larga y segura)
 - Usuario de Elsa admin con credenciales reales (`provalliance`/`<ELSA_ADMIN_PASSWORD>`)
 - Shopify apuntando a `<TIENDA>.myshopify.com`
