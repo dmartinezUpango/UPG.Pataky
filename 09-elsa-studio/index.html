@@ -1,0 +1,2449 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación técnica del sistema de integración ERP-PIM-Shopify">
+      
+      
+      
+      
+        <link rel="prev" href="../08-configuracion/">
+      
+      
+        <link rel="next" href="../tags/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Elsa Studio - UPG.Pataky — Guía de Estudio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#09-elsa-studio-la-interfaz-visual" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="UPG.Pataky — Guía de Estudio" class="md-header__button md-logo" aria-label="UPG.Pataky — Guía de Estudio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UPG.Pataky — Guía de Estudio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Elsa Studio
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartir" aria-label="Compartir" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01-arquitectura-etl/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Arquitectura
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../wf-productos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Procesos
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../04-extractors/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Pipeline ETL
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../06-modelos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Sistema
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../mp-index/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Marketplaces
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="UPG.Pataky — Guía de Estudio" class="md-nav__button md-logo" aria-label="UPG.Pataky — Guía de Estudio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UPG.Pataky — Guía de Estudio
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../01-arquitectura-etl/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../wf-productos/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procesos
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../04-extractors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipeline ETL
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sistema
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sistema
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-modelos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelos de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-infraestructura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infraestructura y despliegue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-configuracion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elsa Studio
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elsa Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En esta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En esta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Índice
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-que-es-elsa-studio-y-como-funciona-por-dentro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. Qué es Elsa Studio y cómo funciona por dentro
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Qué es Elsa Studio y cómo funciona por dentro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#los-dos-proyectos-de-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Los dos proyectos de Studio
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-acceso-y-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. Acceso y autenticación
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Acceso y autenticación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#url-de-acceso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          URL de acceso
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#credenciales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Credenciales
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-flujo-de-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El flujo de login
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-las-secciones-de-la-interfaz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3. Las secciones de la interfaz
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Las secciones de la interfaz">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Dashboard
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflows-definiciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Workflows → Definiciones
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflows-instancias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Workflows → Instancias
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflows-scheduler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Workflows → Scheduler
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-como-lanzar-un-workflow-manualmente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4. Cómo lanzar un workflow manualmente
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-como-depurar-una-ejecucion-fallida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5. Cómo depurar una ejecución fallida
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Cómo depurar una ejecución fallida">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nivel-1-el-resumen-de-la-instancia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Nivel 1: el resumen de la instancia
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nivel-2-el-journal-de-la-instancia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Nivel 2: el journal de la instancia
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nivel-3-los-logs-de-actividad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Nivel 3: los logs de actividad
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nivel-4-los-logs-del-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Nivel 4: los logs del servidor
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-la-api-personalizada-del-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6. La API personalizada del servidor
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. La API personalizada del servidor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workflows-programados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Workflows programados
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejecutar-un-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Ejecutar un workflow
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instancias-de-ejecucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Instancias de ejecución
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logs-de-ejecucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Logs de ejecución
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Journal
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-el-freno-de-emergencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          7. El freno de emergencia
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. El freno de emergencia">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#como-funciona" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cómo funciona
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoints-del-freno" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Endpoints del freno
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-caso-de-los-emails-pendientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El caso de los emails pendientes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reiniciar-despues-del-freno" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Reiniciar después del freno
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-que-hacer-en-cada-situacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Resumen: qué hacer en cada situación
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guia-de-estudio-completada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Guía de estudio completada
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentos-relacionados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Documentos relacionados
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Índice de etiquetas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../mp-index/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketplaces
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En esta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En esta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Índice
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-que-es-elsa-studio-y-como-funciona-por-dentro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. Qué es Elsa Studio y cómo funciona por dentro
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Qué es Elsa Studio y cómo funciona por dentro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#los-dos-proyectos-de-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Los dos proyectos de Studio
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-acceso-y-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. Acceso y autenticación
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Acceso y autenticación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#url-de-acceso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          URL de acceso
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#credenciales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Credenciales
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-flujo-de-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El flujo de login
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-las-secciones-de-la-interfaz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3. Las secciones de la interfaz
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Las secciones de la interfaz">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Dashboard
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflows-definiciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Workflows → Definiciones
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflows-instancias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Workflows → Instancias
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflows-scheduler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Workflows → Scheduler
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-como-lanzar-un-workflow-manualmente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4. Cómo lanzar un workflow manualmente
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-como-depurar-una-ejecucion-fallida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5. Cómo depurar una ejecución fallida
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Cómo depurar una ejecución fallida">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nivel-1-el-resumen-de-la-instancia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Nivel 1: el resumen de la instancia
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nivel-2-el-journal-de-la-instancia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Nivel 2: el journal de la instancia
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nivel-3-los-logs-de-actividad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Nivel 3: los logs de actividad
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nivel-4-los-logs-del-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Nivel 4: los logs del servidor
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-la-api-personalizada-del-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6. La API personalizada del servidor
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. La API personalizada del servidor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workflows-programados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Workflows programados
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejecutar-un-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Ejecutar un workflow
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instancias-de-ejecucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Instancias de ejecución
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logs-de-ejecucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Logs de ejecución
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Journal
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-el-freno-de-emergencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          7. El freno de emergencia
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. El freno de emergencia">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#como-funciona" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cómo funciona
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoints-del-freno" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Endpoints del freno
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-caso-de-los-emails-pendientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El caso de los emails pendientes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reiniciar-despues-del-freno" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Reiniciar después del freno
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-que-hacer-en-cada-situacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Resumen: qué hacer en cada situación
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guia-de-estudio-completada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Guía de estudio completada
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentos-relacionados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Documentos relacionados
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navegación" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../06-modelos/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Sistema
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:elsa" class="md-tag">Elsa</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:studio" class="md-tag">Studio</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:workflows" class="md-tag">Workflows</a>
+      
+    
+  </nav>
+
+
+
+<h1 id="09-elsa-studio-la-interfaz-visual">09 — Elsa Studio: la interfaz visual<a class="headerlink" href="#09-elsa-studio-la-interfaz-visual" title="Permanent link">&para;</a></h1>
+<p>Elsa Studio es la interfaz web que permite observar, controlar y depurar el sistema de sincronización sin tocar el código. Desde ella puedes ver qué workflows están definidos, cuándo se han ejecutado, qué pasó en cada paso y lanzar ejecuciones manualmente.</p>
+<hr />
+<h2 id="indice">Índice<a class="headerlink" href="#indice" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#1-que-es-elsa-studio-y-como-funciona-por-dentro">Qué es Elsa Studio y cómo funciona por dentro</a></li>
+<li><a href="#2-acceso-y-autenticacion">Acceso y autenticación</a></li>
+<li><a href="#3-las-secciones-de-la-interfaz">Las secciones de la interfaz</a></li>
+<li><a href="#4-como-lanzar-un-workflow-manualmente">Cómo lanzar un workflow manualmente</a></li>
+<li><a href="#5-como-depurar-una-ejecucion-fallida">Cómo depurar una ejecución fallida</a></li>
+<li><a href="#6-la-api-personalizada-del-servidor">La API personalizada del servidor</a></li>
+<li><a href="#7-el-freno-de-emergencia">El freno de emergencia</a></li>
+</ol>
+<hr />
+<h2 id="1-que-es-elsa-studio-y-como-funciona-por-dentro">1. Qué es Elsa Studio y cómo funciona por dentro<a class="headerlink" href="#1-que-es-elsa-studio-y-como-funciona-por-dentro" title="Permanent link">&para;</a></h2>
+<p>Elsa Studio es una aplicación <strong>Blazor WebAssembly</strong> — todo el código se ejecuta en el <strong>navegador del usuario</strong>, no en el servidor. El servidor solo sirve los ficheros estáticos (HTML, CSS, JavaScript compilado). Una vez cargada en el navegador, la aplicación hace llamadas directamente a la API del servidor Elsa (<code>pataky-server</code>).</p>
+<pre class="mermaid"><code>flowchart LR
+    BR["Navegador del usuario"]
+    ST["pataky-studio:5270\nficheros estáticos\nBlazor WASM"]
+    WASM["Elsa Studio\n(ejecuta en el navegador)\nBlazor WebAssembly"]
+    API["pataky-server:5271\n/elsa/api"]
+
+    BR --&gt;|"1. carga app"| ST
+    ST --&gt;|"2. descarga WASM"| WASM
+    WASM --&gt;|"3. peticiones HTTP + JWT"| API</code></pre>
+<p>Por eso la variable <code>ElsaServerUrl</code> debe ser una dirección accesible desde la máquina del usuario (no desde dentro de la red Docker). Si el usuario abre el navegador en su portátil y el servidor está en una IP <code>&lt;IP_SERVIDOR&gt;</code>, la URL debe ser <code>http://&lt;IP_SERVIDOR&gt;:5271/elsa/api</code>.</p>
+<h3 id="los-dos-proyectos-de-studio">Los dos proyectos de Studio<a class="headerlink" href="#los-dos-proyectos-de-studio" title="Permanent link">&para;</a></h3>
+<p>El Studio está dividido en dos proyectos .NET que trabajan juntos:</p>
+<p><strong><code>ElsaStudio.WebAssembly</code></strong> — la aplicación Blazor WebAssembly en sí. Contiene toda la UI, los módulos de Elsa, la lógica de login y la comunicación con la API. Se compila a WebAssembly y se sirve como ficheros estáticos.</p>
+<p>Módulos registrados en su <code>Program.cs</code>:
+- <code>AddCore()</code> — servicios base de Elsa Studio
+- <code>AddShell()</code> — el shell (estructura de la página, navegación lateral)
+- <code>AddRemoteBackend()</code> — cliente HTTP hacia la API de Elsa, con autenticación JWT automática
+- <code>AddLoginModule()</code> + <code>UseElsaIdentity()</code> — pantalla de login y gestión del token JWT
+- <code>AddDashboardModule()</code> — la pantalla de inicio con métricas
+- <code>AddWorkflowsModule()</code> — la sección de workflows (definiciones, instancias, diseñador visual)
+- <code>AddAgentsModule()</code> — módulo de agentes IA de Elsa (no usado activamente en este proyecto)</p>
+<p><strong><code>ElsaStudio.Web</code></strong> — el servidor ASP.NET Core que sirve los ficheros del WebAssembly. Su único trabajo es responder peticiones HTTP con los ficheros estáticos de la app. Cuando el navegador carga cualquier ruta (ej: <code>/workflows</code>), el servidor devuelve siempre el <code>index.html</code> del WebAssembly (<code>MapFallbackToPage("/_Host")</code>), y el enrutamiento lo gestiona Blazor en el cliente.</p>
+<hr />
+<h2 id="2-acceso-y-autenticacion">2. Acceso y autenticación<a class="headerlink" href="#2-acceso-y-autenticacion" title="Permanent link">&para;</a></h2>
+<h3 id="url-de-acceso">URL de acceso<a class="headerlink" href="#url-de-acceso" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Entorno</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Desarrollo local</td>
+<td><code>http://localhost:5270</code></td>
+</tr>
+<tr>
+<td>Producción</td>
+<td><code>http://&lt;IP_SERVIDOR&gt;:5270</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="credenciales">Credenciales<a class="headerlink" href="#credenciales" title="Permanent link">&para;</a></h3>
+<p>Las credenciales se configuran en <code>appsettings.json</code> bajo <code>Elsa:Identity:Users</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Entorno</th>
+<th>Usuario</th>
+<th>Contraseña</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Desarrollo</td>
+<td><code>admin</code></td>
+<td><code>password</code></td>
+</tr>
+<tr>
+<td>Producción (SalonSpace)</td>
+<td><code>provalliance</code></td>
+<td><code>&lt;ELSA_ADMIN_PASSWORD&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="el-flujo-de-login">El flujo de login<a class="headerlink" href="#el-flujo-de-login" title="Permanent link">&para;</a></h3>
+<ol>
+<li>El navegador carga Elsa Studio y detecta que no hay JWT en la sesión.</li>
+<li>Redirige a la pantalla de login.</li>
+<li>Al enviar usuario y contraseña, Studio hace <code>POST /elsa/api/identity/login</code>.</li>
+<li>El servidor verifica la contraseña con PBKDF2-SHA256 y devuelve un JWT firmado con la <code>SigningKey</code>.</li>
+<li>Studio guarda el JWT en memoria (no en <code>localStorage</code>) y lo añade a la cabecera <code>Authorization: Bearer {token}</code> de todas las peticiones siguientes.</li>
+<li>Cuando el token caduca, Studio redirige automáticamente a la pantalla de login.</li>
+</ol>
+<hr />
+<h2 id="3-las-secciones-de-la-interfaz">3. Las secciones de la interfaz<a class="headerlink" href="#3-las-secciones-de-la-interfaz" title="Permanent link">&para;</a></h2>
+<h3 id="dashboard">Dashboard<a class="headerlink" href="#dashboard" title="Permanent link">&para;</a></h3>
+<p>La pantalla de inicio. Muestra un resumen del estado del sistema:
+- Número de workflows definidos
+- Instancias recientes: cuántas han terminado correctamente, cuántas con error, cuántas están en ejecución ahora mismo
+- Accesos rápidos a las secciones más usadas</p>
+<h3 id="workflows-definiciones">Workflows → Definiciones<a class="headerlink" href="#workflows-definiciones" title="Permanent link">&para;</a></h3>
+<p>Lista todos los workflows definidos en el código. Para cada uno muestra:
+- Nombre y descripción
+- Si está publicado (activo) o en borrador
+- La versión actual
+- Un botón para entrar al diseñador visual</p>
+<p><strong>El diseñador visual</strong> muestra el grafo del workflow como cajas (actividades) conectadas con flechas. Para este proyecto, los grafos son lineales (Extract → Transform → Load), aunque las actividades de decisión introducen ramas. Desde el diseñador puedes ver la configuración de cada actividad, pero <strong>no debes modificar los workflows desde el Studio</strong> en este proyecto — están definidos íntegramente en código C# y cualquier cambio desde la UI se perdería al reimportar el workflow.</p>
+<h3 id="workflows-instancias">Workflows → Instancias<a class="headerlink" href="#workflows-instancias" title="Permanent link">&para;</a></h3>
+<p>El historial de todas las ejecuciones. Cada ejecución de un workflow crea una <strong>instancia</strong>. La lista muestra:
+- Nombre del workflow
+- ID único de la instancia
+- Fecha y hora de inicio y fin
+- Estado: <code>Finished</code> (completado), <code>Faulted</code> (falló con error), <code>Running</code> (en curso), <code>Cancelled</code></p>
+<p>Puedes filtrar por workflow, por estado y por rango de fechas. Las instancias antiguas se eliminan automáticamente por la política de retención configurada en <code>Elsa.Retention</code>.</p>
+<h3 id="workflows-scheduler">Workflows → Scheduler<a class="headerlink" href="#workflows-scheduler" title="Permanent link">&para;</a></h3>
+<p>Muestra los triggers de tiempo registrados: qué workflows tienen cron activo y cuándo se ejecutarán la próxima vez. Útil para comprobar que los crons están bien configurados y activos.</p>
+<hr />
+<h2 id="4-como-lanzar-un-workflow-manualmente">4. Cómo lanzar un workflow manualmente<a class="headerlink" href="#4-como-lanzar-un-workflow-manualmente" title="Permanent link">&para;</a></h2>
+<p>Desde Elsa Studio puedes lanzar cualquier workflow sin esperar al cron.</p>
+<p><strong>Desde la sección Definiciones:</strong>
+1. Entrar en la lista de definiciones de workflows.
+2. Buscar el workflow que quieres lanzar (ej: "Productos").
+3. Hacer clic en el botón de ejecución (▶).
+4. Confirmar el lanzamiento.
+5. Elsa crea una nueva instancia y la ejecuta en segundo plano.</p>
+<p><strong>Comportamiento importante:</strong> lanzar manualmente un workflow no detiene ni interrumpe los que están en curso. Si el workflow de Productos está corriendo por el cron y lo lanzas manualmente también, habrá <strong>dos instancias del mismo workflow corriendo en paralelo</strong>. Esto puede causar conflictos si ambas instancias modifican las mismas entidades en Shopify. Para evitarlo, antes de lanzar manualmente comprueba que no hay una instancia en estado <code>Running</code> del mismo workflow.</p>
+<p><strong>Alternativa vía API:</strong> también puedes lanzar un workflow desde la API personalizada del servidor (ver sección 6):</p>
+<div class="language-http highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="err">POST http://&lt;IP_SERVIDOR&gt;:5271/api/upango/workflows/execute</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="err">Authorization: Bearer {token}</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="err">Content-Type: application/json</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="err">{ &quot;WorkflowName&quot;: &quot;Productos&quot; }</span>
+</span></code></pre></div>
+<hr />
+<h2 id="5-como-depurar-una-ejecucion-fallida">5. Cómo depurar una ejecución fallida<a class="headerlink" href="#5-como-depurar-una-ejecucion-fallida" title="Permanent link">&para;</a></h2>
+<p>Cuando un workflow falla, aparece en la lista de instancias con estado <code>Faulted</code> (icono en rojo). El proceso de depuración tiene varios niveles de detalle:</p>
+<h3 id="nivel-1-el-resumen-de-la-instancia">Nivel 1: el resumen de la instancia<a class="headerlink" href="#nivel-1-el-resumen-de-la-instancia" title="Permanent link">&para;</a></h3>
+<p>Clic en la instancia fallida → muestra:
+- En qué actividad falló (la actividad aparece marcada en rojo en el grafo).
+- El mensaje de error de la excepción que causó el fallo.
+- Cuánto tiempo tardó en fallar.</p>
+<p>Esto sirve para localizar rápidamente <strong>dónde</strong> falló (en qué extractor, transformer o loader).</p>
+<h3 id="nivel-2-el-journal-de-la-instancia">Nivel 2: el journal de la instancia<a class="headerlink" href="#nivel-2-el-journal-de-la-instancia" title="Permanent link">&para;</a></h3>
+<p>El <strong>journal</strong> es el registro paso a paso de todo lo que hizo la instancia. Cada actividad tiene una entrada en el journal con:
+- Nombre de la actividad
+- Estado (Started, Completed, Faulted)
+- Timestamp de inicio y fin
+- Datos de entrada y salida de la actividad (las variables que tenía al entrar y al salir)</p>
+<p>El journal es la herramienta más potente para entender <strong>qué datos</strong> procesó el workflow en esa ejecución concreta.</p>
+<h3 id="nivel-3-los-logs-de-actividad">Nivel 3: los logs de actividad<a class="headerlink" href="#nivel-3-los-logs-de-actividad" title="Permanent link">&para;</a></h3>
+<p>Además del journal de Elsa, cada actividad del proyecto usa <code>ActivityResult</code> para acumular mensajes de log durante su ejecución y escribirlos al final en un bloque formateado:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>########## RESULTADO DE EJECUCIÓN DE LA ACTIVIDAD &quot;StockLoader&quot; ##########
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>#
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>#   Advertencias:
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>#      Variante con EAN 8432023456789 no encontrada en BD. Ignorando.
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>#      Variante con EAN 8432023456790 no encontrada en BD. Ignorando.
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>#   Errores:
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>#      Error actualizando stock de gid://shopify/ProductVariant/123: ...
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>#
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>##########################################################################
+</span></code></pre></div>
+<p>Estos bloques aparecen en los logs del servidor (<code>docker logs pataky-server</code>) y también en el journal de Elsa si el nivel de log es suficiente.</p>
+<h3 id="nivel-4-los-logs-del-servidor">Nivel 4: los logs del servidor<a class="headerlink" href="#nivel-4-los-logs-del-servidor" title="Permanent link">&para;</a></h3>
+<p>Para ver todos los logs de una ejecución completa, incluyendo logs de nivel <code>Debug</code> y <code>Trace</code> que el Studio no muestra:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># En el servidor (o desde el host con Docker)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>docker<span class="w"> </span>logs<span class="w"> </span>pataky-server<span class="w"> </span>--since<span class="w"> </span>2h<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;RESULTADO&quot;</span>
+</span></code></pre></div>
+<p>O usando la API personalizada para exportar los logs de una instancia concreta (ver sección 6).</p>
+<hr />
+<h2 id="6-la-api-personalizada-del-servidor">6. La API personalizada del servidor<a class="headerlink" href="#6-la-api-personalizada-del-servidor" title="Permanent link">&para;</a></h2>
+<p>Además de la API estándar de Elsa (<code>/elsa/api/...</code>), el proyecto expone su propia API en <code>/api/upango/workflows/...</code>. Esta API requiere autenticación JWT (el mismo token que usa el Studio).</p>
+<p>Todos los endpoints aceptan el nombre del workflow (como "Productos") o el ID de definición de Elsa como parámetro.</p>
+<hr />
+<h3 id="workflows-programados">Workflows programados<a class="headerlink" href="#workflows-programados" title="Permanent link">&para;</a></h3>
+<p><strong><code>GET /api/upango/workflows/scheduled</code></strong></p>
+<p>Devuelve la lista de todos los workflows que tienen cron configurado. Útil para verificar que el SchedulingWorkflow los tiene todos registrados.</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">[</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;workflowId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Productos&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;nextRunAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-06-18T01:00:00Z&quot;</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;workflowId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Stock&quot;</span><span class="p">,</span><span class="w">     </span><span class="nt">&quot;nextRunAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-06-18T00:10:00Z&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">]</span>
+</span></code></pre></div>
+<hr />
+<p><strong><code>GET /api/upango/workflows/scheduled/{workflowId}/cron</code></strong></p>
+<p>Devuelve el cron actual configurado para un workflow concreto.</p>
+<p><strong><code>PUT /api/upango/workflows/scheduled/{workflowId}/cron</code></strong></p>
+<p>Actualiza el cron de un workflow en caliente, sin reiniciar el servidor. Útil si necesitas desactivar temporalmente un workflow o cambiar su frecuencia sin tocar el <code>appsettings.json</code>.</p>
+<div class="language-http highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="err">PUT /api/upango/workflows/scheduled/Stock/cron</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="err">Content-Type: application/json</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="err">{ &quot;Cron&quot;: null }   ← desactiva el cron; usar una expresión cron para reactivar</span>
+</span></code></pre></div>
+<hr />
+<h3 id="ejecutar-un-workflow">Ejecutar un workflow<a class="headerlink" href="#ejecutar-un-workflow" title="Permanent link">&para;</a></h3>
+<p><strong><code>POST /api/upango/workflows/execute</code></strong></p>
+<p>Lanza una ejecución inmediata de un workflow.</p>
+<div class="language-http highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="err">POST /api/upango/workflows/execute</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="err">Content-Type: application/json</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="err">{ &quot;WorkflowName&quot;: &quot;Pedidos&quot; }</span>
+</span></code></pre></div>
+<p>Respuesta: <code>200 OK</code> con un mensaje de confirmación y el ID de la instancia creada, o <code>400 Bad Request</code> si el workflow no existe o no puede ejecutarse.</p>
+<p><strong><code>GET /api/upango/workflows/{workflowId}/execute</code></strong></p>
+<p>Devuelve las opciones disponibles de ejecución para un workflow (qué parámetros acepta al lanzarlo).</p>
+<hr />
+<h3 id="instancias-de-ejecucion">Instancias de ejecución<a class="headerlink" href="#instancias-de-ejecucion" title="Permanent link">&para;</a></h3>
+<p><strong><code>POST /api/upango/workflows/instances</code></strong></p>
+<p>Lista instancias de todos los workflows con filtros opcionales (estado, rango de fechas, página).</p>
+<p><strong><code>POST /api/upango/workflows/{workflowDefinitionId}/instances</code></strong></p>
+<p>Lista instancias de un workflow específico.</p>
+<p><strong><code>GET /api/upango/workflows/instances/{instanceId}</code></strong></p>
+<p>Devuelve el detalle completo de una instancia: estado, timestamps, workflow al que pertenece, variables finales.</p>
+<hr />
+<h3 id="logs-de-ejecucion">Logs de ejecución<a class="headerlink" href="#logs-de-ejecucion" title="Permanent link">&para;</a></h3>
+<p><strong><code>GET /api/upango/workflows/{workflowDefinitionId}/instances/latest/logs</code></strong></p>
+<p>Exporta los logs completos de la <strong>última ejecución</strong> de un workflow. Es el atajo más útil para ver qué pasó en la sincronización más reciente sin buscar el ID de instancia.</p>
+<p><strong><code>GET /api/upango/workflows/{workflowDefinitionId}/instances/latest/logs/errors</code></strong></p>
+<p>Como el anterior, pero filtrando solo los errores. Perfecto para diagnóstico rápido.</p>
+<p><strong><code>GET /api/upango/workflows/instances/{instanceId}/logs</code></strong></p>
+<p>Exporta todos los logs de una instancia concreta identificada por su ID.</p>
+<p><strong><code>GET /api/upango/workflows/instances/{instanceId}/logs/raw</code></strong></p>
+<p>Como el anterior, pero en formato raw (sin procesar). Para casos en que necesitas el texto exacto tal como lo escribió Serilog.</p>
+<hr />
+<h3 id="journal">Journal<a class="headerlink" href="#journal" title="Permanent link">&para;</a></h3>
+<p><strong><code>GET /api/upango/workflows/instances/{instanceId}/journal</code></strong></p>
+<p>Devuelve el journal paso a paso de una instancia. Soporta paginación:
+- <code>?page=1&amp;pageSize=50</code> — página y tamaño de página
+- <code>?skip=100&amp;take=50</code> — alternativa con skip/take</p>
+<hr />
+<h2 id="7-el-freno-de-emergencia">7. El freno de emergencia<a class="headerlink" href="#7-el-freno-de-emergencia" title="Permanent link">&para;</a></h2>
+<p>El sistema tiene un mecanismo de parada de emergencia llamado <strong>WorkflowsBrake</strong>. Sirve para detener todos los workflows en curso de forma controlada — por ejemplo, antes de hacer un mantenimiento de la base de datos o de la tienda Shopify.</p>
+<h3 id="como-funciona">Cómo funciona<a class="headerlink" href="#como-funciona" title="Permanent link">&para;</a></h3>
+<p>El freno es un <strong>flag estático en memoria</strong> (<code>_workflowsBrake</code>). Cuando se activa, todas las actividades en ejecución lo comprueban en el siguiente <code>BrakeGuard()</code> y lanzan una <code>WorkflowBrakeTriggeredException</code>, que detiene la actividad limpiamente.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Actividad corriendo:
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  → termina su paso actual
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>  → llama a BrakeGuard()
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>  → detecta que el freno está activo
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>  → lanza WorkflowBrakeTriggeredException
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>  → la instancia del workflow se marca como Cancelled
+</span></code></pre></div>
+<p>El freno <strong>no interrumpe</strong> una operación a mitad — espera a que la actividad actual termine su paso. Esto evita dejar Shopify o la BD en un estado inconsistente.</p>
+<h3 id="endpoints-del-freno">Endpoints del freno<a class="headerlink" href="#endpoints-del-freno" title="Permanent link">&para;</a></h3>
+<p><strong><code>PUT /api/workflows/brake</code></strong> — activa el freno</p>
+<div class="language-http highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="err">PUT http://&lt;IP_SERVIDOR&gt;:5271/api/workflows/brake</span>
+</span></code></pre></div>
+<blockquote>
+<p>Este endpoint es <code>[AllowAnonymous]</code> — no necesita autenticación. La lógica es que si el sistema está en un estado crítico y el JWT ha caducado, aún puedes activar el freno de emergencia.</p>
+</blockquote>
+<p>Respuesta inmediata: <code>"El proceso de frenado de Workflows ha comenzado."</code></p>
+<p>El freno no para los workflows al instante — los workflows en curso continúan hasta el siguiente punto de control (la próxima llamada a <code>BrakeGuard()</code> en una actividad).</p>
+<p><strong><code>GET /api/workflows/brake</code></strong> — consulta el estado del freno</p>
+<div class="language-http highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="err">GET http://&lt;IP_SERVIDOR&gt;:5271/api/workflows/brake</span>
+</span></code></pre></div>
+<p>Devuelve el estado actual:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nt">&quot;isCompleted&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="nt">&quot;runningWorkflows&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="nt">&quot;pendingEmails&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;El proceso está en curso. Workflows en ejecución: 2. Correos pendientes: 0.&quot;</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Cuando <code>isCompleted</code> es <code>true</code>, todos los workflows han terminado y el sistema está en reposo. Es seguro hacer el mantenimiento.</p>
+<h3 id="el-caso-de-los-emails-pendientes">El caso de los emails pendientes<a class="headerlink" href="#el-caso-de-los-emails-pendientes" title="Permanent link">&para;</a></h3>
+<p>El freno también espera a que la cola de emails de notificación se vacíe. Si un workflow terminó con errores, el sistema puede tener emails en cola para enviar.</p>
+<p>Si la cola de emails lleva más de <strong>15 minutos</strong> sin vaciarse (stagnada), el sistema asume que hay un problema con el envío de emails y fuerza un reinicio completo del proceso (<code>Environment.FailFast</code>). Esto es un mecanismo de último recurso para evitar que el servicio quede bloqueado indefinidamente esperando a enviar emails que nunca se enviarán.</p>
+<h3 id="reiniciar-despues-del-freno">Reiniciar después del freno<a class="headerlink" href="#reiniciar-despues-del-freno" title="Permanent link">&para;</a></h3>
+<p>El freno es un flag en memoria — al reiniciar el contenedor (<code>docker restart pataky-server</code>) el flag se borra y el sistema vuelve a funcionar normalmente. Los crons se reactivan automáticamente al arrancar porque el <code>SchedulingWorkflow</code> vuelve a registrarlos.</p>
+<hr />
+<h2 id="resumen-que-hacer-en-cada-situacion">Resumen: qué hacer en cada situación<a class="headerlink" href="#resumen-que-hacer-en-cada-situacion" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Situación</th>
+<th>Dónde mirar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ver si un workflow está corriendo ahora mismo</td>
+<td>Studio → Instancias → filtrar por "Running"</td>
+</tr>
+<tr>
+<td>Lanzar manualmente una sincronización</td>
+<td>Studio → Definiciones → botón ▶</td>
+</tr>
+<tr>
+<td>Ver el error de la última ejecución fallida</td>
+<td><code>GET /api/upango/workflows/{id}/instances/latest/logs/errors</code></td>
+</tr>
+<tr>
+<td>Ver el log completo de la última ejecución</td>
+<td><code>GET /api/upango/workflows/{id}/instances/latest/logs</code></td>
+</tr>
+<tr>
+<td>Ver paso a paso qué hizo una instancia concreta</td>
+<td>Studio → Instancias → clic en la instancia → Journal</td>
+</tr>
+<tr>
+<td>Cambiar el cron de un workflow sin reiniciar</td>
+<td><code>PUT /api/upango/workflows/scheduled/{id}/cron</code></td>
+</tr>
+<tr>
+<td>Parar todos los workflows antes de mantenimiento</td>
+<td><code>PUT /api/workflows/brake</code> (sin auth)</td>
+</tr>
+<tr>
+<td>Comprobar si el freno ha terminado</td>
+<td><code>GET /api/workflows/brake</code> (sin auth)</td>
+</tr>
+<tr>
+<td>Reactivar el sistema después del freno</td>
+<td><code>docker restart pataky-server</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="guia-de-estudio-completada">Guía de estudio completada<a class="headerlink" href="#guia-de-estudio-completada" title="Permanent link">&para;</a></h2>
+<p>Has llegado al final de la guía. Con estos 9 apartados tienes una visión completa del sistema, desde los fundamentos hasta los detalles de cada capa:</p>
+<pre class="mermaid"><code>flowchart LR
+    A1["01 — Arquitectura ETL\nel marco mental"] --&gt; A2["02 — Elsa Workflows\nel motor"]
+    A2 --&gt; A3["03 — Los workflows\n6 flujos de sincronización"]
+    A3 --&gt; A4["04 — Extractors\nleer del origen"]
+    A4 --&gt; A5["05 — Transformers\nconvertir los datos"]
+    A5 --&gt; A6["06 — Modelos\nestructuras del sistema"]
+    A6 --&gt; A7["07 — Infraestructura\nDocker y despliegue"]
+    A7 --&gt; A8["08 — Configuración\nappsettings.json"]
+    A8 --&gt; A9["09 — Elsa Studio\noperar el sistema"]</code></pre>
+<p>→ <a href="../">Volver al índice</a></p>
+<hr />
+<h2 id="documentos-relacionados">Documentos relacionados<a class="headerlink" href="#documentos-relacionados" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Documento</th>
+<th>Relación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../07-infraestructura/">07 — Infraestructura</a></td>
+<td>Contenedor <code>pataky-studio</code> que sirve esta interfaz</td>
+</tr>
+<tr>
+<td><a href="../08-configuracion/">08 — Configuración</a></td>
+<td>Sección <code>Elsa:Identity</code> que configura el login de Studio</td>
+</tr>
+<tr>
+<td><a href="../02-elsa-workflows/">02 — El motor Elsa</a></td>
+<td>Workflows, instancias y actividades que se visualizan desde Studio</td>
+</tr>
+<tr>
+<td><a href="../03-workflows-detalle/">03 — Workflows del sistema</a></td>
+<td>Los 6 workflows que puedes monitorizar y lanzar desde Studio</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../08-configuracion/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Configuración">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Configuración
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../tags/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Índice de etiquetas">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Índice de etiquetas
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.instant.progress", "navigation.instant.prefetch", "navigation.instant.preview", "navigation.indexes", "navigation.path", "navigation.tracking", "navigation.prune", "navigation.top", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.code.select", "content.action.edit", "content.action.view", "content.tabs.link", "content.tooltips", "header.autohide"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../assets/javascripts/reactflow/bundle.reactflow.js" defer></script>
+      
+        <script src="../assets/javascripts/mermaid-zoom.js" defer></script>
+      
+    
+  </body>
+</html>

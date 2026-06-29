@@ -1,0 +1,2957 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación técnica del sistema de integración ERP-PIM-Shopify">
+      
+      
+      
+      
+        <link rel="prev" href="../02-elsa-workflows/">
+      
+      
+        <link rel="next" href="../wf-productos/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Workflows del sistema - UPG.Pataky — Guía de Estudio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#03-los-workflows-del-sistema" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="UPG.Pataky — Guía de Estudio" class="md-header__button md-logo" aria-label="UPG.Pataky — Guía de Estudio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UPG.Pataky — Guía de Estudio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Workflows del sistema
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartir" aria-label="Compartir" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01-arquitectura-etl/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Arquitectura
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../wf-productos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Procesos
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../04-extractors/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Pipeline ETL
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../06-modelos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Sistema
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../mp-index/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Marketplaces
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="UPG.Pataky — Guía de Estudio" class="md-nav__button md-logo" aria-label="UPG.Pataky — Guía de Estudio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UPG.Pataky — Guía de Estudio
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arquitectura
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-arquitectura-etl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura ETL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-elsa-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motor de Workflows (Elsa)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflows del sistema
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflows del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En esta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En esta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vision-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Visión general
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-ciclo-completo-mirror-extract-decidir-transformar-cargar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El ciclo completo: Mirror → Extract → Decidir → Transformar → Cargar
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="El ciclo completo: Mirror → Extract → Decidir → Transformar → Cargar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-capa-de-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          La capa de Decisión
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-capa-mirror" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          La capa Mirror
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-workflow-de-productos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. Workflow de Productos
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Workflow de Productos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grafo-del-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Grafo del workflow
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividades-en-detalle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Actividades en detalle
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actividades en detalle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syncproductsv2-mirror-de-productos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>SyncProductsV2</code> — Mirror de productos
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productswithimagesextract-extraccion-del-pim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ProductsWithImagesExtract</code> — Extracción del PIM
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productsrebuilddecision-la-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ProductsRebuildDecision</code> — La decisión
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productscreatetransform-productsupdatetransform-productsdeletetransform-transformacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ProductsCreateTransform</code>, <code>ProductsUpdateTransform</code>, <code>ProductsDeleteTransform</code> — Transformación
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productswithvariantscreate-loader-de-creacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ProductsWithVariantsCreate</code> — Loader de creación
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productswithvariantsupdate-loader-de-actualizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ProductsWithVariantsUpdate</code> — Loader de actualización
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productswithvariantsdelete-loader-de-borrado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ProductsWithVariantsDelete</code> — Loader de borrado
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-workflow-de-stock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. Workflow de Stock
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Workflow de Stock">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grafo-del-workflow_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Grafo del workflow
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-que-no-hay-paso-mirror-ni-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Por qué no hay paso Mirror ni Decisión
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#las-dos-fases-de-syncstock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Las dos fases de <code>SyncStock</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Las dos fases de SyncStock">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fase-1-updatevariants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Fase 1: <code>UpdateVariants</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fase-2-inventorysetquantities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Fase 2: <code>InventorySetQuantities</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-workflow-de-clientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3. Workflow de Clientes
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Workflow de Clientes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructura-de-datos-b2b-en-shopify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Estructura de datos B2B en Shopify
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafo-del-workflow_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Grafo del workflow
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-modelo-de-datos-de-provalliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El modelo de datos de Provalliance
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-que-hay-dos-actividades-mirror-al-inicio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Por qué hay dos actividades Mirror al inicio
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customerdecision-la-decision-de-clientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>CustomerDecision</code> — La decisión de clientes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#companieswithcontactsloader-las-17-operaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>CompaniesWithContactsLoader</code> — Las 17 operaciones
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-workflow-de-pedidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4. Workflow de Pedidos
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Workflow de Pedidos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#este-workflow-va-en-sentido-contrario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Este workflow va en sentido contrario
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafo-del-workflow_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Grafo del workflow
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-se-evita-procesar-el-mismo-pedido-dos-veces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cómo se evita procesar el mismo pedido dos veces
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capacidades-completas-de-ordersloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Capacidades completas de <code>OrdersLoader</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-errores-en-loadorders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Gestión de errores en <code>LoadOrders</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-workflow-de-imagenes-pim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5. Workflow de Imágenes PIM
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Workflow de Imágenes PIM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grafo-del-workflow_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Grafo del workflow
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lo-que-hace-localimagesextractor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lo que hace <code>LocalImagesExtractor</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-workflow-de-imagenes-shopify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6. Workflow de Imágenes Shopify
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Workflow de Imágenes Shopify">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grafo-del-workflow_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Grafo del workflow
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reutilizacion-de-productswithimagesextract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Reutilización de <code>ProductsWithImagesExtract</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-que-el-originid-se-guarda-en-el-campo-alt-de-la-imagen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Por qué el <code>OriginId</code> se guarda en el campo ALT de la imagen
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dos-mirror-cuando-se-usa-cada-uno" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Dos Mirror: ¿cuándo se usa cada uno?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imagedecision-las-5-operaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ImageDecision</code> — Las 5 operaciones
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#siguiente-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Siguiente paso
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../wf-productos/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procesos
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../04-extractors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipeline ETL
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../06-modelos/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sistema
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../mp-index/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketplaces
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En esta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En esta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vision-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Visión general
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-ciclo-completo-mirror-extract-decidir-transformar-cargar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El ciclo completo: Mirror → Extract → Decidir → Transformar → Cargar
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="El ciclo completo: Mirror → Extract → Decidir → Transformar → Cargar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-capa-de-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          La capa de Decisión
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-capa-mirror" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          La capa Mirror
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-workflow-de-productos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. Workflow de Productos
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Workflow de Productos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grafo-del-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Grafo del workflow
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividades-en-detalle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Actividades en detalle
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actividades en detalle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syncproductsv2-mirror-de-productos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>SyncProductsV2</code> — Mirror de productos
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productswithimagesextract-extraccion-del-pim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ProductsWithImagesExtract</code> — Extracción del PIM
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productsrebuilddecision-la-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ProductsRebuildDecision</code> — La decisión
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productscreatetransform-productsupdatetransform-productsdeletetransform-transformacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ProductsCreateTransform</code>, <code>ProductsUpdateTransform</code>, <code>ProductsDeleteTransform</code> — Transformación
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productswithvariantscreate-loader-de-creacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ProductsWithVariantsCreate</code> — Loader de creación
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productswithvariantsupdate-loader-de-actualizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ProductsWithVariantsUpdate</code> — Loader de actualización
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productswithvariantsdelete-loader-de-borrado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ProductsWithVariantsDelete</code> — Loader de borrado
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-workflow-de-stock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. Workflow de Stock
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Workflow de Stock">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grafo-del-workflow_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Grafo del workflow
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-que-no-hay-paso-mirror-ni-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Por qué no hay paso Mirror ni Decisión
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#las-dos-fases-de-syncstock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Las dos fases de <code>SyncStock</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Las dos fases de SyncStock">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fase-1-updatevariants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Fase 1: <code>UpdateVariants</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fase-2-inventorysetquantities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Fase 2: <code>InventorySetQuantities</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-workflow-de-clientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3. Workflow de Clientes
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Workflow de Clientes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructura-de-datos-b2b-en-shopify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Estructura de datos B2B en Shopify
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafo-del-workflow_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Grafo del workflow
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-modelo-de-datos-de-provalliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El modelo de datos de Provalliance
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-que-hay-dos-actividades-mirror-al-inicio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Por qué hay dos actividades Mirror al inicio
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customerdecision-la-decision-de-clientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>CustomerDecision</code> — La decisión de clientes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#companieswithcontactsloader-las-17-operaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>CompaniesWithContactsLoader</code> — Las 17 operaciones
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-workflow-de-pedidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4. Workflow de Pedidos
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Workflow de Pedidos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#este-workflow-va-en-sentido-contrario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Este workflow va en sentido contrario
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafo-del-workflow_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Grafo del workflow
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-se-evita-procesar-el-mismo-pedido-dos-veces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cómo se evita procesar el mismo pedido dos veces
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capacidades-completas-de-ordersloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Capacidades completas de <code>OrdersLoader</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-errores-en-loadorders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Gestión de errores en <code>LoadOrders</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-workflow-de-imagenes-pim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5. Workflow de Imágenes PIM
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Workflow de Imágenes PIM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grafo-del-workflow_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Grafo del workflow
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lo-que-hace-localimagesextractor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lo que hace <code>LocalImagesExtractor</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-workflow-de-imagenes-shopify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6. Workflow de Imágenes Shopify
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Workflow de Imágenes Shopify">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grafo-del-workflow_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Grafo del workflow
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reutilizacion-de-productswithimagesextract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Reutilización de <code>ProductsWithImagesExtract</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-que-el-originid-se-guarda-en-el-campo-alt-de-la-imagen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Por qué el <code>OriginId</code> se guarda en el campo ALT de la imagen
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dos-mirror-cuando-se-usa-cada-uno" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Dos Mirror: ¿cuándo se usa cada uno?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imagedecision-las-5-operaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ImageDecision</code> — Las 5 operaciones
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#siguiente-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Siguiente paso
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navegación" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../01-arquitectura-etl/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Arquitectura
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:clientes" class="md-tag">Clientes</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:imágenes" class="md-tag">Imágenes</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:pedidos" class="md-tag">Pedidos</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:productos" class="md-tag">Productos</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:stock" class="md-tag">Stock</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:workflows" class="md-tag">Workflows</a>
+      
+    
+  </nav>
+
+
+
+<h1 id="03-los-workflows-del-sistema">03 — Los workflows del sistema<a class="headerlink" href="#03-los-workflows-del-sistema" title="Permanent link">&para;</a></h1>
+<p>Este documento describe en detalle los 6 workflows del proyecto: qué hace cada uno, qué sistemas conecta, qué actividades lo componen y qué lógica especial tiene.</p>
+<hr />
+<h2 id="vision-general">Visión general<a class="headerlink" href="#vision-general" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Workflow</th>
+<th>Dirección</th>
+<th>Actividades</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Productos</strong></td>
+<td>PIM → Shopify</td>
+<td>Mirror, Extrae, Decide, Transforma ×3, Carga ×3</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Stock</strong></td>
+<td>ERP → Shopify</td>
+<td>Extrae, Transforma, Carga</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Clientes</strong></td>
+<td>ERP → Shopify B2B</td>
+<td>Mirror ×2, Extrae, Decide, Transforma, Carga</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Pedidos</strong></td>
+<td>Shopify → ERP</td>
+<td>Extrae, Transforma, Carga en ERP, Etiqueta en Shopify</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Imágenes PIM</strong></td>
+<td>FTP → PIM</td>
+<td>Extrae imágenes del FTP, genera CSV</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Imágenes Shopify</strong></td>
+<td>PIM → Shopify</td>
+<td>Mirror, Extrae, Decide, Transforma, Carga</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="el-ciclo-completo-mirror-extract-decidir-transformar-cargar">El ciclo completo: Mirror → Extract → Decidir → Transformar → Cargar<a class="headerlink" href="#el-ciclo-completo-mirror-extract-decidir-transformar-cargar" title="Permanent link">&para;</a></h2>
+<p>Antes de entrar en cada workflow, es importante entender que la cadena no es solo ETL (Extract-Transform-Load). En los workflows más complejos hay dos capas adicionales:</p>
+<h3 id="la-capa-de-decision">La capa de Decisión<a class="headerlink" href="#la-capa-de-decision" title="Permanent link">&para;</a></h3>
+<p>Entre el Extract y el Transform existe siempre una actividad de <strong>Decisión</strong> que compara los datos del origen con la <strong>base de datos de transacciones</strong> (TransactionsDB) y clasifica cada elemento: ¿hay que crearlo? ¿actualizarlo? ¿borrarlo?</p>
+<p>La TransactionsDB es la pieza central: guarda la relación <code>OriginId ↔ DestinoId</code> para cada producto, variante, imagen, empresa, etc. Cada vez que el Loader escribe algo en Shopify, inmediatamente registra el par en la TransactionsDB. Así la siguiente ejecución sabe qué ya existe y qué no.</p>
+<h3 id="la-capa-mirror">La capa Mirror<a class="headerlink" href="#la-capa-mirror" title="Permanent link">&para;</a></h3>
+<p>Pero los Loaders pueden fallar a medias, puede haber cambios manuales en Shopify, o puede haber inconsistencias por errores de red. Para garantizar que la TransactionsDB esté en sincronía con el estado real de Shopify antes de tomar decisiones, algunos workflows arrancan con una actividad <strong>Mirror</strong>.</p>
+<p>Una actividad Mirror <strong>lee Shopify en bulk y actualiza la TransactionsDB</strong> — no modifica Shopify, solo actualiza el estado local. Es una operación de reconciliación.</p>
+<p>El patrón completo de los workflows con Mirror es:</p>
+<pre class="mermaid"><code>flowchart TD
+    MI["**MIRROR**\nLee el estado real de Shopify\nActualiza la TransactionsDB"]
+    EX["**EXTRACT**\nLee los datos del origen\n(PIM / ERP)"]
+    DE["**DECISION**\nCompara origen con TransactionsDB\nClasifica: crear / actualizar / borrar"]
+    TR["**TRANSFORM**\nConvierte modelos del origen\nal formato de la API de Shopify"]
+    LO["**LOAD**\nEscribe en Shopify\nRegistra OriginId↔DestinoId en TransactionsDB"]
+    DB[("TransactionsDB")]
+    SH["Shopify"]
+
+    SH -. "bulk read" .-&gt; MI
+    MI --&gt;|"reconcilia"| DB
+    MI --&gt; EX --&gt; DE --&gt; TR --&gt; LO
+    DE -. "consulta" .-&gt; DB
+    LO --&gt;|"escribe"| SH
+    LO -. "registra pares" .-&gt; DB</code></pre>
+<p>Los workflows sin Mirror (Stock, Pedidos, Imágenes PIM) son casos especiales donde no hay decisión que tomar o donde el flujo va en dirección contraria.</p>
+<hr />
+<h2 id="1-workflow-de-productos">1. Workflow de Productos<a class="headerlink" href="#1-workflow-de-productos" title="Permanent link">&para;</a></h2>
+<p><strong>Fichero</strong>: <code>ElsaServer/Workflows/ProductsWorkflow.cs</code>
+<strong>Dirección</strong>: SalesLayer (PIM) → Shopify
+<strong>Propósito</strong>: Mantener el catálogo de productos de Shopify sincronizado con el PIM.</p>
+<h3 id="grafo-del-workflow">Grafo del workflow<a class="headerlink" href="#grafo-del-workflow" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart TD
+    MI["**MIRROR**\nSyncProductsV2\nLee productos+variantes de Shopify vía Bulk\nActualiza TransactionsDB con DestinoIds"]
+    EX["**EXTRACT**\nProductsWithImagesExtract\nLee productos e imágenes del PIM\nAgrupa variantes por CodigoAgrupacion"]
+    DE["**DECISION**\nProductsRebuildDecision\n7 salidas: Crear / Actualizar / Borrar\n+ Variantes + RebuildProductOptions"]
+
+    TC["**TRANSFORM**\nProductsCreateTransform"]
+    TU["**TRANSFORM**\nProductsUpdateTransform"]
+    TD2["**TRANSFORM**\nProductsDeleteTransform"]
+
+    LC["**LOAD**\nProductsWithVariantsCreate"]
+    LU["**LOAD**\nProductsWithVariantsUpdate"]
+    LD["**LOAD**\nProductsWithVariantsDelete"]
+
+    MI --&gt; EX --&gt; DE
+    DE --&gt;|"ProductosCrear"| TC --&gt; LC
+    DE --&gt;|"ProductosActualizar"| TU --&gt; LU
+    DE --&gt;|"ProductosBorrar"| TD2 --&gt; LD</code></pre>
+<h3 id="actividades-en-detalle">Actividades en detalle<a class="headerlink" href="#actividades-en-detalle" title="Permanent link">&para;</a></h3>
+<h4 id="syncproductsv2-mirror-de-productos"><code>SyncProductsV2</code> — Mirror de productos<a class="headerlink" href="#syncproductsv2-mirror-de-productos" title="Permanent link">&para;</a></h4>
+<p>Esta actividad garantiza que la TransactionsDB sea fiel al estado real de Shopify antes de tomar ninguna decisión. Sin ella, podría haber inconsistencias acumuladas (errores previos, cambios manuales en Shopify...) que harían tomar decisiones equivocadas.</p>
+<p>Flujo interno:
+1. Llama a <code>BulkGetAllWithMetafieldKeyFilter(nameMetafieldOrigenId)</code> — devuelve en streaming todos los productos, variantes y el metafield <code>originId</code> de cada uno.
+2. Carga toda la TransactionsDB en memoria (6 índices por DestinoId y OriginId) para hacer O(1) lookups sin consultas a BD por cada elemento.
+3. Para cada producto de Shopify: actualiza el registro en BD (crea si no existe, actualiza <code>DestinoId</code>/<code>OrigenId</code> si cambiaron).
+4. Para cada variante: igual.
+5. Sincroniza las opciones de producto.
+6. Al final: elimina de la BD los registros cuyos <code>DestinoId</code> ya no existen en Shopify.</p>
+<p>Lógica de deduplicación ("Claim"): si dos productos en Shopify tienen el mismo <code>OriginId</code>, el que ya estaba en BD lo conserva; el otro recibe un GUID aleatorio para que vuelva a procesarse correctamente.</p>
+<h4 id="productswithimagesextract-extraccion-del-pim"><code>ProductsWithImagesExtract</code> — Extracción del PIM<a class="headerlink" href="#productswithimagesextract-extraccion-del-pim" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Se conecta al canal de salida de <strong>SalesLayer</strong> y descarga todos los productos.</li>
+<li>Agrupa los productos en dos tipos:</li>
+<li><strong>Productos simples</strong>: los que no tienen <code>CodigoAgrupacion</code>.</li>
+<li><strong>Productos con variantes</strong>: los que comparten el mismo <code>CodigoAgrupacion</code> (se agrupan en un único <code>Product</code> con múltiples variantes).</li>
+<li>Los productos que están marcados como <em>Visible Y Obsoleto</em> se tratan como <em>Invisible</em>.</li>
+<li>Elimina productos y variantes con IDs duplicados (y los loguea como error).</li>
+<li>Produce dos salidas independientes: la lista de productos (para el workflow de productos) y la lista de imágenes (para el workflow de imágenes).</li>
+</ul>
+<h4 id="productsrebuilddecision-la-decision"><code>ProductsRebuildDecision</code> — La decisión<a class="headerlink" href="#productsrebuilddecision-la-decision" title="Permanent link">&para;</a></h4>
+<p>Esta actividad compara los productos del PIM con lo que hay guardado en la TransactionsDB y clasifica cada producto en hasta 7 canales de salida:</p>
+<table>
+<thead>
+<tr>
+<th>Canal</th>
+<th>Cuándo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ProductosCrear</code></td>
+<td>Existe en PIM, no en BD</td>
+</tr>
+<tr>
+<td><code>ProductosActualizar</code></td>
+<td>Existe en PIM y en BD, las opciones <strong>no</strong> han cambiado</td>
+</tr>
+<tr>
+<td><code>RebuildProductOptions</code></td>
+<td>Existe en PIM y en BD, pero las opciones <strong>sí</strong> han cambiado</td>
+</tr>
+<tr>
+<td><code>ProductosBorrar</code></td>
+<td>Marcado como <code>Deleted</code> en PIM, o no existe en PIM pero sí en BD</td>
+</tr>
+<tr>
+<td><code>VariantesCrear</code></td>
+<td>Variante en PIM, no en BD</td>
+</tr>
+<tr>
+<td><code>VariantesActualizar</code></td>
+<td>Variante en PIM y en BD</td>
+</tr>
+<tr>
+<td><code>VariantesBorrar</code></td>
+<td>Variante en BD pero no en PIM</td>
+</tr>
+</tbody>
+</table>
+<p>Lógica especial:
+- Si <strong>todas</strong> las variantes de un producto van a borrarse → se archiva el producto entero en lugar de borrar variantes (Shopify no permite borrar la última variante).
+- Si un producto se va a archivar → se eliminan las operaciones de borrado de sus variantes (es redundante y puede dar error).
+- Productos con más de <strong>2048 variantes</strong> se descartan con error (límite de Shopify).</p>
+<h4 id="productscreatetransform-productsupdatetransform-productsdeletetransform-transformacion"><code>ProductsCreateTransform</code>, <code>ProductsUpdateTransform</code>, <code>ProductsDeleteTransform</code> — Transformación<a class="headerlink" href="#productscreatetransform-productsupdatetransform-productsdeletetransform-transformacion" title="Permanent link">&para;</a></h4>
+<p>Convierten los modelos del PIM (<code>IProduct</code>, <code>IVariant</code>) al formato que espera la API de Shopify. Hay un transformador independiente para cada operación porque cada una necesita datos distintos. Ver detalle en el apartado 05.</p>
+<h4 id="productswithvariantscreate-loader-de-creacion"><code>ProductsWithVariantsCreate</code> — Loader de creación<a class="headerlink" href="#productswithvariantscreate-loader-de-creacion" title="Permanent link">&para;</a></h4>
+<p>Crea productos y variantes en Shopify en hasta 5 pasos encadenados:</p>
+<ol>
+<li><strong>BulkCreate de productos</strong> — inserta artificialmente el valor <code>$</code> como primer valor en cada opción. Así la variante por defecto que Shopify genera automáticamente queda marcada con <code>$</code> y se puede identificar para borrarla.</li>
+<li><strong>Excluir de mercados</strong> — recién creado el producto, se excluye de todos los mercados para que no aparezca sin precio. El workflow de precios lo incluirá después en los mercados correctos.</li>
+<li><strong>Registrar en TransactionsDB</strong> con <code>transactionsService.Products.Create()</code>.</li>
+<li><strong>Crear variantes</strong> en los productos que se crearon bien.</li>
+<li><strong>Eliminar variante <code>$</code></strong> (la creada automáticamente por Shopify).</li>
+<li><strong>Reordenar opciones</strong> para que coincidan con el orden del PIM.</li>
+</ol>
+<p>Si en el siguiente ciclo un producto todavía tiene la variante <code>$</code>, es señal de que su carga no se completó y necesita reintentarse.</p>
+<h4 id="productswithvariantsupdate-loader-de-actualizacion"><code>ProductsWithVariantsUpdate</code> — Loader de actualización<a class="headerlink" href="#productswithvariantsupdate-loader-de-actualizacion" title="Permanent link">&para;</a></h4>
+<p>Actualiza productos y variantes. La sub-operación más importante es <strong>RebuildProductOptions</strong>: cuando las opciones de un producto cambian, Shopify no permite reemplazarlas directamente. El proceso usa una <strong>variante centinela</strong> (<code>$</code>):</p>
+<ol>
+<li>Pone el producto en borrador (invisible al cliente durante la migración).</li>
+<li>Añade el valor <code>$</code> a todas las opciones actuales.</li>
+<li>Crea la variante centinela con <code>$</code> en todas las opciones (así el producto nunca se queda sin variantes).</li>
+<li>Borra todas las variantes reales.</li>
+<li>Migra las opciones iterativamente, respetando el límite de 3 opciones de Shopify.</li>
+<li>Crea las nuevas variantes.</li>
+<li>Borra la variante centinela.</li>
+<li>Restaura el estado del producto.</li>
+<li>Reordena las opciones.</li>
+</ol>
+<h4 id="productswithvariantsdelete-loader-de-borrado"><code>ProductsWithVariantsDelete</code> — Loader de borrado<a class="headerlink" href="#productswithvariantsdelete-loader-de-borrado" title="Permanent link">&para;</a></h4>
+<p>Antes de borrar variantes, comprueba si alguna es la <strong>última de su producto</strong>. En ese caso, en lugar de borrar la variante (que Shopify rechaza), borra el producto entero. Esta lógica se llama <code>RemoveProductsIfLastVariants</code> y ya se aplica también en <code>ProductsRebuildDecision</code>, pero el Loader lo repite como salvaguarda.</p>
+<hr />
+<h2 id="2-workflow-de-stock">2. Workflow de Stock<a class="headerlink" href="#2-workflow-de-stock" title="Permanent link">&para;</a></h2>
+<p><strong>Fichero</strong>: <code>ElsaServer/Workflows/StockWorkflow.cs</code>
+<strong>Dirección</strong>: API de Provalliance → Shopify
+<strong>Propósito</strong>: Actualizar el inventario de cada variante en Shopify.</p>
+<h3 id="grafo-del-workflow_1">Grafo del workflow<a class="headerlink" href="#grafo-del-workflow_1" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart LR
+    ERP["API Provalliance\n/stock/shopify"]
+    EX["**EXTRACT**\nStockExtract\nVariantId + cantidad disponible"]
+    DB[("TransactionsDB\nVariantId → InventoryItemId")]
+    TR["**TRANSFORM**\nStockTransform\nMapea VariantId → InventoryItemId"]
+    LO["**LOAD**\nSyncStock\nFase 1: UpdateVariants\nFase 2: InventorySetQuantities (lotes 250)"]
+    SH["Shopify\nInventario actualizado"]
+
+    ERP --&gt; EX --&gt; TR --&gt; LO --&gt; SH
+    DB -. "lookup" .-&gt; TR</code></pre>
+<h3 id="por-que-no-hay-paso-mirror-ni-decision">Por qué no hay paso Mirror ni Decisión<a class="headerlink" href="#por-que-no-hay-paso-mirror-ni-decision" title="Permanent link">&para;</a></h3>
+<p>El stock es un <strong>valor absoluto</strong> que se sobreescribe. No hay que comparar ni clasificar: si el ERP dice que hay 42 unidades de la variante X, se actualiza a 42, independientemente de lo que haya antes en Shopify. El <code>InventoryItemId</code> (necesario para la llamada a Shopify) se obtiene de la TransactionsDB usando el <code>VariantId</code> como clave de búsqueda.</p>
+<h3 id="las-dos-fases-de-syncstock">Las dos fases de <code>SyncStock</code><a class="headerlink" href="#las-dos-fases-de-syncstock" title="Permanent link">&para;</a></h3>
+<h4 id="fase-1-updatevariants">Fase 1: <code>UpdateVariants</code><a class="headerlink" href="#fase-1-updatevariants" title="Permanent link">&para;</a></h4>
+<p>Actualiza atributos de las variantes que afectan al comportamiento del inventario:
+- <code>InventoryPolicy</code>: si la variante se puede vender sin stock disponible ("seguir vendiendo" vs. "bloquear").
+- Metafields específicos de stock.
+- Los metafields con valor <code>null</code> se eliminan explícitamente (Shopify no acepta nulos directamente).</p>
+<h4 id="fase-2-inventorysetquantities">Fase 2: <code>InventorySetQuantities</code><a class="headerlink" href="#fase-2-inventorysetquantities" title="Permanent link">&para;</a></h4>
+<p>Establece el stock exacto usando la mutación <code>inventorySetQuantities</code> de Shopify:
+- Trabaja en <strong>lotes de 250</strong> (límite de la API).
+- Usa <code>IgnoreCompareQuantity = true</code>: el valor se establece directamente sin comparar con la cantidad anterior.
+- Usa <code>Name: "available"</code> y <code>Reason: "other"</code>.
+- Si no se encuentra el <code>InventoryItemId</code> en la BD para una variante, se descarta con advertencia en el log.</p>
+<hr />
+<h2 id="3-workflow-de-clientes">3. Workflow de Clientes<a class="headerlink" href="#3-workflow-de-clientes" title="Permanent link">&para;</a></h2>
+<p><strong>Fichero</strong>: <code>ElsaServer/Workflows/CompaniesWorkflow.cs</code>
+<strong>Dirección</strong>: API de Provalliance → Shopify B2B
+<strong>Propósito</strong>: Sincronizar la estructura de clientes B2B del ERP en Shopify.</p>
+<h3 id="estructura-de-datos-b2b-en-shopify">Estructura de datos B2B en Shopify<a class="headerlink" href="#estructura-de-datos-b2b-en-shopify" title="Permanent link">&para;</a></h3>
+<p>En el modelo B2B de Shopify, los "clientes" tienen una estructura jerárquica de tres niveles:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Company (Empresa)
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  └── CompanyLocation (Sucursal)
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        └── CompanyContact (Contacto / persona de acceso)
+</span></code></pre></div>
+<p>Este workflow sincroniza los tres niveles a la vez.</p>
+<h3 id="grafo-del-workflow_2">Grafo del workflow<a class="headerlink" href="#grafo-del-workflow_2" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart TD
+    SH["Shopify B2B\nCompany → Location → Contact"]
+    DB[("TransactionsDB")]
+
+    MI1["**MIRROR 1**\nSyncCompanies\nReconcilia Companies+Locations+Contacts\n+ agentes y customers sin empresa"]
+    MI2["**MIRROR 2**\nSyncPriceLists\nReconcilia Catalogs, Publications,\nPriceLists y variantes con precio"]
+    EX["**EXTRACT**\nCustomerExtract\nLee clientes ERP: CodCom + LocationResponseModel[]"]
+    DE["**DECISION**\nCustomerDecision\n9 salidas: Create/Update/Delete\npara Companies, Locations y Contacts"]
+    TR["**TRANSFORM**\nCustomerTransform\nConvierte modelos ERP → inputs Shopify API\nMetafields: zona_fiscal, external_id"]
+    LO["**LOAD**\nCompaniesWithContactsLoader\n17 operaciones ordenadas"]
+
+    SH -. "bulk read" .-&gt; MI1
+    SH -. "bulk read" .-&gt; MI2
+    MI1 --&gt;|"reconcilia"| DB
+    MI2 --&gt;|"reconcilia"| DB
+    MI1 --&gt; MI2 --&gt; EX --&gt; DE --&gt; TR --&gt; LO
+    DE -. "consulta" .-&gt; DB
+    LO --&gt;|"escribe"| SH
+    LO -. "registra pares" .-&gt; DB</code></pre>
+<h3 id="el-modelo-de-datos-de-provalliance">El modelo de datos de Provalliance<a class="headerlink" href="#el-modelo-de-datos-de-provalliance" title="Permanent link">&para;</a></h3>
+<p>Cada cliente que devuelve la API de Provalliance (<code>ClientResponseModel</code>) tiene:
+- Un <strong>código de empresa</strong> (<code>CodCom</code>) → es el <code>OriginId</code> de la <code>Company</code> en Shopify.
+- Un array de <strong>direcciones</strong> (<code>LocationResponseModel</code>) → cada dirección es a la vez:
+  - Una <code>Location</code> (sucursal) en Shopify, con su propia dirección postal.
+  - Un <code>Contact</code> (contacto) en Shopify, con email y teléfono.</p>
+<p>El email de la persona de contacto de cada dirección se usa como <code>OriginId</code> único del contacto en Shopify.</p>
+<h3 id="por-que-hay-dos-actividades-mirror-al-inicio">Por qué hay dos actividades Mirror al inicio<a class="headerlink" href="#por-que-hay-dos-actividades-mirror-al-inicio" title="Permanent link">&para;</a></h3>
+<p><code>SyncCompanies</code> y <code>SyncPriceLists</code> corren <strong>antes del Extract</strong> precisamente para que la TransactionsDB esté completamente actualizada cuando <code>CustomerDecision</code> compare los datos del ERP con ella.</p>
+<ul>
+<li><code>SyncCompanies</code> reconcilia la jerarquía Company→Location→Contact→Role con el estado actual de Shopify. También procesa los clientes con etiquetas de agente (<code>IsAgent = true</code>) y los customers sin empresa.</li>
+<li><code>SyncPriceLists</code> reconcilia las PriceLists con sus Catálogos y Publicaciones, y actualiza la tabla <code>PriceListsVariants</code>.</li>
+</ul>
+<h3 id="customerdecision-la-decision-de-clientes"><code>CustomerDecision</code> — La decisión de clientes<a class="headerlink" href="#customerdecision-la-decision-de-clientes" title="Permanent link">&para;</a></h3>
+<p>Gestiona decisiones independientes para los tres niveles jerárquicos. Para cada empresa del ERP:
+- Busca si existe en la TransactionsDB por <code>OriginId</code> (= <code>CodCom</code>).
+- Si existe: va a la lista de actualizar o a la de borrar según el estado.
+- Si no existe: va a la lista de crear.</p>
+<p>Hace lo mismo para cada Location (identificada por <code>ExternalId</code>) y cada Contact (identificado por email). Además gestiona la asignación de contacto principal (<code>MainContactAssign</code>) y los roles de acceso (<code>AssignRoles</code>).</p>
+<p>La lógica <code>TryAddRole()</code> deduplica roles usando un <code>HashSet&lt;string&gt;</code> sembrado con los roles ya existentes en BD — evita crear el mismo rol dos veces si hay datos inconsistentes.</p>
+<h3 id="companieswithcontactsloader-las-17-operaciones"><code>CompaniesWithContactsLoader</code> — Las 17 operaciones<a class="headerlink" href="#companieswithcontactsloader-las-17-operaciones" title="Permanent link">&para;</a></h3>
+<p>El orden de ejecución es crítico. Siempre se borra antes de crear, y las companies antes que las locations, y las locations antes que los contacts:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Operación</th>
+<th>Nota</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Revocar roles</td>
+<td>Desasocia roles de contactos</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Borrar contactos</td>
+<td>Los agentes se omiten aunque estén en la lista</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Borrar sucursales</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Borrar empresas</td>
+<td>Primero desasocia contactos (requisito de la API)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Crear empresas</td>
+<td>Incluye primera location y contactos en la misma llamada</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Actualizar empresas</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Crear sucursales</td>
+<td>En paralelo</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Actualizar sucursales</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Actualizar configuración fiscal</td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Actualizar direcciones</td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Crear contactos</td>
+<td>Si el customer ya existe por email, se reasigna</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Actualizar contactos</td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Añadir etiquetas a customers</td>
+<td>Solo añade las que faltan</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Asignar contacto principal</td>
+<td></td>
+</tr>
+<tr>
+<td>15</td>
+<td>Crear metafields</td>
+<td>En lotes de 25</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Actualizar PriceLists y Markets</td>
+<td>En lotes de 250 sucursales</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Asignar roles</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-workflow-de-pedidos">4. Workflow de Pedidos<a class="headerlink" href="#4-workflow-de-pedidos" title="Permanent link">&para;</a></h2>
+<p><strong>Fichero</strong>: <code>ElsaServer/Workflows/OrdersWorkflow.cs</code>
+<strong>Dirección</strong>: Shopify → API de Provalliance (dirección INVERSA al resto)
+<strong>Propósito</strong>: Enviar los pedidos B2B de Shopify al ERP de Provalliance y marcarlos como sincronizados.</p>
+<h3 id="este-workflow-va-en-sentido-contrario">Este workflow va en sentido contrario<a class="headerlink" href="#este-workflow-va-en-sentido-contrario" title="Permanent link">&para;</a></h3>
+<p>Es el único workflow donde Shopify es el <strong>origen</strong> y Provalliance el <strong>destino</strong>. Representa el flujo natural de negocio: un cliente hace un pedido en la tienda online, y ese pedido tiene que llegar al sistema de gestión interno.</p>
+<p>No hay actividad Mirror porque no se escribe en Shopify de forma estructurada — solo se añade una etiqueta al final. No hay actividad Decision porque todos los pedidos nuevos se envían siempre.</p>
+<h3 id="grafo-del-workflow_3">Grafo del workflow<a class="headerlink" href="#grafo-del-workflow_3" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart LR
+    SH["Shopify\npedidos sin 'Sincronizado'\n(solo B2B companies)"]
+    EX["**EXTRACT**\nOrdersExtractor"]
+    TR["**TRANSFORM**\nOrderTransform\nShopify → formato ERP"]
+    LE["**LOAD**\nLoadOrders → ERP\nFalla por pedido, continúa"]
+    ERP["API Provalliance\n(ERP)"]
+    LL["**LOAD**\nOrdersLoader → Shopify\nEtiqueta 'Sincronizado'\n+ pagos / fulfillments"]
+
+    SH --&gt;|"extrae pedidos"| EX --&gt; TR --&gt; LE --&gt; ERP
+    LE --&gt;|"pedidos OK"| LL --&gt;|"etiqueta"| SH</code></pre>
+<h3 id="como-se-evita-procesar-el-mismo-pedido-dos-veces">Cómo se evita procesar el mismo pedido dos veces<a class="headerlink" href="#como-se-evita-procesar-el-mismo-pedido-dos-veces" title="Permanent link">&para;</a></h3>
+<p>El filtro de pedidos está en <code>appsettings.json</code>:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&quot;FilterOrders&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tag_not:Sincronizado&quot;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>El extractor solo recupera pedidos que <strong>no tengan</strong> esa etiqueta. Cuando un pedido se envía correctamente al ERP, <code>LoadOrders</code> lo añade a la lista de pedidos a etiquetar, y finalmente <code>OrdersLoader</code> pone la etiqueta en Shopify. En la siguiente ejecución ese pedido ya no aparece.</p>
+<h3 id="capacidades-completas-de-ordersloader">Capacidades completas de <code>OrdersLoader</code><a class="headerlink" href="#capacidades-completas-de-ordersloader" title="Permanent link">&para;</a></h3>
+<p>Aunque en el flujo habitual solo añade etiquetas, el loader puede ejecutar múltiples operaciones sobre pedidos según lo que configure el workflow:</p>
+<table>
+<thead>
+<tr>
+<th>Operación</th>
+<th>Cuándo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Añadir etiquetas</td>
+<td>Siempre (marca "Sincronizado")</td>
+</tr>
+<tr>
+<td>Crear pago manual</td>
+<td>Cuando el ERP confirma el pago fuera de Shopify</td>
+</tr>
+<tr>
+<td>Cancelar pedidos</td>
+<td>Cuando el ERP rechaza el pedido</td>
+</tr>
+<tr>
+<td>Marcar como pagado</td>
+<td>Cuando el ERP confirma el cobro</td>
+</tr>
+<tr>
+<td>Crear fulfillments</td>
+<td>Cuando el ERP notifica el envío. Requiere recuperar el <code>FulfillmentOrderId</code> de Shopify primero.</td>
+</tr>
+<tr>
+<td>Crear eventos de fulfillment</td>
+<td>Cambios de estado: en tránsito, entregado, etc. Requiere el <code>FulfillmentId</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gestion-de-errores-en-loadorders">Gestión de errores en <code>LoadOrders</code><a class="headerlink" href="#gestion-de-errores-en-loadorders" title="Permanent link">&para;</a></h3>
+<p>Si el envío de un pedido concreto al ERP falla, la actividad:
+1. Registra el error en la BD de transacciones con el mensaje de error.
+2. Loguea el error y lo añade a los logs de notificación.
+3. <strong>Continúa con el siguiente pedido</strong> — un fallo en un pedido no para el proceso completo.</p>
+<p>Los pedidos fallidos no se etiquetan como "Sincronizado", por lo que volverán a intentarse en la próxima ejecución.</p>
+<hr />
+<h2 id="5-workflow-de-imagenes-pim">5. Workflow de Imágenes PIM<a class="headerlink" href="#5-workflow-de-imagenes-pim" title="Permanent link">&para;</a></h2>
+<p><strong>Fichero</strong>: <code>ElsaServer/Workflows/ImagenesPIMWorkflow.cs</code>
+<strong>Dirección</strong>: FTP → SalesLayer (PIM)
+<strong>Propósito</strong>: Leer imágenes desde un servidor FTP y publicarlas en el PIM para que queden disponibles para los productos.</p>
+<h3 id="grafo-del-workflow_4">Grafo del workflow<a class="headerlink" href="#grafo-del-workflow_4" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart LR
+    FTP["Servidor FTP\nimágenes por carpeta"]
+    EX["**LocalImagesExtractor**\nDescarga listado FTP\nExtrae referencia y orden del nombre\nGenera CSV_CargaImages.csv"]
+    CSV["FTP\nCSV_CargaImages.csv"]
+    PIM["SalesLayer (PIM)\nlee CSV periódicamente\nasigna imágenes a productos"]
+
+    FTP --&gt; EX --&gt;|"sube CSV"| CSV --&gt; PIM</code></pre>
+<h3 id="lo-que-hace-localimagesextractor">Lo que hace <code>LocalImagesExtractor</code><a class="headerlink" href="#lo-que-hace-localimagesextractor" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Se conecta al servidor <strong>FTP</strong> configurado en <code>appsettings.json</code> (host, puerto, credenciales).</li>
+<li>Descarga el listado de ficheros de las carpetas remotas configuradas.</li>
+<li>Para cada imagen, extrae la <strong>referencia</strong> y el <strong>orden</strong> a partir del nombre del fichero. El convenio es <code>REFERENCIA-ORDEN.ext</code>, por ejemplo <code>GHD001-1.jpg</code> → referencia <code>GHD001</code>, orden <code>1</code>.</li>
+<li>Genera un fichero <strong>CSV</strong> con la lista de nombres de imágenes (columna <code>Imagen</code>).</li>
+<li>Sube ese CSV al mismo FTP en la ruta <code>CSV_CargaImages.csv</code>.</li>
+</ol>
+<p>El PIM (SalesLayer) tiene configurado leer ese CSV periódicamente para asociar las imágenes a los productos correspondientes.</p>
+<blockquote>
+<p>Este workflow termina en <code>Finish</code> sin hacer más. La carga de las imágenes a Shopify la realiza el workflow de Imágenes Shopify.</p>
+</blockquote>
+<hr />
+<h2 id="6-workflow-de-imagenes-shopify">6. Workflow de Imágenes Shopify<a class="headerlink" href="#6-workflow-de-imagenes-shopify" title="Permanent link">&para;</a></h2>
+<p><strong>Fichero</strong>: <code>ElsaServer/Workflows/ImagenesShopifyWorkflow.cs</code>
+<strong>Dirección</strong>: SalesLayer (PIM) → Shopify
+<strong>Propósito</strong>: Sincronizar las imágenes de los productos del PIM en Shopify.</p>
+<h3 id="grafo-del-workflow_5">Grafo del workflow<a class="headerlink" href="#grafo-del-workflow_5" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart TD
+    SH["Shopify\nproductos + variantes + imágenes"]
+    DB[("TransactionsDB\ntabla Medias")]
+    PIM["SalesLayer (PIM)"]
+
+    MI["**MIRROR**\nSyncProductMedias\nOriginId desde campo ALT\nActualiza tabla Medias en BD\nSincroniza asignación imagen↔variante"]
+    EX["**EXTRACT**\nProductsWithImagesExtract\nsalida 'imágenes' del PIM"]
+    DE["**DECISION**\nImageDecision\n5 salidas: Crear / Editar / Borrar\n+ Asociar / Desasociar variantes"]
+    TR["**TRANSFORM**\nImagesTransform\nIProductImage → inputs Shopify API"]
+    LO["**LOAD**\nProductsMedias\nSube / actualiza / borra imágenes\nAsociación variantes + reordenación"]
+    MPL["**MIRROR POST-LOAD**\nMirrorMediasLoad\nMatching imagen↔variante con datos del PIM\nRegistra OriginId↔DestinoId en BD"]
+
+    SH -. "bulk read" .-&gt; MI
+    MI --&gt;|"reconcilia"| DB
+    MI --&gt; EX
+    PIM --&gt; EX
+    EX --&gt; DE --&gt; TR --&gt; LO --&gt;|"escribe"| SH
+    DE -. "consulta" .-&gt; DB
+    LO -. "registra" .-&gt; DB
+    LO --&gt; MPL
+    MPL -. "reconcilia post-carga" .-&gt; DB</code></pre>
+<h3 id="reutilizacion-de-productswithimagesextract">Reutilización de <code>ProductsWithImagesExtract</code><a class="headerlink" href="#reutilizacion-de-productswithimagesextract" title="Permanent link">&para;</a></h3>
+<p>La misma actividad extrae tanto los productos (para el workflow de Productos) como las imágenes (para este workflow). Tiene dos salidas independientes:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// En ProductsWorkflow — solo usa los productos:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="na">[&quot;extraccionProductos&quot;]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ProductsWithImagesExtract</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">{</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="n">ProductsOutput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s">&quot;productos&quot;</span><span class="p">]),</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="n">ProductsImagesOutput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">()</span><span class="w">   </span><span class="c1">// ← ignorado aquí</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">},</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1">// En ImagenesShopifyWorkflow — solo usa las imágenes:</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="na">[&quot;extraccion&quot;]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ProductsWithImagesExtract</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">{</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="n">ProductsOutput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">(),</span><span class="w">        </span><span class="c1">// ← ignorado aquí</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="n">ProductsImagesOutput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s">&quot;imagenes&quot;</span><span class="p">])</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="por-que-el-originid-se-guarda-en-el-campo-alt-de-la-imagen">Por qué el <code>OriginId</code> se guarda en el campo ALT de la imagen<a class="headerlink" href="#por-que-el-originid-se-guarda-en-el-campo-alt-de-la-imagen" title="Permanent link">&para;</a></h3>
+<p>El campo ALT (texto alternativo) es el único campo de texto libre que Shopify incluye en las respuestas de la API de imágenes del Bulk. Al guardar el <code>OriginId</code> en el ALT, <code>SyncProductMedias</code> puede recuperar ese identificador cuando lea las imágenes de Shopify para reconciliar la BD — sin necesidad de metafields.</p>
+<p>El <code>ALT</code> no pierde el <code>OriginId</code> aunque se actualice la imagen porque <code>ProductsMedias.UpdateMedias()</code> recupera el <code>OriginId</code> de la BD antes de actualizar para reincrustarlo.</p>
+<h3 id="dos-mirror-cuando-se-usa-cada-uno">Dos Mirror: ¿cuándo se usa cada uno?<a class="headerlink" href="#dos-mirror-cuando-se-usa-cada-uno" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Mirror</th>
+<th>Cuándo corre</th>
+<th>Qué información tiene</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SyncProductMedias</code></td>
+<td>Al inicio del workflow</td>
+<td>Solo lo que existe en Shopify (lee el ALT para recuperar OriginId)</td>
+</tr>
+<tr>
+<td><code>MirrorMediasLoad</code></td>
+<td>Después del Load (opcional)</td>
+<td>Tiene además la asignación imagen→variante del PIM, hace matching más preciso</td>
+</tr>
+</tbody>
+</table>
+<h3 id="imagedecision-las-5-operaciones"><code>ImageDecision</code> — Las 5 operaciones<a class="headerlink" href="#imagedecision-las-5-operaciones" title="Permanent link">&para;</a></h3>
+<p>Las imágenes no solo se crean o borran: también pueden <strong>asociarse</strong> o <strong>desasociarse</strong> de variantes específicas dentro de un producto. Por eso la decisión produce cinco tipos de salida:</p>
+<table>
+<thead>
+<tr>
+<th>Canal</th>
+<th>Qué representa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>imagenesCrear</code></td>
+<td>Imágenes nuevas que hay que subir a Shopify</td>
+</tr>
+<tr>
+<td><code>imagenesEditar</code></td>
+<td>Imágenes que ya existen pero cuya URL ha cambiado</td>
+</tr>
+<tr>
+<td><code>imagenesBorrar</code></td>
+<td>Imágenes que ya no están en el PIM</td>
+</tr>
+<tr>
+<td><code>imagenesAsociar</code></td>
+<td>Relaciones imagen-variante que hay que crear</td>
+</tr>
+<tr>
+<td><code>imagenesDesasociar</code></td>
+<td>Relaciones imagen-variante que hay que eliminar</td>
+</tr>
+</tbody>
+</table>
+<p>Nota: si una imagen va a borrarse, no se genera también una operación de desasociación de variante (sería redundante y podría dar error al intentar desasociar algo que ya no existe).</p>
+<hr />
+<h2 id="siguiente-paso">Siguiente paso<a class="headerlink" href="#siguiente-paso" title="Permanent link">&para;</a></h2>
+<p>Ya conoces qué hace cada workflow en detalle, incluyendo la capa Mirror y la capa Loader. El siguiente documento entra en detalle en la capa de extracción: cómo se autentican las APIs externas, cómo se pagina la respuesta de clientes y cómo se estructuran los modelos de datos que producen los extractors.</p>
+<p>→ <a href="../04-extractors/">04 — Los Extractors</a></p>
+<p>Para entender en detalle cómo funcionan los Loaders y las actividades Mirror, consulta:</p>
+<p>→ <a href="../10-loaders/">10 — Loaders y Mirror</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../02-elsa-workflows/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Motor de Workflows (Elsa)">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Motor de Workflows (Elsa)
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../wf-productos/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Visión general">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Visión general
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.instant.progress", "navigation.instant.prefetch", "navigation.instant.preview", "navigation.indexes", "navigation.path", "navigation.tracking", "navigation.prune", "navigation.top", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.code.select", "content.action.edit", "content.action.view", "content.tabs.link", "content.tooltips", "header.autohide"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../assets/javascripts/reactflow/bundle.reactflow.js" defer></script>
+      
+        <script src="../assets/javascripts/mermaid-zoom.js" defer></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2970 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación técnica del sistema de integración ERP-PIM-Shopify">
+      
+      
+      
+      
+        <link rel="prev" href="../06-modelos/">
+      
+      
+        <link rel="next" href="../08-configuracion/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Infraestructura y despliegue - UPG.Pataky — Guía de Estudio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#07-infraestructura-y-despliegue" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="UPG.Pataky — Guía de Estudio" class="md-header__button md-logo" aria-label="UPG.Pataky — Guía de Estudio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UPG.Pataky — Guía de Estudio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Infraestructura y despliegue
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartir" aria-label="Compartir" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01-arquitectura-etl/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Arquitectura
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../wf-productos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Procesos
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../04-extractors/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Pipeline ETL
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../06-modelos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Sistema
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../mp-index/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Marketplaces
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="UPG.Pataky — Guía de Estudio" class="md-nav__button md-logo" aria-label="UPG.Pataky — Guía de Estudio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UPG.Pataky — Guía de Estudio
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../01-arquitectura-etl/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../wf-productos/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procesos
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../04-extractors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipeline ETL
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sistema
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sistema
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-modelos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelos de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infraestructura y despliegue
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infraestructura y despliegue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En esta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En esta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Índice
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-vision-general-del-sistema-de-contenedores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. Visión general del sistema de contenedores
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-la-cadena-de-imagenes-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. La cadena de imágenes Docker
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. La cadena de imágenes Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dockerfilepartial-el-codigo-especifico-del-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>Dockerfile.partial</code> — el código específico del cliente
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockerfilecomunes-las-librerias-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>Dockerfile.comunes</code> — las librerías comunes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockerfile-en-upgpatakyshared-el-servidor-principal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>Dockerfile</code> (en <code>UPG.Pataky.Shared</code>) — el servidor principal
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-contenedor-pataky-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3. Contenedor: pataky-server
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-contenedor-pataky-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4. Contenedor: pataky-studio
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-contenedor-pataky-postgres" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5. Contenedor: pataky-postgres
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-imagenes-de-soporte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6. Imágenes de soporte
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Imágenes de soporte">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shared-utils-y-shopify-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>shared-utils</code> y <code>shopify-sdk</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pataky-partial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>pataky-partial</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-variables-de-entorno-y-fichero-env" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          7. Variables de entorno y fichero .env
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-diferencias-entre-entornos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          8. Diferencias entre entornos
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-networking-y-comunicacion-entre-contenedores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          9. Networking y comunicación entre contenedores
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-persistencia-de-datos-y-volumenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          10. Persistencia de datos y volúmenes
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Persistencia de datos y volúmenes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base-de-datos-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Base de datos PostgreSQL
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logs-del-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Logs del servidor
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logs-de-elsa-en-bd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Logs de Elsa (en BD)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-stack-tecnologico-paquetes-nuget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          11. Stack tecnológico: paquetes NuGet
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Stack tecnológico: paquetes NuGet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elsa-workflows-362" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Elsa Workflows 3.6.2
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Base de datos
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-y-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          HTTP y red
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Logging
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referencias-a-proyectos-locales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Referencias a proyectos locales
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-como-arrancar-el-sistema-localmente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          12. Cómo arrancar el sistema localmente
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Cómo arrancar el sistema localmente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requisitos-previos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Requisitos previos
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arranque" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Arranque
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urls-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          URLs disponibles
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ver-logs-en-tiempo-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Ver logs en tiempo real
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parar-el-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Parar el sistema
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#siguiente-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Siguiente paso
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentos-relacionados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Documentos relacionados
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-configuracion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-elsa-studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elsa Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Índice de etiquetas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../mp-index/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketplaces
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En esta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En esta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Índice
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-vision-general-del-sistema-de-contenedores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. Visión general del sistema de contenedores
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-la-cadena-de-imagenes-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. La cadena de imágenes Docker
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. La cadena de imágenes Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dockerfilepartial-el-codigo-especifico-del-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>Dockerfile.partial</code> — el código específico del cliente
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockerfilecomunes-las-librerias-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>Dockerfile.comunes</code> — las librerías comunes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockerfile-en-upgpatakyshared-el-servidor-principal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>Dockerfile</code> (en <code>UPG.Pataky.Shared</code>) — el servidor principal
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-contenedor-pataky-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3. Contenedor: pataky-server
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-contenedor-pataky-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4. Contenedor: pataky-studio
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-contenedor-pataky-postgres" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5. Contenedor: pataky-postgres
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-imagenes-de-soporte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6. Imágenes de soporte
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Imágenes de soporte">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shared-utils-y-shopify-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>shared-utils</code> y <code>shopify-sdk</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pataky-partial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>pataky-partial</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-variables-de-entorno-y-fichero-env" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          7. Variables de entorno y fichero .env
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-diferencias-entre-entornos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          8. Diferencias entre entornos
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-networking-y-comunicacion-entre-contenedores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          9. Networking y comunicación entre contenedores
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-persistencia-de-datos-y-volumenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          10. Persistencia de datos y volúmenes
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Persistencia de datos y volúmenes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base-de-datos-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Base de datos PostgreSQL
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logs-del-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Logs del servidor
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logs-de-elsa-en-bd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Logs de Elsa (en BD)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-stack-tecnologico-paquetes-nuget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          11. Stack tecnológico: paquetes NuGet
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Stack tecnológico: paquetes NuGet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elsa-workflows-362" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Elsa Workflows 3.6.2
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Base de datos
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-y-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          HTTP y red
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Logging
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referencias-a-proyectos-locales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Referencias a proyectos locales
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-como-arrancar-el-sistema-localmente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          12. Cómo arrancar el sistema localmente
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Cómo arrancar el sistema localmente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requisitos-previos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Requisitos previos
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arranque" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Arranque
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urls-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          URLs disponibles
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ver-logs-en-tiempo-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Ver logs en tiempo real
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parar-el-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Parar el sistema
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#siguiente-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Siguiente paso
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentos-relacionados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Documentos relacionados
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navegación" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../06-modelos/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Sistema
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:docker" class="md-tag">Docker</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:infraestructura" class="md-tag">Infraestructura</a>
+      
+    
+  </nav>
+
+
+
+<h1 id="07-infraestructura-y-despliegue">07 — Infraestructura y despliegue<a class="headerlink" href="#07-infraestructura-y-despliegue" title="Permanent link">&para;</a></h1>
+<p>Este documento describe cómo se construye, empaqueta y despliega el sistema. Cubre Docker Compose, cada contenedor, la cadena de imágenes Docker, las variables de entorno, el sistema de logging y las diferencias entre el entorno de desarrollo y producción.</p>
+<hr />
+<h2 id="indice">Índice<a class="headerlink" href="#indice" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#1-vision-general-del-sistema-de-contenedores">Visión general del sistema de contenedores</a></li>
+<li><a href="#2-la-cadena-de-imagenes-docker">La cadena de imágenes Docker</a></li>
+<li><a href="#3-contenedor-pataky-server">Contenedor: pataky-server</a></li>
+<li><a href="#4-contenedor-pataky-studio">Contenedor: pataky-studio</a></li>
+<li><a href="#5-contenedor-pataky-postgres">Contenedor: pataky-postgres</a></li>
+<li><a href="#6-imagenes-de-soporte">Imágenes de soporte (shared-utils, shopify-sdk, pataky-partial)</a></li>
+<li><a href="#7-variables-de-entorno-y-fichero-env">Variables de entorno y fichero .env</a></li>
+<li><a href="#8-diferencias-entre-entornos">Diferencias entre entornos</a></li>
+<li><a href="#9-networking-y-comunicacion-entre-contenedores">Networking y comunicación entre contenedores</a></li>
+<li><a href="#10-persistencia-de-datos-y-volumenes">Persistencia de datos y volúmenes</a></li>
+<li><a href="#11-stack-tecnologico-paquetes-nuget">Stack tecnológico: paquetes NuGet</a></li>
+<li><a href="#12-como-arrancar-el-sistema-localmente">Cómo arrancar el sistema localmente</a></li>
+</ol>
+<hr />
+<h2 id="1-vision-general-del-sistema-de-contenedores">1. Visión general del sistema de contenedores<a class="headerlink" href="#1-vision-general-del-sistema-de-contenedores" title="Permanent link">&para;</a></h2>
+<p>El sistema corre completamente en <strong>Docker</strong>. Hay dos ficheros Docker Compose:</p>
+<table>
+<thead>
+<tr>
+<th>Fichero</th>
+<th>Propósito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>docker-compose.yml</code></td>
+<td>Entorno de desarrollo: incluye el proceso de build de imágenes</td>
+</tr>
+<tr>
+<td><code>docker-compose.Production.SalonSpace.yml</code></td>
+<td>Producción: usa imágenes ya construidas del registry, sin rebuild</td>
+</tr>
+</tbody>
+</table>
+<p>En ejecución normal hay <strong>tres contenedores activos</strong> (los dos de producción):</p>
+<pre class="mermaid"><code>graph TD
+    subgraph Host["Host (servidor Linux o Windows)"]
+        PS["pataky-server\n:5271\nAPI + Elsa"]
+        ST["pataky-studio\n:5270\nUI visual (Blazor WASM)"]
+        PG[("pataky-postgres\n:5432\nPostgreSQL 17.2")]
+    end
+
+    PS --&gt;|"persiste estado"| PG
+    ST --&gt;|"API REST / JWT"| PS</code></pre>
+<p>El contenedor <code>pataky-studio</code> se conecta al API de <code>pataky-server</code> para mostrar la UI. El <code>pataky-server</code> se conecta a <code>pataky-postgres</code> para persistir el estado de Elsa y las transacciones.</p>
+<hr />
+<h2 id="2-la-cadena-de-imagenes-docker">2. La cadena de imágenes Docker<a class="headerlink" href="#2-la-cadena-de-imagenes-docker" title="Permanent link">&para;</a></h2>
+<p>La construcción del <code>pataky-server</code> usa una cadena de imágenes en capas. Es importante entender el orden porque cada capa depende de las anteriores.</p>
+<pre class="mermaid"><code>graph TD
+    BASE["upango/dotnet-builder:ci\nimagen base CI con .NET SDK"]
+
+    SU["upango/shared-utils"]
+    SS["upango/shopify-sdk"]
+    SL["upango/saleslayer"]
+    CG["upango/connector-google"]
+    GL["upango/graph-library"]
+
+    CO["upango/comunes\n(une todos los anteriores)"]
+    PP["upango/pataky-partial\n(código UPG.Pataky)"]
+
+    SRV["upango/pataky-server\nimagen final del servidor"]
+
+    BASE --&gt; SU
+    BASE --&gt; SS
+    BASE --&gt; SL
+    BASE --&gt; CG
+    BASE --&gt; GL
+    SU &amp; SS &amp; SL &amp; CG &amp; GL --&gt; CO
+    BASE --&gt; PP
+    PP &amp; CO --&gt; SRV</code></pre>
+<p>Cada nivel del árbol es una imagen Docker independiente. Las imágenes de nivel bajo (<code>shared-utils</code>, <code>shopify-sdk</code>, etc.) se construyen en sus propios repositorios y se publican al registry de Upango. El <code>pataky-server</code> las consume como capas.</p>
+<hr />
+<h3 id="dockerfilepartial-el-codigo-especifico-del-cliente"><code>Dockerfile.partial</code> — el código específico del cliente<a class="headerlink" href="#dockerfilepartial-el-codigo-especifico-del-cliente" title="Permanent link">&para;</a></h3>
+<div class="language-dockerfile highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">upango/dotnet-builder:ci</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/src</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>.
+</span></code></pre></div>
+<p>El Dockerfile más simple del sistema. Solo copia el código de <code>UPG.Pataky</code> (el repositorio con Extractors, Transformers, Workflows y ElsaServer) al sistema de ficheros de la imagen, sin compilar. La compilación ocurre en el <code>Dockerfile</code> del servidor.</p>
+<p>La imagen resultante se llama <code>upango/pataky-partial</code>.</p>
+<hr />
+<h3 id="dockerfilecomunes-las-librerias-comunes"><code>Dockerfile.comunes</code> — las librerías comunes<a class="headerlink" href="#dockerfilecomunes-las-librerias-comunes" title="Permanent link">&para;</a></h3>
+<div class="language-dockerfile highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">upango/shared-utils</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">shared-utils</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">FROM</span><span class="w"> </span><span class="s">upango/shopify-sdk</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">shopify-sdk</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">FROM</span><span class="w"> </span><span class="s">upango/saleslayer</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">saleslayer</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">FROM</span><span class="w"> </span><span class="s">upango/connector-google</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">connector-google</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">FROM</span><span class="w"> </span><span class="s">upango/graph-library</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">graph-library</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">FROM</span><span class="w"> </span><span class="s">upango/dotnet-builder:ci</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/src</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>shared-utils<span class="w"> </span>/src<span class="w"> </span>./UPG.SharedUtils
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>shopify-sdk<span class="w">  </span>/src<span class="w"> </span>./UPG.ShopifySDK
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>saleslayer<span class="w">   </span>/src<span class="w"> </span>./UPG.Connector.SalesLayer
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>connector-google<span class="w"> </span>/src<span class="w"> </span>./UPG.Connector.Google
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>graph-library<span class="w"> </span>/src<span class="w"> </span>./GraphLibrary
+</span></code></pre></div>
+<p>Coge cinco imágenes de librerías diferentes y las combina en un único sistema de ficheros estructurado. El resultado es una imagen con todos los proyectos de <code>C:\Repos\Comunes\</code> disponibles en <code>/src/</code>.</p>
+<p>La imagen resultante se llama <code>upango/comunes</code>.</p>
+<hr />
+<h3 id="dockerfile-en-upgpatakyshared-el-servidor-principal"><code>Dockerfile</code> (en <code>UPG.Pataky.Shared</code>) — el servidor principal<a class="headerlink" href="#dockerfile-en-upgpatakyshared-el-servidor-principal" title="Permanent link">&para;</a></h3>
+<p>Este es el Dockerfile más complejo. Usa <strong>multi-stage build</strong> con seis etapas:</p>
+<p><div class="language-dockerfile highlight"><span class="filename">Dockerfile</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">mcr.microsoft.com/dotnet/aspnet:8.0</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">base</span><span class="w"> </span>#<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span>!
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">EXPOSE</span><span class="w"> </span><span class="s">8080</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">EXPOSE</span><span class="w"> </span><span class="s">8081</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">ENV</span><span class="w"> </span><span class="nv">DOTNET_gcServer</span><span class="o">=</span><span class="m">1</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">ENV</span><span class="w"> </span><span class="nv">DOTNET_gcConcurrent</span><span class="o">=</span><span class="m">1</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="k">ENV</span><span class="w"> </span><span class="nv">DOTNET_GCHeapHardLimitPercent</span><span class="o">=</span>0x55<span class="w"> </span><span class="c"># (2)!</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="k">FROM</span><span class="w"> </span><span class="s">upango/comunes</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">comunes</span><span class="w"> </span>#<span class="w"> </span><span class="o">(</span><span class="m">3</span><span class="o">)</span>!
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="k">FROM</span><span class="w"> </span><span class="s">upango/pataky-partial</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">pataky-partial</span><span class="w"> </span>#<span class="w"> </span><span class="o">(</span><span class="m">4</span><span class="o">)</span>!
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="k">FROM</span><span class="w"> </span><span class="s">scratch</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">estructura-pataky</span><span class="w"> </span>#<span class="w"> </span><span class="o">(</span><span class="m">5</span><span class="o">)</span>!
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>comunes<span class="w">        </span>/src<span class="w">  </span>/src/Comunes
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="k">COPY</span><span class="w"> </span>.<span class="w">                           </span>/src/Comunes/UPG.Pataky.Shared
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>pataky-partial<span class="w"> </span>/src<span class="w">  </span>/src/UPANGO/Elsa/UPG.Pataky
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="k">FROM</span><span class="w"> </span><span class="s">mcr.microsoft.com/dotnet/sdk:8.0</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">build</span><span class="w"> </span>#<span class="w"> </span><span class="o">(</span><span class="m">6</span><span class="o">)</span>!
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>estructura-pataky<span class="w"> </span>/src<span class="w"> </span>/src
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/src/UPANGO/Elsa/UPG.Pataky/ElsaServer</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="k">RUN</span><span class="w"> </span>dotnet<span class="w"> </span>restore<span class="w"> </span><span class="s2">&quot;ElsaServer.csproj&quot;</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="k">RUN</span><span class="w"> </span>dotnet<span class="w"> </span>build<span class="w">   </span><span class="s2">&quot;ElsaServer.csproj&quot;</span><span class="w"> </span>-c<span class="w"> </span>Release<span class="w"> </span>-o<span class="w"> </span>/app/build
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="k">FROM</span><span class="w"> </span><span class="s">build</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">publish</span><span class="w"> </span>#<span class="w"> </span><span class="o">(</span><span class="m">7</span><span class="o">)</span>!
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="k">RUN</span><span class="w"> </span>dotnet<span class="w"> </span>publish<span class="w"> </span><span class="s2">&quot;ElsaServer.csproj&quot;</span><span class="w"> </span>-c<span class="w"> </span>Release<span class="w"> </span>-o<span class="w"> </span>/app/publish<span class="w"> </span>/p:UseAppHost<span class="o">=</span>false
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="k">FROM</span><span class="w"> </span><span class="s">base</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">final</span><span class="w"> </span>#<span class="w"> </span><span class="o">(</span><span class="m">8</span><span class="o">)</span>!
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>publish<span class="w"> </span>/app/publish<span class="w"> </span>.
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;dotnet&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ElsaServer.dll&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+1. <strong>base</strong> — imagen <code>aspnet:8.0</code> (runtime solo, ~220 MB). Sin SDK ni herramientas de compilación.
+2. <strong>Heap al 85%</strong> — el GC no usará más del 85% de la RAM del contenedor para evitar OOM kills del SO durante sincronizaciones masivas.
+3. <strong>comunes</strong> — importa los proyectos de <code>C:\Repos\Comunes</code> como capa de sistema de ficheros. No compila nada aquí.
+4. <strong>pataky-partial</strong> — importa el código de <code>UPG.Pataky</code>. No compila nada aquí.
+5. <strong>estructura-pataky</strong> — imagen <code>scratch</code> (vacía) que monta el árbol de directorios que espera el <code>.csproj</code>. Espeja <code>C:\Repos\</code> para que los <code>&lt;ProjectReference&gt;</code> funcionen igual en Docker que en local.
+6. <strong>build</strong> — descarga paquetes NuGet y compila en Release con el SDK completo de .NET (~800 MB). Esta etapa se descarta: no aparece en la imagen final.
+7. <strong>publish</strong> — ejecuta <code>dotnet publish</code> para generar los binarios optimizados sin temporales de compilación.
+8. <strong>final</strong> — copia solo los binarios publicados en la imagen <code>base</code>. La imagen resultante es mínima (~220 MB + binarios) y lista para producción.</p>
+<p><strong>La estructura de carpetas montada en <code>estructura-pataky</code>:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>/src/
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>├── Comunes/
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>│   ├── UPG.SharedUtils/
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>│   ├── UPG.ShopifySDK/
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>│   ├── UPG.Connector.SalesLayer/
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>│   ├── UPG.Connector.Google/
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>│   ├── GraphLibrary/
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>│   └── UPG.Pataky.Shared/       ← el proyecto de servicios compartidos
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>└── UPANGO/Elsa/UPG.Pataky/
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    ├── ElsaServer/               ← punto de entrada, el .csproj principal
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    ├── Extractors/
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    ├── Transformers/
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    ├── Decisions/
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    └── Workflows/
+</span></code></pre></div>
+<p>Esta estructura espeja exactamente la estructura de <code>C:\Repos\</code> en local, por lo que los <code>&lt;ProjectReference&gt;</code> del <code>.csproj</code> funcionan igual en Docker que en local.</p>
+<p><strong>Optimizaciones de memoria configuradas:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Valor</th>
+<th>Efecto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DOTNET_gcServer=1</code></td>
+<td>Server GC activo</td>
+<td>Usa múltiples threads para el garbage collector, mejor throughput</td>
+</tr>
+<tr>
+<td><code>DOTNET_gcConcurrent=1</code></td>
+<td>GC concurrente</td>
+<td>El GC trabaja en paralelo con el código de la aplicación</td>
+</tr>
+<tr>
+<td><code>DOTNET_GCHeapHardLimitPercent=0x55</code></td>
+<td>85% de RAM</td>
+<td>El GC no usará más del 85% de la memoria disponible — evita OOM kills del sistema operativo</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-contenedor-pataky-server">3. Contenedor: pataky-server<a class="headerlink" href="#3-contenedor-pataky-server" title="Permanent link">&para;</a></h2>
+<p>Es el contenedor principal. Ejecuta el servidor de <strong>Elsa Workflows</strong> con todos los workflows, activities, extractors, transformers y loaders.</p>
+<p><strong>Configuración en docker-compose (producción):</strong></p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">pataky-server</span><span class="p">:</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">upango/pataky-server:latest</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pataky-server</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nt">extra_hosts</span><span class="p">:</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;host.docker.internal:host-gateway&quot;</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="nt">ports</span><span class="p">:</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5271:8080</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="nt">env_file</span><span class="p">:</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.env</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">  </span><span class="nt">volumes</span><span class="p">:</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./logs:/app/logs</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">  </span><span class="nt">environment</span><span class="p">:</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="nt">TZ</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${TIME_ZONE}</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="nt">ASPNETCORE_ENVIRONMENT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${ASPNETCORE_ENVIRONMENT}</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">    </span><span class="nt">BUSINESS_TYPE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${BUSINESS_TYPE}</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">    </span><span class="nt">Elsa__Persistence__ConnectionString</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Host=...&quot;</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">    </span><span class="nt">Elsa__Persistence__DatabaseProvider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;PostgreSql&quot;</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">    </span><span class="nt">Transactions__ConnectionString</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Host=...&quot;</span>
+</span></code></pre></div>
+<p><strong>Puertos:</strong>
+- <code>5271</code> en el host → <code>8080</code> dentro del contenedor
+- La API de Elsa escucha en <code>http://0.0.0.0:8080/elsa/api</code></p>
+<p><strong><code>restart: unless-stopped</code>:</strong> el contenedor se reinicia automáticamente si falla o si se reinicia el servidor, excepto si fue detenido manualmente.</p>
+<p><strong><code>extra_hosts: host.docker.internal:host-gateway</code>:</strong> permite al contenedor acceder al host del servidor usando <code>host.docker.internal</code> como nombre DNS. Usado en entornos donde el servidor de base de datos está en el host en lugar de en otro contenedor.</p>
+<p><strong><code>volumes: ./logs:/app/logs</code>:</strong> monta la carpeta <code>./logs/</code> del host dentro del contenedor en <code>/app/logs</code>. Los logs de Serilog se escriben en <code>/app/logs/</code> dentro del contenedor y son accesibles desde el host. En desarrollo este volumen no está configurado.</p>
+<p><strong>Variables de entorno inyectadas directamente</strong> (sobreescriben el <code>appsettings.json</code>):</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TZ</code></td>
+<td>Zona horaria del sistema (<code>Europe/Madrid</code>). Afecta a todos los <code>DateTime.Now</code> y a los crons.</td>
+</tr>
+<tr>
+<td><code>ASPNETCORE_ENVIRONMENT</code></td>
+<td>Activa el <code>appsettings.{Environment}.json</code> correspondiente</td>
+</tr>
+<tr>
+<td><code>BUSINESS_TYPE</code></td>
+<td>Tipo de negocio (<code>B2B</code> o <code>SalonSpace</code>). Controla comportamientos condicionales del código</td>
+</tr>
+<tr>
+<td><code>Elsa__Persistence__ConnectionString</code></td>
+<td>Cadena de conexión a la BD <code>elsa-*</code> (estado de workflows)</td>
+</tr>
+<tr>
+<td><code>Elsa__Persistence__DatabaseProvider</code></td>
+<td>Siempre <code>"PostgreSql"</code> en producción</td>
+</tr>
+<tr>
+<td><code>Transactions__ConnectionString</code></td>
+<td>Cadena de conexión a la BD <code>transactions-*</code> (pares OriginId↔DestinoId)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Nota sobre los dobles guiones bajos</strong>: en ASP.NET Core, la notación <code>Elsa__Persistence__ConnectionString</code> en variables de entorno equivale a <code>Elsa:Persistence:ConnectionString</code> en el JSON. Los <code>__</code> son el separador de secciones jerárquicas.</p>
+</blockquote>
+<hr />
+<h2 id="4-contenedor-pataky-studio">4. Contenedor: pataky-studio<a class="headerlink" href="#4-contenedor-pataky-studio" title="Permanent link">&para;</a></h2>
+<p>Es la interfaz visual de Elsa. Un servidor web que sirve la aplicación <strong>Blazor WebAssembly</strong> de Elsa Studio. Solo consume la API del servidor — no tiene acceso a base de datos ni a ningún sistema externo.</p>
+<p><strong><code>ElsaStudio.Dockerfile</code>:</strong></p>
+<div class="language-dockerfile highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">upango/dotnet-builder:ci</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">build</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/src</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">COPY</span><span class="w"> </span>./ElsaStudio.WebAssembly<span class="w"> </span>./ElsaStudio.WebAssembly
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">COPY</span><span class="w"> </span>./ElsaStudio.Web<span class="w"> </span>./ElsaStudio.Web
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">RUN</span><span class="w"> </span>dotnet<span class="w"> </span>restore<span class="w"> </span><span class="s2">&quot;./ElsaStudio.WebAssembly/ElsaStudio.WebAssembly.csproj&quot;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="k">RUN</span><span class="w"> </span>dotnet<span class="w"> </span>restore<span class="w"> </span><span class="s2">&quot;./ElsaStudio.Web/ElsaStudio.Web.csproj&quot;</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/src/ElsaStudio.Web</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="k">RUN</span><span class="w"> </span>dotnet<span class="w"> </span>build<span class="w">   </span><span class="s2">&quot;ElsaStudio.Web.csproj&quot;</span><span class="w"> </span>-c<span class="w"> </span>Release<span class="w"> </span>-o<span class="w"> </span>/app/build
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="k">RUN</span><span class="w"> </span>dotnet<span class="w"> </span>publish<span class="w"> </span><span class="s2">&quot;ElsaStudio.Web.csproj&quot;</span><span class="w"> </span>-c<span class="w"> </span>Release<span class="w"> </span>-o<span class="w"> </span>/app/publish<span class="w"> </span>/p:UseAppHost<span class="o">=</span><span class="nb">false</span><span class="w"> </span>--no-restore<span class="w"> </span>-f<span class="w"> </span>net10.0
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="k">FROM</span><span class="w"> </span><span class="s">upango/dotnet-runtime:ci</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">base</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>build<span class="w"> </span>/app/publish<span class="w"> </span>./
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="k">EXPOSE</span><span class="w"> </span><span class="s">8080/tcp</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="k">EXPOSE</span><span class="w"> </span><span class="s">443/tcp</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;dotnet&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ElsaStudio.Web.dll&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+<p><strong>Configuración en docker-compose:</strong></p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">pataky-studio</span><span class="p">:</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">upango/pataky-studio:latest</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pataky-studio</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">depends_on</span><span class="p">:</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pataky-server</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="nt">ports</span><span class="p">:</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5270:8080</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">  </span><span class="nt">environment</span><span class="p">:</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="nt">TZ</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${TIME_ZONE}</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="nt">HostingBasePath</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://${HOST}:5270&quot;</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span><span class="nt">ElsaServerUrl</span><span class="p">:</span><span class="w">   </span><span class="s">&quot;http://${HOST}:5271/elsa/api&quot;</span>
+</span></code></pre></div>
+<p><strong>Puertos:</strong>
+- <code>5270</code> en el host → <code>8080</code> dentro del contenedor
+- Acceso desde el navegador: <code>http://{HOST}:5270</code></p>
+<p><strong>Variables de entorno:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>HostingBasePath</code></td>
+<td>La URL base donde está servida la UI. Necesaria para que las rutas de Blazor WebAssembly funcionen correctamente</td>
+</tr>
+<tr>
+<td><code>ElsaServerUrl</code></td>
+<td>La URL completa de la API de Elsa a la que se conecta la UI. Debe ser accesible desde el navegador del usuario, no desde el contenedor</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>depends_on: pataky-server</code>:</strong> Docker Compose espera a que el contenedor <code>pataky-server</code> esté en estado "running" antes de iniciar <code>pataky-studio</code>. No garantiza que la API esté lista (solo que el proceso ha arrancado), pero en la práctica es suficiente.</p>
+<hr />
+<h2 id="5-contenedor-pataky-postgres">5. Contenedor: pataky-postgres<a class="headerlink" href="#5-contenedor-pataky-postgres" title="Permanent link">&para;</a></h2>
+<p>Es la base de datos PostgreSQL. Contiene dos bases de datos lógicas dentro del mismo servidor:</p>
+<table>
+<thead>
+<tr>
+<th>Base de datos</th>
+<th>Propósito</th>
+<th>Se configura en</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>elsa-provalliance</code> / <code>elsa</code></td>
+<td>Estado de Elsa: definiciones de workflows, instancias, variables, triggers</td>
+<td><code>Elsa__Persistence__ConnectionString</code></td>
+</tr>
+<tr>
+<td><code>transactions-provalliance</code> / <code>transactions</code></td>
+<td>Pares OriginId↔DestinoId de todas las entidades sincronizadas</td>
+<td><code>Transactions__ConnectionString</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Configuración en docker-compose (solo en desarrollo):</strong></p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">pataky-postgres</span><span class="p">:</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres:17.2-alpine</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pataky-postgres</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="nt">ports</span><span class="p">:</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${POSTGRES_PORT}:5432</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="nt">env_file</span><span class="p">:</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.env</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">  </span><span class="nt">environment</span><span class="p">:</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">    </span><span class="nt">TZ</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${TIME_ZONE}</span>
+</span></code></pre></div>
+<ul>
+<li>La imagen es <code>postgres:17.2-alpine</code> — la variante Alpine es más ligera (~80 MB vs ~350 MB de la imagen base de Debian).</li>
+<li>El puerto <code>${POSTGRES_PORT}</code> del host se mapea al <code>5432</code> interno, permitiendo conectarse desde herramientas externas como DBeaver o TablePlus.</li>
+<li>Las credenciales las recibe a través del <code>env_file</code>, que le pasa las variables <code>POSTGRES_USER</code> y <code>POSTGRES_PASSWORD</code> que PostgreSQL reconoce automáticamente para crear el usuario inicial.</li>
+</ul>
+<blockquote>
+<p><strong>En producción</strong> el contenedor de PostgreSQL no está en el <code>docker-compose.Production.SalonSpace.yml</code> — la BD está en un servidor PostgreSQL externo (IP <code>&lt;IP_SERVIDOR&gt;</code>) accesible directamente desde la red del host.</p>
+</blockquote>
+<hr />
+<h2 id="6-imagenes-de-soporte">6. Imágenes de soporte<a class="headerlink" href="#6-imagenes-de-soporte" title="Permanent link">&para;</a></h2>
+<p>Estas imágenes existen solo para facilitar la construcción. En tiempo de ejecución no hay contenedor activo para ellas.</p>
+<h3 id="shared-utils-y-shopify-sdk"><code>shared-utils</code> y <code>shopify-sdk</code><a class="headerlink" href="#shared-utils-y-shopify-sdk" title="Permanent link">&para;</a></h3>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">shared-utils</span><span class="p">:</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">upango/shared-utils:latest</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nt">build</span><span class="p">:</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="nt">context</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">../../../Comunes/UPG.SharedUtils</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="nt">dockerfile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./Dockerfile</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/bin/bash -c exit</span><span class="w">   </span><span class="c1"># ← termina inmediatamente</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="nt">shopify-sdk</span><span class="p">:</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">upango/shopify-sdk:latest</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">  </span><span class="nt">build</span><span class="p">:</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">    </span><span class="nt">context</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">../../../Comunes/UPG.ShopifySDK</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">    </span><span class="nt">dockerfile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./Dockerfile</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/bin/bash -c exit</span>
+</span></code></pre></div>
+<p><code>command: /bin/bash -c exit</code> hace que el contenedor arranque y se cierre al instante. El propósito es solo <strong>construir la imagen</strong> para que esté disponible en el registry local cuando la referencia el Dockerfile del servidor.</p>
+<h3 id="pataky-partial"><code>pataky-partial</code><a class="headerlink" href="#pataky-partial" title="Permanent link">&para;</a></h3>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">pataky-partial</span><span class="p">:</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">upango/pataky-partial:latest</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="nt">build</span><span class="p">:</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nt">context</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="nt">dockerfile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./Dockerfile.partial</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/bin/bash -c exit</span>
+</span></code></pre></div>
+<p>Construye la imagen con el código de <code>UPG.Pataky</code> (este repositorio). El <code>context: .</code> significa que el directorio de build es la raíz del repositorio.</p>
+<hr />
+<h2 id="7-variables-de-entorno-y-fichero-env">7. Variables de entorno y fichero .env<a class="headerlink" href="#7-variables-de-entorno-y-fichero-env" title="Permanent link">&para;</a></h2>
+<p>El fichero <code>.env</code> en la raíz del repositorio define todas las variables de entorno que usa Docker Compose. Hay <strong>dos ficheros <code>.env</code></strong> según el entorno:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4a2 2 0 0 1 2 2v10c0 1.11-.89 2-2 2h4v2H0v-2h4a2 2 0 0 1-2-2V6c0-1.11.89-2 2-2zm0 2H4v10h16zm-8 6c2.21 0 4 .9 4 2v1H8v-1c0-1.1 1.79-2 4-2m0-5a2 2 0 1 1 0 4c-1.11 0-2-.89-2-2s.9-2 2-2"/></svg></span> Desarrollo</label><label for="__tabbed_1_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg></span> Producción</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-bash highlight"><span class="filename">.env</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nv">TIME_ZONE</span><span class="o">=</span>Europe/Madrid
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nv">ASPNETCORE_ENVIRONMENT</span><span class="o">=</span>Development
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nv">HOST</span><span class="o">=</span>localhost
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nv">POSTGRES_HOST</span><span class="o">=</span>pataky-postgres<span class="w">   </span><span class="c1"># nombre del contenedor (DNS interno de Docker)</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="nv">POSTGRES_PORT</span><span class="o">=</span><span class="m">5432</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="nv">POSTGRES_USER</span><span class="o">=</span>root
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>root
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="nv">ELSA_DB</span><span class="o">=</span>elsa-b2b
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="nv">TRANSACTIONS_DB</span><span class="o">=</span>transactions-b2b
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="nv">BUSINESS_TYPE</span><span class="o">=</span>B2B
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><span class="filename">.env.Production.SalonSpace</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nv">TIME_ZONE</span><span class="o">=</span>Europe/Madrid
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nv">ASPNETCORE_ENVIRONMENT</span><span class="o">=</span>Production
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nv">HOST</span><span class="o">=</span>&lt;IP_SERVIDOR&gt;<span class="w">                  </span><span class="c1"># IP del servidor en producción</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="nv">POSTGRES_HOST</span><span class="o">=</span>&lt;IP_SERVIDOR&gt;<span class="w">         </span><span class="c1"># PostgreSQL externo</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nv">POSTGRES_PORT</span><span class="o">=</span><span class="m">5432</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="nv">POSTGRES_USER</span><span class="o">=</span>postgres
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>&lt;POSTGRES_PASSWORD&gt;
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="nv">ELSA_DB</span><span class="o">=</span>elsa
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="nv">TRANSACTIONS_DB</span><span class="o">=</span>transactions
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="nv">BUSINESS_TYPE</span><span class="o">=</span>SalonSpace
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p><strong>Descripción de cada variable:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Tipo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TIME_ZONE</code></td>
+<td>string</td>
+<td>Zona horaria del contenedor. Afecta a <code>DateTime.Now</code>, los crons y las marcas de tiempo en los logs. En España peninsular siempre <code>Europe/Madrid</code>.</td>
+</tr>
+<tr>
+<td><code>ASPNETCORE_ENVIRONMENT</code></td>
+<td>enum</td>
+<td><code>Development</code>, <code>Staging</code> o <code>Production</code>. ASP.NET Core usa este valor para cargar el fichero <code>appsettings.{Environment}.json</code> correspondiente, que sobreescribe valores del <code>appsettings.json</code> base.</td>
+</tr>
+<tr>
+<td><code>HOST</code></td>
+<td>string</td>
+<td>IP o DNS del servidor donde corre Elsa. El Studio lo usa para construir la URL de la API (<code>ElsaServerUrl</code>). En local es <code>localhost</code>; en producción es la IP del servidor.</td>
+</tr>
+<tr>
+<td><code>POSTGRES_HOST</code></td>
+<td>string</td>
+<td>Host del servidor PostgreSQL. En desarrollo es <code>pataky-postgres</code> (nombre del contenedor, resuelto por la red interna de Docker). En producción es una IP externa.</td>
+</tr>
+<tr>
+<td><code>POSTGRES_PORT</code></td>
+<td>int</td>
+<td>Puerto de PostgreSQL. Casi siempre <code>5432</code>. Se mapea tal cual al host en desarrollo para acceso externo.</td>
+</tr>
+<tr>
+<td><code>POSTGRES_USER</code></td>
+<td>string</td>
+<td>Usuario de PostgreSQL.</td>
+</tr>
+<tr>
+<td><code>POSTGRES_PASSWORD</code></td>
+<td>string</td>
+<td>Contraseña de PostgreSQL.</td>
+</tr>
+<tr>
+<td><code>ELSA_DB</code></td>
+<td>string</td>
+<td>Nombre de la base de datos para el estado de Elsa.</td>
+</tr>
+<tr>
+<td><code>TRANSACTIONS_DB</code></td>
+<td>string</td>
+<td>Nombre de la base de datos para el seguimiento de sincronizaciones.</td>
+</tr>
+<tr>
+<td><code>BUSINESS_TYPE</code></td>
+<td>string</td>
+<td>Tipo de negocio. Controla comportamientos condicionales en el código que difieren entre instalaciones.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-diferencias-entre-entornos">8. Diferencias entre entornos<a class="headerlink" href="#8-diferencias-entre-entornos" title="Permanent link">&para;</a></h2>
+<p>El sistema usa el mecanismo estándar de ASP.NET Core: el fichero <code>appsettings.json</code> es la base, y <code>appsettings.{Environment}.json</code> sobreescribe solo los valores específicos de ese entorno.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>appsettings.json                         ← valores base y defaults
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>  ├── appsettings.Development.json       ← sobreescribe para Development
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>  └── appsettings.Production.SalonSpace.json  ← sobreescribe para Production
+</span></code></pre></div>
+<p><strong><code>appsettings.json</code> — valores base:</strong>
+- Conexiones a PostgreSQL de desarrollo (localhost:36220)
+- Credenciales de SalesLayer PIM (CanalEntrada y CanalSalida)
+- Configuración FTP de imágenes
+- Shopify con valores vacíos (se rellenan por entorno)
+- Credenciales de Provalliance Middleware (Azure API Management)
+- Crons de todos los workflows: <code>null</code> (no se ejecutan automáticamente sin configurar)
+- Filtro de pedidos: <code>"tag_not:Sincronizado"</code></p>
+<p><strong><code>appsettings.Development.json</code> — sobreescrituras de desarrollo:</strong>
+- Solo sobreescribe <code>ShopifyCredentials</code> con la tienda de pruebas de Domingo
+- Todo lo demás hereda del base</p>
+<p><strong><code>appsettings.Production.SalonSpace.json</code> — sobreescrituras de producción:</strong>
+- Conexión a Elsa BD y Transactions en el servidor de producción (<code>&lt;IP_SERVIDOR&gt;</code>)
+- <code>SigningKey</code> de Elsa Identity (llave real, más larga y segura)
+- Usuario de Elsa admin con credenciales reales (<code>provalliance</code>/<code>&lt;ELSA_ADMIN_PASSWORD&gt;</code>)
+- Shopify apuntando a <code>&lt;TIENDA&gt;.myshopify.com</code>
+- Tag de agentes: <code>["agente"]</code>
+- Credenciales de Microsoft Graph para envío de emails
+- <strong>Crons activos:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Workflow</th>
+<th>Cron</th>
+<th>Frecuencia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Productos</td>
+<td><code>0 0 * * * *</code></td>
+<td>Cada hora en punto</td>
+</tr>
+<tr>
+<td>ImagesToPIM</td>
+<td><code>0 * * * * *</code></td>
+<td>Cada minuto</td>
+</tr>
+<tr>
+<td>ImagesToShopify</td>
+<td><code>0 30 * * * *</code></td>
+<td>Cada hora y media</td>
+</tr>
+<tr>
+<td>Stock</td>
+<td><code>0 */10 4-21 * * *</code></td>
+<td>Cada 10 minutos entre las 4:00 y las 21:59</td>
+</tr>
+<tr>
+<td>Clientes</td>
+<td><code>0 15 * * * *</code></td>
+<td>Cada hora a las :15</td>
+</tr>
+<tr>
+<td>Pedidos</td>
+<td><code>0 */5 * * * *</code></td>
+<td>Cada 5 minutos</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>El cron de Stock</strong> (<code>0 */10 4-21 * * *</code>) merece una explicación: el ERP actualiza el stock cada 10 minutos entre las 6:04 y las 21:44. El cron cubre un rango más amplio (4:00-21:59) para absorber cambios de hora (verano/invierno) sin necesidad de reconfigurar.</p>
+</blockquote>
+<hr />
+<h2 id="9-networking-y-comunicacion-entre-contenedores">9. Networking y comunicación entre contenedores<a class="headerlink" href="#9-networking-y-comunicacion-entre-contenedores" title="Permanent link">&para;</a></h2>
+<p>Docker Compose crea automáticamente una <strong>red interna</strong> para todos los servicios definidos en el mismo fichero. Dentro de esta red, cada contenedor puede acceder a los demás usando el <strong>nombre del servicio</strong> como nombre DNS.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>pataky-server → &quot;pataky-postgres&quot; → resuelve a la IP del contenedor PostgreSQL
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>pataky-studio → &quot;pataky-server&quot;   → pero ¡CUIDADO! (ver abajo)
+</span></code></pre></div>
+<p><strong>El problema de <code>pataky-studio</code>:</strong></p>
+<p><code>pataky-studio</code> sirve una aplicación <strong>Blazor WebAssembly</strong> (WASM). Esto significa que el código JavaScript se descarga al navegador del usuario y se ejecuta en su máquina, no en el servidor. Cuando el navegador intenta conectarse al servidor Elsa, lo hace desde la máquina del usuario, no desde la red Docker.</p>
+<p>Por eso <code>ElsaServerUrl</code> usa la variable <code>${HOST}</code> (una IP o DNS accesible desde el exterior) en lugar de <code>pataky-server</code> (que solo funcionaría dentro de la red Docker):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a># Mal (solo funciona dentro de Docker):
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>ElsaServerUrl: &quot;http://pataky-server:8080/elsa/api&quot;
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a># Bien (accesible desde el navegador):
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>ElsaServerUrl: &quot;http://&lt;IP_SERVIDOR&gt;:5271/elsa/api&quot;
+</span></code></pre></div>
+<p><strong><code>extra_hosts: host.docker.internal:host-gateway</code></strong> (solo en producción):</p>
+<p>Esta directiva añade una entrada al <code>/etc/hosts</code> del contenedor que mapea <code>host.docker.internal</code> a la IP de la interfaz de red del host. Permite al contenedor <code>pataky-server</code> conectarse a servicios corriendo directamente en el host (fuera de Docker), usando <code>host.docker.internal</code> como hostname.</p>
+<hr />
+<h2 id="10-persistencia-de-datos-y-volumenes">10. Persistencia de datos y volúmenes<a class="headerlink" href="#10-persistencia-de-datos-y-volumenes" title="Permanent link">&para;</a></h2>
+<p>El sistema usa dos tipos de persistencia:</p>
+<h3 id="base-de-datos-postgresql">Base de datos PostgreSQL<a class="headerlink" href="#base-de-datos-postgresql" title="Permanent link">&para;</a></h3>
+<p>La persistencia de la BD depende de si PostgreSQL corre en Docker o en un servidor externo:</p>
+<ul>
+<li>
+<p><strong>Desarrollo (PostgreSQL en Docker):</strong> el contenedor <code>pataky-postgres</code> usa el almacenamiento interno del contenedor. Si se borra el contenedor, se pierden los datos. Para persistir datos en desarrollo habría que añadir un volumen explícito (<code>./data:/var/lib/postgresql/data</code>), pero en el <code>docker-compose.yml</code> actual no está configurado — se asume que el entorno de desarrollo es efímero.</p>
+</li>
+<li>
+<p><strong>Producción (PostgreSQL externo):</strong> la BD está en un servidor externo (IP <code>&lt;IP_SERVIDOR&gt;</code>), fuera de Docker. La persistencia la gestiona ese servidor directamente.</p>
+</li>
+</ul>
+<h3 id="logs-del-servidor">Logs del servidor<a class="headerlink" href="#logs-del-servidor" title="Permanent link">&para;</a></h3>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">volumes</span><span class="p">:</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./logs:/app/logs</span>
+</span></code></pre></div>
+<p>Solo en el fichero de producción. Los logs de Serilog se escriben en <code>/app/logs/</code> dentro del contenedor y se mapean a <code>./logs/</code> en el host (junto al <code>docker-compose.yml</code>). Esto permite acceder a los logs desde el host sin entrar al contenedor.</p>
+<p>El sistema de logging usa <strong>Serilog</strong> con dos sinks configurados:
+- <strong>Console</strong>: para ver los logs en tiempo real con <code>docker logs pataky-server</code>
+- <strong>Fichero</strong>: para persistencia en disco</p>
+<h3 id="logs-de-elsa-en-bd">Logs de Elsa (en BD)<a class="headerlink" href="#logs-de-elsa-en-bd" title="Permanent link">&para;</a></h3>
+<p>Elsa guarda el historial de ejecución de cada workflow en la BD <code>elsa-*</code>. Esto incluye:
+- Qué workflows se han ejecutado y cuándo
+- En qué estado terminaron (completado, error, cancelado)
+- Qué variables tenían en cada paso
+- Los logs de cada actividad</p>
+<p>La política de retención de estos registros se configura con <code>Elsa.Retention</code> (paquete instalado en el <code>.csproj</code>).</p>
+<hr />
+<h2 id="11-stack-tecnologico-paquetes-nuget">11. Stack tecnológico: paquetes NuGet<a class="headerlink" href="#11-stack-tecnologico-paquetes-nuget" title="Permanent link">&para;</a></h2>
+<p>El <code>ElsaServer.csproj</code> declara todas las dependencias del servidor. Aquí están explicadas:</p>
+<h3 id="elsa-workflows-362">Elsa Workflows 3.6.2<a class="headerlink" href="#elsa-workflows-362" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Paquete</th>
+<th>Versión</th>
+<th>Propósito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Elsa</code></td>
+<td>3.6.2</td>
+<td>Núcleo del motor de workflows</td>
+</tr>
+<tr>
+<td><code>Elsa.Workflows.Core</code></td>
+<td>3.6.2</td>
+<td>Definición de workflows y activities en código C#</td>
+</tr>
+<tr>
+<td><code>Elsa.Workflows.Api</code></td>
+<td>3.6.2</td>
+<td>Endpoints REST para la API de Elsa (que consume Elsa Studio)</td>
+</tr>
+<tr>
+<td><code>Elsa.Scheduling</code></td>
+<td>3.6.2</td>
+<td>Soporte de triggers de tiempo y crons</td>
+</tr>
+<tr>
+<td><code>Elsa.Identity</code></td>
+<td>3.6.2</td>
+<td>Autenticación y autorización de la API de Elsa</td>
+</tr>
+<tr>
+<td><code>Elsa.Http</code></td>
+<td>3.6.2</td>
+<td>Actividades HTTP y triggers HTTP</td>
+</tr>
+<tr>
+<td><code>Elsa.Expressions.CSharp</code></td>
+<td>3.6.2</td>
+<td>Permite escribir expresiones C# en el Studio</td>
+</tr>
+<tr>
+<td><code>Elsa.Persistence.EFCore.PostgreSql</code></td>
+<td>3.6.2</td>
+<td>Persistencia de Elsa en PostgreSQL</td>
+</tr>
+<tr>
+<td><code>Elsa.Persistence.EFCore.Sqlite</code></td>
+<td>3.6.2</td>
+<td>Persistencia de Elsa en SQLite (usado en tests o dev)</td>
+</tr>
+<tr>
+<td><code>Elsa.Retention</code></td>
+<td>3.6.1</td>
+<td>Política de borrado de historial de workflows</td>
+</tr>
+</tbody>
+</table>
+<h3 id="base-de-datos">Base de datos<a class="headerlink" href="#base-de-datos" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Paquete</th>
+<th>Versión</th>
+<th>Propósito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Microsoft.EntityFrameworkCore.Design</code></td>
+<td>10.0.1</td>
+<td>Herramientas de diseño de EF Core (generación de migraciones)</td>
+</tr>
+<tr>
+<td><code>Microsoft.EntityFrameworkCore.Tools</code></td>
+<td>10.0.1</td>
+<td>Comandos CLI de EF Core (<code>dotnet ef</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="http-y-red">HTTP y red<a class="headerlink" href="#http-y-red" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Paquete</th>
+<th>Versión</th>
+<th>Propósito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RestSharp</code></td>
+<td>112.1.0</td>
+<td>Cliente HTTP para las llamadas al ERP Provalliance y al PIM SalesLayer</td>
+</tr>
+<tr>
+<td><code>Kveer.XmlRPC</code></td>
+<td>1.3.1</td>
+<td>Cliente XML-RPC para la API antigua de SalesLayer (CanalEntrada)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Paquete</th>
+<th>Versión</th>
+<th>Propósito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Serilog.AspNetCore</code></td>
+<td>10.0.0</td>
+<td>Integración de Serilog con ASP.NET Core</td>
+</tr>
+<tr>
+<td><code>Serilog.Extensions.Logging</code></td>
+<td>10.0.0</td>
+<td>Puente entre la abstracción <code>ILogger</code> y Serilog</td>
+</tr>
+<tr>
+<td><code>Serilog.Sinks.Console</code></td>
+<td>6.1.1</td>
+<td>Sink de consola (output de <code>docker logs</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="referencias-a-proyectos-locales">Referencias a proyectos locales<a class="headerlink" href="#referencias-a-proyectos-locales" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Proyecto</th>
+<th>Carpeta</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ElsaShared.csproj</code></td>
+<td><code>Comunes/UPG.Pataky.Shared/Shared/</code></td>
+<td>Servicios compartidos, interfaces, BD de transacciones</td>
+</tr>
+<tr>
+<td><code>ShopifySDK.csproj</code></td>
+<td><code>Comunes/UPG.ShopifySDK/</code></td>
+<td>Cliente GraphQL de Shopify</td>
+</tr>
+<tr>
+<td><code>UPG.Connector.SalesLayer.csproj</code></td>
+<td><code>Comunes/UPG.Connector.SalesLayer/</code></td>
+<td>Cliente de la API de SalesLayer</td>
+</tr>
+<tr>
+<td><code>Extractors.csproj</code></td>
+<td><code>Extractors/</code></td>
+<td>Capa de extracción</td>
+</tr>
+<tr>
+<td><code>Transformers.csproj</code></td>
+<td><code>Transformers/</code></td>
+<td>Capa de transformación</td>
+</tr>
+<tr>
+<td><code>Decisions.csproj</code></td>
+<td><code>Decisions/</code></td>
+<td>Actividades de decisión (ramificación en workflows)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Nota sobre el framework:</strong> el proyecto usa <strong>.NET 10.0</strong> (<code>net10.0</code>) pero el Dockerfile del servidor todavía referencia imágenes de .NET 8 (<code>mcr.microsoft.com/dotnet/aspnet:8.0</code>). Hay una inconsistencia temporal — la imagen base del contenedor deberá actualizarse a .NET 10 en el siguiente despliegue.</p>
+</blockquote>
+<hr />
+<h2 id="12-como-arrancar-el-sistema-localmente">12. Cómo arrancar el sistema localmente<a class="headerlink" href="#12-como-arrancar-el-sistema-localmente" title="Permanent link">&para;</a></h2>
+<h3 id="requisitos-previos">Requisitos previos<a class="headerlink" href="#requisitos-previos" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Docker Desktop instalado y corriendo</li>
+<li>El repositorio <code>UPG.Pataky</code> clonado en <code>C:\Repos\Upango\Elsa\UPG.Pataky</code></li>
+<li>El repositorio <code>Comunes</code> clonado en <code>C:\Repos\Comunes\</code></li>
+<li>Acceso al registry de imágenes de Upango (para <code>upango/shared-utils</code>, <code>upango/shopify-sdk</code>, etc.)</li>
+</ol>
+<h3 id="arranque">Arranque<a class="headerlink" href="#arranque" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># En la raíz del repositorio (C:\Repos\Upango\Elsa\UPG.Pataky)</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="c1"># 1. Construir todas las imágenes y arrancar</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>docker-compose<span class="w"> </span>up<span class="w"> </span>--build
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="c1"># 2. Solo arrancar sin reconstruir (si las imágenes ya están construidas)</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>docker-compose<span class="w"> </span>up
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="c1"># 3. Solo el servidor (sin studio)</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>docker-compose<span class="w"> </span>up<span class="w"> </span>pataky-server<span class="w"> </span>pataky-postgres
+</span></code></pre></div>
+<h3 id="urls-disponibles">URLs disponibles<a class="headerlink" href="#urls-disponibles" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Servicio</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Elsa Studio (UI)</td>
+<td><code>http://localhost:5270</code></td>
+</tr>
+<tr>
+<td>API de Elsa</td>
+<td><code>http://localhost:5271/elsa/api</code></td>
+</tr>
+<tr>
+<td>PostgreSQL</td>
+<td><code>localhost:5432</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="ver-logs-en-tiempo-real">Ver logs en tiempo real<a class="headerlink" href="#ver-logs-en-tiempo-real" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># Logs del servidor</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>docker<span class="w"> </span>logs<span class="w"> </span>pataky-server<span class="w"> </span>-f
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="c1"># Logs de todos los contenedores</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>docker-compose<span class="w"> </span>logs<span class="w"> </span>-f
+</span></code></pre></div>
+<h3 id="parar-el-sistema">Parar el sistema<a class="headerlink" href="#parar-el-sistema" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># Parar sin borrar contenedores</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>docker-compose<span class="w"> </span>stop
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="c1"># Parar y borrar contenedores (los datos de PostgreSQL se pierden)</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>docker-compose<span class="w"> </span>down
+</span></code></pre></div>
+<hr />
+<h2 id="siguiente-paso">Siguiente paso<a class="headerlink" href="#siguiente-paso" title="Permanent link">&para;</a></h2>
+<p>→ <a href="../08-configuracion/"><code>08-configuracion.md</code></a> — Explicación detallada de todos los bloques del <code>appsettings.json</code></p>
+<hr />
+<h2 id="documentos-relacionados">Documentos relacionados<a class="headerlink" href="#documentos-relacionados" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Documento</th>
+<th>Relación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../08-configuracion/">08 — Configuración</a></td>
+<td>Variables de entorno y <code>appsettings.json</code> que configuran los contenedores</td>
+</tr>
+<tr>
+<td><a href="../09-elsa-studio/">09 — Elsa Studio</a></td>
+<td>La interfaz <code>pataky-studio</code> y cómo se conecta a <code>pataky-server</code></td>
+</tr>
+<tr>
+<td><a href="../02-elsa-workflows/">02 — El motor Elsa</a></td>
+<td>BD de Elsa y BD de transacciones que persisten en <code>pataky-postgres</code></td>
+</tr>
+<tr>
+<td><a href="../06-modelos/">06 — Modelos de datos</a></td>
+<td>Las entidades que se persisten en la base de datos de transacciones</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../06-modelos/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Modelos de datos">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Modelos de datos
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../08-configuracion/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Configuración">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Configuración
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.instant.progress", "navigation.instant.prefetch", "navigation.instant.preview", "navigation.indexes", "navigation.path", "navigation.tracking", "navigation.prune", "navigation.top", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.code.select", "content.action.edit", "content.action.view", "content.tabs.link", "content.tooltips", "header.autohide"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../assets/javascripts/reactflow/bundle.reactflow.js" defer></script>
+      
+        <script src="../assets/javascripts/mermaid-zoom.js" defer></script>
+      
+    
+  </body>
+</html>

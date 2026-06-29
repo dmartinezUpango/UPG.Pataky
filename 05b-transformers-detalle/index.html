@@ -1,0 +1,3921 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación técnica del sistema de integración ERP-PIM-Shopify">
+      
+      
+      
+      
+        <link rel="prev" href="../05-transformers/">
+      
+      
+        <link rel="next" href="../05c-transformers-metodos/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Detalle completo - UPG.Pataky — Guía de Estudio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#05b-transformers-detalle-completo" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="UPG.Pataky — Guía de Estudio" class="md-header__button md-logo" aria-label="UPG.Pataky — Guía de Estudio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UPG.Pataky — Guía de Estudio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Detalle completo
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartir" aria-label="Compartir" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01-arquitectura-etl/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Arquitectura
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../wf-productos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Procesos
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../04-extractors/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Pipeline ETL
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../06-modelos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Sistema
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../mp-index/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Marketplaces
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="UPG.Pataky — Guía de Estudio" class="md-nav__button md-logo" aria-label="UPG.Pataky — Guía de Estudio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UPG.Pataky — Guía de Estudio
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../01-arquitectura-etl/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../wf-productos/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procesos
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipeline ETL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pipeline ETL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../04-extractors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extractors
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../04d-decisions/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decisions
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transformers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Transformers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-transformers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visión general
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Detalle completo
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Detalle completo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En esta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En esta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#transformer-1-crear-productos-productscreatetransform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Transformer 1 — Crear productos (<code>ProductsCreateTransform</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformer 1 — Crear productos (ProductsCreateTransform)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-recibe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué recibe
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-produce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué produce
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-origininputt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El <code>OriginInput&lt;T&gt;</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-se-mapea-product-productcreateinput" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cómo se mapea <code>Product → ProductCreateInput</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cómo se mapea Product → ProductCreateInput">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metafields-del-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Metafields del producto
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metafields-de-la-variante" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Metafields de la variante
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#campos-directos-de-la-variante" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Campos directos de la variante
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer-2-actualizar-productos-productsupdatetransform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Transformer 2 — Actualizar productos (<code>ProductsUpdateTransform</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformer 2 — Actualizar productos (ProductsUpdateTransform)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-recibe_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué recibe
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logica-de-actualizacion-de-variantes-con-imagenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lógica de actualización de variantes con imágenes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logica-de-archivado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lógica de archivado
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logica-de-reconstruccion-de-opciones-rebuildproductoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lógica de reconstrucción de opciones (RebuildProductOptions)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer-3-borrar-productos-y-variantes-productsdeletetransform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Transformer 3 — Borrar productos y variantes (<code>ProductsDeleteTransform</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformer 3 — Borrar productos y variantes (ProductsDeleteTransform)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-recibe_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué recibe
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-hace-internamente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué hace internamente
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer-4-stock-stocktransform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Transformer 4 — Stock (<code>StockTransform</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformer 4 — Stock (StockTransform)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-resolucion-ean-destinoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          La resolución EAN → DestinoId
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-logica-de-variantes-sin-stock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          La lógica de variantes sin stock
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-produce_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué produce
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer-5-imagenes-imagestransform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Transformer 5 — Imágenes (<code>ImagesTransform</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformer 5 — Imágenes (ImagesTransform)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#las-cinco-operaciones-de-imagen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Las cinco operaciones de imagen
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resolucion-de-ids-por-operacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Resolución de IDs por operación
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logica-de-creacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lógica de creación
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logica-de-asociar-y-desasociar-appendmedias-detachmedias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lógica de asociar y desasociar (<code>AppendMedias</code> / <code>DetachMedias</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-produce_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué produce
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer-6-clientes-b2b-customertransform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Transformer 6 — Clientes B2B (<code>CustomerTransform</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformer 6 — Clientes B2B (CustomerTransform)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-perfil-customersmappingprofile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El perfil <code>CustomersMappingProfile</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="El perfil CustomersMappingProfile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clientresponsemodel-companyinput" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ClientResponseModel → CompanyInput</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#locationresponsemodel-companylocationinput" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>LocationResponseModel → CompanyLocationInput</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#locationresponsemodel-companylocationupdateinput" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>LocationResponseModel → CompanyLocationUpdateInput</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#locationresponsemodel-companycontactinput" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>LocationResponseModel → CompanyContactInput</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buildaddress-la-conversion-de-direccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>BuildAddress</code> — la conversión de dirección
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#las-tarifas-de-precios-por-defecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Las tarifas de precios por defecto
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-external_id-del-contacto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El <code>external_id</code> del contacto
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer-7-pedidos-ordersmappingprofile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Transformer 7 — Pedidos (<code>OrdersMappingProfile</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformer 7 — Pedidos (OrdersMappingProfile)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-mapeo-order-orderheadermodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El mapeo <code>Order → OrderHeaderModel</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-logica-de-descuentos-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          La lógica de descuentos (header)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-mapeo-lineitem-orderlinemodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El mapeo <code>LineItem → OrderLineModel</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-deteccion-de-dropshipping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          La detección de dropshipping
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer-8-tarifas-de-precio-pricelisttransform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Transformer 8 — Tarifas de precio (<code>PriceListTransform</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformer 8 — Tarifas de precio (PriceListTransform)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-escenario-de-tarifas-b2b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El escenario de tarifas B2B
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="El escenario de tarifas B2B">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-tarifas-_tarifascrear" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Creación de tarifas (<code>_tarifasCrear</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actualizacion-de-tarifas-_tarifaseditar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Actualización de tarifas (<code>_tarifasEditar</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminacion-de-tarifas-_tarifaseliminar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Eliminación de tarifas (<code>_tarifasEliminar</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer-9-traducciones-translationstransform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Transformer 9 — Traducciones (<code>TranslationsTransform</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformer 9 — Traducciones (TranslationsTransform)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#los-dos-tipos-de-contenido-que-transforma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Los dos tipos de contenido que transforma
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Los dos tipos de contenido que transforma">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#traducciones-de-productos-itranslatableproduct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Traducciones de productos (<code>ITranslatableProduct</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traducciones-de-metafields-itranslatable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Traducciones de metafields (<code>ITranslatable</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-produce_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué produce
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-de-la-capa-de-transformacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Resumen de la capa de transformación
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentos-relacionados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Documentos relacionados
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05c-transformers-metodos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Métodos y funciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../10-loaders/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Loaders y Mirror
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../06-modelos/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sistema
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../mp-index/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketplaces
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En esta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En esta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#transformer-1-crear-productos-productscreatetransform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Transformer 1 — Crear productos (<code>ProductsCreateTransform</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformer 1 — Crear productos (ProductsCreateTransform)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-recibe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué recibe
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-produce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué produce
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-origininputt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El <code>OriginInput&lt;T&gt;</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-se-mapea-product-productcreateinput" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cómo se mapea <code>Product → ProductCreateInput</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cómo se mapea Product → ProductCreateInput">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metafields-del-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Metafields del producto
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metafields-de-la-variante" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Metafields de la variante
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#campos-directos-de-la-variante" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Campos directos de la variante
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer-2-actualizar-productos-productsupdatetransform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Transformer 2 — Actualizar productos (<code>ProductsUpdateTransform</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformer 2 — Actualizar productos (ProductsUpdateTransform)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-recibe_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué recibe
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logica-de-actualizacion-de-variantes-con-imagenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lógica de actualización de variantes con imágenes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logica-de-archivado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lógica de archivado
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logica-de-reconstruccion-de-opciones-rebuildproductoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lógica de reconstrucción de opciones (RebuildProductOptions)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer-3-borrar-productos-y-variantes-productsdeletetransform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Transformer 3 — Borrar productos y variantes (<code>ProductsDeleteTransform</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformer 3 — Borrar productos y variantes (ProductsDeleteTransform)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-recibe_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué recibe
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-hace-internamente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué hace internamente
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer-4-stock-stocktransform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Transformer 4 — Stock (<code>StockTransform</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformer 4 — Stock (StockTransform)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-resolucion-ean-destinoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          La resolución EAN → DestinoId
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-logica-de-variantes-sin-stock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          La lógica de variantes sin stock
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-produce_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué produce
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer-5-imagenes-imagestransform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Transformer 5 — Imágenes (<code>ImagesTransform</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformer 5 — Imágenes (ImagesTransform)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#las-cinco-operaciones-de-imagen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Las cinco operaciones de imagen
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resolucion-de-ids-por-operacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Resolución de IDs por operación
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logica-de-creacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lógica de creación
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logica-de-asociar-y-desasociar-appendmedias-detachmedias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lógica de asociar y desasociar (<code>AppendMedias</code> / <code>DetachMedias</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-produce_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué produce
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer-6-clientes-b2b-customertransform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Transformer 6 — Clientes B2B (<code>CustomerTransform</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformer 6 — Clientes B2B (CustomerTransform)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-perfil-customersmappingprofile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El perfil <code>CustomersMappingProfile</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="El perfil CustomersMappingProfile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clientresponsemodel-companyinput" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ClientResponseModel → CompanyInput</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#locationresponsemodel-companylocationinput" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>LocationResponseModel → CompanyLocationInput</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#locationresponsemodel-companylocationupdateinput" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>LocationResponseModel → CompanyLocationUpdateInput</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#locationresponsemodel-companycontactinput" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>LocationResponseModel → CompanyContactInput</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buildaddress-la-conversion-de-direccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>BuildAddress</code> — la conversión de dirección
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#las-tarifas-de-precios-por-defecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Las tarifas de precios por defecto
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-external_id-del-contacto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El <code>external_id</code> del contacto
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer-7-pedidos-ordersmappingprofile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Transformer 7 — Pedidos (<code>OrdersMappingProfile</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformer 7 — Pedidos (OrdersMappingProfile)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-mapeo-order-orderheadermodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El mapeo <code>Order → OrderHeaderModel</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-logica-de-descuentos-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          La lógica de descuentos (header)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-mapeo-lineitem-orderlinemodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El mapeo <code>LineItem → OrderLineModel</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-deteccion-de-dropshipping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          La detección de dropshipping
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer-8-tarifas-de-precio-pricelisttransform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Transformer 8 — Tarifas de precio (<code>PriceListTransform</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformer 8 — Tarifas de precio (PriceListTransform)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-escenario-de-tarifas-b2b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El escenario de tarifas B2B
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="El escenario de tarifas B2B">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-tarifas-_tarifascrear" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Creación de tarifas (<code>_tarifasCrear</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actualizacion-de-tarifas-_tarifaseditar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Actualización de tarifas (<code>_tarifasEditar</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminacion-de-tarifas-_tarifaseliminar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Eliminación de tarifas (<code>_tarifasEliminar</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer-9-traducciones-translationstransform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Transformer 9 — Traducciones (<code>TranslationsTransform</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformer 9 — Traducciones (TranslationsTransform)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#los-dos-tipos-de-contenido-que-transforma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Los dos tipos de contenido que transforma
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Los dos tipos de contenido que transforma">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#traducciones-de-productos-itranslatableproduct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Traducciones de productos (<code>ITranslatableProduct</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traducciones-de-metafields-itranslatable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Traducciones de metafields (<code>ITranslatable</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-produce_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué produce
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-de-la-capa-de-transformacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Resumen de la capa de transformación
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentos-relacionados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Documentos relacionados
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navegación" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../04-extractors/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Pipeline ETL
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../05-transformers/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Transformers
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:automapper" class="md-tag">AutoMapper</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:shopify" class="md-tag">Shopify</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:transformers" class="md-tag">Transformers</a>
+      
+    
+  </nav>
+
+
+
+<h1 id="05b-transformers-detalle-completo">05b — Transformers: detalle completo<a class="headerlink" href="#05b-transformers-detalle-completo" title="Permanent link">&para;</a></h1>
+<p>Este documento entra en profundidad en cada transformer: qué campos mapea exactamente, qué lógica aplica, qué metafields genera y cómo resuelve los IDs de Shopify.</p>
+<blockquote>
+<p><strong>¿Quieres ver el código completo de un método?</strong>
+→ <a href="../05c-transformers-metodos/"><code>05c-transformers-metodos.md</code></a> — cada función explicada con su código fuente completo.</p>
+</blockquote>
+<hr />
+<h2 id="transformer-1-crear-productos-productscreatetransform">Transformer 1 — Crear productos (<code>ProductsCreateTransform</code>)<a class="headerlink" href="#transformer-1-crear-productos-productscreatetransform" title="Permanent link">&para;</a></h2>
+<h3 id="que-recibe">Qué recibe<a class="headerlink" href="#que-recibe" title="Permanent link">&para;</a></h3>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="na">[Input]</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;</span><span class="n">IProduct</span><span class="o">&gt;</span><span class="w">  </span><span class="n">ProductosCrearInput</span><span class="w">    </span><span class="c1">// productos nuevos a crear en Shopify</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">[Input]</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;</span><span class="n">IVariant</span><span class="o">&gt;</span><span class="w">  </span><span class="n">VariantesCrearInput</span><span class="w">    </span><span class="c1">// variantes nuevas de productos ya existentes</span>
+</span></code></pre></div>
+<p>Distingue dos escenarios:
+- <strong>Producto nuevo completo</strong>: el producto padre no existe aún en Shopify. Se crea el producto con todas sus variantes en una sola operación.
+- <strong>Variante nueva en producto existente</strong>: el producto padre ya existe en Shopify. Solo se añaden las variantes nuevas.</p>
+<h3 id="que-produce">Qué produce<a class="headerlink" href="#que-produce" title="Permanent link">&para;</a></h3>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">ProductsWithVariantsCreateLoaderInput</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="n">Products</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="p">(</span><span class="n">OriginInput</span><span class="o">&lt;</span><span class="n">ProductCreateInput</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">OriginInput</span><span class="o">&lt;</span><span class="n">ProductVariantsBulkInput</span><span class="o">&gt;</span><span class="p">[])</span><span class="o">&gt;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="n">Variants</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="kt">string</span><span class="w"> </span><span class="n">shopifyProductId</span><span class="p">,</span><span class="w"> </span><span class="n">OriginInput</span><span class="o">&lt;</span><span class="n">ProductVariantsBulkInput</span><span class="o">&gt;</span><span class="p">[]</span><span class="o">&gt;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="n">PublishProducts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="n">ExcludeNewProductsFromMarkets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="el-origininputt">El <code>OriginInput&lt;T&gt;</code><a class="headerlink" href="#el-origininputt" title="Permanent link">&para;</a></h3>
+<p>Todas las listas de este transformer usan el tipo <code>OriginInput&lt;T&gt;</code>, que es un contenedor que agrupa el input de Shopify con su <code>OriginId</code> (para que el loader pueda registrarlo en la BD de transacciones una vez creado):</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">OriginInput</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">OriginId</span><span class="w">    </span><span class="c1">// el código del ERP/PIM</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="kt">string?</span><span class="w"> </span><span class="n">Reference</span><span class="w">  </span><span class="c1">// en variantes: el SKU del artículo</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="n">T</span><span class="w"> </span><span class="n">Input</span><span class="w">            </span><span class="c1">// el input para la API de Shopify</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="como-se-mapea-product-productcreateinput">Cómo se mapea <code>Product → ProductCreateInput</code><a class="headerlink" href="#como-se-mapea-product-productcreateinput" title="Permanent link">&para;</a></h3>
+<p>El perfil <code>ProductosMappingTransforms</code> define este mapeo:</p>
+<table>
+<thead>
+<tr>
+<th>Campo de Shopify</th>
+<th>Lógica del mapeo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Title</code></td>
+<td>Si tiene múltiples variantes: usa <code>ParentProductName.Get("es")</code>; si es simple: <code>NombreProducto.Get("es")</code></td>
+</tr>
+<tr>
+<td><code>DescriptionHtml</code></td>
+<td><code>LongProductDescription.Get("es")</code> de la variante principal</td>
+</tr>
+<tr>
+<td><code>Handle</code></td>
+<td>Para multi-variante: <code>ParentUrlSeo</code>; para simple: <code>UrlSeo</code> del artículo</td>
+</tr>
+<tr>
+<td><code>Status</code></td>
+<td><code>Active→ACTIVE</code>, <code>Inactive→DRAFT</code>, <code>Deleted→ARCHIVED</code></td>
+</tr>
+<tr>
+<td><code>Tags</code></td>
+<td>Lista de strings de <code>etiqueta</code>, limpiados y deduplicados</td>
+</tr>
+<tr>
+<td><code>Vendor</code></td>
+<td>Primer elemento del array <code>Brand</code></td>
+</tr>
+<tr>
+<td><code>Seo.Title</code></td>
+<td>Para multi-variante: <code>ParentMetatitle</code>; para simple: <code>MetaTitle.Get("es")</code></td>
+</tr>
+<tr>
+<td><code>Seo.Description</code></td>
+<td>Para multi-variante: <code>ParentMetadescription</code>; para simple: <code>MetaDescription.Get("es")</code></td>
+</tr>
+<tr>
+<td><code>ProductOptions</code></td>
+<td>Opciones construidas desde <code>GetSortedOptions()</code> del producto</td>
+</tr>
+<tr>
+<td><code>Metafields</code></td>
+<td>Ver lista completa abajo</td>
+</tr>
+</tbody>
+</table>
+<h4 id="metafields-del-producto">Metafields del producto<a class="headerlink" href="#metafields-del-producto" title="Permanent link">&para;</a></h4>
+<p>Se generan de forma automática en <a href="../05c-transformers-metodos/#13-productosmappingtransforms-getmetafieldsproducto"><code>GetMetafieldsProducto</code></a>. Los metafields vacíos (valor <code>null</code> o <code>""</code>) se omiten.</p>
+<table>
+<thead>
+<tr>
+<th>Namespace</th>
+<th>Key</th>
+<th>Tipo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>upng</code></td>
+<td><code>originId</code></td>
+<td><code>single_line_text_field</code></td>
+<td><code>OriginId</code> del producto</td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>referencia</code></td>
+<td><code>single_line_text_field</code></td>
+<td>Mismo valor que <code>originId</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>last_sync</code></td>
+<td><code>single_line_text_field</code></td>
+<td>Fecha y hora actual <code>"dd-MM-yyyy HH:mm"</code></td>
+</tr>
+<tr>
+<td><code>product</code></td>
+<td><code>is_discontinued</code></td>
+<td><code>boolean</code></td>
+<td><code>"true"</code> o <code>"false"</code> según campo <code>Obsoleto</code></td>
+</tr>
+<tr>
+<td><code>product_info</code></td>
+<td><code>prod_ss_description_short</code></td>
+<td><code>multi_line_text_field</code></td>
+<td><code>ShortProductDescription.Get("es")</code></td>
+</tr>
+<tr>
+<td><code>product_info</code></td>
+<td><code>more_details</code></td>
+<td><code>multi_line_text_field</code></td>
+<td><code>AdditionalBenefits.Get("es")</code></td>
+</tr>
+<tr>
+<td><code>product_info</code></td>
+<td><code>prod_ingredients</code></td>
+<td><code>multi_line_text_field</code></td>
+<td><code>Ingredients.Get("es")</code></td>
+</tr>
+<tr>
+<td><code>product_info</code></td>
+<td><code>prod_ss_instructions</code></td>
+<td><code>multi_line_text_field</code></td>
+<td><code>HowToUse.Get("es")</code></td>
+</tr>
+<tr>
+<td><code>brand</code></td>
+<td><code>prod_brand</code></td>
+<td><code>single_line_text_field</code></td>
+<td>Primer elemento de <code>Brand</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>shopify_line_brand</code></td>
+<td><code>single_line_text_field</code></td>
+<td><code>ShopifyLineaMarca</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>shopify_category</code></td>
+<td><code>single_line_text_field</code></td>
+<td><code>ShopifyCategory</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>shopify_subcategory</code></td>
+<td><code>single_line_text_field</code></td>
+<td><code>ShopifySubcategory</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>benefits</code></td>
+<td><code>multi_line_text_field</code></td>
+<td><code>Benefits.Get("es")</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>key_features</code></td>
+<td><code>multi_line_text_field</code></td>
+<td><code>KeyFeatures.Get("es")</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>warranties_and_certifications</code></td>
+<td><code>multi_line_text_field</code></td>
+<td><code>WarrantiesAndCertifications</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>safety_warning_content</code></td>
+<td><code>multi_line_text_field</code></td>
+<td><code>SafetyWarningContent</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>brand_line</code></td>
+<td><code>single_line_text_field</code></td>
+<td><code>BrandLine</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>brand_family</code></td>
+<td><code>single_line_text_field</code></td>
+<td><code>BrandFamily</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>brand_subfamily</code></td>
+<td><code>single_line_text_field</code></td>
+<td><code>BrandSubfamily</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>product_class</code></td>
+<td><code>list.single_line_text_field</code></td>
+<td>JSON de <code>ProductClass</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>target_gender</code></td>
+<td><code>list.single_line_text_field</code></td>
+<td>JSON de <code>TargetGender</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>hair_need</code></td>
+<td><code>list.single_line_text_field</code></td>
+<td>JSON de <code>HairNeed</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>category_name</code></td>
+<td><code>single_line_text_field</code></td>
+<td><code>CategoryName</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>descargar_ficha_tecnica</code></td>
+<td><code>url</code></td>
+<td><code>FichaTecnica</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>tax-class</code></td>
+<td><code>single_line_text_field</code></td>
+<td><code>"21"</code> si <code>NivelImpuesto=NOR</code>, <code>"10"</code> si <code>RED</code>, <code>"4"</code> si <code>SRD</code>. <strong>Lanza excepción si no es ninguno de estos</strong></td>
+</tr>
+<tr>
+<td><code>custom</code></td>
+<td><code>filtro_*</code></td>
+<td><code>single_line_text_field</code></td>
+<td>~40 campos de filtros de categoría (tintes, styling, depilación, accesorios, etc.)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>El metafield <code>tax-class</code> es especial: está fuera del bloque try/catch a propósito. Si un producto tiene un <code>NivelImpuesto</code> desconocido, la transformación del producto <strong>falla completamente</strong>. Esto garantiza que nunca se suba un producto sin tipo de IVA definido.</p>
+</blockquote>
+<h4 id="metafields-de-la-variante">Metafields de la variante<a class="headerlink" href="#metafields-de-la-variante" title="Permanent link">&para;</a></h4>
+<p>Definidos en <a href="../05c-transformers-metodos/#14-productosmappingtransforms-getmetafieldsvariante"><code>GetMetafieldsVariante</code></a>:</p>
+<table>
+<thead>
+<tr>
+<th>Namespace</th>
+<th>Key</th>
+<th>Tipo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>upng</code></td>
+<td><code>originId</code></td>
+<td><code>single_line_text_field</code></td>
+<td><code>OriginId</code> de la variante</td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>tags_shopify</code></td>
+<td><code>list.single_line_text_field</code></td>
+<td>JSON de <code>Etiqueta</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>benefits</code></td>
+<td><code>multi_line_text_field</code></td>
+<td><code>Benefits.Get("es")</code></td>
+</tr>
+<tr>
+<td><code>product_info</code></td>
+<td><code>more_details</code></td>
+<td><code>multi_line_text_field</code></td>
+<td><code>AdditionalBenefits.Get("es")</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>key_features</code></td>
+<td><code>multi_line_text_field</code></td>
+<td><code>KeyFeatures.Get("es")</code></td>
+</tr>
+<tr>
+<td><code>product_info</code></td>
+<td><code>prod_ss_instructions</code></td>
+<td><code>multi_line_text_field</code></td>
+<td><code>HowToUse.Get("es")</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>ean_1</code></td>
+<td><code>single_line_text_field</code></td>
+<td><code>Ean1</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>ean_2</code></td>
+<td><code>single_line_text_field</code></td>
+<td><code>Ean2</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>ean_3</code></td>
+<td><code>single_line_text_field</code></td>
+<td><code>Ean3</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>hair_type</code></td>
+<td><code>single_line_text_field</code></td>
+<td><code>HairType.Get("es")</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>hair_need</code></td>
+<td><code>list.single_line_text_field</code></td>
+<td>JSON de <code>HairNeed</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>content_type</code></td>
+<td><code>single_line_text_field</code></td>
+<td>Primer elemento de <code>ContentType</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>content_value</code></td>
+<td><code>integer</code></td>
+<td><code>ContentValue</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>color</code></td>
+<td><code>single_line_text_field</code></td>
+<td><code>Color.Get("es")</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>units_per_box</code></td>
+<td><code>integer</code></td>
+<td><code>UnitsPerBox</code> (parseado a entero)</td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>weight</code></td>
+<td><code>decimal</code></td>
+<td><code>Weight</code> (parseado, coma→punto)</td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>PVP</code></td>
+<td><code>decimal</code></td>
+<td><code>SalonSpaceSellingPrice</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>special_selling_price</code></td>
+<td><code>decimal</code></td>
+<td><code>SalonSpaceSpecialSellingPrice</code></td>
+</tr>
+<tr>
+<td><code>variant</code></td>
+<td><code>codigo_agrupacion</code></td>
+<td><code>single_line_text_field</code></td>
+<td><code>CodigoAgrupacion</code></td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>galeria_imagenes</code></td>
+<td><code>list.file_reference</code></td>
+<td>JSON de IDs de medias de Shopify</td>
+</tr>
+<tr>
+<td><code>upng</code></td>
+<td><code>pack_profesionales</code></td>
+<td><code>list.variant_reference</code></td>
+<td>JSON de IDs de variantes del pack</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><code>galeria_imagenes</code> solo tiene valor en la actualización (ProductsUpdateTransform), porque las imágenes deben existir antes en Shopify para tener un ID. En la creación, este metafield se envía vacío.</p>
+</blockquote>
+<h4 id="campos-directos-de-la-variante">Campos directos de la variante<a class="headerlink" href="#campos-directos-de-la-variante" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Campo Shopify</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Price</code></td>
+<td><code>SalonSpaceSellingPrice</code> (parseado a decimal, coma→punto)</td>
+</tr>
+<tr>
+<td><code>Barcode</code></td>
+<td><code>Ean</code> (EAN principal; null si vacío)</td>
+</tr>
+<tr>
+<td><code>InventoryItem.Sku</code></td>
+<td><code>Sku</code> del artículo</td>
+</tr>
+<tr>
+<td><code>InventoryItem.Tracked</code></td>
+<td><code>true</code> si <code>SkuType</code> contiene "material"; <code>false</code> si contiene "digital"</td>
+</tr>
+<tr>
+<td><code>InventoryItem.RequiresShipping</code></td>
+<td>Mismo valor que <code>Tracked</code></td>
+</tr>
+<tr>
+<td><code>OptionValues</code></td>
+<td>Lista de <code>{OptionName, Name}</code> de las opciones de la variante</td>
+</tr>
+<tr>
+<td><code>InventoryQuantities</code></td>
+<td>Se establece en crear, <strong>se pone a null en actualizar</strong> (el stock se gestiona aparte)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="transformer-2-actualizar-productos-productsupdatetransform">Transformer 2 — Actualizar productos (<code>ProductsUpdateTransform</code>)<a class="headerlink" href="#transformer-2-actualizar-productos-productsupdatetransform" title="Permanent link">&para;</a></h2>
+<h3 id="que-recibe_1">Qué recibe<a class="headerlink" href="#que-recibe_1" title="Permanent link">&para;</a></h3>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="na">[Input]</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;</span><span class="n">IProduct</span><span class="o">&gt;</span><span class="w">  </span><span class="n">ProductosActualizarInput</span><span class="w">     </span><span class="c1">// productos que han cambiado</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="na">[Input]</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;</span><span class="n">IVariant</span><span class="o">&gt;</span><span class="w">  </span><span class="n">VariantesActualizarInput</span><span class="w">     </span><span class="c1">// variantes que han cambiado</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="na">[Input]</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;</span><span class="n">IProduct</span><span class="o">&gt;</span><span class="w">  </span><span class="n">RebuildProductOptionsInput</span><span class="w">   </span><span class="c1">// productos cuyas opciones cambiaron</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="na">[Input]</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w">    </span><span class="n">ProductosArchivarInput</span><span class="w">        </span><span class="c1">// OriginIds de productos a archivar</span>
+</span></code></pre></div>
+<h3 id="logica-de-actualizacion-de-variantes-con-imagenes">Lógica de actualización de variantes con imágenes<a class="headerlink" href="#logica-de-actualizacion-de-variantes-con-imagenes" title="Permanent link">&para;</a></h3>
+<p>En la actualización, antes de mapear cada variante, el transformer resuelve las imágenes asignadas a esa variante:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// Para cada variante a actualizar:</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kt">var</span><span class="w"> </span><span class="n">variantImagesShopifyIds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">variant</span><span class="p">.</span><span class="n">Images</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="p">.</span><span class="n">Union</span><span class="p">(</span><span class="n">variant</span><span class="p">.</span><span class="n">GetParentImages</span><span class="p">())</span><span class="w">          </span><span class="c1">// imágenes propias + del producto padre</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">mediasOriginIdsToShopifyIds</span><span class="p">.</span><span class="n">TryGetValue</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">ToString</span><span class="p">(),</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="k">value</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="o">!</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="p">.</span><span class="n">Distinct</span><span class="p">()</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">x</span><span class="o">!</span><span class="p">)</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="p">.</span><span class="n">ToList</span><span class="p">();</span>
+</span></code></pre></div>
+<p>Esto produce la lista de IDs de medias de Shopify que se usará para rellenar el metafield <code>galeria_imagenes</code> de la variante. Si la media no existe aún en Shopify (por ejemplo, es nueva), se omite de la lista.</p>
+<h3 id="logica-de-archivado">Lógica de archivado<a class="headerlink" href="#logica-de-archivado" title="Permanent link">&para;</a></h3>
+<p>El archivado es un caso especial dentro de este transformer. Al archivar:</p>
+<ol>
+<li>Se consulta Shopify para saber si el producto ya está archivado (para evitar operaciones redundantes).</li>
+<li>Si no está archivado, se genera un <code>ProductUpdateInput</code> con:</li>
+<li><code>Status = ARCHIVED</code></li>
+<li><code>Handle</code> modificado: <code>"{handle-actual}-{fecha}-{número aleatorio}"</code> (para liberar el slug URL y evitar conflictos).</li>
+</ol>
+<h3 id="logica-de-reconstruccion-de-opciones-rebuildproductoptions">Lógica de reconstrucción de opciones (RebuildProductOptions)<a class="headerlink" href="#logica-de-reconstruccion-de-opciones-rebuildproductoptions" title="Permanent link">&para;</a></h3>
+<p>Cuando las opciones de un producto cambian (ej: antes tenía "Color+Talla" y ahora solo tiene "Color"), Shopify no permite actualizar las opciones directamente. Hay que usar la operación de reconstrucción que borra y vuelve a crear las opciones junto con todas las variantes.</p>
+<p>Este transformer genera el input completo para esa operación: el ID de Shopify del producto y todas sus variantes con sus nuevas opciones.</p>
+<hr />
+<h2 id="transformer-3-borrar-productos-y-variantes-productsdeletetransform">Transformer 3 — Borrar productos y variantes (<code>ProductsDeleteTransform</code>)<a class="headerlink" href="#transformer-3-borrar-productos-y-variantes-productsdeletetransform" title="Permanent link">&para;</a></h2>
+<h3 id="que-recibe_2">Qué recibe<a class="headerlink" href="#que-recibe_2" title="Permanent link">&para;</a></h3>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="na">[Input]</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w">  </span><span class="n">ProductosEliminarInput</span><span class="w">   </span><span class="c1">// OriginIds de productos</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="na">[Input]</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w">  </span><span class="n">VariantesEliminarInput</span><span class="w">   </span><span class="c1">// OriginIds de variantes</span>
+</span></code></pre></div>
+<h3 id="que-hace-internamente">Qué hace internamente<a class="headerlink" href="#que-hace-internamente" title="Permanent link">&para;</a></h3>
+<p>No usa AutoMapper. Solo resuelve IDs:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>OriginId de producto  →  transactionsService.Products.FindShopifyIds(...)  →  DestinoId
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>OriginId de variante  →  transactionsService.Products.Variants.FindShopifyIds(...)  →  DestinoId
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Para cada variante:
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>  DestinoId de variante  →  transactionsService.Products.Variants.FindProductsDestinationIdFromDestinationsIds(...)
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>                         →  DestinoId del producto padre
+</span></code></pre></div>
+<p>El resultado se organiza como un diccionario <code>{shopifyProductId → [shopifyVariantId1, shopifyVariantId2]}</code> porque la API de Shopify agrupa las eliminaciones de variantes por producto.</p>
+<hr />
+<h2 id="transformer-4-stock-stocktransform">Transformer 4 — Stock (<code>StockTransform</code>)<a class="headerlink" href="#transformer-4-stock-stocktransform" title="Permanent link">&para;</a></h2>
+<h3 id="la-resolucion-ean-destinoid">La resolución EAN → DestinoId<a class="headerlink" href="#la-resolucion-ean-destinoid" title="Permanent link">&para;</a></h3>
+<p>Esta es la parte más interesante del transformer. El ERP devuelve stock por EAN, pero Shopify trabaja con <code>InventoryItemId</code>. El transformer construye un diccionario de traducción consultando la BD:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">var</span><span class="w"> </span><span class="n">products</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">transcationsService</span><span class="p">.</span><span class="n">Products</span><span class="p">.</span><span class="n">Get</span><span class="p">();</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kt">var</span><span class="w"> </span><span class="n">helperDict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">products</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="p">.</span><span class="n">SelectMany</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">Variants</span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">v</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">        </span><span class="n">VariantSku</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">Referencia</span><span class="p">,</span><span class="w">    </span><span class="c1">// ← el EAN se guarda en el campo Referencia de la BD</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">        </span><span class="n">VariantShopifyId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">DestinoId</span><span class="p">,</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">        </span><span class="n">ProductShopifyId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">DestinoId</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="p">}))</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">    </span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="o">!</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">VariantSku</span><span class="p">))</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">    </span><span class="p">.</span><span class="n">GroupBy</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">VariantSku</span><span class="o">!</span><span class="p">)</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">    </span><span class="p">.</span><span class="n">ToDictionary</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">ToList</span><span class="p">());</span>
+</span></code></pre></div>
+<p>Hay un detalle importante: el mismo EAN puede corresponderse con más de una variante (si el mismo artículo físico tiene varias referencias en el catálogo). Por eso el diccionario agrupa por EAN (<code>GroupBy</code>), y para cada EAN en el stock del ERP, el transformer actualiza <strong>todas las variantes</strong> que tengan ese EAN.</p>
+<h3 id="la-logica-de-variantes-sin-stock">La lógica de variantes sin stock<a class="headerlink" href="#la-logica-de-variantes-sin-stock" title="Permanent link">&para;</a></h3>
+<p>Si una variante existe en la BD pero no aparece en la lista de stock del ERP, el transformer la establece a <strong>0 unidades</strong>:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kt">var</span><span class="w"> </span><span class="n">inputSkus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_input</span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">y</span><span class="p">.</span><span class="n">Ean</span><span class="p">).</span><span class="n">ToHashSet</span><span class="p">();</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kt">var</span><span class="w"> </span><span class="n">variantsWithMissingStock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">helperDict</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="o">!</span><span class="n">inputSkus</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">Key</span><span class="p">))</span><span class="w">   </span><span class="c1">// variantes en BD pero no en el stock recibido</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="p">.</span><span class="n">SelectMany</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">Value</span><span class="p">)</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="p">.</span><span class="n">ToList</span><span class="p">();</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">variant</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">variantsWithMissingStock</span><span class="p">)</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="p">{</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span><span class="n">AddStockUpdate</span><span class="p">(</span><span class="n">variant</span><span class="p">.</span><span class="n">ProductShopifyId</span><span class="p">,</span><span class="w"> </span><span class="n">variant</span><span class="p">.</span><span class="n">VariantShopifyId</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Esto lo hace con un warning en los logs. La lógica es: si el ERP no informa de stock para un artículo que teóricamente existe, asumimos que está a 0 (mejor quedarse sin stock que tener stock incorrecto).</p>
+<h3 id="que-produce_1">Qué produce<a class="headerlink" href="#que-produce_1" title="Permanent link">&para;</a></h3>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">SyncStockInput</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">{</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="n">Variants</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="kt">string</span><span class="w"> </span><span class="n">shopifyProductId</span><span class="p">,</span><span class="w"> </span><span class="n">VariantStockUpdate</span><span class="p">[]</span><span class="o">&gt;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">}</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="n">VariantStockUpdate</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="p">{</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="n">IdShopifyVariant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;gid://shopify/ProductVariant/...&quot;</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="n">LocationId</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;gid://shopify/Location/...&quot;</span><span class="w">     </span><span class="c1">// del appsettings.json</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="n">Stock</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<hr />
+<h2 id="transformer-5-imagenes-imagestransform">Transformer 5 — Imágenes (<code>ImagesTransform</code>)<a class="headerlink" href="#transformer-5-imagenes-imagestransform" title="Permanent link">&para;</a></h2>
+<h3 id="las-cinco-operaciones-de-imagen">Las cinco operaciones de imagen<a class="headerlink" href="#las-cinco-operaciones-de-imagen" title="Permanent link">&para;</a></h3>
+<p>Este transformer es el más complejo en cuanto a superficie de entrada. Recibe cinco listas independientes porque las operaciones de imagen en Shopify son muy distintas entre sí:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="na">[Input]</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;</span><span class="n">IProductImage</span><span class="o">&gt;</span><span class="w">                              </span><span class="n">ProductsImagesCreate</span><span class="w">   </span><span class="c1">// imágenes nuevas</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="na">[Input]</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;</span><span class="n">IProductImage</span><span class="o">&gt;</span><span class="w">                              </span><span class="n">ProductsImagesUpdate</span><span class="w">   </span><span class="c1">// imágenes que cambiaron de URL</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="na">[Input]</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w">                                     </span><span class="n">ProductsImagesDelete</span><span class="w">   </span><span class="c1">// IDs de imágenes a borrar</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="na">[Input]</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;</span><span class="p">(</span><span class="n">ProductOriginId</span><span class="p">,</span><span class="w"> </span><span class="n">VariantOriginId</span><span class="p">,</span><span class="w"> </span><span class="n">ImageOriginId</span><span class="p">)</span><span class="o">&gt;</span><span class="w"> </span><span class="n">AppendMedias</span><span class="w">   </span><span class="c1">// asociar imagen a variante</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="na">[Input]</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;</span><span class="p">(</span><span class="n">ProductOriginId</span><span class="p">,</span><span class="w"> </span><span class="n">VariantOriginId</span><span class="p">,</span><span class="w"> </span><span class="n">ImageOriginId</span><span class="p">)</span><span class="o">&gt;</span><span class="w"> </span><span class="n">DetachMedias</span><span class="w">   </span><span class="c1">// desasociar imagen de variante</span>
+</span></code></pre></div>
+<h3 id="resolucion-de-ids-por-operacion">Resolución de IDs por operación<a class="headerlink" href="#resolucion-de-ids-por-operacion" title="Permanent link">&para;</a></h3>
+<p>Cada operación requiere resolver IDs distintos:</p>
+<table>
+<thead>
+<tr>
+<th>Operación</th>
+<th>IDs que necesita resolver</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Crear</td>
+<td><code>ProductOriginId → ProductShopifyId</code> (para saber en qué producto crear la imagen)</td>
+</tr>
+<tr>
+<td>Actualizar</td>
+<td><code>ImageOriginId → MediaShopifyId</code> (para saber qué media de Shopify actualizar)</td>
+</tr>
+<tr>
+<td>Borrar</td>
+<td>Recibe directamente los DestinoIds — no hay que resolver nada</td>
+</tr>
+<tr>
+<td>Asociar</td>
+<td><code>ProductOriginId → ProductShopifyId</code> + <code>VariantOriginId → VariantShopifyId</code></td>
+</tr>
+<tr>
+<td>Desasociar</td>
+<td><code>ProductOriginId → ProductShopifyId</code> + <code>VariantOriginId → VariantShopifyId</code> + <code>ImageOriginId → MediaShopifyId</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="logica-de-creacion">Lógica de creación<a class="headerlink" href="#logica-de-creacion" title="Permanent link">&para;</a></h3>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kt">var</span><span class="w"> </span><span class="n">create</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_productsImagesCreate</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="p">.</span><span class="n">GroupBy</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">ProductOriginId</span><span class="p">)</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="p">.</span><span class="n">ToDictionary</span><span class="p">(</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">productsOriginIdToShopifyId</span><span class="p">[</span><span class="n">x</span><span class="p">.</span><span class="n">Key</span><span class="p">]</span><span class="o">!</span><span class="p">,</span><span class="w">      </span><span class="c1">// clave: ShopifyId del producto</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">Select</span><span class="p">((</span><span class="n">productImage</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">OriginInput</span><span class="o">&lt;</span><span class="n">IProductMedia</span><span class="o">&gt;</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">            </span><span class="n">OriginId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">productImage</span><span class="p">.</span><span class="n">ImageOriginId</span><span class="p">,</span><span class="w">     </span><span class="c1">// URL = identificador de la imagen</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">            </span><span class="n">Input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ProductMediaUrl</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">                </span><span class="n">Url</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">productImage</span><span class="p">.</span><span class="n">ImageOriginId</span><span class="p">,</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">                </span><span class="n">MediaContentType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MediaContentType</span><span class="p">.</span><span class="n">IMAGE</span><span class="p">,</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">                </span><span class="n">Position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">uint</span><span class="p">)</span><span class="n">i</span>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">        </span><span class="p">}).</span><span class="n">ToList</span><span class="p">());</span>
+</span></code></pre></div>
+<p>Las imágenes se crean como <code>ProductMediaUrl</code>, indicando la URL de origen y el tipo de contenido. La <code>Position</code> se asigna según el orden dentro del grupo de imágenes de ese producto.</p>
+<h3 id="logica-de-asociar-y-desasociar-appendmedias-detachmedias">Lógica de asociar y desasociar (<code>AppendMedias</code> / <code>DetachMedias</code>)<a class="headerlink" href="#logica-de-asociar-y-desasociar-appendmedias-detachmedias" title="Permanent link">&para;</a></h3>
+<p>Las operaciones de asociar y desasociar vinculan o desvinculan una imagen de las variantes específicas que la muestran. En Shopify B2B esto es importante: cada variante puede tener su propia galería de imágenes.</p>
+<p>Para la desasociación, además del ID del producto y de la variante, hay que saber el ID de la media en Shopify (porque se desasocia por ID, no por URL).</p>
+<p>Si alguno de los IDs no puede resolverse (el producto, la variante o la media no existen en la BD), la operación se omite con un log de warning. Nunca se lanza excepción por esto.</p>
+<h3 id="que-produce_2">Qué produce<a class="headerlink" href="#que-produce_2" title="Permanent link">&para;</a></h3>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">ProductsMediasLoaderInput</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="p">{</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="n">CreateMedias</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">shopifyProductId</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">OriginInput</span><span class="o">&lt;</span><span class="n">IProductMedia</span><span class="o">&gt;&gt;&gt;</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="n">UpdateMedias</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">IProductMedia</span><span class="o">&gt;</span><span class="w">                       </span><span class="c1">// lista plana, con Id ya resuelto</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="n">Delete</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="kt">string</span><span class="p">[]</span><span class="w">                                   </span><span class="c1">// DestinoIds de medias a borrar</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="n">AppendFiles</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="w">                                       </span><span class="c1">// no se usa (para subir ficheros)</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">    </span><span class="n">AppendMedias</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">shopifyProductId</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="p">(</span><span class="n">variantId</span><span class="p">,</span><span class="w"> </span><span class="n">mediaId</span><span class="p">)</span><span class="o">&gt;&gt;</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">    </span><span class="n">DetachMedias</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">shopifyProductId</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="p">(</span><span class="n">variantId</span><span class="p">,</span><span class="w"> </span><span class="n">mediaId</span><span class="p">)</span><span class="o">&gt;&gt;</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">    </span><span class="n">PublishProductsWithMedias</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="p">}</span>
+</span></code></pre></div>
+<hr />
+<h2 id="transformer-6-clientes-b2b-customertransform">Transformer 6 — Clientes B2B (<code>CustomerTransform</code>)<a class="headerlink" href="#transformer-6-clientes-b2b-customertransform" title="Permanent link">&para;</a></h2>
+<h3 id="el-perfil-customersmappingprofile">El perfil <code>CustomersMappingProfile</code><a class="headerlink" href="#el-perfil-customersmappingprofile" title="Permanent link">&para;</a></h3>
+<p>Define cuatro mapeos:</p>
+<h4 id="clientresponsemodel-companyinput"><code>ClientResponseModel → CompanyInput</code><a class="headerlink" href="#clientresponsemodel-companyinput" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Campo Shopify</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ExternalId</code></td>
+<td><code>Company.CodCom</code> (el código de cliente del ERP)</td>
+</tr>
+<tr>
+<td><code>Name</code></td>
+<td><code>Company.Name</code> (razón social)</td>
+</tr>
+</tbody>
+</table>
+<p>Luego, fuera del mapper, se añaden metafields:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1">// Añadir metafield zona_fiscal</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">metafields</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MetafieldInput</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="p">{</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="n">Namespace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;upng&quot;</span><span class="p">,</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span><span class="n">Key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;zona_fiscal&quot;</span><span class="p">,</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="n">Value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">company</span><span class="p">.</span><span class="n">GetFiscalZone</span><span class="p">()</span><span class="w">  </span><span class="c1">// = ZonaFiscal.zonaFiscal</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="p">});</span>
+</span></code></pre></div>
+<h4 id="locationresponsemodel-companylocationinput"><code>LocationResponseModel → CompanyLocationInput</code><a class="headerlink" href="#locationresponsemodel-companylocationinput" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Campo Shopify</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ExternalId</code></td>
+<td><code>ILocation.OriginId</code> = <code>"{CodCom}#{Codadr}"</code></td>
+</tr>
+<tr>
+<td><code>Name</code></td>
+<td><code>Contact</code> (nombre del contacto de esa dirección)</td>
+</tr>
+<tr>
+<td><code>TaxRegistrationId</code></td>
+<td><code>Crn</code> (número de IVA copiado del cliente padre)</td>
+</tr>
+<tr>
+<td><code>ShippingAddress</code></td>
+<td><code>BuildAddress(location)</code></td>
+</tr>
+<tr>
+<td><code>BillingAddress</code></td>
+<td><code>BuildAddress(location)</code> (misma dirección para envío y facturación)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="locationresponsemodel-companylocationupdateinput"><code>LocationResponseModel → CompanyLocationUpdateInput</code><a class="headerlink" href="#locationresponsemodel-companylocationupdateinput" title="Permanent link">&para;</a></h4>
+<p>Para actualización, añade campos adicionales:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Phone</code></td>
+<td>Teléfono de la localización (null si vacío)</td>
+</tr>
+<tr>
+<td><code>BuyerExperienceConfiguration.EditableShippingAddress</code></td>
+<td><code>true</code> (los clientes B2B pueden editar su dirección de envío)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="locationresponsemodel-companycontactinput"><code>LocationResponseModel → CompanyContactInput</code><a class="headerlink" href="#locationresponsemodel-companycontactinput" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Campo Shopify</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Email</code></td>
+<td><code>Email</code> del location (este es el identificador único del contacto)</td>
+</tr>
+<tr>
+<td><code>Phone</code></td>
+<td>Teléfono (null si vacío)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="buildaddress-la-conversion-de-direccion"><a href="../05c-transformers-metodos/#3-buildaddress-conversion-de-direccion"><code>BuildAddress</code></a> — la conversión de dirección<a class="headerlink" href="#buildaddress-la-conversion-de-direccion" title="Permanent link">&para;</a></h3>
+<p>La conversión de dirección es más compleja que un simple mapeo porque Shopify requiere códigos ISO estrictos, y el ERP puede enviar valores en formatos distintos.</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">CompanyAddressInput</span><span class="w"> </span><span class="nf">BuildAddress</span><span class="p">(</span><span class="n">ILogger</span><span class="w"> </span><span class="n">logger</span><span class="p">,</span><span class="w"> </span><span class="n">LocationResponseModel</span><span class="w"> </span><span class="n">location</span><span class="p">)</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="p">{</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="c1">// 1. Parsear el código de país a CountryCode enum de Shopify</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="c1">//    Si el ERP manda &quot;ES&quot;, Shopify acepta CountryCode.ES</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="c1">//    Si falla el parseo, se loguea error y se pone null</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span><span class="n">CountryCode</span><span class="o">?</span><span class="w"> </span><span class="n">countryCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Enum</span><span class="p">.</span><span class="n">TryParse</span><span class="o">&lt;</span><span class="n">CountryCode</span><span class="o">&gt;</span><span class="p">(</span><span class="n">location</span><span class="p">.</span><span class="n">Country</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="k">value</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">        </span><span class="o">?</span><span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">    </span><span class="c1">// 2. Resolver el código de provincia mediante tabla de traducción</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">    </span><span class="c1">//    ZoneCodes.TryGetZoneCode(&quot;ES&quot;, &quot;MAD&quot;) → &quot;ES-MD&quot; (formato ISO 3166-2)</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">    </span><span class="kt">string?</span><span class="w"> </span><span class="n">zoneCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ZoneCodes</span><span class="p">.</span><span class="n">TryGetZoneCode</span><span class="p">(</span><span class="n">countryCode</span><span class="p">.</span><span class="n">ToString</span><span class="p">(),</span><span class="w"> </span><span class="n">location</span><span class="p">.</span><span class="n">ZoneCode</span><span class="p">);</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CompanyAddressInput</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="w">        </span><span class="n">Address1</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">location</span><span class="p">.</span><span class="n">Address1</span><span class="p">,</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="w">        </span><span class="n">Address2</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">location</span><span class="p">.</span><span class="n">Address2</span><span class="p">,</span>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="w">        </span><span class="n">City</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">location</span><span class="p">.</span><span class="n">City</span><span class="p">,</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="w">        </span><span class="n">Zip</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="n">location</span><span class="p">.</span><span class="n">Zip</span><span class="p">,</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="w">        </span><span class="n">Recipient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">location</span><span class="p">.</span><span class="n">Contact</span><span class="p">,</span><span class="w">       </span><span class="c1">// nombre del destinatario</span>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="w">        </span><span class="n">Phone</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">location</span><span class="p">.</span><span class="n">Phone</span><span class="p">,</span>
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a><span class="w">        </span><span class="n">ZoneCode</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">zoneCode</span><span class="p">,</span><span class="w">              </span><span class="c1">// código de provincia en formato ISO</span>
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="w">        </span><span class="n">CountryCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">countryCode</span><span class="w">          </span><span class="c1">// código de país en formato ISO</span>
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a><span class="w">    </span><span class="p">};</span>
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>El <a href="../05c-transformers-metodos/#4-zonecodestrygetzonecode-tabla-de-provincias-iso"><code>ZoneCodes.TryGetZoneCode</code></a> es una utilidad que traduce los códigos de provincia del ERP (formato interno de Sage X3) al formato ISO 3166-2 que requiere Shopify. Si no encuentra la traducción, se loguea un error y la dirección se crea sin código de provincia.</p>
+<h3 id="las-tarifas-de-precios-por-defecto">Las tarifas de precios por defecto<a class="headerlink" href="#las-tarifas-de-precios-por-defecto" title="Permanent link">&para;</a></h3>
+<p>En la creación de nuevas sucursales (locations), el transformer añade automáticamente la tarifa de precios por defecto configurada en <code>appsettings.json</code>:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">// Para cada location nueva:</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">location</span><span class="p">.</span><span class="n">DefaultPriceListId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">config</span><span class="p">[</span><span class="s">&quot;ShopifyCredentials:DefaultPriceListId&quot;</span><span class="p">];</span>
+</span></code></pre></div>
+<h3 id="el-external_id-del-contacto">El <code>external_id</code> del contacto<a class="headerlink" href="#el-external_id-del-contacto" title="Permanent link">&para;</a></h3>
+<p>Cuando se crea o actualiza un contacto (CompanyContact), el transformer añade un metafield <code>external_id</code> que almacena el email del contacto. Esto permite al workflow de pedidos encontrar el contacto correcto cuando llega un nuevo pedido.</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">contactInput</span><span class="p">.</span><span class="n">Metafields</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MetafieldInput</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="p">{</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="n">Namespace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;upng&quot;</span><span class="p">,</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="n">Key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;external_id&quot;</span><span class="p">,</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="n">Value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">customer</span><span class="p">.</span><span class="n">OriginId</span><span class="w">  </span><span class="c1">// = email del contacto</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="p">});</span>
+</span></code></pre></div>
+<hr />
+<h2 id="transformer-7-pedidos-ordersmappingprofile">Transformer 7 — Pedidos (<code>OrdersMappingProfile</code>)<a class="headerlink" href="#transformer-7-pedidos-ordersmappingprofile" title="Permanent link">&para;</a></h2>
+<h3 id="el-mapeo-order-orderheadermodel">El mapeo <code>Order → OrderHeaderModel</code><a class="headerlink" href="#el-mapeo-order-orderheadermodel" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Campo del ERP</th>
+<th>Lógica de mapeo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Id</code></td>
+<td><code>order.Name</code> → ej: <code>"#SS4185"</code> — el número de pedido legible de Shopify se convierte en el ID del documento en el ERP</td>
+</tr>
+<tr>
+<td><code>ShopifyId</code></td>
+<td><code>order.Id</code> → el ID de GraphQL completo</td>
+</tr>
+<tr>
+<td><code>CreatedAt</code></td>
+<td><code>order.CreatedAt</code> formateado como <code>"yyyy-MM-ddTHH:mm:ssK"</code></td>
+</tr>
+<tr>
+<td><code>EjercicioDocumento</code></td>
+<td>Año de <code>CreatedAt</code> como entero → ej: <code>2026</code></td>
+</tr>
+<tr>
+<td><code>CustomerId</code></td>
+<td>Se establece antes del mapeo: <code>company.ExternalId</code> = <code>CodCom</code> del cliente en el ERP</td>
+</tr>
+<tr>
+<td><code>ShippingAddressId</code></td>
+<td><code>location.ExternalId</code> con la parte antes del <code>#</code> eliminada: <code>"C0001#DIR01"</code> → <code>"DIR01"</code></td>
+</tr>
+<tr>
+<td><code>PaymentTerms</code></td>
+<td><code>order.PaymentGatewayNames</code> unidos con coma</td>
+</tr>
+<tr>
+<td><code>ShippingLineCode</code></td>
+<td>Código de la primera línea de envío</td>
+</tr>
+<tr>
+<td><code>ShippingLinePrice</code></td>
+<td>Precio de envío sin IVA (coste de entrega)</td>
+</tr>
+<tr>
+<td><code>SubtotalPrice</code></td>
+<td><code>SubtotalPriceSet.ShopMoney.Amount</code></td>
+</tr>
+<tr>
+<td><code>TaxLine</code></td>
+<td><code>TotalTaxSet.ShopMoney.Amount</code> (suma de todos los impuestos)</td>
+</tr>
+<tr>
+<td><code>TotalPrice</code></td>
+<td><code>TotalPriceSet.ShopMoney.Amount</code></td>
+</tr>
+<tr>
+<td><code>Note</code></td>
+<td>Notas del pedido en Shopify</td>
+</tr>
+<tr>
+<td><code>PoNumber</code></td>
+<td>Número de orden de compra del cliente</td>
+</tr>
+<tr>
+<td><code>ShippingAddress</code></td>
+<td>Solo se rellena si es dropshipping (ver más abajo)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="la-logica-de-descuentos-header">La lógica de descuentos (header)<a class="headerlink" href="#la-logica-de-descuentos-header" title="Permanent link">&para;</a></h3>
+<p>Los descuentos se calculan en <a href="../05c-transformers-metodos/#10-ordersmappingprofile-logica-de-descuentos"><code>SetHeaderDiscountFields</code></a>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>TotalDiscount     = suma de descuentos de importe fijo (DiscountApplicationAllocationMethod.ACROSS + valor fijo)
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>TotalDiscountPrcnt = suma de descuentos de porcentaje (DiscountApplicationAllocationMethod.ACROSS + PricingPercentageValue)
+</span></code></pre></div>
+<p>Si no hay descuentos de porcentaje, <code>TotalDiscountPrcnt = null</code>. Si no hay descuentos de importe fijo, <code>TotalDiscount = 0</code>.</p>
+<h3 id="el-mapeo-lineitem-orderlinemodel">El mapeo <code>LineItem → OrderLineModel</code><a class="headerlink" href="#el-mapeo-lineitem-orderlinemodel" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Campo del ERP</th>
+<th>Lógica de mapeo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ProductId</code></td>
+<td><code>lineItem.Sku</code> → el SKU de la variante se convierte en la referencia del artículo en el ERP</td>
+</tr>
+<tr>
+<td><code>Title</code></td>
+<td><code>lineItem.Name</code></td>
+</tr>
+<tr>
+<td><code>Quantity</code></td>
+<td><code>lineItem.Quantity</code></td>
+</tr>
+<tr>
+<td><code>Price</code></td>
+<td>Precio unitario sin descuento (<code>GetLineItemPrice</code>)</td>
+</tr>
+<tr>
+<td><code>TotalPrice</code></td>
+<td><code>DiscountedTotalSet.ShopMoney.Amount</code> (total de línea ya con descuentos)</td>
+</tr>
+<tr>
+<td><code>TotalDiscount</code></td>
+<td>Descuento de importe fijo de esa línea</td>
+</tr>
+<tr>
+<td><code>TotalDiscountPrcnt</code></td>
+<td>Descuento de porcentaje de esa línea (null si no hay)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="la-deteccion-de-dropshipping">La detección de dropshipping<a class="headerlink" href="#la-deteccion-de-dropshipping" title="Permanent link">&para;</a></h3>
+<p>Antes del mapeo se ejecuta <a href="../05c-transformers-metodos/#11-ordersmappingprofile-isdropshipping-y-normalizacion"><code>IsDropshipping(order)</code></a>:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">IsDropshipping</span><span class="p">(</span><span class="n">Order</span><span class="w"> </span><span class="n">order</span><span class="p">)</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="p">{</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">orderAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">order</span><span class="p">.</span><span class="n">ShippingAddress</span><span class="p">;</span><span class="w">            </span><span class="c1">// dirección de envío del pedido</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">locationAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">purchasingCompany</span><span class="o">?.</span><span class="n">Location</span><span class="o">?.</span><span class="n">ShippingAddress</span><span class="p">;</span><span class="w">  </span><span class="c1">// dirección registrada de la sucursal</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">    </span><span class="c1">// Si las dos direcciones son iguales → no es dropshipping → ShippingAddress = null en el ERP</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">    </span><span class="c1">// Si son distintas → es dropshipping → se incluye la dirección del pedido para que el ERP la gestione</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">!</span><span class="n">Same</span><span class="p">(</span><span class="n">orderAddress</span><span class="p">.</span><span class="n">Address1</span><span class="p">,</span><span class="w"> </span><span class="n">locationAddress</span><span class="p">.</span><span class="n">Address1</span><span class="p">)</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">        </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">Same</span><span class="p">(</span><span class="n">orderAddress</span><span class="p">.</span><span class="n">Zip</span><span class="p">,</span><span class="w"> </span><span class="n">locationAddress</span><span class="p">.</span><span class="n">Zip</span><span class="p">)</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">        </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">Same</span><span class="p">(</span><span class="n">orderAddress</span><span class="p">.</span><span class="n">Province</span><span class="p">,</span><span class="w"> </span><span class="n">locationAddress</span><span class="p">.</span><span class="n">Province</span><span class="p">)</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">        </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">Same</span><span class="p">(</span><span class="n">orderAddress</span><span class="p">.</span><span class="n">Country</span><span class="p">,</span><span class="w"> </span><span class="n">locationAddress</span><span class="p">.</span><span class="n">Country</span><span class="p">);</span>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>La comparación es insensible a mayúsculas y a espacios al inicio/final. Solo si la dirección de envío del pedido difiere de la registrada para la sucursal, se incluye <code>ShippingAddress</code> en el modelo del ERP. En caso contrario, el campo va a null (el ERP ya sabe la dirección de la sucursal).</p>
+<hr />
+<h2 id="transformer-8-tarifas-de-precio-pricelisttransform">Transformer 8 — Tarifas de precio (<code>PriceListTransform</code>)<a class="headerlink" href="#transformer-8-tarifas-de-precio-pricelisttransform" title="Permanent link">&para;</a></h2>
+<h3 id="el-escenario-de-tarifas-b2b">El escenario de tarifas B2B<a class="headerlink" href="#el-escenario-de-tarifas-b2b" title="Permanent link">&para;</a></h3>
+<p>En Shopify B2B, una <code>PriceList</code> es un catálogo de precios específico que se asigna a una sucursal. Una sucursal puede tener una tarifa con precios específicos para cada variante, distintos del precio normal del catálogo.</p>
+<p>El transformer gestiona tres tipos de cambios en una misma pasada:</p>
+<h4 id="creacion-de-tarifas-_tarifascrear">Creación de tarifas (<code>_tarifasCrear</code>)<a class="headerlink" href="#creacion-de-tarifas-_tarifascrear" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Para cada tarifa nueva:
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>  1. Añadir la tarifa al diccionario priceListsToCreate {OriginId → CurrencyCode}
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>  2. Para cada precio de la tarifa:
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>     · Resolver VariantOriginId → VariantShopifyId (BD de transacciones)
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>     · Generar PriceListPriceInput {VariantId, Price, CompareAtPrice}
+</span></code></pre></div>
+<h4 id="actualizacion-de-tarifas-_tarifaseditar">Actualización de tarifas (<code>_tarifasEditar</code>)<a class="headerlink" href="#actualizacion-de-tarifas-_tarifaseditar" title="Permanent link">&para;</a></h4>
+<p>Más complejo que la creación. Se divide en cuatro sub-operaciones:</p>
+<ol>
+<li><strong>ExcludeProducts</strong>: productos que estaban en la tarifa (según la BD) pero que ya no vienen del ERP → excluirlos de la tarifa en Shopify.</li>
+<li><strong>SetProductVariantsFixedPrices</strong>: establecer precios para variantes que llegan del ERP.</li>
+<li><strong>ResetProductVariantsFixedPrices</strong>: variantes que estaban con precio en la BD pero que ya no llegan del ERP → resetear su precio al predeterminado del catálogo.</li>
+<li>Las reglas de cantidad (<code>QuantityRules</code>, <code>QuantityPriceBreaks</code>) están preparadas pero comentadas.</li>
+</ol>
+<h4 id="eliminacion-de-tarifas-_tarifaseliminar">Eliminación de tarifas (<code>_tarifasEliminar</code>)<a class="headerlink" href="#eliminacion-de-tarifas-_tarifaseliminar" title="Permanent link">&para;</a></h4>
+<p>Solo pasa los <code>DestinoId</code> directamente al output, sin resolución de IDs adicional.</p>
+<hr />
+<h2 id="transformer-9-traducciones-translationstransform">Transformer 9 — Traducciones (<code>TranslationsTransform</code>)<a class="headerlink" href="#transformer-9-traducciones-translationstransform" title="Permanent link">&para;</a></h2>
+<h3 id="los-dos-tipos-de-contenido-que-transforma">Los dos tipos de contenido que transforma<a class="headerlink" href="#los-dos-tipos-de-contenido-que-transforma" title="Permanent link">&para;</a></h3>
+<p>El transformer maneja dos pipelines independientes:</p>
+<h4 id="traducciones-de-productos-itranslatableproduct">Traducciones de productos (<code>ITranslatableProduct</code>)<a class="headerlink" href="#traducciones-de-productos-itranslatableproduct" title="Permanent link">&para;</a></h4>
+<p>Para cada producto con contenido traducible, llama a <code>product.GetTranslations()</code> que devuelve un diccionario <code>{idioma → ProductTranslateModel}</code>. Luego resuelve el <code>OriginId</code> al <code>ShopifyId</code> del producto y construye el output.</p>
+<h4 id="traducciones-de-metafields-itranslatable">Traducciones de metafields (<code>ITranslatable</code>)<a class="headerlink" href="#traducciones-de-metafields-itranslatable" title="Permanent link">&para;</a></h4>
+<p>Para el resto de entidades (variantes, companies, locations, contacts), llama a <code>item.GetTranslatableMetafields()</code> que devuelve <code>{locale → List&lt;MetafieldInput&gt;}</code>.</p>
+<p>Cada tipo de entidad requiere una consulta diferente a la BD:</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Método de la BD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TranslationType.Product</code></td>
+<td><code>transactionsService.Products.FindShopifyIds(...)</code></td>
+</tr>
+<tr>
+<td><code>TranslationType.Variant</code></td>
+<td><code>transactionsService.Products.Variants.FindShopifyIds(...)</code></td>
+</tr>
+<tr>
+<td><code>TranslationType.Location</code></td>
+<td><code>transactionsService.Companies.Locations.FindShopifyIds(...)</code></td>
+</tr>
+<tr>
+<td><code>TranslationType.Company</code></td>
+<td><code>transactionsService.Companies.FindShopifyIds(...)</code></td>
+</tr>
+<tr>
+<td><code>TranslationType.Customer</code></td>
+<td><code>transactionsService.Companies.Customers.FindShopifyIds(...)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="que-produce_3">Qué produce<a class="headerlink" href="#que-produce_3" title="Permanent link">&para;</a></h3>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">TranslationsInput</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="p">{</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">    </span><span class="n">ProductsToTranslate</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">shopifyProductId</span><span class="p">,</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">locale</span><span class="p">,</span><span class="w"> </span><span class="n">ProductTranslateModel</span><span class="o">&gt;&gt;</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="n">MetafieldsToTranslate</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">shopifyEntityId</span><span class="p">,</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">locale</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MetafieldInput</span><span class="o">&gt;&gt;&gt;</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<hr />
+<h2 id="resumen-de-la-capa-de-transformacion">Resumen de la capa de transformación<a class="headerlink" href="#resumen-de-la-capa-de-transformacion" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Origen (modelos internos)            Transformer                    Destino (inputs de Shopify)
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>───────────────────────────────────  ─────────────────────────────  ──────────────────────────────────
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>Product + Variant (del PIM)     →    ProductsCreateTransform    →   ProductCreateInput
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>                                                                      + ProductVariantsBulkInput
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>                                                                      + 25+ metafields de producto
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>                                                                      + 20+ metafields de variante
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>Product + Variant (del PIM)     →    ProductsUpdateTransform    →   ProductUpdateInput
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>                                                                      + ProductVariantsBulkInput (con galería)
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>                                                                      + archive (ARCHIVED + nuevo handle)
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>                                                                      + rebuild options
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>OriginIds                       →    ProductsDeleteTransform    →   DestinoIds agrupados por producto
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>
+</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>Stock {ean, qty}                →    StockTransform             →   SyncStockInput {variantId, qty, locationId}
+</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a>
+</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>IProductImage × 5 operaciones   →    ImagesTransform            →   ProductsMediasLoaderInput
+</span><span id="__span-21-18"><a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>
+</span><span id="__span-21-19"><a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a>ClientResponseModel/Location    →    CustomerTransform          →   CompanyInput
+</span><span id="__span-21-20"><a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a>                                     + CustomersMappingProfile      + CompanyLocationInput
+</span><span id="__span-21-21"><a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a>                                                                      + CompanyContactInput
+</span><span id="__span-21-22"><a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a>                                                                      + metafields (zona_fiscal, external_id)
+</span><span id="__span-21-23"><a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a>
+</span><span id="__span-21-24"><a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a>Order de Shopify                →    OrderTransform             →   OrderModel
+</span><span id="__span-21-25"><a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a>                                     + OrdersMappingProfile         + OrderHeaderModel (formato ERP)
+</span><span id="__span-21-26"><a id="__codelineno-21-26" name="__codelineno-21-26" href="#__codelineno-21-26"></a>                                                                      + OrderLineModel × n líneas
+</span><span id="__span-21-27"><a id="__codelineno-21-27" name="__codelineno-21-27" href="#__codelineno-21-27"></a>                                                                      + detección dropshipping
+</span><span id="__span-21-28"><a id="__codelineno-21-28" name="__codelineno-21-28" href="#__codelineno-21-28"></a>
+</span><span id="__span-21-29"><a id="__codelineno-21-29" name="__codelineno-21-29" href="#__codelineno-21-29"></a>IPriceList                      →    PriceListTransform         →   PriceListsB2BLoaderInput
+</span><span id="__span-21-30"><a id="__codelineno-21-30" name="__codelineno-21-30" href="#__codelineno-21-30"></a>                                                                      (precios, exclusiones, resets)
+</span><span id="__span-21-31"><a id="__codelineno-21-31" name="__codelineno-21-31" href="#__codelineno-21-31"></a>
+</span><span id="__span-21-32"><a id="__codelineno-21-32" name="__codelineno-21-32" href="#__codelineno-21-32"></a>ITranslatable                   →    TranslationsTransform      →   TranslationsInput
+</span><span id="__span-21-33"><a id="__codelineno-21-33" name="__codelineno-21-33" href="#__codelineno-21-33"></a>                                                                      (traducciones por idioma)
+</span></code></pre></div>
+<hr />
+<h2 id="documentos-relacionados">Documentos relacionados<a class="headerlink" href="#documentos-relacionados" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Documento</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../05-transformers/"><code>05-transformers.md</code></a></td>
+<td>Visión general de los 9 transformers y el papel de AutoMapper</td>
+</tr>
+<tr>
+<td><a href="../05c-transformers-metodos/"><code>05c-transformers-metodos.md</code></a></td>
+<td>Código fuente completo y explicación de cada método y función</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../05-transformers/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Visión general">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Visión general
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../05c-transformers-metodos/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Métodos y funciones">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Métodos y funciones
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.instant.progress", "navigation.instant.prefetch", "navigation.instant.preview", "navigation.indexes", "navigation.path", "navigation.tracking", "navigation.prune", "navigation.top", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.code.select", "content.action.edit", "content.action.view", "content.tabs.link", "content.tooltips", "header.autohide"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../assets/javascripts/reactflow/bundle.reactflow.js" defer></script>
+      
+        <script src="../assets/javascripts/mermaid-zoom.js" defer></script>
+      
+    
+  </body>
+</html>

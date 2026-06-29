@@ -1,0 +1,84 @@
+/* Ampliar área de contenido en páginas de referencia largas (métodos, detalle) */
+.md-grid {
+  max-width: 1440px;
+}
+
+/* Mejorar visibilidad de los marcadores de anotación de código */
+.md-annotation__index {
+  font-size: 0.75em;
+  vertical-align: middle;
+}
+
+/* Reducir el peso visual de los números de línea en bloques de código */
+.md-code__content .linenos {
+  opacity: 0.45;
+  user-select: none;
+}
+
+/* Asegurar que las tablas de referencia anchas no rompan el layout */
+.md-typeset table:not([class]) {
+  display: block;
+  overflow-x: auto;
+}
+
+/* ── Mermaid zoom controls ───────────────────────────────────────────────── */
+.mermaid-zoom-bar {
+  display: flex;
+  gap: 4px;
+  justify-content: flex-end;
+  margin-bottom: 6px;
+}
+
+.mermaid-zoom-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--md-default-fg-color--lighter);
+  border-radius: 4px;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  font-size: 1.05rem;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.mermaid-zoom-btn:hover {
+  background: var(--md-accent-fg-color--transparent);
+  border-color: var(--md-accent-fg-color);
+  color: var(--md-accent-fg-color);
+}
+
+.mermaid-zoom-btn:active {
+  transform: translateY(1px);
+}
+
+/* Scrollable viewport that lets a zoomed-in diagram be panned. */
+.mzoom-viewport {
+  overflow: auto;
+  max-width: 100%;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  /* Cap height so a large zoom scrolls inside the box instead of
+     stretching the whole page. */
+  max-height: 80vh;
+}
+
+/* Reserves the scaled footprint so scrollbars appear when zoomed. */
+.mzoom-sizer {
+  position: relative;
+}
+
+/* ── ReactFlow clickable nodes ───────────────────────────────────────────── */
+/* Nodes that link to a documentation section get a pointer cursor and a
+   highlighted outline on hover so users know they can be clicked. */
+.react-flow__node.rf-clickable {
+  cursor: pointer;
+}
+
+.react-flow__node.rf-clickable:hover {
+  box-shadow: 0 0 0 2px var(--md-accent-fg-color);
+}

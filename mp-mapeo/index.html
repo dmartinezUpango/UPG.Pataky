@@ -1,0 +1,2007 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación técnica del sistema de integración ERP-PIM-Shopify">
+      
+      
+      
+      
+        <link rel="prev" href="../mp-wf-precios/">
+      
+      
+        <link rel="next" href="../mp-modelos/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Mapeo y transformación - UPG.Pataky — Guía de Estudio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mapeo-y-transformacion" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="UPG.Pataky — Guía de Estudio" class="md-header__button md-logo" aria-label="UPG.Pataky — Guía de Estudio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UPG.Pataky — Guía de Estudio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mapeo y transformación
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartir" aria-label="Compartir" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01-arquitectura-etl/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Arquitectura
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../wf-productos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Procesos
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../04-extractors/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Pipeline ETL
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../06-modelos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Sistema
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../mp-index/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Marketplaces
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="UPG.Pataky — Guía de Estudio" class="md-nav__button md-logo" aria-label="UPG.Pataky — Guía de Estudio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UPG.Pataky — Guía de Estudio
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../01-arquitectura-etl/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../wf-productos/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procesos
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../04-extractors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipeline ETL
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../06-modelos/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sistema
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketplaces
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Marketplaces
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mp-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visión general
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mp-arquitectura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura del conector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../mp-ewheel/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Servicios
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../mp-wf-stock/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procesos (Workers)
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mapeo y transformación
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mapeo y transformación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En esta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En esta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Índice
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-perfil-automapper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El perfil AutoMapper
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventario-y-precios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Inventario y precios
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pedidos-sforder-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Pedidos: <code>SFOrder → Order</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pedidos: SFOrder → Order">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#traduccion-de-estados-getorderstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Traducción de estados (<code>GetOrderStatus</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parche-miravia-gastos-de-envio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Parche Miravia (gastos de envío)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-transportista-getcarriercodefromorder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Código de transportista (<code>GetCarrierCodeFromOrder</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pedidos-order-ewheelorder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Pedidos: <code>Order → EwheelOrder</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapeo-de-canales-channel-marketplace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Mapeo de canales (channel → marketplace)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapeo-de-paises-marketplace-pais-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Mapeo de países (marketplace + país → cliente)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mapeo de países (marketplace + país → cliente)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resolucion-completa-del-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Resolución completa del cliente
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transliteracion-cirilica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Transliteración cirílica
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codigo-de-nacion-de-sage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Código de nación de Sage
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentos-relacionados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Documentos relacionados
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mp-modelos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelos de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mp-configuracion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En esta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En esta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Índice
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-perfil-automapper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El perfil AutoMapper
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventario-y-precios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Inventario y precios
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pedidos-sforder-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Pedidos: <code>SFOrder → Order</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pedidos: SFOrder → Order">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#traduccion-de-estados-getorderstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Traducción de estados (<code>GetOrderStatus</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parche-miravia-gastos-de-envio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Parche Miravia (gastos de envío)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-transportista-getcarriercodefromorder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Código de transportista (<code>GetCarrierCodeFromOrder</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pedidos-order-ewheelorder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Pedidos: <code>Order → EwheelOrder</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapeo-de-canales-channel-marketplace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Mapeo de canales (channel → marketplace)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapeo-de-paises-marketplace-pais-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Mapeo de países (marketplace + país → cliente)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mapeo de países (marketplace + país → cliente)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resolucion-completa-del-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Resolución completa del cliente
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transliteracion-cirilica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Transliteración cirílica
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codigo-de-nacion-de-sage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Código de nación de Sage
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentos-relacionados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Documentos relacionados
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navegación" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../mp-index/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Marketplaces
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:automapper" class="md-tag">AutoMapper</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:mapeo" class="md-tag">Mapeo</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:marketplaces" class="md-tag">Marketplaces</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:shoppingfeed" class="md-tag">ShoppingFeed</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:ewheel" class="md-tag">eWheel</a>
+      
+    
+  </nav>
+
+
+
+<h1 id="mapeo-y-transformacion">Mapeo y transformación<a class="headerlink" href="#mapeo-y-transformacion" title="Permanent link">&para;</a></h1>
+<p>Este documento reúne toda la lógica de <strong>traducción de datos</strong> entre los tres formatos del conector: los modelos de la API de ShoppingFeed (<code>SF*</code>), los modelos de dominio (<code>Order</code>, <code>Inventory</code>, <code>ProductPrice</code>) y los modelos del ERP (<code>EwheelOrder</code>). Casi todo vive en <code>AutoMapperProfileShoppingFeed</code> y en dos clases de configuración de mapeo.</p>
+<hr />
+<h2 id="indice">Índice<a class="headerlink" href="#indice" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#el-perfil-automapper">El perfil AutoMapper</a></li>
+<li><a href="#inventario-y-precios">Inventario y precios</a></li>
+<li><a href="#pedidos-sforder-order">Pedidos: <code>SFOrder → Order</code></a></li>
+<li><a href="#pedidos-order-ewheelorder">Pedidos: <code>Order → EwheelOrder</code></a></li>
+<li><a href="#mapeo-de-canales-channel-marketplace">Mapeo de canales (channel → marketplace)</a></li>
+<li><a href="#mapeo-de-paises-marketplace-pais-cliente">Mapeo de países (marketplace + país → cliente)</a></li>
+<li><a href="#transliteracion-cirilica">Transliteración cirílica</a></li>
+<li><a href="#codigo-de-nacion-de-sage">Código de nación de Sage</a></li>
+<li><a href="#documentos-relacionados">Documentos relacionados</a></li>
+</ol>
+<hr />
+<h2 id="el-perfil-automapper">El perfil AutoMapper<a class="headerlink" href="#el-perfil-automapper" title="Permanent link">&para;</a></h2>
+<p><code>AutoMapperProfileShoppingFeed</code> (registrado en <code>Program.cs</code>) define todos los mapeos. Se agrupan en tres regiones: <strong>Inventory</strong>, <strong>Pricing</strong> y <strong>Order</strong>.</p>
+<hr />
+<h2 id="inventario-y-precios">Inventario y precios<a class="headerlink" href="#inventario-y-precios" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Origen</th>
+<th>Destino</th>
+<th>Notas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SFInventoryRequest</code> / <code>SFInventoryResponse</code></td>
+<td><code>Inventory</code></td>
+<td><code>Reference → ProductReference</code>, <code>Stock → StockTotal</code></td>
+</tr>
+<tr>
+<td><code>ProductoConStock</code></td>
+<td><code>Inventory</code></td>
+<td><code>SKU → ProductReference</code>, <code>Stock → StockTotal</code></td>
+</tr>
+<tr>
+<td><code>SFPriceRequest</code> / <code>SFPriceResponse</code></td>
+<td><code>ProductPrice</code></td>
+<td><code>Reference → ProductReference</code>, <code>Price → NetPrice</code>, <code>PriceType = NET</code></td>
+</tr>
+<tr>
+<td><code>PrecioProducto</code></td>
+<td><code>ProductPrice</code></td>
+<td><code>SKU → ProductReference</code>, <code>Precio → NetPrice</code></td>
+</tr>
+</tbody>
+</table>
+<p>Todos son <code>ReverseMap</code>, de modo que sirven en ambos sentidos (leer de SF y escribir en SF).</p>
+<hr />
+<h2 id="pedidos-sforder-order">Pedidos: <code>SFOrder → Order</code><a class="headerlink" href="#pedidos-sforder-order" title="Permanent link">&para;</a></h2>
+<p>Es el mapeo más rico. Convierte el pedido crudo de ShoppingFeed en el modelo de dominio <code>Order</code>. Puntos destacables:</p>
+<table>
+<thead>
+<tr>
+<th>Campo destino</th>
+<th>Origen / lógica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CardName</code></td>
+<td>Nombre de cliente (billing → shipping → email), vía <code>ShoppingFeedMappingHelper</code></td>
+</tr>
+<tr>
+<td><code>LicTradNum</code></td>
+<td>DNI/NIF del cliente (campo <code>other</code> de la dirección)</td>
+</tr>
+<tr>
+<td><code>NumAtCard</code></td>
+<td><code>SFOrder.Id</code> (ID interno de SF)</td>
+</tr>
+<tr>
+<td><code>U_CPR_IDChannel</code></td>
+<td><code>SFOrder.ChannelId</code></td>
+</tr>
+<tr>
+<td><code>U_CPR_RefMKTPlace</code></td>
+<td><code>SFOrder.Reference</code> (referencia en el marketplace)</td>
+</tr>
+<tr>
+<td><code>U_CPR_ChannelCode</code></td>
+<td><code>channel_code</code> de <code>AdditionalFields</code> (vía <code>ChannelCodeResolver</code>)</td>
+</tr>
+<tr>
+<td><code>CurrentStatus</code></td>
+<td><code>GetOrderStatus</code>: traduce el estado textual de SF a <code>OrderStatusEnum</code></td>
+</tr>
+<tr>
+<td><code>Addresses</code></td>
+<td><code>GetAddressesFromOrder</code>: shipping + billing válidas</td>
+</tr>
+<tr>
+<td><code>DocumentLines</code></td>
+<td><code>GetDocumentLinesFromOrder</code>: una línea por ítem (<code>Reference</code>, <code>Price</code>, <code>Quantity</code>)</td>
+</tr>
+<tr>
+<td><code>DocumentAdditionalExpenses</code></td>
+<td>Gastos de envío (con <strong>parche Miravia</strong>, ver abajo)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="traduccion-de-estados-getorderstatus">Traducción de estados (<code>GetOrderStatus</code>)<a class="headerlink" href="#traduccion-de-estados-getorderstatus" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Estado SF</th>
+<th><code>OrderStatusEnum</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>created</code>, <code>waiting_store_acceptance</code></td>
+<td><code>CREATED</code></td>
+</tr>
+<tr>
+<td><code>refused</code></td>
+<td><code>REFUSED</code></td>
+</tr>
+<tr>
+<td><code>waiting_shipment</code></td>
+<td><code>READY_FOR_SHIPPING</code></td>
+</tr>
+<tr>
+<td><code>shipped</code>, <code>partially_shipped</code></td>
+<td><code>SHIPPED</code></td>
+</tr>
+<tr>
+<td><code>cancelled</code></td>
+<td><code>CANCELLED</code></td>
+</tr>
+<tr>
+<td><code>refunded</code>, <code>partially_refunded</code></td>
+<td><code>REFUNDED</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="parche-miravia-gastos-de-envio">Parche Miravia (gastos de envío)<a class="headerlink" href="#parche-miravia-gastos-de-envio" title="Permanent link">&para;</a></h3>
+<p>En <code>GetPaymentShippingAmountByChannel</code>, si el canal es Miravia (<code>channelId == 46619</code>) los gastos de envío se fuerzan a <strong>0</strong> a petición de negocio, para que no lleguen al ERP. El resto de canales pasan el importe real.</p>
+<h3 id="codigo-de-transportista-getcarriercodefromorder">Código de transportista (<code>GetCarrierCodeFromOrder</code>)<a class="headerlink" href="#codigo-de-transportista-getcarriercodefromorder" title="Permanent link">&para;</a></h3>
+<p>Traduce el nombre del carrier a un código numérico de Sage (según documentación de Seidor):</p>
+<table>
+<thead>
+<tr>
+<th>Carrier</th>
+<th>Código</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Medios Clientes</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Chrono</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Palma Cargo</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Redur</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Medios Marlu</td>
+<td>5</td>
+</tr>
+<tr>
+<td>#Sin definir</td>
+<td>6</td>
+</tr>
+<tr>
+<td>DHL</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Adelante Logística</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="pedidos-order-ewheelorder">Pedidos: <code>Order → EwheelOrder</code><a class="headerlink" href="#pedidos-order-ewheelorder" title="Permanent link">&para;</a></h2>
+<p>Mapeo base que prepara el pedido para el ERP. AutoMapper solo cubre los campos directos; el grueso de la lógica (cliente, dirección, moneda) lo añade el Worker en <a href="../mp-wf-pedidos-sf-erp/#la-transformacion-a-ewheelorder"><code>CreateSaleRequestFromOrder</code></a>.</p>
+<table>
+<thead>
+<tr>
+<th>Campo <code>EwheelOrder</code></th>
+<th>Origen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OrderDate</code></td>
+<td><code>DocDate</code> formateado <code>yyyy-MM-ddTHH:mm:ss</code></td>
+</tr>
+<tr>
+<td><code>GrossAmount</code> / <code>TotalWeb</code></td>
+<td><code>AmountTotal</code> (string, cultura invariante)</td>
+</tr>
+<tr>
+<td><code>CurrencyCode</code></td>
+<td><code>Currency</code></td>
+</tr>
+<tr>
+<td><code>PaymentConditionCode</code></td>
+<td>fijo <code>"16"</code></td>
+</tr>
+<tr>
+<td><code>NumeroPedido</code></td>
+<td><code>NumAtCard</code></td>
+</tr>
+</tbody>
+</table>
+<p>También se mapean <code>Order → SFOrderShipRequest</code>, <code>SFOrderCancelRequest</code> y <code>SFOrderRefundRequest</code> para los cambios de estado de salida.</p>
+<hr />
+<h2 id="mapeo-de-canales-channel-marketplace">Mapeo de canales (channel → marketplace)<a class="headerlink" href="#mapeo-de-canales-channel-marketplace" title="Permanent link">&para;</a></h2>
+<p><code>ChannelMappingConfig</code> lee la sección <code>ChannelMapping</code> y traduce el <strong><code>channelId</code> de ShoppingFeed</strong> al <strong>nombre de marketplace</strong>:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&quot;ChannelMapping&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;36916&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Decathlon&quot;</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;38996&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Saturn&quot;</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;66&quot;</span><span class="p">:</span><span class="w">    </span><span class="s2">&quot;Amazon&quot;</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;31376&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PcComponentes&quot;</span><span class="p">,</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">&quot;31796&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Worten&quot;</span><span class="p">,</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">&quot;44&quot;</span><span class="p">:</span><span class="w">    </span><span class="s2">&quot;Ebay&quot;</span><span class="p">,</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">&quot;54184&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Temu&quot;</span><span class="p">,</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nt">&quot;34210&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AliExpress&quot;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">GetMarketplaceByChannelId</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">channelId</span><span class="p">)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_channelToMarketplaceMap</span><span class="p">.</span><span class="n">TryGetValue</span><span class="p">(</span><span class="n">channelId</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="n">mkt</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">mkt</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+</span></code></pre></div>
+<hr />
+<h2 id="mapeo-de-paises-marketplace-pais-cliente">Mapeo de países (marketplace + país → cliente)<a class="headerlink" href="#mapeo-de-paises-marketplace-pais-cliente" title="Permanent link">&para;</a></h2>
+<p>Para Amazon, Worten y eBay el cliente del ERP depende del <strong>país</strong> del pedido. <code>CountryMappingFactory</code> construye un <code>CountryMappingConfig</code> por marketplace, leyendo la sección <code>&lt;Marketplace&gt;CountryMapping</code>:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">public</span><span class="w"> </span><span class="n">CountryMappingConfig</span><span class="w"> </span><span class="nf">ForMarketplace</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">marketplace</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="p">(</span><span class="n">_config</span><span class="p">,</span><span class="w"> </span><span class="s">$&quot;{marketplace}CountryMapping&quot;</span><span class="p">);</span>
+</span></code></pre></div>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&quot;AmazonCountryMapping&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;es&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9326&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;nl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9665&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;se&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9666&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;it&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9571&quot;</span><span class="p">,</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">&quot;pl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9667&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;de&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9668&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;be&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9669&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;gb&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9670&quot;</span><span class="p">,</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">&quot;fr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9671&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;ie&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9672&quot;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">},</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nt">&quot;WortenCountryMapping&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;WRT_ES_ONLINE&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9777&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;WRT_PT_ONLINE&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9779&quot;</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nt">&quot;EbayCountryMapping&quot;</span><span class="p">:</span><span class="w">   </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;fr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10104&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;it&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10106&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;de&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10108&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;hu&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10118&quot;</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="resolucion-completa-del-cliente">Resolución completa del cliente<a class="headerlink" href="#resolucion-completa-del-cliente" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>channelId ──(ChannelMapping)──▶ marketplace
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>   │
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>   ├─ Decathlon/Saturn/PcComponentes/Temu/AliExpress ──▶ customerId fijo
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>   └─ Amazon/Worten/Ebay ──(&lt;Mkt&gt;CountryMapping[country])──▶ customerId por país
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>                                       │
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>                                       └─ sin mapeo → Ebay: 9950 (fallback)
+</span></code></pre></div>
+<hr />
+<h2 id="transliteracion-cirilica">Transliteración cirílica<a class="headerlink" href="#transliteracion-cirilica" title="Permanent link">&para;</a></h2>
+<p><code>CyrillicTransliterationHelper.TransliterateCustomerName</code> convierte nombres en alfabeto cirílico (ruso y ucraniano) a alfabeto latino antes de enviarlos al ERP, que no admite caracteres cirílicos. Maneja casos especiales contextuales (Є/Ї al inicio de palabra) y un mapa carácter-a-cadena para el resto.</p>
+<p>Ejemplo: <code>Олександр</code> → <code>Oleksandr</code>.</p>
+<hr />
+<h2 id="codigo-de-nacion-de-sage">Código de nación de Sage<a class="headerlink" href="#codigo-de-nacion-de-sage" title="Permanent link">&para;</a></h2>
+<p><code>MapCodigoNacionEnvios</code> (en el Worker <a href="../mp-wf-pedidos-sf-erp/">Pedidos SF → ERP</a>) traduce el código de país ISO de la dirección de envío al <strong>código de nación interno de Sage 200</strong>, mediante un diccionario de ~250 países. Si el país viene vacío o no está mapeado, usa <strong>108 (España)</strong> por defecto.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ES → 108    FR → 110    DE → 126    GB → 125
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>IT → 115    PT → 123    PL → 122    NL → 121   …
+</span></code></pre></div>
+<hr />
+<h2 id="documentos-relacionados">Documentos relacionados<a class="headerlink" href="#documentos-relacionados" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Documento</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../mp-wf-pedidos-sf-erp/">Pedidos SF → ERP</a></td>
+<td>Dónde se aplican estos mapeos</td>
+</tr>
+<tr>
+<td><a href="../mp-modelos/">Modelos de datos</a></td>
+<td>Estructura de <code>SFOrder</code>, <code>Order</code>, <code>EwheelOrder</code></td>
+</tr>
+<tr>
+<td><a href="../mp-configuracion/">Configuración</a></td>
+<td>Secciones <code>ChannelMapping</code> y <code>&lt;Mkt&gt;CountryMapping</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../mp-wf-precios/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Precios · ERP → SF">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Precios · ERP → SF
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../mp-modelos/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Modelos de datos">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Modelos de datos
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.instant.progress", "navigation.instant.prefetch", "navigation.instant.preview", "navigation.indexes", "navigation.path", "navigation.tracking", "navigation.prune", "navigation.top", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.code.select", "content.action.edit", "content.action.view", "content.tabs.link", "content.tooltips", "header.autohide"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../assets/javascripts/reactflow/bundle.reactflow.js" defer></script>
+      
+        <script src="../assets/javascripts/mermaid-zoom.js" defer></script>
+      
+    
+  </body>
+</html>

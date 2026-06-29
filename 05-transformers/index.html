@@ -1,0 +1,2032 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación técnica del sistema de integración ERP-PIM-Shopify">
+      
+      
+      
+      
+        <link rel="prev" href="../04d-decisions-metodos/">
+      
+      
+        <link rel="next" href="../05b-transformers-detalle/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Visión general - UPG.Pataky — Guía de Estudio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#05-los-transformers-vision-general" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="UPG.Pataky — Guía de Estudio" class="md-header__button md-logo" aria-label="UPG.Pataky — Guía de Estudio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UPG.Pataky — Guía de Estudio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Visión general
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartir" aria-label="Compartir" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01-arquitectura-etl/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Arquitectura
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../wf-productos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Procesos
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../04-extractors/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Pipeline ETL
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../06-modelos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Sistema
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../mp-index/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Marketplaces
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="UPG.Pataky — Guía de Estudio" class="md-nav__button md-logo" aria-label="UPG.Pataky — Guía de Estudio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UPG.Pataky — Guía de Estudio
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../01-arquitectura-etl/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../wf-productos/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procesos
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipeline ETL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pipeline ETL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../04-extractors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extractors
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../04d-decisions/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decisions
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transformers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Transformers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visión general
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visión general
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En esta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En esta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#el-problema-que-resuelven-los-transformers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El problema que resuelven los transformers
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-herramienta-principal-automapper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          La herramienta principal: AutoMapper
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-papel-de-transactionsservice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El papel de <code>TransactionsService</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#los-transformers-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Los transformers del sistema
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Los transformers del sistema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-productscreatetransform-crear-productos-en-shopify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. <code>ProductsCreateTransform</code> — Crear productos en Shopify
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-productsupdatetransform-actualizar-y-archivar-productos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. <code>ProductsUpdateTransform</code> — Actualizar y archivar productos
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-productsdeletetransform-borrar-variantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3. <code>ProductsDeleteTransform</code> — Borrar variantes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-stocktransform-stock-del-erp-a-inventario-de-shopify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4. <code>StockTransform</code> — Stock del ERP a inventario de Shopify
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-imagestransform-imagenes-del-pim-a-medias-de-shopify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5. <code>ImagesTransform</code> — Imágenes del PIM a medias de Shopify
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-customertransform-clientes-del-erp-a-empresas-b2b-de-shopify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6. <code>CustomerTransform</code> — Clientes del ERP a empresas B2B de Shopify
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-ordertransform-pedidos-de-shopify-al-formato-del-erp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          7. <code>OrderTransform</code> — Pedidos de Shopify al formato del ERP
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-pricelisttransform-tarifas-de-precio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          8. <code>PriceListTransform</code> — Tarifas de precio
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-translationstransform-traducciones-de-contenido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          9. <code>TranslationsTransform</code> — Traducciones de contenido
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-que-transforma-cada-transformer-y-como" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Resumen: qué transforma cada transformer y cómo
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#siguiente-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Siguiente paso
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentos-relacionados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Documentos relacionados
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05b-transformers-detalle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Detalle completo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05c-transformers-metodos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Métodos y funciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../10-loaders/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Loaders y Mirror
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../06-modelos/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sistema
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../mp-index/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketplaces
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En esta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En esta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#el-problema-que-resuelven-los-transformers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El problema que resuelven los transformers
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-herramienta-principal-automapper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          La herramienta principal: AutoMapper
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-papel-de-transactionsservice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El papel de <code>TransactionsService</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#los-transformers-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Los transformers del sistema
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Los transformers del sistema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-productscreatetransform-crear-productos-en-shopify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. <code>ProductsCreateTransform</code> — Crear productos en Shopify
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-productsupdatetransform-actualizar-y-archivar-productos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. <code>ProductsUpdateTransform</code> — Actualizar y archivar productos
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-productsdeletetransform-borrar-variantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3. <code>ProductsDeleteTransform</code> — Borrar variantes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-stocktransform-stock-del-erp-a-inventario-de-shopify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4. <code>StockTransform</code> — Stock del ERP a inventario de Shopify
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-imagestransform-imagenes-del-pim-a-medias-de-shopify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5. <code>ImagesTransform</code> — Imágenes del PIM a medias de Shopify
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-customertransform-clientes-del-erp-a-empresas-b2b-de-shopify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6. <code>CustomerTransform</code> — Clientes del ERP a empresas B2B de Shopify
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-ordertransform-pedidos-de-shopify-al-formato-del-erp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          7. <code>OrderTransform</code> — Pedidos de Shopify al formato del ERP
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-pricelisttransform-tarifas-de-precio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          8. <code>PriceListTransform</code> — Tarifas de precio
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-translationstransform-traducciones-de-contenido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          9. <code>TranslationsTransform</code> — Traducciones de contenido
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-que-transforma-cada-transformer-y-como" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Resumen: qué transforma cada transformer y cómo
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#siguiente-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Siguiente paso
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentos-relacionados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Documentos relacionados
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navegación" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../04-extractors/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Pipeline ETL
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Transformers
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:automapper" class="md-tag">AutoMapper</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:shopify" class="md-tag">Shopify</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:transformers" class="md-tag">Transformers</a>
+      
+    
+  </nav>
+
+
+
+<h1 id="05-los-transformers-vision-general">05 — Los Transformers: visión general<a class="headerlink" href="#05-los-transformers-vision-general" title="Permanent link">&para;</a></h1>
+<p>Los transformers son la tercera capa del patrón ETL. Reciben los modelos <strong>ya clasificados</strong> por los <a href="../04d-decisions/">Decisions</a> (listas separadas de qué crear, actualizar y borrar) y los convierten al formato que necesitan los loaders (inputs de la API de Shopify). No leen de ningún sistema externo, no escriben en ningún destino: <strong>solo transforman</strong>.</p>
+<blockquote>
+<p><strong>¿Quieres entender cómo funciona un método concreto?</strong>
+→ <a href="../05c-transformers-metodos/"><code>05c-transformers-metodos.md</code></a> — explicación paso a paso de cada función y método de esta capa.</p>
+</blockquote>
+<p>Sin embargo, sí necesitan acceder a la <strong>base de datos de transacciones</strong> durante la transformación, porque necesitan resolver los <code>OriginId</code> (códigos del ERP o del PIM) a <code>DestinoId</code> (IDs de Shopify). Este es el papel fundamental de <code>TransactionsService</code> en la capa de transformación.</p>
+<hr />
+<h2 id="el-problema-que-resuelven-los-transformers">El problema que resuelven los transformers<a class="headerlink" href="#el-problema-que-resuelven-los-transformers" title="Permanent link">&para;</a></h2>
+<p>El sistema origen (ERP, PIM, FTP) habla un idioma: códigos de cliente, SKUs, URLs de imágenes.</p>
+<p>Shopify habla otro idioma: IDs de GraphQL con formato <code>gid://shopify/Product/123456</code>, <code>gid://shopify/ProductVariant/789</code>, etc.</p>
+<p>Los transformers son los traductores entre ambos mundos. Reciben un modelo como <code>ClientResponseModel</code> (en lenguaje del ERP) y producen un <code>CompanyInput</code> (en lenguaje de Shopify).</p>
+<hr />
+<h2 id="la-herramienta-principal-automapper">La herramienta principal: AutoMapper<a class="headerlink" href="#la-herramienta-principal-automapper" title="Permanent link">&para;</a></h2>
+<p>Tres de los transformers usan <strong>AutoMapper</strong>, una librería de .NET que permite declarar de forma explícita y reutilizable cómo mapear los campos de una clase a otra.</p>
+<p>En lugar de escribir esto manualmente en cada transformer:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">var</span><span class="w"> </span><span class="n">company</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CompanyInput</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">ExternalId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cliente</span><span class="p">.</span><span class="n">Company</span><span class="p">.</span><span class="n">CodCom</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cliente</span><span class="p">.</span><span class="n">Company</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="c1">// ...</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">};</span>
+</span></code></pre></div>
+<p>Se declara un <strong>perfil de mapeo</strong> una vez:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">CreateMap</span><span class="o">&lt;</span><span class="n">ClientResponseModel</span><span class="p">,</span><span class="w"> </span><span class="n">CompanyInput</span><span class="o">&gt;</span><span class="p">()</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="p">.</span><span class="n">ForMember</span><span class="p">(</span><span class="n">dest</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">dest</span><span class="p">.</span><span class="n">ExternalId</span><span class="p">,</span><span class="w"> </span><span class="n">opt</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">opt</span><span class="p">.</span><span class="n">MapFrom</span><span class="p">(</span><span class="n">src</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">src</span><span class="p">.</span><span class="n">Company</span><span class="p">.</span><span class="n">CodCom</span><span class="p">))</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="p">.</span><span class="n">ForMember</span><span class="p">(</span><span class="n">dest</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">dest</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">opt</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">opt</span><span class="p">.</span><span class="n">MapFrom</span><span class="p">(</span><span class="n">src</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">src</span><span class="p">.</span><span class="n">Company</span><span class="p">.</span><span class="n">Name</span><span class="p">));</span>
+</span></code></pre></div>
+<p>Y luego el transformer solo necesita:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">var</span><span class="w"> </span><span class="n">company</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mapper</span><span class="p">.</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">CompanyInput</span><span class="o">&gt;</span><span class="p">(</span><span class="n">cliente</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Los tres perfiles de AutoMapper del proyecto son:
+- <a href="../05c-transformers-metodos/#2-customersmappingprofile-mapeos-automapper"><code>CustomersMappingProfile</code></a> — clientes del ERP a estructuras B2B de Shopify
+- <a href="../05c-transformers-metodos/#8-ordersmappingprofile-mapeos-automapper"><code>OrdersMappingProfile</code></a> — pedidos de Shopify al formato del ERP
+- <a href="../05c-transformers-metodos/#12-productosmappingtransforms-mapeos-automapper"><code>ProductosMappingTransforms</code></a> — productos del PIM a inputs de producto/variante de Shopify</p>
+<hr />
+<h2 id="el-papel-de-transactionsservice">El papel de <code>TransactionsService</code><a class="headerlink" href="#el-papel-de-transactionsservice" title="Permanent link">&para;</a></h2>
+<p>La BD de transacciones (<code>transactions-provalliance</code>) actúa como el <strong>diccionario de traducción</strong> entre los dos sistemas. Guarda pares <code>OriginId ↔ DestinoId</code> para cada entidad.</p>
+<p>Todos los transformers la usan para resolver IDs antes de generar los inputs de Shopify:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ERP/PIM                 BD Transacciones              Shopify
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>─────────────────       ──────────────────────        ─────────────────────────────────
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Sku = &quot;GHD001&quot;    →     OriginId=&quot;GHD001&quot;       →     DestinoId=&quot;gid://shopify/Product/123&quot;
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Ean = &quot;8432...&quot;   →     Referencia=&quot;8432...&quot;    →     DestinoId=&quot;gid://shopify/ProductVariant/456&quot;
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>CodCom = &quot;C0001&quot;  →     OriginId=&quot;C0001&quot;        →     DestinoId=&quot;gid://shopify/Company/789&quot;
+</span></code></pre></div>
+<p>Si no se puede encontrar un ID en la BD, el elemento se descarta con un log de warning o error. Nunca se asume un ID.</p>
+<hr />
+<h2 id="los-transformers-del-sistema">Los transformers del sistema<a class="headerlink" href="#los-transformers-del-sistema" title="Permanent link">&para;</a></h2>
+<p>El proyecto tiene 9 transformers. Algunos son simples (convierten directamente con AutoMapper) y otros son complejos (tienen lógica de resolución de IDs, detección de casos especiales, etc.).</p>
+<h3 id="1-productscreatetransform-crear-productos-en-shopify">1. <code>ProductsCreateTransform</code> — Crear productos en Shopify<a class="headerlink" href="#1-productscreatetransform-crear-productos-en-shopify" title="Permanent link">&para;</a></h3>
+<p><strong>Fichero</strong>: <code>Transformers/Products/ProductsCreateTransform.cs</code>
+<strong>Recibe</strong>: productos y variantes marcados para crear
+<strong>Produce</strong>: <code>ProductsWithVariantsCreateLoaderInput</code></p>
+<p>Convierte cada <code>Product</code> en un <code>ProductCreateInput</code> de Shopify usando <code>ProductosMappingTransforms</code>. Procesa dos tipos de creación:
+- <strong>Producto nuevo con sus variantes</strong> (producto que no existía en absoluto en Shopify).
+- <strong>Variantes nuevas de un producto ya existente</strong> (el producto padre ya existe, solo hay que añadirle variantes).</p>
+<p>Descarta productos sin opciones definidas y variantes sin valores de opción.</p>
+<h3 id="2-productsupdatetransform-actualizar-y-archivar-productos">2. <code>ProductsUpdateTransform</code> — Actualizar y archivar productos<a class="headerlink" href="#2-productsupdatetransform-actualizar-y-archivar-productos" title="Permanent link">&para;</a></h3>
+<p><strong>Fichero</strong>: <code>Transformers/Products/ProductsUpdateTransform.cs</code>
+<strong>Recibe</strong>: productos y variantes a actualizar, productos a archivar, productos con opciones a reconstruir
+<strong>Produce</strong>: <code>ProductsWithVariantsUpdateLoaderInput</code></p>
+<p>Es el transformer más complejo de los productos. Gestiona cuatro operaciones distintas en una sola pasada:
+- <strong>Actualizar</strong> datos del producto (título, descripción, metafields...).
+- <strong>Actualizar</strong> variantes existentes (precio, EAN, opciones, galería de imágenes...).
+- <strong>Reconstruir opciones</strong> (RebuildProductOptions): cuando cambia el esquema de variantes de un producto, hay que borrar las opciones antiguas y crearlas de nuevo.
+- <strong>Archivar</strong>: cambia el estado del producto a <code>ARCHIVED</code> en Shopify y modifica el handle para evitar conflictos de URL.</p>
+<p>El archivar requiere una llamada extra a Shopify para comprobar el estado actual del producto antes de intentar archivarlo (para no archivar algo que ya está archivado).</p>
+<h3 id="3-productsdeletetransform-borrar-variantes">3. <code>ProductsDeleteTransform</code> — Borrar variantes<a class="headerlink" href="#3-productsdeletetransform-borrar-variantes" title="Permanent link">&para;</a></h3>
+<p><strong>Fichero</strong>: <code>Transformers/Products/ProductsDeleteTransform.cs</code>
+<strong>Recibe</strong>: OriginIds de productos y variantes a borrar
+<strong>Produce</strong>: <code>ProductsWithVariantsDeleteLoaderInput</code> con los DestinoIds de Shopify</p>
+<p>No usa AutoMapper. Su trabajo es resolver los OriginIds a DestinoIds a través de <code>TransactionsService</code> y organizar las variantes por producto (porque la API de Shopify para borrar variantes las agrupa por producto padre).</p>
+<h3 id="4-stocktransform-stock-del-erp-a-inventario-de-shopify">4. <code>StockTransform</code> — Stock del ERP a inventario de Shopify<a class="headerlink" href="#4-stocktransform-stock-del-erp-a-inventario-de-shopify" title="Permanent link">&para;</a></h3>
+<p><strong>Fichero</strong>: <code>Transformers/StockTransform.cs</code>
+<strong>Recibe</strong>: lista de <code>Stock</code> (ean + warehouse + quantity)
+<strong>Produce</strong>: <code>SyncStockInput</code></p>
+<p>Resuelve cada EAN al ID de variante de Shopify consultando la BD de transacciones. Si hay variantes en la BD que no aparecen en el stock del ERP, las establece a 0 (no han desaparecido del catálogo, solo no se han recibido — podría ser stock agotado).</p>
+<h3 id="5-imagestransform-imagenes-del-pim-a-medias-de-shopify">5. <code>ImagesTransform</code> — Imágenes del PIM a medias de Shopify<a class="headerlink" href="#5-imagestransform-imagenes-del-pim-a-medias-de-shopify" title="Permanent link">&para;</a></h3>
+<p><strong>Fichero</strong>: <code>Transformers/ImagesTransform.cs</code>
+<strong>Recibe</strong>: cinco listas de operaciones de imagen (crear/actualizar/borrar/asociar/desasociar)
+<strong>Produce</strong>: <code>ProductsMediasLoaderInput</code></p>
+<p>Es el transformer más complejo del sistema en cuanto a número de operaciones. Una imagen en Shopify no es simplemente un fichero: tiene relaciones con el producto y con las variantes específicas que la muestran. Por eso hay que gestionar cinco tipos de operaciones independientes.</p>
+<h3 id="6-customertransform-clientes-del-erp-a-empresas-b2b-de-shopify">6. <code>CustomerTransform</code> — Clientes del ERP a empresas B2B de Shopify<a class="headerlink" href="#6-customertransform-clientes-del-erp-a-empresas-b2b-de-shopify" title="Permanent link">&para;</a></h3>
+<p><strong>Fichero</strong>: <code>Transformers/CustomerTransform.cs</code>
+<strong>Recibe</strong>: listas de companies/locations/contacts a crear y actualizar
+<strong>Produce</strong>: <code>CompaniesWithContactsInput</code></p>
+<p>Usa <code>CustomersMappingProfile</code> para convertir los tres niveles de la jerarquía B2B. Añade metafields personalizados (zona fiscal, external_id) y gestiona la conversión de los códigos de país y provincia a los formatos ISO que espera Shopify.</p>
+<h3 id="7-ordertransform-pedidos-de-shopify-al-formato-del-erp">7. <code>OrderTransform</code> — Pedidos de Shopify al formato del ERP<a class="headerlink" href="#7-ordertransform-pedidos-de-shopify-al-formato-del-erp" title="Permanent link">&para;</a></h3>
+<p><strong>Fichero</strong>: <code>Transformers/OrderTransform.cs</code>
+<strong>Recibe</strong>: lista de <code>Order</code> de Shopify
+<strong>Produce</strong>: lista de <code>OrderModel</code> (header + líneas en formato ERP)</p>
+<p>Usa <code>OrdersMappingProfile</code>. Descarta pedidos sin <code>ExternalId</code> (que es el código de cliente del ERP). Detecta si el pedido es un dropshipping (dirección de envío diferente a la de la sucursal) y en ese caso incluye la dirección completa en el modelo del ERP.</p>
+<h3 id="8-pricelisttransform-tarifas-de-precio">8. <code>PriceListTransform</code> — Tarifas de precio<a class="headerlink" href="#8-pricelisttransform-tarifas-de-precio" title="Permanent link">&para;</a></h3>
+<p><strong>Fichero</strong>: <code>Transformers/PriceListTransform.cs</code>
+<strong>Recibe</strong>: tarifas a crear/actualizar/borrar
+<strong>Produce</strong>: <code>PriceListsB2BLoaderInput</code></p>
+<p>Transformer de tarifas B2B de Shopify. Gestiona la lógica compleja de actualización incremental de precios por variante: compara lo que hay en la BD con lo que llega del ERP y calcula qué precios hay que añadir, actualizar, resetear o excluir de qué tarifas.</p>
+<h3 id="9-translationstransform-traducciones-de-contenido">9. <code>TranslationsTransform</code> — Traducciones de contenido<a class="headerlink" href="#9-translationstransform-traducciones-de-contenido" title="Permanent link">&para;</a></h3>
+<p><strong>Fichero</strong>: <code>Transformers/TranslationsTransform.cs</code>
+<strong>Recibe</strong>: productos e ítems traducibles
+<strong>Produce</strong>: <code>TranslationsInput</code></p>
+<p>Transforma el contenido multilingüe de los productos y metafields para su sincronización en Shopify. Soporta traducciones para productos, variantes, companies, locations y contacts. No está conectado a ningún workflow activo actualmente.</p>
+<hr />
+<h2 id="resumen-que-transforma-cada-transformer-y-como">Resumen: qué transforma cada transformer y cómo<a class="headerlink" href="#resumen-que-transforma-cada-transformer-y-como" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Transformer</th>
+<th>De</th>
+<th>A</th>
+<th>Usa AutoMapper</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ProductsCreateTransform</code></td>
+<td><code>Product</code> + <code>Variant</code></td>
+<td><code>ProductCreateInput</code> + <code>ProductVariantsBulkInput</code></td>
+<td>Sí</td>
+</tr>
+<tr>
+<td><code>ProductsUpdateTransform</code></td>
+<td><code>Product</code> + <code>Variant</code> + OriginIds archivar</td>
+<td><code>ProductUpdateInput</code> + <code>ProductVariantsBulkInput</code></td>
+<td>Sí</td>
+</tr>
+<tr>
+<td><code>ProductsDeleteTransform</code></td>
+<td>OriginIds</td>
+<td>DestinoIds agrupados</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>StockTransform</code></td>
+<td><code>Stock</code> (ean+qty)</td>
+<td><code>SyncStockInput</code></td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>ImagesTransform</code></td>
+<td>5 listas de operaciones de imagen</td>
+<td><code>ProductsMediasLoaderInput</code></td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>CustomerTransform</code></td>
+<td><code>ICompany</code>/<code>ILocation</code>/<code>ICustomer</code></td>
+<td><code>CompanyInput</code>/<code>CompanyLocationInput</code>/<code>CompanyContactInput</code></td>
+<td>Sí</td>
+</tr>
+<tr>
+<td><code>OrderTransform</code></td>
+<td><code>Order</code> de Shopify</td>
+<td><code>OrderModel</code> (header+lines)</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td><code>PriceListTransform</code></td>
+<td><code>IPriceList</code></td>
+<td><code>PriceListsB2BLoaderInput</code></td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>TranslationsTransform</code></td>
+<td><code>ITranslatable</code></td>
+<td><code>TranslationsInput</code></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="siguiente-paso">Siguiente paso<a class="headerlink" href="#siguiente-paso" title="Permanent link">&para;</a></h2>
+<p>El siguiente documento entra en profundidad en cada transformer: la lógica campo a campo, todos los metafields que se generan, cómo se calculan los descuentos y cómo se resuelven los IDs.</p>
+<p>→ <a href="../05b-transformers-detalle/">05b — Transformers: detalle completo</a></p>
+<hr />
+<h2 id="documentos-relacionados">Documentos relacionados<a class="headerlink" href="#documentos-relacionados" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Documento</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../05b-transformers-detalle/"><code>05b-transformers-detalle.md</code></a></td>
+<td>Estructura campo a campo de cada transformer: qué mapea, qué metafields genera</td>
+</tr>
+<tr>
+<td><a href="../05c-transformers-metodos/"><code>05c-transformers-metodos.md</code></a></td>
+<td>Explicación paso a paso de cada método y función de esta capa</td>
+</tr>
+<tr>
+<td><a href="../10-loaders/"><code>10-loaders.md</code></a></td>
+<td>Los Loaders que reciben los outputs de los Transformers y escriben en Shopify</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../04d-decisions-metodos/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Métodos y funciones">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Métodos y funciones
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../05b-transformers-detalle/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Detalle completo">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Detalle completo
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.instant.progress", "navigation.instant.prefetch", "navigation.instant.preview", "navigation.indexes", "navigation.path", "navigation.tracking", "navigation.prune", "navigation.top", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.code.select", "content.action.edit", "content.action.view", "content.tabs.link", "content.tooltips", "header.autohide"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../assets/javascripts/reactflow/bundle.reactflow.js" defer></script>
+      
+        <script src="../assets/javascripts/mermaid-zoom.js" defer></script>
+      
+    
+  </body>
+</html>

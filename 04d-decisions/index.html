@@ -1,0 +1,2158 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación técnica del sistema de integración ERP-PIM-Shopify">
+      
+      
+      
+      
+        <link rel="prev" href="../04c-extractors-metodos/">
+      
+      
+        <link rel="next" href="../04d-decisions-metodos/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Visión general - UPG.Pataky — Guía de Estudio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#04d-los-decisions" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="UPG.Pataky — Guía de Estudio" class="md-header__button md-logo" aria-label="UPG.Pataky — Guía de Estudio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UPG.Pataky — Guía de Estudio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Visión general
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartir" aria-label="Compartir" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01-arquitectura-etl/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Arquitectura
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../wf-productos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Procesos
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../04-extractors/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Pipeline ETL
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../06-modelos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Sistema
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../mp-index/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Marketplaces
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="UPG.Pataky — Guía de Estudio" class="md-nav__button md-logo" aria-label="UPG.Pataky — Guía de Estudio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UPG.Pataky — Guía de Estudio
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../01-arquitectura-etl/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../wf-productos/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procesos
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipeline ETL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pipeline ETL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../04-extractors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extractors
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decisions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Decisions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visión general
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visión general
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En esta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En esta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#el-problema-que-resuelven" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El problema que resuelven
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contrato-comun-la-herencia-de-baseactivityt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Contrato común: la herencia de <code>BaseActivity&lt;T&gt;</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#los-5-decisions-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Los 5 Decisions del sistema
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Los 5 Decisions del sistema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-productsdecision-comparacion-basica-de-productos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. ProductsDecision — comparación básica de productos
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-productsrebuilddecision-con-reconstruccion-de-opciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. ProductsRebuildDecision — con reconstrucción de opciones
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-customerdecision-jerarquia-a-tres-niveles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3. CustomerDecision — jerarquía a tres niveles
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-imagedecision-imagenes-y-sus-asignaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4. ImageDecision — imágenes y sus asignaciones
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-pricelistdecision-tarifas-b2b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5. PriceListDecision — tarifas B2B
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-que-compara-cada-decision-y-en-base-a-que" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Resumen: qué compara cada Decision y en base a qué
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#siguiente-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Siguiente paso
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentos-relacionados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Documentos relacionados
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04d-decisions-metodos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Métodos y funciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../05-transformers/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transformers
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../10-loaders/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Loaders y Mirror
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../06-modelos/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sistema
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../mp-index/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketplaces
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En esta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En esta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#el-problema-que-resuelven" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El problema que resuelven
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contrato-comun-la-herencia-de-baseactivityt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Contrato común: la herencia de <code>BaseActivity&lt;T&gt;</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#los-5-decisions-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Los 5 Decisions del sistema
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Los 5 Decisions del sistema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-productsdecision-comparacion-basica-de-productos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. ProductsDecision — comparación básica de productos
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-productsrebuilddecision-con-reconstruccion-de-opciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. ProductsRebuildDecision — con reconstrucción de opciones
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-customerdecision-jerarquia-a-tres-niveles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3. CustomerDecision — jerarquía a tres niveles
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-imagedecision-imagenes-y-sus-asignaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4. ImageDecision — imágenes y sus asignaciones
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-pricelistdecision-tarifas-b2b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5. PriceListDecision — tarifas B2B
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-que-compara-cada-decision-y-en-base-a-que" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Resumen: qué compara cada Decision y en base a qué
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#siguiente-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Siguiente paso
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentos-relacionados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Documentos relacionados
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navegación" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../04-extractors/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Pipeline ETL
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Decisions
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:decisions" class="md-tag">Decisions</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:erp" class="md-tag">ERP</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:pim" class="md-tag">PIM</a>
+      
+    
+  </nav>
+
+
+
+<h1 id="04d-los-decisions">04d — Los Decisions<a class="headerlink" href="#04d-los-decisions" title="Permanent link">&para;</a></h1>
+<p>Los Decisions son la segunda fase de la capa de extracción: reciben los datos que acaban de llegar del sistema origen y los <strong>clasifican</strong> en operaciones concretas para Shopify (crear, actualizar, borrar). No transforman ningún campo ni llaman a ninguna API externa — solo consultan la <strong>BD de transacciones</strong> y comparan.</p>
+<blockquote>
+<p><strong>¿Quieres ver el código completo de un método?</strong>
+→ <a href="../04d-decisions-metodos/"><code>04d-decisions-metodos.md</code></a> — cada <code>RunAsync</code> explicado con su código fuente completo.</p>
+</blockquote>
+<hr />
+<h2 id="el-problema-que-resuelven">El problema que resuelven<a class="headerlink" href="#el-problema-que-resuelven" title="Permanent link">&para;</a></h2>
+<p>Después de que los extractors entregan los datos del ERP o del PIM, el sistema tiene una lista completa de <em>cómo deberían estar las cosas</em>. Pero Shopify ya tiene su propio estado. El Decision responde a la pregunta:</p>
+<blockquote>
+<p><em>¿Qué hay que hacer para que Shopify quede igual que el origen?</em></p>
+</blockquote>
+<p>Para responder esa pregunta, compara la lista entrante contra la <strong>BD de transacciones</strong> (<code>transactions-provalliance</code>), que registra cada entidad sincronizada con su <code>OriginId</code> (código del ERP/PIM) y su <code>DestinoId</code> (ID de Shopify).</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Sistema origen          Decision                    Outputs para los transformers
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>──────────────          ────────────────────────    ──────────────────────────────
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Lista completa     →    Existe en BD?               → Crear (no estaba)
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>de entidades            · No  →  Crear              → Actualizar (ya estaba)
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>actuales                · Sí  →  Actualizar         → Borrar (estaba pero ya no llega)
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>                        Está en BD pero no
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>                        en la lista?  →  Borrar
+</span></code></pre></div>
+<hr />
+<h2 id="contrato-comun-la-herencia-de-baseactivityt">Contrato común: la herencia de <code>BaseActivity&lt;T&gt;</code><a class="headerlink" href="#contrato-comun-la-herencia-de-baseactivityt" title="Permanent link">&para;</a></h2>
+<p>Todos los Decisions son actividades de Elsa que heredan de <a href="../04c-extractors-metodos/#1-infraestructura-base-de-una-actividad"><code>BaseActivity&lt;T&gt;</code></a>, igual que los extractors y los transformers. El contrato es el mismo:</p>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Rol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>InitInputs</code></td>
+<td>Lee los inputs del contexto de Elsa y los guarda en campos privados</td>
+</tr>
+<tr>
+<td><code>ShouldRunAsync</code></td>
+<td>Devuelve <code>false</code> si no hay nada que procesar (lista vacía)</td>
+</tr>
+<tr>
+<td><code>RunAsync</code></td>
+<td>Consulta la BD, clasifica, y escribe los outputs</td>
+</tr>
+</tbody>
+</table>
+<p>El patrón típico de <code>ShouldRunAsync</code> en los Decisions:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">ShouldRunAsync</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_productos</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Count</span><span class="p">:</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">};</span>
+</span></code></pre></div>
+<p>Si el extractor previo no entregó ningún elemento, el Decision se salta por completo y los transformers recibirán listas vacías.</p>
+<hr />
+<h2 id="los-5-decisions-del-sistema">Los 5 Decisions del sistema<a class="headerlink" href="#los-5-decisions-del-sistema" title="Permanent link">&para;</a></h2>
+<h3 id="1-productsdecision-comparacion-basica-de-productos">1. ProductsDecision — comparación básica de productos<a class="headerlink" href="#1-productsdecision-comparacion-basica-de-productos" title="Permanent link">&para;</a></h3>
+<p><strong>Fichero:</strong> <code>UPG.Pataky.Shared/.../Decisions/ProductDecision.cs</code>
+<strong>Usado en:</strong> Workflow de Productos (versión base)</p>
+<p>Recibe la lista completa de productos y variantes del PIM y produce seis listas de trabajo.</p>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Tipo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ProductosInput</code></td>
+<td><code>Box&lt;IProduct&gt;</code> — todos los productos del PIM</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th>Tipo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ProductosCrear</code></td>
+<td><code>Box&lt;IProduct&gt;</code></td>
+<td>Productos que no existen en BD → hay que crearlos en Shopify</td>
+</tr>
+<tr>
+<td><code>ProductosActualizar</code></td>
+<td><code>Box&lt;IProduct&gt;</code></td>
+<td>Productos que ya existen en BD → hay que actualizarlos</td>
+</tr>
+<tr>
+<td><code>ProductosBorrar</code></td>
+<td><code>Box&lt;string&gt;</code></td>
+<td>OriginIds de productos que estaban en BD pero no han llegado del PIM</td>
+</tr>
+<tr>
+<td><code>VariantesCrear</code></td>
+<td><code>Box&lt;IVariant&gt;</code></td>
+<td>Variantes de productos ya existentes que son nuevas</td>
+</tr>
+<tr>
+<td><code>VariantesActualizar</code></td>
+<td><code>Box&lt;IVariant&gt;</code></td>
+<td>Variantes que ya existen en BD → actualizar</td>
+</tr>
+<tr>
+<td><code>VariantesBorrar</code></td>
+<td><code>Box&lt;string&gt;</code></td>
+<td>OriginIds de variantes que estaban en BD pero ya no llegan del PIM</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Lógica:</strong> consulta la BD elemento a elemento. Para cada producto, llama a <code>ExistsProductByOriginId</code>; para cada variante de un producto existente, llama a <code>ExistsVariantByOriginId</code>. El diff de borrados se calcula al final comparando todos los OriginIds de BD contra el input.</p>
+<p>→ <a href="../04d-decisions-metodos/#1-productsdecision-runasync">Ver <code>RunAsync</code> completo</a></p>
+<hr />
+<h3 id="2-productsrebuilddecision-con-reconstruccion-de-opciones">2. ProductsRebuildDecision — con reconstrucción de opciones<a class="headerlink" href="#2-productsrebuilddecision-con-reconstruccion-de-opciones" title="Permanent link">&para;</a></h3>
+<p><strong>Fichero:</strong> <code>UPG.Pataky.Shared/.../Decisions/ProductsRebuildDecision.cs</code> y <code>Decisions/ProductsRebuildDecision.cs</code>
+<strong>Usado en:</strong> Workflow de Productos (versión actual)</p>
+<p>Versión mejorada de <code>ProductsDecision</code>. Añade un séptimo output y cuatro capacidades nuevas.</p>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Tipo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ProductosInput</code></td>
+<td><code>Box&lt;IProduct&gt;</code> — todos los productos del PIM</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th>Tipo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ProductosCrear</code></td>
+<td><code>Box&lt;IProduct&gt;</code></td>
+<td>Productos nuevos</td>
+</tr>
+<tr>
+<td><code>ProductosActualizar</code></td>
+<td><code>Box&lt;IProduct&gt;</code></td>
+<td>Productos a actualizar</td>
+</tr>
+<tr>
+<td><code>ProductosBorrar</code></td>
+<td><code>Box&lt;string&gt;</code></td>
+<td>Productos desaparecidos</td>
+</tr>
+<tr>
+<td><code>VariantesCrear</code></td>
+<td><code>Box&lt;IVariant&gt;</code></td>
+<td>Variantes nuevas</td>
+</tr>
+<tr>
+<td><code>VariantesActualizar</code></td>
+<td><code>Box&lt;IVariant&gt;</code></td>
+<td>Variantes a actualizar</td>
+</tr>
+<tr>
+<td><code>VariantesBorrar</code></td>
+<td><code>Box&lt;string&gt;</code></td>
+<td>Variantes desaparecidas</td>
+</tr>
+<tr>
+<td><strong><code>RebuildProductOptions</code></strong></td>
+<td><code>Box&lt;IProduct&gt;</code></td>
+<td><strong>Productos cuyo esquema de opciones ha cambiado</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Las cuatro capacidades adicionales:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Capacidad</th>
+<th>Qué hace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Detección de cambio de opciones</td>
+<td>Si <a href="../04c-extractors-metodos/#getsortedoptions"><code>GetSortedOptions()</code></a> del producto actual difiere del esquema guardado en BD, el producto va a <code>RebuildProductOptions</code> en lugar de <code>ProductosActualizar</code></td>
+</tr>
+<tr>
+<td>Límite de variantes (<code>MaxNumVariants = 2048</code>)</td>
+<td>Los productos que superan 2048 variantes se descartan antes de clasificar y se loguea un error</td>
+</tr>
+<tr>
+<td>Promoción a borrado de producto</td>
+<td>Si todas las variantes de un producto van a borrarse, se promueve a borrar el producto entero en lugar de N variantes individuales</td>
+</tr>
+<tr>
+<td>Supresión de borrado de variantes redundante</td>
+<td>Si el producto padre ya va a borrarse, sus variantes se eliminan de <code>VariantesBorrar</code> (Shopify las borra automáticamente al borrar el producto)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Por qué existe <code>RebuildProductOptions</code>:</strong> Shopify no permite actualizar las opciones de un producto directamente. Cuando el esquema de opciones cambia (ej: el producto pasa de tener "Color + Talla" a solo "Color"), hay que usar una operación especial de reconstrucción que borra y vuelve a crear todas las opciones y variantes. El transformer <code>ProductsUpdateTransform</code> detecta esta lista y genera esa operación.</p>
+<p>→ <a href="../04d-decisions-metodos/#2-productsrebuilddecision-runasync">Ver <code>RunAsync</code> completo con las 4 capacidades explicadas</a></p>
+<hr />
+<h3 id="3-customerdecision-jerarquia-a-tres-niveles">3. CustomerDecision — jerarquía a tres niveles<a class="headerlink" href="#3-customerdecision-jerarquia-a-tres-niveles" title="Permanent link">&para;</a></h3>
+<p><strong>Fichero:</strong> <code>UPG.Pataky.Shared/.../Decisions/CustomerDecision.cs</code>
+<strong>Usado en:</strong> Workflow de Clientes</p>
+<p>El más complejo de los cinco. Gestiona la jerarquía B2B completa: una <code>Company</code> tiene <code>Location</code>s (sucursales), y cada <code>Location</code> tiene <code>Customer</code>s (contactos). Además gestiona la asignación de roles (qué contactos pueden actuar en qué sucursales) y el contacto principal.</p>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Tipo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CompaniesInput</code></td>
+<td><code>Box&lt;ICompany&gt;</code> — lista completa de clientes del ERP</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th>Tipo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CreateCompanies</code></td>
+<td><code>Box&lt;ICompany&gt;</code></td>
+<td>Companies nuevas (con todas sus locations y contacts)</td>
+</tr>
+<tr>
+<td><code>UpdateCompanies</code></td>
+<td><code>Box&lt;(DestinoId, ICompany)&gt;</code></td>
+<td>Companies a actualizar (con su ID de Shopify)</td>
+</tr>
+<tr>
+<td><code>DeleteCompanies</code></td>
+<td><code>Box&lt;string&gt;</code></td>
+<td>DestinoIds de companies a borrar</td>
+</tr>
+<tr>
+<td><code>CreateLocations</code></td>
+<td><code>Box&lt;(DestinoId, ILocation)&gt;</code></td>
+<td>Sucursales nuevas (con el DestinoId de su company padre)</td>
+</tr>
+<tr>
+<td><code>UpdateLocations</code></td>
+<td><code>Box&lt;(DestinoId, ILocation)&gt;</code></td>
+<td>Sucursales a actualizar (con su DestinoId)</td>
+</tr>
+<tr>
+<td><code>DeleteLocations</code></td>
+<td><code>Box&lt;Location&gt;</code></td>
+<td>Objetos Location a borrar (con DestinoId incluido)</td>
+</tr>
+<tr>
+<td><code>CreateContacts</code></td>
+<td><code>Box&lt;(DestinoId, ICustomer)&gt;</code></td>
+<td>Contactos nuevos (con el DestinoId de su company)</td>
+</tr>
+<tr>
+<td><code>UpdateContacts</code></td>
+<td><code>Box&lt;(DestinoId, ICustomer)&gt;</code></td>
+<td>Contactos a actualizar (con su DestinoId de CompanyContact)</td>
+</tr>
+<tr>
+<td><code>DeleteContacts</code></td>
+<td><code>Box&lt;string&gt;</code></td>
+<td>DestinoIds de contactos a borrar</td>
+</tr>
+<tr>
+<td><code>MainContactAssign</code></td>
+<td><code>Box&lt;(DestinoId, ICustomer)&gt;</code></td>
+<td>Asignaciones de contacto principal que han cambiado</td>
+</tr>
+<tr>
+<td><code>AssignRoles</code></td>
+<td><code>Box&lt;(ICustomer, ILocation)&gt;</code></td>
+<td>Pares contacto-sucursal a los que asignar rol en Shopify B2B</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Puntos clave de la lógica:</strong></p>
+<ul>
+<li>Cada <code>DestinoId</code> que llega en los outputs de actualización/borrado proviene de la BD de transacciones — los transformers lo necesitan para llamar a las mutaciones correctas de la API de Shopify.</li>
+<li><a href="../04d-decisions-metodos/#tryaddrole"><code>TryAddRole</code></a> evita duplicados usando un <code>HashSet</code> de OriginIds de roles ya existentes. Un contacto puede aparecer tanto en <code>company.GetCustomers()</code> como en <code>location.GetCustomers()</code> — sin este control se generarían asignaciones de rol duplicadas.</li>
+<li>Los contactos de empresa marcados como <code>IsAgent</code> nunca se borran automáticamente.</li>
+<li>El <code>MainContactAssign</code> solo se rellena si el contacto principal del ERP difiere del que está registrado en la BD.</li>
+</ul>
+<p>→ <a href="../04d-decisions-metodos/#3-customerdecision-runasync">Ver <code>RunAsync</code> completo con diagrama de jerarquía</a></p>
+<hr />
+<h3 id="4-imagedecision-imagenes-y-sus-asignaciones">4. ImageDecision — imágenes y sus asignaciones<a class="headerlink" href="#4-imagedecision-imagenes-y-sus-asignaciones" title="Permanent link">&para;</a></h3>
+<p><strong>Fichero:</strong> <code>UPG.Pataky.Shared/.../Decisions/ImageDecision.cs</code>
+<strong>Usado en:</strong> Workflow de Imágenes</p>
+<p>Clasifica imágenes en tres operaciones básicas y dos operaciones de asociación variante-imagen.</p>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Tipo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ProductsImagesInput</code></td>
+<td><code>Box&lt;IProductImage&gt;</code> — todas las imágenes del PIM</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th>Tipo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ProductsImagesCreate</code></td>
+<td><code>Box&lt;IProductImage&gt;</code></td>
+<td>Imágenes nuevas (URL no está en BD)</td>
+</tr>
+<tr>
+<td><code>ProductsImagesUpdate</code></td>
+<td><code>Box&lt;IProductImage&gt;</code></td>
+<td>Imágenes existentes cuya metadata puede haber cambiado</td>
+</tr>
+<tr>
+<td><code>ProductsImagesDelete</code></td>
+<td><code>Box&lt;string&gt;</code></td>
+<td>DestinoIds de medias a borrar (URL desaparecida del PIM)</td>
+</tr>
+<tr>
+<td><code>AppendMedias</code></td>
+<td><code>Box&lt;(ProductOriginId, VariantOriginId, ImageOriginId)&gt;</code></td>
+<td>Asociaciones variante-imagen a crear</td>
+</tr>
+<tr>
+<td><code>DetachMedias</code></td>
+<td><code>Box&lt;(ProductOriginId, VariantOriginId, ImageOriginId)&gt;</code></td>
+<td>Asociaciones variante-imagen a eliminar</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Por qué son necesarios <code>AppendMedias</code> y <code>DetachMedias</code>:</strong></p>
+<p>En Shopify B2B, cada variante puede tener su propia imagen. Cuando el PIM cambia qué imagen está asignada a qué variante, no es suficiente con actualizar la imagen — hay que gestionar explícitamente las asociaciones. El Decision calcula el estado deseado (qué imagen debe tener cada variante según el PIM) y el estado actual (qué imagen tiene cada variante según la BD) y produce las diferencias.</p>
+<p>La lógica guarda que si una imagen ya va a borrarse (<code>imageOriginIdsToDelete</code>), no se genera operación de desasociación para esa imagen — Shopify la desasocia automáticamente al borrarla.</p>
+<p>→ <a href="../04d-decisions-metodos/#4-imagedecision-runasync">Ver <code>RunAsync</code> completo con la lógica de AppendMedias/DetachMedias</a></p>
+<hr />
+<h3 id="5-pricelistdecision-tarifas-b2b">5. PriceListDecision — tarifas B2B<a class="headerlink" href="#5-pricelistdecision-tarifas-b2b" title="Permanent link">&para;</a></h3>
+<p><strong>Fichero:</strong> <code>UPG.Pataky.Shared/.../Decisions/PriceListDecision.cs</code>
+<strong>Usado en:</strong> Workflow de Clientes (sincronización de tarifas)</p>
+<p>El más simple. Clasifica tarifas de precio B2B en tres operaciones.</p>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Tipo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PriceLists</code></td>
+<td><code>Box&lt;IPriceList&gt;</code> — tarifas del ERP</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th>Tipo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PriceListsCrear</code></td>
+<td><code>Box&lt;IPriceList&gt;</code></td>
+<td>Tarifas nuevas (OriginId no está en BD)</td>
+</tr>
+<tr>
+<td><code>PriceListsEditar</code></td>
+<td><code>Box&lt;IPriceList&gt;</code></td>
+<td>Tarifas que ya existen en BD</td>
+</tr>
+<tr>
+<td><code>PriceListsEliminar</code></td>
+<td><code>Box&lt;string&gt;</code></td>
+<td>DestinoIds de tarifas que estaban en BD pero ya no llegan del ERP</td>
+</tr>
+</tbody>
+</table>
+<p><strong>El caso especial de <code>MarketCatalog</code>:</strong> las tarifas de tipo <code>MarketCatalog</code> son catálogos de precios públicos que Shopify gestiona automáticamente. El ERP no los conoce, por lo que sin este filtro el Decision los añadiría siempre a <code>PriceListsEliminar</code>. Se excluyen del diff de borrados comprobando el prefijo del <code>CatalogId</code>.</p>
+<p>→ <a href="../04d-decisions-metodos/#5-pricelistdecision-runasync">Ver <code>RunAsync</code> completo con el filtro de MarketCatalog</a></p>
+<hr />
+<h2 id="resumen-que-compara-cada-decision-y-en-base-a-que">Resumen: qué compara cada Decision y en base a qué<a class="headerlink" href="#resumen-que-compara-cada-decision-y-en-base-a-que" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Fuente de datos BD</th>
+<th>Elementos comparados</th>
+<th>Outputs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ProductsDecision</code></td>
+<td><code>Products</code> + <code>Variants</code></td>
+<td>OriginId de producto y variante</td>
+<td>6</td>
+</tr>
+<tr>
+<td><code>ProductsRebuildDecision</code></td>
+<td><code>Products</code> + <code>Variants</code> + <code>Options</code></td>
+<td>OriginId + esquema de opciones</td>
+<td>7</td>
+</tr>
+<tr>
+<td><code>CustomerDecision</code></td>
+<td><code>Companies</code> + <code>Locations</code> + <code>Contacts</code> + <code>Roles</code></td>
+<td>OriginId en cada nivel de jerarquía + MainContact</td>
+<td>11</td>
+</tr>
+<tr>
+<td><code>ImageDecision</code></td>
+<td><code>Medias</code> (con productos y variantes)</td>
+<td>ImageOriginId (URL) + asignaciones variante-imagen</td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>PriceListDecision</code></td>
+<td><code>PriceLists</code></td>
+<td>OriginId de tarifa (excluyendo MarketCatalog)</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="siguiente-paso">Siguiente paso<a class="headerlink" href="#siguiente-paso" title="Permanent link">&para;</a></h2>
+<p>Con los datos clasificados, los transformers convierten los modelos del ERP/PIM al formato de la API de Shopify.</p>
+<p>→ <a href="../05-transformers/">05 — Los Transformers</a></p>
+<hr />
+<h2 id="documentos-relacionados">Documentos relacionados<a class="headerlink" href="#documentos-relacionados" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Documento</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../04-extractors/"><code>04-extractors.md</code></a></td>
+<td>Los extractors que producen los datos que reciben los Decisions</td>
+</tr>
+<tr>
+<td><a href="../04c-extractors-metodos/"><code>04c-extractors-metodos.md</code></a></td>
+<td><code>BaseActivity&lt;T&gt;</code>, <code>GetSortedOptions()</code> y otros métodos referenciados</td>
+</tr>
+<tr>
+<td><a href="../04d-decisions-metodos/"><code>04d-decisions-metodos.md</code></a></td>
+<td>Código completo y explicación de cada <code>RunAsync</code></td>
+</tr>
+<tr>
+<td><a href="../05-transformers/"><code>05-transformers.md</code></a></td>
+<td>Los transformers que reciben los outputs de los Decisions</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../04c-extractors-metodos/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Métodos y funciones">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Métodos y funciones
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../04d-decisions-metodos/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Métodos y funciones">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Métodos y funciones
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.instant.progress", "navigation.instant.prefetch", "navigation.instant.preview", "navigation.indexes", "navigation.path", "navigation.tracking", "navigation.prune", "navigation.top", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.code.select", "content.action.edit", "content.action.view", "content.tabs.link", "content.tooltips", "header.autohide"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../assets/javascripts/reactflow/bundle.reactflow.js" defer></script>
+      
+        <script src="../assets/javascripts/mermaid-zoom.js" defer></script>
+      
+    
+  </body>
+</html>

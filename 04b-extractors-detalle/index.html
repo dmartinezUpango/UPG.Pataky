@@ -1,0 +1,4321 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación técnica del sistema de integración ERP-PIM-Shopify">
+      
+      
+      
+      
+        <link rel="prev" href="../04-extractors/">
+      
+      
+        <link rel="next" href="../04c-extractors-metodos/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Detalle completo - UPG.Pataky — Guía de Estudio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#04b-extractors-detalle-completo-de-cada-uno" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="UPG.Pataky — Guía de Estudio" class="md-header__button md-logo" aria-label="UPG.Pataky — Guía de Estudio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UPG.Pataky — Guía de Estudio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Detalle completo
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartir" aria-label="Compartir" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01-arquitectura-etl/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Arquitectura
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../wf-productos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Procesos
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../04-extractors/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Pipeline ETL
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../06-modelos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Sistema
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../mp-index/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Marketplaces
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="UPG.Pataky — Guía de Estudio" class="md-nav__button md-logo" aria-label="UPG.Pataky — Guía de Estudio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UPG.Pataky — Guía de Estudio
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../01-arquitectura-etl/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../wf-productos/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procesos
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipeline ETL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pipeline ETL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extractors
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Extractors
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-extractors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visión general
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Detalle completo
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Detalle completo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En esta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En esta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-1-productos-e-imagenes-del-pim-productswithimagesextract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 1 — Productos e imágenes del PIM (<code>ProductsWithImagesExtract</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 1 — Productos e imágenes del PIM (ProductsWithImagesExtract)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sistema-origen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Sistema origen
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-llega-la-respuesta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cómo llega la respuesta
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-estructura-de-salonspaceproduct-campo-a-campo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          La estructura de <code>SalonSpaceProduct</code> — campo a campo
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="La estructura de SalonSpaceProduct — campo a campo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#identificacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Identificación
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estado-de-publicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Estado de publicación
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agrupacion-de-variantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Agrupación de variantes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contenido-traducible" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Contenido traducible
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clasificacion-y-taxonomia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Clasificación y taxonomía
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imagenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Imágenes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otros-campos-relevantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Otros campos relevantes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#de-salonspaceproduct-a-product-y-variant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          De <code>SalonSpaceProduct</code> a <code>Product</code> y <code>Variant</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="De SalonSpaceProduct a Product y Variant">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-objeto-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El objeto <code>Product</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-objeto-variant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El objeto <code>Variant</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-se-construyen-las-opciones-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cómo se construyen las opciones (<code>Options</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-objeto-productimage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El objeto <code>ProductImage</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limpieza-de-duplicados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Limpieza de duplicados
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Limpieza de duplicados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-productos-con-originid-duplicado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. Productos con <code>OriginId</code> duplicado
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-variantes-duplicadas-dentro-de-un-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. Variantes duplicadas dentro de un producto
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs-del-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Outputs del workflow
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flujo-resumido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Flujo resumido
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-2-clientes-del-erp-customerextract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 2 — Clientes del ERP (<code>CustomerExtract</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 2 — Clientes del ERP (CustomerExtract)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sistema-origen_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Sistema origen
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-llega-la-respuesta-paginada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cómo llega la respuesta (paginada)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-estructura-de-clientresponsemodel-campo-a-campo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          La estructura de <code>ClientResponseModel</code> — campo a campo
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="La estructura de ClientResponseModel — campo a campo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bpc0_1-companyresponsemodel-datos-de-la-empresa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>BPC0_1</code> → <code>CompanyResponseModel</code> — datos de la empresa
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bprc_1-bprc1-datos-de-facturacion-y-financieros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>BPRC_1</code> → <code>Bprc1</code> — datos de facturación y financieros
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bprc_5-bprc5-datos-edi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>BPRC_5</code> → <code>Bprc5</code> — datos EDI
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bpac_1-locationresponsemodel-las-direcciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>BPAC_1</code> → <code>LocationResponseModel[]</code> — <strong>las direcciones</strong>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BPAC_1 → LocationResponseModel[] — las direcciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#campos-de-locationresponsemodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Campos de <code>LocationResponseModel</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#los-dos-originid-de-locationresponsemodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Los dos OriginId de <code>LocationResponseModel</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bpc3_2-zonafiscal-zona-fiscal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>BPC3_2</code> → <code>ZonaFiscal</code> — zona fiscal
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bpc3_1-bpc31-datos-de-pago" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>BPC3_1</code> → <code>Bpc31</code> — datos de pago
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adxtec-adxtec-auditoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ADXTEC</code> → <code>Adxtec</code> — auditoría
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lo-que-produce-customerextract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lo que produce <code>CustomerExtract</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-3-stock-del-erp-stockextract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 3 — Stock del ERP (<code>StockExtract</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 3 — Stock del ERP (StockExtract)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sistema-origen_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Sistema origen
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-llega-la-respuesta_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cómo llega la respuesta
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-objeto-stock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El objeto <code>Stock</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lo-que-produce-stockextract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lo que produce <code>StockExtract</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-4-pedidos-de-shopify-ordersextractor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 4 — Pedidos de Shopify (<code>OrdersExtractor</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 4 — Pedidos de Shopify (OrdersExtractor)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sistema-origen_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Sistema origen
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-llega-la-respuesta_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cómo llega la respuesta
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lo-que-produce-ordersextractor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lo que produce <code>OrdersExtractor</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lo-que-hace-ordertransform-inmediatamente-despues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lo que hace <code>OrderTransform</code> inmediatamente después
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-objeto-orderheadermodel-formato-del-erp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El objeto <code>OrderHeaderModel</code> — formato del ERP
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-objeto-orderlinemodel-lineas-del-pedido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El objeto <code>OrderLineModel</code> — líneas del pedido
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-objeto-ordershippingaddressmodel-direccion-de-envio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El objeto <code>OrderShippingAddressModel</code> — dirección de envío
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-5-imagenes-del-ftp-localimagesextractor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 5 — Imágenes del FTP (<code>LocalImagesExtractor</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 5 — Imágenes del FTP (LocalImagesExtractor)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sistema-origen_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Sistema origen
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proceso-de-extraccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Proceso de extracción
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convencion-de-nombrado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Convención de nombrado
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-objeto-nasfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El objeto <code>NasFile</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-csv-que-genera-como-efecto-secundario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El CSV que genera como efecto secundario
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lo-que-produce-localimagesextractor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lo que produce <code>LocalImagesExtractor</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-6-traducciones-translationsextract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 6 — Traducciones (<code>TranslationsExtract</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 6 — Traducciones (TranslationsExtract)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sistema-origen_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Sistema origen
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-hace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué hace
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estado-actual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Estado actual
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lo-que-produce-translationsextract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lo que produce <code>TranslationsExtract</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-7-tarifas-de-precios-extracttarifas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 7 — Tarifas de precios (<code>ExtractTarifas</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 7 — Tarifas de precios (ExtractTarifas)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Estado
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-que-existe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Por qué existe
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-8-migracion-desde-shopify-shopifyextract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 8 — Migración desde Shopify (<code>ShopifyExtract</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 8 — Migración desde Shopify (ShopifyExtract)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estado_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Estado
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#para-que-se-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Para qué se usó
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-hace-internamente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué hace internamente
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-que-se-conserva-en-el-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Por qué se conserva en el código
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentos-relacionados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Documentos relacionados
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-de-objetos-que-produce-cada-extractor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Resumen de objetos que produce cada extractor
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04c-extractors-metodos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Métodos y funciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../04d-decisions/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decisions
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../05-transformers/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transformers
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../10-loaders/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Loaders y Mirror
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../06-modelos/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sistema
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../mp-index/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketplaces
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En esta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En esta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-1-productos-e-imagenes-del-pim-productswithimagesextract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 1 — Productos e imágenes del PIM (<code>ProductsWithImagesExtract</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 1 — Productos e imágenes del PIM (ProductsWithImagesExtract)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sistema-origen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Sistema origen
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-llega-la-respuesta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cómo llega la respuesta
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-estructura-de-salonspaceproduct-campo-a-campo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          La estructura de <code>SalonSpaceProduct</code> — campo a campo
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="La estructura de SalonSpaceProduct — campo a campo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#identificacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Identificación
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estado-de-publicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Estado de publicación
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agrupacion-de-variantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Agrupación de variantes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contenido-traducible" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Contenido traducible
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clasificacion-y-taxonomia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Clasificación y taxonomía
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imagenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Imágenes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otros-campos-relevantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Otros campos relevantes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#de-salonspaceproduct-a-product-y-variant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          De <code>SalonSpaceProduct</code> a <code>Product</code> y <code>Variant</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="De SalonSpaceProduct a Product y Variant">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-objeto-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El objeto <code>Product</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-objeto-variant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El objeto <code>Variant</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-se-construyen-las-opciones-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cómo se construyen las opciones (<code>Options</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-objeto-productimage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El objeto <code>ProductImage</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limpieza-de-duplicados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Limpieza de duplicados
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Limpieza de duplicados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-productos-con-originid-duplicado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. Productos con <code>OriginId</code> duplicado
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-variantes-duplicadas-dentro-de-un-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. Variantes duplicadas dentro de un producto
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs-del-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Outputs del workflow
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flujo-resumido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Flujo resumido
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-2-clientes-del-erp-customerextract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 2 — Clientes del ERP (<code>CustomerExtract</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 2 — Clientes del ERP (CustomerExtract)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sistema-origen_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Sistema origen
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-llega-la-respuesta-paginada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cómo llega la respuesta (paginada)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-estructura-de-clientresponsemodel-campo-a-campo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          La estructura de <code>ClientResponseModel</code> — campo a campo
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="La estructura de ClientResponseModel — campo a campo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bpc0_1-companyresponsemodel-datos-de-la-empresa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>BPC0_1</code> → <code>CompanyResponseModel</code> — datos de la empresa
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bprc_1-bprc1-datos-de-facturacion-y-financieros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>BPRC_1</code> → <code>Bprc1</code> — datos de facturación y financieros
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bprc_5-bprc5-datos-edi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>BPRC_5</code> → <code>Bprc5</code> — datos EDI
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bpac_1-locationresponsemodel-las-direcciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>BPAC_1</code> → <code>LocationResponseModel[]</code> — <strong>las direcciones</strong>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BPAC_1 → LocationResponseModel[] — las direcciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#campos-de-locationresponsemodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Campos de <code>LocationResponseModel</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#los-dos-originid-de-locationresponsemodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Los dos OriginId de <code>LocationResponseModel</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bpc3_2-zonafiscal-zona-fiscal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>BPC3_2</code> → <code>ZonaFiscal</code> — zona fiscal
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bpc3_1-bpc31-datos-de-pago" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>BPC3_1</code> → <code>Bpc31</code> — datos de pago
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adxtec-adxtec-auditoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ADXTEC</code> → <code>Adxtec</code> — auditoría
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lo-que-produce-customerextract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lo que produce <code>CustomerExtract</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-3-stock-del-erp-stockextract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 3 — Stock del ERP (<code>StockExtract</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 3 — Stock del ERP (StockExtract)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sistema-origen_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Sistema origen
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-llega-la-respuesta_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cómo llega la respuesta
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-objeto-stock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El objeto <code>Stock</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lo-que-produce-stockextract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lo que produce <code>StockExtract</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-4-pedidos-de-shopify-ordersextractor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 4 — Pedidos de Shopify (<code>OrdersExtractor</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 4 — Pedidos de Shopify (OrdersExtractor)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sistema-origen_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Sistema origen
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-llega-la-respuesta_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cómo llega la respuesta
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lo-que-produce-ordersextractor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lo que produce <code>OrdersExtractor</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lo-que-hace-ordertransform-inmediatamente-despues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lo que hace <code>OrderTransform</code> inmediatamente después
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-objeto-orderheadermodel-formato-del-erp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El objeto <code>OrderHeaderModel</code> — formato del ERP
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-objeto-orderlinemodel-lineas-del-pedido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El objeto <code>OrderLineModel</code> — líneas del pedido
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-objeto-ordershippingaddressmodel-direccion-de-envio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El objeto <code>OrderShippingAddressModel</code> — dirección de envío
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-5-imagenes-del-ftp-localimagesextractor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 5 — Imágenes del FTP (<code>LocalImagesExtractor</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 5 — Imágenes del FTP (LocalImagesExtractor)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sistema-origen_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Sistema origen
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proceso-de-extraccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Proceso de extracción
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convencion-de-nombrado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Convención de nombrado
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-objeto-nasfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El objeto <code>NasFile</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-csv-que-genera-como-efecto-secundario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El CSV que genera como efecto secundario
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lo-que-produce-localimagesextractor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lo que produce <code>LocalImagesExtractor</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-6-traducciones-translationsextract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 6 — Traducciones (<code>TranslationsExtract</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 6 — Traducciones (TranslationsExtract)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sistema-origen_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Sistema origen
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-hace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué hace
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estado-actual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Estado actual
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lo-que-produce-translationsextract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lo que produce <code>TranslationsExtract</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-7-tarifas-de-precios-extracttarifas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 7 — Tarifas de precios (<code>ExtractTarifas</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 7 — Tarifas de precios (ExtractTarifas)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Estado
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-que-existe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Por qué existe
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-8-migracion-desde-shopify-shopifyextract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 8 — Migración desde Shopify (<code>ShopifyExtract</code>)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 8 — Migración desde Shopify (ShopifyExtract)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estado_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Estado
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#para-que-se-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Para qué se usó
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-hace-internamente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué hace internamente
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-que-se-conserva-en-el-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Por qué se conserva en el código
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentos-relacionados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Documentos relacionados
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-de-objetos-que-produce-cada-extractor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Resumen de objetos que produce cada extractor
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navegación" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../04-extractors/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Pipeline ETL
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../04-extractors/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Extractors
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:erp" class="md-tag">ERP</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:extractors" class="md-tag">Extractors</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:pim" class="md-tag">PIM</a>
+      
+    
+  </nav>
+
+
+
+<h1 id="04b-extractors-detalle-completo-de-cada-uno">04b — Extractors: detalle completo de cada uno<a class="headerlink" href="#04b-extractors-detalle-completo-de-cada-uno" title="Permanent link">&para;</a></h1>
+<p>Este documento entra en profundidad en cada extractor: qué objeto produce, cómo llega del sistema origen, cuál es su estructura campo a campo y qué transformaciones iniciales aplica el propio extractor antes de entregar los datos.</p>
+<blockquote>
+<p><strong>¿Quieres entender cómo funciona un método concreto?</strong>
+→ <a href="../04c-extractors-metodos/"><code>04c-extractors-metodos.md</code></a> — explicación paso a paso de cada función y método de esta capa.</p>
+</blockquote>
+<hr />
+<h2 id="extractor-1-productos-e-imagenes-del-pim-productswithimagesextract">Extractor 1 — Productos e imágenes del PIM (<code>ProductsWithImagesExtract</code>)<a class="headerlink" href="#extractor-1-productos-e-imagenes-del-pim-productswithimagesextract" title="Permanent link">&para;</a></h2>
+<h3 id="sistema-origen">Sistema origen<a class="headerlink" href="#sistema-origen" title="Permanent link">&para;</a></h3>
+<p><strong>SalesLayer</strong> — PIM (Product Information Manager). Se accede mediante el conector <code>UPG.Connector.SalesLayer</code>, usando el canal de salida configurado en <code>PIM:CanalSalida</code>.</p>
+<h3 id="como-llega-la-respuesta">Cómo llega la respuesta<a class="headerlink" href="#como-llega-la-respuesta" title="Permanent link">&para;</a></h3>
+<p>SalesLayer devuelve un único objeto JSON con dos listas:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;categories&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;products&quot;</span><span class="p">:</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">]</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Esto se deserializa en <code>SalonSpaceResponse</code>:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">SalonSpaceResponse</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">SalonSpaceCategory</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Categories</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">SalonSpaceProduct</span><span class="o">&gt;</span><span class="w">  </span><span class="n">Products</span><span class="w">   </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>La lista de categorías no se usa en el flujo actual. Todo el procesamiento es sobre <code>Products</code>.</p>
+<hr />
+<h3 id="la-estructura-de-salonspaceproduct-campo-a-campo">La estructura de <code>SalonSpaceProduct</code> — campo a campo<a class="headerlink" href="#la-estructura-de-salonspaceproduct-campo-a-campo" title="Permanent link">&para;</a></h3>
+<p>Cada elemento de la lista <code>products</code> es un <code>SalonSpaceProduct</code>. Esta clase tiene más de 80 campos porque el PIM almacena una cantidad enorme de atributos de producto. Los más relevantes:</p>
+<h4 id="identificacion">Identificación<a class="headerlink" href="#identificacion" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Campo JSON</th>
+<th>Propiedad C#</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ID</code></td>
+<td><code>Id</code></td>
+<td>Identificador interno de SalesLayer. Se usa como sufijo del <code>OriginId</code> de la variante.</td>
+</tr>
+<tr>
+<td><code>sku</code></td>
+<td><code>Sku</code></td>
+<td>Referencia del artículo. Para productos simples, es el <code>OriginId</code> del producto.</td>
+</tr>
+<tr>
+<td><code>ean</code></td>
+<td><code>Ean</code></td>
+<td>Código EAN principal. El <code>StockExtract</code> usa el EAN para cruzar con el stock.</td>
+</tr>
+<tr>
+<td><code>ean_1</code>, <code>ean_2</code>, <code>ean_3</code></td>
+<td><code>Ean1</code>, <code>Ean2</code>, <code>Ean3</code></td>
+<td>EANs alternativos.</td>
+</tr>
+<tr>
+<td><code>codigo_agrupacion</code></td>
+<td><code>CodigoAgrupacion</code></td>
+<td>Si está relleno, el artículo es una variante y este es el <code>OriginId</code> del producto padre. Si está vacío, es un producto simple.</td>
+</tr>
+<tr>
+<td><code>STATUS</code></td>
+<td><code>Status</code></td>
+<td>Estado interno de SalesLayer (no es el estado de publicación).</td>
+</tr>
+</tbody>
+</table>
+<h4 id="estado-de-publicacion">Estado de publicación<a class="headerlink" href="#estado-de-publicacion" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Campo JSON</th>
+<th>Propiedad C#</th>
+<th>Tipo</th>
+<th>Valores</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>estatus</code></td>
+<td><code>Estatus</code></td>
+<td><code>Estatus</code> (enum)</td>
+<td><code>Visible</code>, <code>Invisible</code>, <code>Borrador</code></td>
+</tr>
+<tr>
+<td><code>obsoleto</code></td>
+<td><code>Obsoleto</code></td>
+<td><code>bool</code></td>
+<td><code>true</code>/<code>false</code> (viene como <code>"1"</code>/<code>"0"</code> o <code>""</code> en el JSON)</td>
+</tr>
+</tbody>
+</table>
+<p>El <code>Estatus</code> se mapea a <code>EntityStatus</code> en la variante:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Visible   → EntityStatus.Active
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Borrador  → EntityStatus.Inactive
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Invisible → EntityStatus.Deleted
+</span></code></pre></div>
+<p>Y el extractor aplica una regla especial antes de eso: si <code>Estatus == Visible &amp;&amp; Obsoleto == true</code>, fuerza <code>Estatus = Invisible</code>. Un producto visible pero obsoleto se trata como eliminado.</p>
+<h4 id="agrupacion-de-variantes">Agrupación de variantes<a class="headerlink" href="#agrupacion-de-variantes" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Campo JSON</th>
+<th>Propiedad C#</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>agrupacion</code></td>
+<td><code>Agrupacion</code></td>
+<td>Lista con la definición de opciones. Ejemplo: <code>["Color + Talla"]</code>. Los nombres de las opciones se extraen separando por <code>+</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Este campo sólo tiene sentido en el artículo "padre" (el que tiene el mismo SKU que <code>codigo_agrupacion</code>). Los demás artículos del grupo usarán los atributos referenciados ahí para extraer el valor de cada opción.</p>
+<h4 id="contenido-traducible">Contenido traducible<a class="headerlink" href="#contenido-traducible" title="Permanent link">&para;</a></h4>
+<p>Muchos campos son de tipo <code>Translatable&lt;string&gt;</code>, que es una clase del conector SalesLayer que almacena el mismo texto en varios idiomas:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// Ejemplo de uso:</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">producto</span><span class="p">.</span><span class="n">NombreProducto</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="s">&quot;es&quot;</span><span class="p">)</span><span class="w">  </span><span class="c1">// → &quot;Champú hidratante&quot;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">producto</span><span class="p">.</span><span class="n">NombreProducto</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="s">&quot;en&quot;</span><span class="p">)</span><span class="w">  </span><span class="c1">// → &quot;Moisturizing shampoo&quot;</span>
+</span></code></pre></div>
+<p>Los campos traducibles son:</p>
+<table>
+<thead>
+<tr>
+<th>Campo JSON</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nombre_producto</code></td>
+<td>Nombre del producto</td>
+</tr>
+<tr>
+<td><code>long_product_description</code></td>
+<td>Descripción larga</td>
+</tr>
+<tr>
+<td><code>short_product_description</code></td>
+<td>Descripción corta</td>
+</tr>
+<tr>
+<td><code>parent_product_name</code></td>
+<td>Nombre del producto padre (para variantes)</td>
+</tr>
+<tr>
+<td><code>how_to_use</code></td>
+<td>Modo de uso</td>
+</tr>
+<tr>
+<td><code>key_features</code></td>
+<td>Características principales</td>
+</tr>
+<tr>
+<td><code>benefits</code></td>
+<td>Beneficios</td>
+</tr>
+<tr>
+<td><code>additional_benefits</code></td>
+<td>Beneficios adicionales</td>
+</tr>
+<tr>
+<td><code>ingredients</code></td>
+<td>Ingredientes</td>
+</tr>
+<tr>
+<td><code>hair_type</code></td>
+<td>Tipo de cabello</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td>Color</td>
+</tr>
+<tr>
+<td><code>meta_title</code></td>
+<td>Título meta (SEO)</td>
+</tr>
+<tr>
+<td><code>meta_description</code></td>
+<td>Descripción meta (SEO)</td>
+</tr>
+<tr>
+<td><code>descripcion_profesional</code></td>
+<td>Descripción de uso profesional</td>
+</tr>
+</tbody>
+</table>
+<h4 id="clasificacion-y-taxonomia">Clasificación y taxonomía<a class="headerlink" href="#clasificacion-y-taxonomia" title="Permanent link">&para;</a></h4>
+<p>Hay una cantidad muy grande de campos de clasificación (todos de tipo <code>string</code>) que reflejan la taxonomía de productos del sector de peluquería:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>shopify_category, shopify_subcategory, shopify_linea_marca,
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>brand, brand_family, brand_subfamily, brand_line,
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>tipo_lacas_styling_lacas, tipo_cera_styling_ceras,
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>tipo_producto_cabello_champus, tipo_producto_cabello_mascarillas,
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>tipo_producto_color_tintes, tipo_producto_color_tintes_negros, ...
+</span></code></pre></div>
+<p>Estos campos existen porque la taxonomía del catálogo de Provalliance es muy específica del sector (peluquería, cosmética, accesorios). No todos tienen valor en todos los productos: la mayoría estará vacío dependiendo de la categoría del artículo.</p>
+<h4 id="imagenes">Imágenes<a class="headerlink" href="#imagenes" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Campo JSON</th>
+<th>Propiedad C#</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>imagen_de_producto</code></td>
+<td><code>Imagenes</code></td>
+<td>Imágenes propias de la variante (lista de URLs).</td>
+</tr>
+<tr>
+<td><code>imagen_productos_agrupados</code></td>
+<td><code>ImagenesProductosAgrupados</code></td>
+<td>Imágenes del producto padre, compartidas por todas las variantes.</td>
+</tr>
+</tbody>
+</table>
+<p>Las URLs vienen como objetos <code>SLUri</code> con una propiedad <code>.Org</code> que contiene la URL original de la imagen en alta resolución.</p>
+<h4 id="otros-campos-relevantes">Otros campos relevantes<a class="headerlink" href="#otros-campos-relevantes" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Campo JSON</th>
+<th>Propiedad C#</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>etiqueta</code></td>
+<td><code>Etiqueta</code></td>
+<td>Tags del producto (lista de strings). Se trasladan a tags de Shopify.</td>
+</tr>
+<tr>
+<td><code>sku_type</code></td>
+<td><code>SkuType</code></td>
+<td>Tipo de SKU.</td>
+</tr>
+<tr>
+<td><code>content_value</code> + <code>content_type</code></td>
+<td>—</td>
+<td>Contenido y tipo (ej: "250" + "ml").</td>
+</tr>
+<tr>
+<td><code>weight</code></td>
+<td><code>Weight</code></td>
+<td>Peso del artículo.</td>
+</tr>
+<tr>
+<td><code>salon_space_selling_price</code></td>
+<td><code>SalonSpaceSellingPrice</code></td>
+<td>Precio de venta (string, hay que parsear).</td>
+</tr>
+<tr>
+<td><code>nivel_impuesto</code></td>
+<td><code>NivelImpuesto</code></td>
+<td>Nivel de impuesto (IVA).</td>
+</tr>
+<tr>
+<td><code>ficha_tecnica</code></td>
+<td><code>FichaTecnica</code></td>
+<td>URL a la ficha técnica.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="de-salonspaceproduct-a-product-y-variant">De <code>SalonSpaceProduct</code> a <code>Product</code> y <code>Variant</code><a class="headerlink" href="#de-salonspaceproduct-a-product-y-variant" title="Permanent link">&para;</a></h3>
+<p>El extractor no entrega los <code>SalonSpaceProduct</code> directamente. Los convierte en objetos <code>Product</code> (que implementa <code>IProduct</code>) y <code>Variant</code> (que implementa <code>IVariant</code>).</p>
+<h4 id="el-objeto-product">El objeto <code>Product</code><a class="headerlink" href="#el-objeto-product" title="Permanent link">&para;</a></h4>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Product</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IProduct</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">OriginId</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">        </span><span class="c1">// = CodigoAgrupacion (o Sku si es simple)</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">EntityStatus</span><span class="w"> </span><span class="n">Status</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">    </span><span class="c1">// calculado a partir de las variantes</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="c1">// Internamente:</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">ICollection</span><span class="o">&lt;</span><span class="n">Variant</span><span class="o">&gt;</span><span class="w"> </span><span class="n">_variants</span><span class="p">;</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">Variant</span><span class="w"> </span><span class="n">_mainVariant</span><span class="p">;</span><span class="w">  </span><span class="c1">// el que tiene el mismo Sku que CodigoAgrupacion</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>El <code>Status</code> del producto se calcula como el "mínimo" de las variantes: si alguna está <code>Active</code>, el producto está <code>Active</code>. Si están todas <code>Inactive</code>, el producto está <code>Inactive</code>. Etc.</p>
+<p>El <code>OriginId</code> del producto es:
+- <strong>Producto simple</strong>: el campo <code>Sku</code> del artículo.
+- <strong>Producto con variantes</strong>: el campo <code>CodigoAgrupacion</code> (el SKU padre compartido).</p>
+<h4 id="el-objeto-variant">El objeto <code>Variant</code><a class="headerlink" href="#el-objeto-variant" title="Permanent link">&para;</a></h4>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Variant</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IVariant</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p">{</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">ProductOriginId</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="c1">// = OriginId del producto padre</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">OriginId</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">         </span><span class="c1">// = &quot;{ProductOriginId}#{SalonSpaceProduct.Id}&quot;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">EntityStatus</span><span class="w"> </span><span class="n">Status</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">     </span><span class="c1">// calculado desde Estatus del SalonSpaceProduct</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">IDictionary</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;?</span><span class="w"> </span><span class="n">Options</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="c1">// ej: {&quot;Color&quot;: &quot;Negro&quot;, &quot;Talla&quot;: &quot;M&quot;}</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>El <code>OriginId</code> de cada variante es un identificador compuesto: el ID del producto padre más el ID interno de SalesLayer, separados por <code>#</code>. Esto garantiza unicidad global.</p>
+<h4 id="como-se-construyen-las-opciones-options">Cómo se construyen las opciones (<code>Options</code>)<a class="headerlink" href="#como-se-construyen-las-opciones-options" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Producto simple</strong> (1 variante): la opción es siempre <code>{"Title": "Default Title"}</code> (convención de Shopify).</li>
+<li><strong>Producto con variantes</strong>: se leen los nombres de opciones del campo <code>Agrupacion</code> del artículo padre (ej: <code>"Color + Talla"</code>) y se parte por <code>+</code>. Para cada variante, se lee el valor de cada opción buscando en el objeto <code>SalonSpaceProduct</code> el campo JSON que coincida con el nombre de la opción en minúsculas con guiones bajos (ej: <code>color</code>, <code>talla</code>).</li>
+</ul>
+<hr />
+<h3 id="el-objeto-productimage">El objeto <code>ProductImage</code><a class="headerlink" href="#el-objeto-productimage" title="Permanent link">&para;</a></h3>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ProductImage</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IProductImage</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p">{</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">ImageOriginId</span><span class="w">         </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="c1">// URL de la imagen (es a la vez su ID)</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">ProductOriginId</span><span class="w">       </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="c1">// OriginId del producto al que pertenece</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;?</span><span class="w"> </span><span class="n">ProductVariantsOriginId</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="c1">// OriginIds de las variantes con esa imagen</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Hay dos tipos de imágenes:
+- <strong>Imágenes de variante</strong> (<code>imagen_de_producto</code>): tienen <code>ProductVariantsOriginId</code> relleno con las variantes que usan esa imagen.
+- <strong>Imágenes de producto padre</strong> (<code>imagen_productos_agrupados</code>): tienen <code>ProductVariantsOriginId</code> vacío, aplican a todo el producto.</p>
+<hr />
+<h3 id="limpieza-de-duplicados">Limpieza de duplicados<a class="headerlink" href="#limpieza-de-duplicados" title="Permanent link">&para;</a></h3>
+<p>Antes de emitir los outputs, el extractor realiza dos pasadas de deduplicación (ver <a href="../04c-extractors-metodos/#removeduplicatedvariants"><code>RemoveDuplicatedVariants()</code></a> para el detalle del método):</p>
+<h4 id="1-productos-con-originid-duplicado">1. Productos con <code>OriginId</code> duplicado<a class="headerlink" href="#1-productos-con-originid-duplicado" title="Permanent link">&para;</a></h4>
+<p>Si dos productos tienen el mismo <code>OriginId</code>, se conserva solo el primero y se emite un <code>LogError</code> por cada grupo de duplicados eliminados.</p>
+<h4 id="2-variantes-duplicadas-dentro-de-un-producto">2. Variantes duplicadas dentro de un producto<a class="headerlink" href="#2-variantes-duplicadas-dentro-de-un-producto" title="Permanent link">&para;</a></h4>
+<p>Dentro de cada <code>Product</code>, si hay variantes con el mismo <code>OriginId</code>, se conserva solo la primera. Se emite un <code>LogError</code> indicando cuántas variantes duplicadas tenía ese producto.</p>
+<hr />
+<h3 id="outputs-del-workflow">Outputs del workflow<a class="headerlink" href="#outputs-del-workflow" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th>Tipo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ProductsOutput</code></td>
+<td><code>Box&lt;IProduct&gt;</code></td>
+<td>Lista de todos los productos (simples y con variantes) ya limpios de duplicados.</td>
+</tr>
+<tr>
+<td><code>ProductsImagesOutput</code></td>
+<td><code>Box&lt;IProductImage&gt;</code></td>
+<td>Lista plana de todas las imágenes, deduplicadas por <code>ImageOriginId</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Las imágenes se emiten como output <strong>independiente</strong> aunque el producto ya tiene acceso a ellas vía <a href="../04c-extractors-metodos/#getparentimages"><code>GetParentImages()</code></a> y <a href="../04c-extractors-metodos/#getvariantsimages"><code>GetVariantsImages()</code></a>. El motivo es que la rama del workflow que gestiona imágenes (subida, sincronización) pueda procesarlas directamente sin tener que recorrer la jerarquía producto → variante en cada paso.</p>
+<hr />
+<h3 id="flujo-resumido">Flujo resumido<a class="headerlink" href="#flujo-resumido" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>SalesLayer API
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    └── SalonSpaceResponse
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>            ├── Marcar Visibles+Obsoletos como Invisibles
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>            ├── Productos sin CodigoAgrupacion  ──► Product (simple, 1 variante)
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>            ├── Productos con CodigoAgrupacion  ──► Product (agrupado, N variantes)
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>            ├── Eliminar Products con OriginId duplicado
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>            ├── Eliminar Variants duplicadas dentro de cada Product
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>            └── Extraer imágenes (parent + variants, deduplicadas por ImageOriginId)
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>                    │
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>                    ├── ProductsOutput        ──► actividades de sincronización de productos
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>                    └── ProductsImagesOutput  ──► actividades de sincronización de imágenes
+</span></code></pre></div>
+<hr />
+<h2 id="extractor-2-clientes-del-erp-customerextract">Extractor 2 — Clientes del ERP (<code>CustomerExtract</code>)<a class="headerlink" href="#extractor-2-clientes-del-erp-customerextract" title="Permanent link">&para;</a></h2>
+<h3 id="sistema-origen_1">Sistema origen<a class="headerlink" href="#sistema-origen_1" title="Permanent link">&para;</a></h3>
+<p><strong>API de Provalliance</strong> — middleware en Azure API Management. Endpoint: <code>GET /clients/client?PageNumber=0&amp;PageItems=50</code>.</p>
+<h3 id="como-llega-la-respuesta-paginada">Cómo llega la respuesta (paginada)<a class="headerlink" href="#como-llega-la-respuesta-paginada" title="Permanent link">&para;</a></h3>
+<p>Cada página devuelve un <code>ClientResponseModelContainer</code>:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nt">&quot;ClientsList&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="nt">&quot;NextPageLink&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://apim-prod.../clients/client?PageNumber=1&amp;PageItems=50&quot;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ClientResponseModelContainer</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="p">{</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">ClientResponseModel</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ClientsList</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">NextPageLink</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>El extractor itera páginas hasta recibir una con menos de 50 elementos (ver <a href="../04c-extractors-metodos/#getclients"><code>GetClients()</code></a> para el detalle de la paginación).</p>
+<hr />
+<h3 id="la-estructura-de-clientresponsemodel-campo-a-campo">La estructura de <code>ClientResponseModel</code> — campo a campo<a class="headerlink" href="#la-estructura-de-clientresponsemodel-campo-a-campo" title="Permanent link">&para;</a></h3>
+<p>Los campos de la API de Provalliance usan nombres crípticos heredados del ERP (Sage X3). Cada campo principal es un objeto con el nombre de la tabla del ERP.</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ClientResponseModel</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICompany</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="p">{</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;BPC0_1&quot;)]</span><span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="n">CompanyResponseModel</span><span class="w"> </span><span class="n">Company</span><span class="w">   </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;BPRC_1&quot;)]</span><span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="n">Bprc1</span><span class="w">                </span><span class="n">Bprc1</span><span class="w">     </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;BPRC_5&quot;)]</span><span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="n">Bprc5</span><span class="w">                </span><span class="n">Bprc5</span><span class="w">     </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;BPAC_1&quot;)]</span><span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="n">LocationResponseModel</span><span class="p">[]</span><span class="w"> </span><span class="n">Locations</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;BPC2_6&quot;)]</span><span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="n">Bpc26</span><span class="w">                </span><span class="n">Bpc26</span><span class="w">     </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;BPC3_1&quot;)]</span><span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="n">Bpc31</span><span class="w">                </span><span class="n">Bpc31</span><span class="w">     </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;BPC3_2&quot;)]</span><span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="n">ZonaFiscal</span><span class="w">           </span><span class="n">ZonaFiscal</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;BPC3_3&quot;)]</span><span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="n">Bpc33</span><span class="w">                </span><span class="n">Bpc33</span><span class="w">     </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;BPC4_1&quot;)]</span><span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="n">Bpc41</span><span class="p">[]</span><span class="w">              </span><span class="n">Bpc41</span><span class="w">     </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;ADXTEC&quot;)]</span><span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="n">Adxtec</span><span class="w">               </span><span class="n">Adxtec</span><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="bpc0_1-companyresponsemodel-datos-de-la-empresa"><code>BPC0_1</code> → <code>CompanyResponseModel</code> — datos de la empresa<a class="headerlink" href="#bpc0_1-companyresponsemodel-datos-de-la-empresa" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Campo JSON</th>
+<th>Campo C#</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BPCNUM</code></td>
+<td><code>CodCom</code></td>
+<td><strong>Código de cliente en el ERP. Es el <code>OriginId</code> de la Company en Shopify.</strong></td>
+</tr>
+<tr>
+<td><code>BPCNAM</code></td>
+<td><code>Name</code></td>
+<td>Razón social de la empresa.</td>
+</tr>
+<tr>
+<td><code>BCGCOD</code></td>
+<td><code>Bcgcod</code></td>
+<td>Código de grupo de clientes.</td>
+</tr>
+<tr>
+<td><code>ZBPCSHOPIFY</code></td>
+<td><code>Zbpcshopify</code></td>
+<td>ID de Shopify (si ya fue sincronizado).</td>
+</tr>
+</tbody>
+</table>
+<h4 id="bprc_1-bprc1-datos-de-facturacion-y-financieros"><code>BPRC_1</code> → <code>Bprc1</code> — datos de facturación y financieros<a class="headerlink" href="#bprc_1-bprc1-datos-de-facturacion-y-financieros" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Campo JSON</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CRN</code></td>
+<td><strong>Número de IVA / CIF.</strong> Se copia a todas las Locations.</td>
+</tr>
+<tr>
+<td><code>CUR</code></td>
+<td>Moneda del cliente.</td>
+</tr>
+<tr>
+<td><code>LAN</code></td>
+<td>Idioma del cliente.</td>
+</tr>
+<tr>
+<td><code>BPRSHO</code></td>
+<td>Nombre abreviado.</td>
+</tr>
+<tr>
+<td><code>ZUTOFAC</code></td>
+<td>Indicador de facturación automática.</td>
+</tr>
+<tr>
+<td><code>SUBTOTAX</code></td>
+<td>Tipo de IVA.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="bprc_5-bprc5-datos-edi"><code>BPRC_5</code> → <code>Bprc5</code> — datos EDI<a class="headerlink" href="#bprc_5-bprc5-datos-edi" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Campo JSON</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ZEDIFLG</code></td>
+<td>Flag de integración EDI activa.</td>
+</tr>
+<tr>
+<td><code>ZEDIREF</code></td>
+<td>Referencia EDI del cliente.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="bpac_1-locationresponsemodel-las-direcciones"><code>BPAC_1</code> → <code>LocationResponseModel[]</code> — <strong>las direcciones</strong><a class="headerlink" href="#bpac_1-locationresponsemodel-las-direcciones" title="Permanent link">&para;</a></h4>
+<p>Este es el campo más importante. Es un array de direcciones del cliente. Cada dirección implementa a la vez <code>ILocation</code> <strong>y</strong> <code>ICustomer</code>, porque en el modelo de Shopify B2B cada dirección es tanto una sucursal como una persona de acceso.</p>
+<h5 id="campos-de-locationresponsemodel">Campos de <code>LocationResponseModel</code><a class="headerlink" href="#campos-de-locationresponsemodel" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Campo JSON</th>
+<th>Campo C#</th>
+<th>Significado en Shopify</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CODADR</code></td>
+<td><code>Codadr</code></td>
+<td>Código de dirección en el ERP</td>
+</tr>
+<tr>
+<td><code>BPADES</code></td>
+<td><code>Contact</code></td>
+<td>Nombre de la persona de contacto</td>
+</tr>
+<tr>
+<td><code>BPACRY</code></td>
+<td><code>Country</code></td>
+<td>Código de país (2 letras, ej: <code>ES</code>)</td>
+</tr>
+<tr>
+<td><code>ADDLIG1</code></td>
+<td><code>Address1</code></td>
+<td>Primera línea de dirección</td>
+</tr>
+<tr>
+<td><code>ADDLIG2</code></td>
+<td><code>Address2</code></td>
+<td>Segunda línea de dirección</td>
+</tr>
+<tr>
+<td><code>POSCOD</code></td>
+<td><code>Zip</code></td>
+<td>Código postal</td>
+</tr>
+<tr>
+<td><code>CTY</code></td>
+<td><code>City</code></td>
+<td>Ciudad</td>
+</tr>
+<tr>
+<td><code>SAT</code></td>
+<td><code>ZoneCode</code></td>
+<td>Código de provincia/estado</td>
+</tr>
+<tr>
+<td><code>TEL1</code></td>
+<td><code>Phone</code></td>
+<td>Teléfono principal</td>
+</tr>
+<tr>
+<td><code>WEB1</code></td>
+<td><code>Email</code></td>
+<td><strong>Email del contacto. Es el <code>OriginId</code> del Customer en Shopify.</strong></td>
+</tr>
+</tbody>
+</table>
+<h5 id="los-dos-originid-de-locationresponsemodel">Los dos OriginId de <code>LocationResponseModel</code><a class="headerlink" href="#los-dos-originid-de-locationresponsemodel" title="Permanent link">&para;</a></h5>
+<p>La misma clase actúa como dos entidades distintas en Shopify, con dos <code>OriginId</code> diferentes (ver <a href="../04c-extractors-metodos/#15-locationresponsemodel-metodos-de-ilocation-e-icustomer"><code>ILocation.OriginId</code> e <code>ICustomer.OriginId</code> en sección 15</a>):</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">// Como ILocation (sucursal):</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="kt">string</span><span class="w"> </span><span class="n">ILocation</span><span class="p">.</span><span class="n">OriginId</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">LocationOriginId</span><span class="p">;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="c1">// Valor: &quot;{CodCliente}#{CodDireccion}&quot;  →  ej: &quot;C0001#DIR01&quot;</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1">// Se construye en CustomerExtract: location.LocationOriginId = cliente.OriginId + &quot;#&quot; + location.Codadr</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="c1">// Como ICustomer (contacto/persona de acceso):</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="kt">string</span><span class="w"> </span><span class="n">ICustomer</span><span class="p">.</span><span class="n">OriginId</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Email</span><span class="p">;</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="c1">// Valor: el email del contacto  →  ej: &quot;contacto@peluqueria.com&quot;</span>
+</span></code></pre></div>
+<p>Esto es fundamental: <strong>el email es el identificador único del contacto en Shopify</strong>. Si dos direcciones del mismo cliente tienen el mismo email, el sistema las trata como el mismo contacto.</p>
+<h4 id="bpc3_2-zonafiscal-zona-fiscal"><code>BPC3_2</code> → <code>ZonaFiscal</code> — zona fiscal<a class="headerlink" href="#bpc3_2-zonafiscal-zona-fiscal" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Campo JSON</th>
+<th>Campo C#</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>VACBPR</code></td>
+<td><code>zonaFiscal</code></td>
+<td>Código de zona fiscal. Ejemplos: <code>EXE</code> (exento), <code>es_re:REQ</code> (recargo de equivalencia), cualquier otro valor (régimen normal).</td>
+</tr>
+<tr>
+<td><code>VATEXN</code></td>
+<td><code>Vatexn</code></td>
+<td>Número de exención de IVA.</td>
+</tr>
+</tbody>
+</table>
+<p>Este campo se guarda como metafield en la Company de Shopify (<code>upng.zona_fiscal</code>).</p>
+<h4 id="bpc3_1-bpc31-datos-de-pago"><code>BPC3_1</code> → <code>Bpc31</code> — datos de pago<a class="headerlink" href="#bpc3_1-bpc31-datos-de-pago" title="Permanent link">&para;</a></h4>
+<p>Contiene información sobre el pagador (<code>BPCINV</code>, <code>BPCPYR</code>) y el grupo de clientes (<code>BPCGRU</code>). No se usa directamente en la sincronización actual.</p>
+<h4 id="adxtec-adxtec-auditoria"><code>ADXTEC</code> → <code>Adxtec</code> — auditoría<a class="headerlink" href="#adxtec-adxtec-auditoria" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Campo JSON</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>WW_MODSTAMP</code></td>
+<td>Timestamp de última modificación (útil para sincronizaciones incrementales)</td>
+</tr>
+<tr>
+<td><code>WW_MODUSER</code></td>
+<td>Usuario que hizo la última modificación</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="lo-que-produce-customerextract">Lo que produce <code>CustomerExtract</code><a class="headerlink" href="#lo-que-produce-customerextract" title="Permanent link">&para;</a></h3>
+<p>Entrega una <code>Box&lt;ICompany&gt;</code> donde cada elemento es un <code>ClientResponseModel</code>. Desde el punto de vista del sistema:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad / Método</th>
+<th>Valor / Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OriginId</code></td>
+<td><code>Company.CodCom</code> — ej: <code>"C0001"</code></td>
+</tr>
+<tr>
+<td><a href="../04c-extractors-metodos/#getlocations"><code>GetLocations()</code></a></td>
+<td>Array de <code>LocationResponseModel</code> como <code>ILocation</code></td>
+</tr>
+<tr>
+<td><a href="../04c-extractors-metodos/#getcustomers"><code>GetCustomers()</code></a></td>
+<td>El mismo array como <code>ICustomer</code></td>
+</tr>
+<tr>
+<td><a href="../04c-extractors-metodos/#getmaincontact"><code>GetMainContact()</code></a></td>
+<td>La primera dirección como contacto principal</td>
+</tr>
+<tr>
+<td><a href="../04c-extractors-metodos/#getfiscalzone"><code>GetFiscalZone()</code></a></td>
+<td><code>ZonaFiscal.zonaFiscal</code> — código de zona fiscal</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="extractor-3-stock-del-erp-stockextract">Extractor 3 — Stock del ERP (<code>StockExtract</code>)<a class="headerlink" href="#extractor-3-stock-del-erp-stockextract" title="Permanent link">&para;</a></h2>
+<h3 id="sistema-origen_2">Sistema origen<a class="headerlink" href="#sistema-origen_2" title="Permanent link">&para;</a></h3>
+<p><strong>API de Provalliance</strong> — endpoint: <code>GET /stock/shopify</code>.</p>
+<h3 id="como-llega-la-respuesta_1">Cómo llega la respuesta<a class="headerlink" href="#como-llega-la-respuesta_1" title="Permanent link">&para;</a></h3>
+<p>La API devuelve directamente un array JSON:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">[</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;ean&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8432599123456&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;warehouse&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MADRID&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;ean&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8432599654321&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;warehouse&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MADRID&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">  </span><span class="err">...</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="p">]</span>
+</span></code></pre></div>
+<h3 id="el-objeto-stock">El objeto <code>Stock</code><a class="headerlink" href="#el-objeto-stock" title="Permanent link">&para;</a></h3>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">public</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Stock</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="p">{</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;ean&quot;)]</span><span class="w">       </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Ean</span><span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">init</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;warehouse&quot;)]</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Warehouse</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">init</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;quantity&quot;)]</span><span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w">    </span><span class="n">Quantity</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">init</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ean</code></td>
+<td>Código EAN de la variante. Es el puente entre el ERP y Shopify: el transformer lo usará para buscar en la BD de transacciones a qué <code>InventoryItemId</code> de Shopify corresponde este EAN.</td>
+</tr>
+<tr>
+<td><code>Warehouse</code></td>
+<td>Almacén del que proviene el stock. Actualmente no se usa para filtrar.</td>
+</tr>
+<tr>
+<td><code>Quantity</code></td>
+<td>Cantidad disponible. Si es 0, la variante quedará a 0 en Shopify.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lo-que-produce-stockextract">Lo que produce <code>StockExtract</code><a class="headerlink" href="#lo-que-produce-stockextract" title="Permanent link">&para;</a></h3>
+<p>Entrega una <code>Box&lt;Stock&gt;</code> con todos los registros sin ningún filtrado adicional.</p>
+<hr />
+<h2 id="extractor-4-pedidos-de-shopify-ordersextractor">Extractor 4 — Pedidos de Shopify (<code>OrdersExtractor</code>)<a class="headerlink" href="#extractor-4-pedidos-de-shopify-ordersextractor" title="Permanent link">&para;</a></h2>
+<h3 id="sistema-origen_3">Sistema origen<a class="headerlink" href="#sistema-origen_3" title="Permanent link">&para;</a></h3>
+<p><strong>Shopify</strong> — accedido a través del <code>ShopifySDK</code>. Método: <a href="../04c-extractors-metodos/#16-ordersretrieve-shopifysdk"><code>Orders.Retrieve(query)</code></a>.</p>
+<h3 id="como-llega-la-respuesta_2">Cómo llega la respuesta<a class="headerlink" href="#como-llega-la-respuesta_2" title="Permanent link">&para;</a></h3>
+<p>El SDK ejecuta una query de la API de Shopify usando el filtro de configuración. El filtro por defecto es <code>tag_not:Sincronizado</code>, que devuelve todos los pedidos que no tienen esa etiqueta. El resultado es una lista de objetos <code>Order</code> del SDK de Shopify.</p>
+<p>El objeto <code>Order</code> de Shopify es complejo y contiene toda la información del pedido tal como existe en Shopify. Los campos más relevantes para este proyecto son:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Order
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>  · Id           → ID de GraphQL del pedido en Shopify  (ej: &quot;gid://shopify/Order/123456&quot;)
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>  · Name         → Nombre legible del pedido            (ej: &quot;#SS4185&quot;)
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>  · LineItems    → Nodos con las líneas del pedido
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>  │   └── Nodes[]
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>  │         · Quantity    → Cantidad pedida
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>  │         · Title       → Nombre del producto
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>  │         · Variant     → Referencia a la variante
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>  └── BuyerIdentity
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>        └── PurchasingCompany
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>              · Company   → Company de Shopify B2B
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>              │   └── ExternalId  → El OriginId del cliente en el ERP (= CodCom)
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>              └── Location → Sucursal desde la que se hizo el pedido
+</span></code></pre></div>
+<p>El campo clave es <code>ExternalId</code> de la Company: es el metafield que se estableció durante la sincronización de clientes y contiene el código de cliente del ERP (<code>CodCom</code>). Sin él, el pedido no puede enviarse al ERP y se descarta.</p>
+<h3 id="lo-que-produce-ordersextractor">Lo que produce <code>OrdersExtractor</code><a class="headerlink" href="#lo-que-produce-ordersextractor" title="Permanent link">&para;</a></h3>
+<p>Entrega una <code>Box&lt;Order&gt;</code> con los pedidos en crudo tal como vienen de Shopify. La conversión al modelo del ERP se hace en el paso de transformación siguiente.</p>
+<h3 id="lo-que-hace-ordertransform-inmediatamente-despues">Lo que hace <code>OrderTransform</code> inmediatamente después<a class="headerlink" href="#lo-que-hace-ordertransform-inmediatamente-despues" title="Permanent link">&para;</a></h3>
+<p>Aunque no es un extractor, es relevante entender qué pasa justo después. El método <a href="../04c-extractors-metodos/#17-getcompanydetailsforcustomer-shopifysdk"><code>GetCompanyDetailsForCustomer()</code></a> extrae la empresa B2B del campo polimórfico <code>PurchasingEntity</code> del pedido:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1">// Para cada Order de Shopify:</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="kt">var</span><span class="w"> </span><span class="n">company</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">order</span><span class="p">.</span><span class="n">GetCompanyDetailsForCustomer</span><span class="p">()</span><span class="o">?.</span><span class="n">Company</span><span class="p">;</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="kt">var</span><span class="w"> </span><span class="n">customerId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">company</span><span class="o">?.</span><span class="n">ExternalId</span><span class="p">;</span><span class="w">   </span><span class="c1">// ← el CodCom del ERP</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">customerId</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">null</span><span class="p">;</span><span class="w">  </span><span class="c1">// descarta si no tiene ExternalId</span>
+</span></code></pre></div>
+<p>Produce <code>OrderModel</code>, que es un objeto contenedor que une el <code>Order</code> de Shopify con el <code>OrderHeaderModel</code> (formato ERP):</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">OrderModel</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="p">{</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Order</span><span class="w"> </span><span class="n">ShopifyOrder</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">         </span><span class="c1">// el pedido original de Shopify</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">OrderHeaderModel</span><span class="w"> </span><span class="n">Header</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">    </span><span class="c1">// el pedido convertido al formato del ERP</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">ICollection</span><span class="o">&lt;</span><span class="n">OrderLineModel</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Lines</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="c1">// las líneas del pedido</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<hr />
+<h3 id="el-objeto-orderheadermodel-formato-del-erp">El objeto <code>OrderHeaderModel</code> — formato del ERP<a class="headerlink" href="#el-objeto-orderheadermodel-formato-del-erp" title="Permanent link">&para;</a></h3>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">OrderHeaderModel</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="p">{</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;id&quot;)]</span><span class="w">                 </span><span class="kt">string</span><span class="w">  </span><span class="n">Id</span><span class="w">               </span><span class="c1">// Número de pedido ERP</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;shopifyId&quot;)]</span><span class="w">          </span><span class="kt">string</span><span class="w">  </span><span class="n">ShopifyId</span><span class="w">        </span><span class="c1">// ID de Shopify</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;created_at&quot;)]</span><span class="w">         </span><span class="kt">string?</span><span class="w"> </span><span class="n">CreatedAt</span><span class="w">        </span><span class="c1">// Fecha de creación</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;ejercicioDocumento&quot;)]</span><span class="w"> </span><span class="kt">int</span><span class="w">     </span><span class="n">EjercicioDocumento</span><span class="w"> </span><span class="c1">// Año fiscal</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;customerId&quot;)]</span><span class="w">         </span><span class="kt">string?</span><span class="w"> </span><span class="n">CustomerId</span><span class="w">       </span><span class="c1">// CodCom del ERP</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;shippingAddressId&quot;)]</span><span class="w">  </span><span class="kt">string?</span><span class="w"> </span><span class="n">ShippingAddressId</span><span class="w"> </span><span class="c1">// CodAdr del ERP</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;paymenTerms&quot;)]</span><span class="w">        </span><span class="kt">string?</span><span class="w"> </span><span class="n">PaymentTerms</span><span class="w">     </span><span class="c1">// Términos de pago</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;shippingLineCode&quot;)]</span><span class="w">   </span><span class="kt">string?</span><span class="w"> </span><span class="n">ShippingLineCode</span><span class="w">  </span><span class="c1">// Código de envío</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;shippingLinePrice&quot;)]</span><span class="w">  </span><span class="kt">decimal?</span><span class="w"> </span><span class="n">ShippingLinePrice</span><span class="w"> </span><span class="c1">// Precio de envío</span>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;subtotalPrice&quot;)]</span><span class="w">      </span><span class="kt">decimal?</span><span class="w"> </span><span class="n">SubtotalPrice</span><span class="w">   </span><span class="c1">// Subtotal</span>
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;taxLine&quot;)]</span><span class="w">            </span><span class="kt">decimal?</span><span class="w"> </span><span class="n">TaxLine</span><span class="w">         </span><span class="c1">// Impuestos</span>
+</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;totalPrice&quot;)]</span><span class="w">         </span><span class="kt">decimal?</span><span class="w"> </span><span class="n">TotalPrice</span><span class="w">      </span><span class="c1">// Total</span>
+</span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;totalDiscount&quot;)]</span><span class="w">      </span><span class="kt">decimal?</span><span class="w"> </span><span class="n">TotalDiscount</span><span class="w">   </span><span class="c1">// Descuento total</span>
+</span><span id="__span-18-16"><a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;totalDiscountPrcnt&quot;)]</span><span class="w"> </span><span class="kt">decimal?</span><span class="w"> </span><span class="n">TotalDiscountPrcnt</span><span class="w"> </span><span class="c1">// Descuento %</span>
+</span><span id="__span-18-17"><a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;note&quot;)]</span><span class="w">               </span><span class="kt">string?</span><span class="w"> </span><span class="n">Note</span><span class="w">             </span><span class="c1">// Notas del pedido</span>
+</span><span id="__span-18-18"><a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;poNumber&quot;)]</span><span class="w">           </span><span class="kt">string?</span><span class="w"> </span><span class="n">PoNumber</span><span class="w">         </span><span class="c1">// Número de PO</span>
+</span><span id="__span-18-19"><a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;shipping_address&quot;)]</span><span class="w">   </span><span class="n">OrderShippingAddressModel</span><span class="o">?</span><span class="w"> </span><span class="n">ShippingAddress</span>
+</span><span id="__span-18-20"><a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;line_items&quot;)]</span><span class="w">         </span><span class="n">ICollection</span><span class="o">&lt;</span><span class="n">OrderLineModel</span><span class="o">&gt;?</span><span class="w"> </span><span class="n">LineasDocumento</span>
+</span><span id="__span-18-21"><a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="el-objeto-orderlinemodel-lineas-del-pedido">El objeto <code>OrderLineModel</code> — líneas del pedido<a class="headerlink" href="#el-objeto-orderlinemodel-lineas-del-pedido" title="Permanent link">&para;</a></h3>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">OrderLineModel</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="p">{</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;price&quot;)]</span><span class="w">              </span><span class="kt">decimal</span><span class="w">  </span><span class="n">Price</span><span class="w">          </span><span class="c1">// Precio unitario</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;quantity&quot;)]</span><span class="w">           </span><span class="kt">int</span><span class="w">      </span><span class="n">Quantity</span><span class="w">       </span><span class="c1">// Cantidad</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;productId&quot;)]</span><span class="w">          </span><span class="kt">string</span><span class="w">   </span><span class="n">ProductId</span><span class="w">      </span><span class="c1">// Referencia del producto (OriginId en el ERP)</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;title&quot;)]</span><span class="w">              </span><span class="kt">string</span><span class="w">   </span><span class="n">Title</span><span class="w">          </span><span class="c1">// Nombre del artículo</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;totalDiscount&quot;)]</span><span class="w">      </span><span class="kt">decimal</span><span class="w">  </span><span class="n">TotalDiscount</span><span class="w">  </span><span class="c1">// Descuento de línea</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;totalDiscountPrcnt&quot;)]</span><span class="w"> </span><span class="kt">decimal?</span><span class="w"> </span><span class="n">TotalDiscountPrcnt</span><span class="w"> </span><span class="c1">// Descuento %</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">    </span><span class="na">[JsonProperty(&quot;totalPrice&quot;)]</span><span class="w">         </span><span class="kt">decimal</span><span class="w">  </span><span class="n">TotalPrice</span><span class="w">     </span><span class="c1">// Total de línea</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="el-objeto-ordershippingaddressmodel-direccion-de-envio">El objeto <code>OrderShippingAddressModel</code> — dirección de envío<a class="headerlink" href="#el-objeto-ordershippingaddressmodel-direccion-de-envio" title="Permanent link">&para;</a></h3>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">OrderShippingAddressModel</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="p">{</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">    </span><span class="kt">string?</span><span class="w"> </span><span class="n">FirstName</span><span class="p">,</span><span class="w"> </span><span class="n">LastName</span><span class="w">    </span><span class="c1">// Nombre y apellido del destinatario</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="kt">string?</span><span class="w"> </span><span class="n">Address1</span><span class="p">,</span><span class="w"> </span><span class="n">Address2</span><span class="w">     </span><span class="c1">// Líneas de dirección</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">    </span><span class="kt">string?</span><span class="w"> </span><span class="n">City</span><span class="p">,</span><span class="w"> </span><span class="n">Zip</span><span class="w">              </span><span class="c1">// Ciudad y código postal</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">    </span><span class="kt">string?</span><span class="w"> </span><span class="n">Province</span><span class="p">,</span><span class="w"> </span><span class="n">ProvinceCode</span><span class="w"> </span><span class="c1">// Provincia</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">    </span><span class="kt">string?</span><span class="w"> </span><span class="n">Country</span><span class="p">,</span><span class="w"> </span><span class="n">CountryCode</span><span class="w">   </span><span class="c1">// País</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">    </span><span class="kt">string?</span><span class="w"> </span><span class="n">Phone</span><span class="w">                  </span><span class="c1">// Teléfono</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<hr />
+<h2 id="extractor-5-imagenes-del-ftp-localimagesextractor">Extractor 5 — Imágenes del FTP (<code>LocalImagesExtractor</code>)<a class="headerlink" href="#extractor-5-imagenes-del-ftp-localimagesextractor" title="Permanent link">&para;</a></h2>
+<h3 id="sistema-origen_4">Sistema origen<a class="headerlink" href="#sistema-origen_4" title="Permanent link">&para;</a></h3>
+<p><strong>Servidor FTP</strong> — accedido mediante la librería <code>FluentFTP</code>. Configurado en <code>appsettings.json</code> bajo <code>FtpImages</code>.</p>
+<h3 id="proceso-de-extraccion">Proceso de extracción<a class="headerlink" href="#proceso-de-extraccion" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Se conecta al FTP con usuario y contraseña.</li>
+<li>Lista recursivamente todos los ficheros de las carpetas remotas configuradas.</li>
+<li>Excluye el fichero <code>CSV_CargaImages.csv</code> (es el que él mismo genera).</li>
+<li>Si hay prefijos configurados en <code>FileNameStartsWith</code>, excluye los ficheros que no empiecen por alguno de ellos.</li>
+</ol>
+<h3 id="convencion-de-nombrado">Convención de nombrado<a class="headerlink" href="#convencion-de-nombrado" title="Permanent link">&para;</a></h3>
+<p>El nombre del fichero codifica dos datos:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>GHD001-3.jpg
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>  │      │
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>  │      └── Orden de visualización (último segmento tras el último guión)
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>  └───────── Referencia del producto (todo lo que va antes del último guión)
+</span></code></pre></div>
+<p>Ejemplos:
+- <code>GHD-ALISADOR-PROFESSIONAL-2.png</code> → referencia <code>GHD-ALISADOR-PROFESSIONAL</code>, orden <code>2</code>
+- <code>SECHE-VITE-1.jpg</code> → referencia <code>SECHE-VITE</code>, orden <code>1</code>
+- <code>OLAPLEX007.jpg</code> → referencia <code>OLAPLEX007</code>, orden <code>0</code> (sin guión → orden por defecto 0)</p>
+<h3 id="el-objeto-nasfile">El objeto <code>NasFile</code><a class="headerlink" href="#el-objeto-nasfile" title="Permanent link">&para;</a></h3>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">NasFile</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="p">{</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Name</span><span class="w">     </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="c1">// Nombre del fichero con extensión.  ej: &quot;GHD001-1.jpg&quot;</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Folder</span><span class="w">   </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="c1">// Carpeta remota donde está.         ej: &quot;/smartie/sync_erp/images/import/new&quot;</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">FullPath</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="c1">// Ruta completa en el FTP.           ej: &quot;/smartie/sync_erp/images/import/new/GHD001-1.jpg&quot;</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Reference</span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="c1">// Referencia del producto.           ej: &quot;GHD001&quot;</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Orden</span><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="c1">// Orden de visualización como string. ej: &quot;1&quot;</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="el-csv-que-genera-como-efecto-secundario">El CSV que genera como efecto secundario<a class="headerlink" href="#el-csv-que-genera-como-efecto-secundario" title="Permanent link">&para;</a></h3>
+<p>Además de extraer los ficheros, el extractor genera y sube al FTP un fichero <code>CSV_CargaImages.csv</code>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>Imagen
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>GHD001-1.jpg
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>GHD001-2.jpg
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>SECHE-VITE-1.jpg
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>...
+</span></code></pre></div>
+<p>Este CSV lo lee el PIM (SalesLayer) automáticamente para asociar imágenes a productos. La columna se llama <code>Imagen</code> porque ese es el nombre que tiene el campo en el schema de SalesLayer configurado para Provalliance.</p>
+<h3 id="lo-que-produce-localimagesextractor">Lo que produce <code>LocalImagesExtractor</code><a class="headerlink" href="#lo-que-produce-localimagesextractor" title="Permanent link">&para;</a></h3>
+<p>Entrega una <code>Box&lt;NasFile&gt;</code> con todos los ficheros encontrados. El workflow de Imágenes PIM actualmente termina aquí (con un <code>Finish</code>). La integración completa con SalesLayer está pendiente.</p>
+<hr />
+<h2 id="extractor-6-traducciones-translationsextract">Extractor 6 — Traducciones (<code>TranslationsExtract</code>)<a class="headerlink" href="#extractor-6-traducciones-translationsextract" title="Permanent link">&para;</a></h2>
+<h3 id="sistema-origen_5">Sistema origen<a class="headerlink" href="#sistema-origen_5" title="Permanent link">&para;</a></h3>
+<p>No llama a ninguna API. Recibe como <strong>input</strong> la lista de <code>IProduct</code> ya extraída por <code>ProductsWithImagesExtract</code>.</p>
+<h3 id="que-hace">Qué hace<a class="headerlink" href="#que-hace" title="Permanent link">&para;</a></h3>
+<p>Filtra los productos que implementen la interfaz <code>ITranslatable</code> usando <a href="../04c-extractors-metodos/#11-translationsextract-initinputs-y-runasync"><code>OfType&lt;ITranslatable&gt;()</code></a> (ver sección 11 del documento de métodos):</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">List</span><span class="o">&lt;</span><span class="n">ITranslatable</span><span class="o">&gt;</span><span class="w"> </span><span class="n">translations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_productos</span><span class="p">.</span><span class="n">OfType</span><span class="o">&lt;</span><span class="n">ITranslatable</span><span class="o">&gt;</span><span class="p">().</span><span class="n">ToList</span><span class="p">();</span>
+</span></code></pre></div>
+<p>El tipo <code>ITranslatable</code> indica que el objeto tiene contenido en varios idiomas que puede sincronizarse en Shopify (por ejemplo, nombre y descripción en español e inglés).</p>
+<h3 id="estado-actual">Estado actual<a class="headerlink" href="#estado-actual" title="Permanent link">&para;</a></h3>
+<p>Existe la actividad pero no hay ningún workflow activo que la use. Es un punto de extensión preparado para cuando se implemente la sincronización de traducciones de productos en Shopify. Los campos <code>Translatable&lt;string&gt;</code> de <code>SalonSpaceProduct</code> (nombre, descripción, etc.) están listos para alimentarlo.</p>
+<h3 id="lo-que-produce-translationsextract">Lo que produce <code>TranslationsExtract</code><a class="headerlink" href="#lo-que-produce-translationsextract" title="Permanent link">&para;</a></h3>
+<p>Entrega una <code>Box&lt;ITranslatable&gt;</code> con los productos que tienen contenido multilingüe.</p>
+<hr />
+<h2 id="extractor-7-tarifas-de-precios-extracttarifas">Extractor 7 — Tarifas de precios (<code>ExtractTarifas</code>)<a class="headerlink" href="#extractor-7-tarifas-de-precios-extracttarifas" title="Permanent link">&para;</a></h2>
+<h3 id="estado">Estado<a class="headerlink" href="#estado" title="Permanent link">&para;</a></h3>
+<p><strong>Stub no implementado.</strong> El método <a href="../04c-extractors-metodos/#12-extracttarifas-runasync-stub"><code>RunAsync</code></a> siempre devuelve una lista vacía:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">PriceLists</span><span class="p">.</span><span class="n">Set</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;</span><span class="n">IPriceList</span><span class="o">&gt;</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">IPriceList</span><span class="o">&gt;</span><span class="p">()));</span>
+</span></code></pre></div>
+<h3 id="por-que-existe">Por qué existe<a class="headerlink" href="#por-que-existe" title="Permanent link">&para;</a></h3>
+<p>Las tarifas de precio (<code>PriceList</code>) son necesarias en el contexto B2B de Shopify: cada sucursal (<code>CompanyLocation</code>) tiene asignada una tarifa que determina los precios que ve ese cliente. La clase <code>ExtractTarifas</code> estaba pensada para leer esas tarifas desde el ERP.</p>
+<p>Sin embargo, en la implementación actual las tarifas se gestionan de otra forma: el workflow de Clientes incluye un paso <code>SyncPriceLists</code> que sincroniza las tarifas leyéndolas directamente desde Shopify y guardándolas en la BD de transacciones. La extracción desde el ERP quedó obsoleta antes de implementarse.</p>
+<hr />
+<h2 id="extractor-8-migracion-desde-shopify-shopifyextract">Extractor 8 — Migración desde Shopify (<code>ShopifyExtract</code>)<a class="headerlink" href="#extractor-8-migracion-desde-shopify-shopifyextract" title="Permanent link">&para;</a></h2>
+<h3 id="estado_1">Estado<a class="headerlink" href="#estado_1" title="Permanent link">&para;</a></h3>
+<p><strong>Desactivado permanentemente</strong> mediante <a href="../04c-extractors-metodos/#shouldrunasync"><code>ShouldRunAsync() =&gt; false</code></a>.</p>
+<h3 id="para-que-se-uso">Para qué se usó<a class="headerlink" href="#para-que-se-uso" title="Permanent link">&para;</a></h3>
+<p>Al arrancar el proyecto, Shopify ya tenía productos y variantes que habían sido creados manualmente o por otro sistema. La BD de transacciones estaba vacía — no sabía qué había en Shopify ni qué <code>OriginId</code> del ERP correspondía a cada elemento.</p>
+<p>Este extractor se usó en la puesta en marcha para <strong>poblar la BD de transacciones desde Shopify</strong>:</p>
+<ol>
+<li>Descargó todos los productos y variantes de Shopify mediante <a href="../04c-extractors-metodos/#18-bulkgetallwithvariantsextended-shopifysdk"><code>BulkGetAllWithVariantsExtended()</code></a> (una query bulk de Shopify).</li>
+<li>Para cada producto y variante, leyó el metafield <code>originId</code> (que contiene el código del ERP).</li>
+<li>Registró en la BD de transacciones la relación <code>DestinoId</code> (ID en Shopify) ↔ <code>OrigenId</code> (código en el ERP).</li>
+</ol>
+<h3 id="que-hace-internamente">Qué hace internamente<a class="headerlink" href="#que-hace-internamente" title="Permanent link">&para;</a></h3>
+<p>El resultado de Shopify viene como una lista de objetos genéricos (<code>JObject</code>). El extractor los clasifica leyendo el prefijo del campo <code>id</code>:
+- <code>gid://shopify/Product/...</code> → es un producto
+- <code>gid://shopify/ProductVariant/...</code> → es una variante
+- <code>gid://shopify/Metafield/...</code> → es un metafield</p>
+<p>Luego cruza los metafields <code>originId</code> con productos y variantes para obtener los pares <code>OriginId ↔ DestinoId</code> que guarda en la BD.</p>
+<h3 id="por-que-se-conserva-en-el-codigo">Por qué se conserva en el código<a class="headerlink" href="#por-que-se-conserva-en-el-codigo" title="Permanent link">&para;</a></h3>
+<p>Se mantiene por si en algún momento hace falta repetir una migración inicial: si se borra la BD de transacciones, o si se hace una instalación nueva en otro cliente. Está desactivado pero disponible.</p>
+<hr />
+<hr />
+<h2 id="documentos-relacionados">Documentos relacionados<a class="headerlink" href="#documentos-relacionados" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Documento</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../04-extractors/"><code>04-extractors.md</code></a></td>
+<td>Visión general de cada extractor: qué hace, de dónde lee, por qué existe</td>
+</tr>
+<tr>
+<td><a href="../04c-extractors-metodos/"><code>04c-extractors-metodos.md</code></a></td>
+<td>Explicación paso a paso de cada método y función</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="resumen-de-objetos-que-produce-cada-extractor">Resumen de objetos que produce cada extractor<a class="headerlink" href="#resumen-de-objetos-que-produce-cada-extractor" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Extractor</th>
+<th>Objeto de salida</th>
+<th>Interfaz que implementa</th>
+<th>Siguiente paso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ProductsWithImagesExtract</code></td>
+<td><code>Box&lt;Product&gt;</code></td>
+<td><code>IProduct</code> (+ <code>IVariant</code> internamente)</td>
+<td><code>ProductsRebuildDecision</code></td>
+</tr>
+<tr>
+<td><code>ProductsWithImagesExtract</code></td>
+<td><code>Box&lt;ProductImage&gt;</code></td>
+<td><code>IProductImage</code></td>
+<td><code>ImageDecision</code></td>
+</tr>
+<tr>
+<td><code>CustomerExtract</code></td>
+<td><code>Box&lt;ClientResponseModel&gt;</code></td>
+<td><code>ICompany</code> (+ <code>ILocation</code> + <code>ICustomer</code> en Locations)</td>
+<td><code>CustomerDecision</code></td>
+</tr>
+<tr>
+<td><code>StockExtract</code></td>
+<td><code>Box&lt;Stock&gt;</code></td>
+<td>— (struct)</td>
+<td><code>StockTransform</code></td>
+</tr>
+<tr>
+<td><code>OrdersExtractor</code></td>
+<td><code>Box&lt;Order&gt;</code></td>
+<td>— (modelo Shopify)</td>
+<td><code>OrderTransform</code></td>
+</tr>
+<tr>
+<td><code>LocalImagesExtractor</code></td>
+<td><code>Box&lt;NasFile&gt;</code></td>
+<td>—</td>
+<td><code>Finish</code> (workflow incompleto)</td>
+</tr>
+<tr>
+<td><code>TranslationsExtract</code></td>
+<td><code>Box&lt;ITranslatable&gt;</code></td>
+<td><code>ITranslatable</code></td>
+<td>— (sin workflow activo)</td>
+</tr>
+<tr>
+<td><code>ExtractTarifas</code></td>
+<td><code>Box&lt;IPriceList&gt;</code> (vacío)</td>
+<td><code>IPriceList</code></td>
+<td>— (no implementado)</td>
+</tr>
+<tr>
+<td><code>ShopifyExtract</code></td>
+<td>— (escribe en BD directamente)</td>
+<td>—</td>
+<td>— (desactivado)</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../04-extractors/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Visión general">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Visión general
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../04c-extractors-metodos/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Métodos y funciones">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Métodos y funciones
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.instant.progress", "navigation.instant.prefetch", "navigation.instant.preview", "navigation.indexes", "navigation.path", "navigation.tracking", "navigation.prune", "navigation.top", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.code.select", "content.action.edit", "content.action.view", "content.tabs.link", "content.tooltips", "header.autohide"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../assets/javascripts/reactflow/bundle.reactflow.js" defer></script>
+      
+        <script src="../assets/javascripts/mermaid-zoom.js" defer></script>
+      
+    
+  </body>
+</html>

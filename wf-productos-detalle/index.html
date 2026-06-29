@@ -1,0 +1,2590 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación técnica del sistema de integración ERP-PIM-Shopify">
+      
+      
+      
+      
+        <link rel="prev" href="../wf-productos/">
+      
+      
+        <link rel="next" href="../wf-productos-metodos/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Detalle completo - UPG.Pataky — Guía de Estudio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#wf-01-productos-detalle-completo" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="UPG.Pataky — Guía de Estudio" class="md-header__button md-logo" aria-label="UPG.Pataky — Guía de Estudio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UPG.Pataky — Guía de Estudio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Detalle completo
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartir" aria-label="Compartir" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01-arquitectura-etl/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Arquitectura
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../wf-productos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Procesos
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../04-extractors/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Pipeline ETL
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../06-modelos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Sistema
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../mp-index/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Marketplaces
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="UPG.Pataky — Guía de Estudio" class="md-nav__button md-logo" aria-label="UPG.Pataky — Guía de Estudio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UPG.Pataky — Guía de Estudio
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../01-arquitectura-etl/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procesos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Procesos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Productos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Productos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wf-productos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visión general
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Detalle completo
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Detalle completo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En esta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En esta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Índice
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-actividad-syncproducts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. Actividad: <code>SyncProducts</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-actividad-productswithimagesextract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. Actividad: <code>ProductsWithImagesExtract</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Actividad: ProductsWithImagesExtract">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proceso-de-construccion-de-productos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Proceso de construcción de productos
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Outputs
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logs-de-resultado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Logs de resultado
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-actividad-productsrebuilddecision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3. Actividad: <code>ProductsRebuildDecision</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Actividad: ProductsRebuildDecision">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shouldrunasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          ShouldRunAsync
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proceso-interno" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Proceso interno
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limite-de-variantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Límite de variantes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Outputs (8)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-rama-crear-transform-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4. Rama Crear: Transform + Load
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Rama Crear: Transform + Load">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#productscreatetransform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ProductsCreateTransform</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productswithvariantscreate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ProductsWithVariantsCreate</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-rama-actualizar-transform-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5. Rama Actualizar: Transform + Load
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Rama Actualizar: Transform + Load">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#productsupdatetransform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ProductsUpdateTransform</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productswithvariantsupdate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ProductsWithVariantsUpdate</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-rama-eliminar-transform-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6. Rama Eliminar: Transform + Load
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Rama Eliminar: Transform + Load">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#productsdeletetransform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ProductsDeleteTransform</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productswithvariantsdelete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ProductsWithVariantsDelete</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-modelo-product-variant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          7. Modelo: <code>Product</code> / <code>Variant</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-notas-de-diseno" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          8. Notas de diseño
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Notas de diseño">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-productstoexcludefrommarkets-no-esta-conectada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          ¿Por qué <code>productsToExcludeFromMarkets</code> no está conectada?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#archivado-vs-borrado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Archivado vs. borrado
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imagenes-en-productscreatetransform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Imágenes en <code>ProductsCreateTransform</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wf-productos-metodos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Métodos y funciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../wf-stock/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stock
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../wf-clientes/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clientes
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../wf-pedidos/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pedidos
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../wf-imagenes-pim/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Imágenes PIM
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../wf-imagenes-shopify/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Imágenes Shopify
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wf-tarifas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarifas B2B
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wf-scheduling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scheduling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../04-extractors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipeline ETL
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../06-modelos/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sistema
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../mp-index/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketplaces
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En esta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En esta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Índice
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-actividad-syncproducts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. Actividad: <code>SyncProducts</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-actividad-productswithimagesextract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. Actividad: <code>ProductsWithImagesExtract</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Actividad: ProductsWithImagesExtract">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proceso-de-construccion-de-productos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Proceso de construcción de productos
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Outputs
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logs-de-resultado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Logs de resultado
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-actividad-productsrebuilddecision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3. Actividad: <code>ProductsRebuildDecision</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Actividad: ProductsRebuildDecision">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shouldrunasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          ShouldRunAsync
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proceso-interno" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Proceso interno
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limite-de-variantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Límite de variantes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Outputs (8)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-rama-crear-transform-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4. Rama Crear: Transform + Load
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Rama Crear: Transform + Load">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#productscreatetransform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ProductsCreateTransform</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productswithvariantscreate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ProductsWithVariantsCreate</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-rama-actualizar-transform-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5. Rama Actualizar: Transform + Load
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Rama Actualizar: Transform + Load">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#productsupdatetransform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ProductsUpdateTransform</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productswithvariantsupdate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ProductsWithVariantsUpdate</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-rama-eliminar-transform-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6. Rama Eliminar: Transform + Load
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Rama Eliminar: Transform + Load">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#productsdeletetransform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ProductsDeleteTransform</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productswithvariantsdelete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ProductsWithVariantsDelete</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-modelo-product-variant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          7. Modelo: <code>Product</code> / <code>Variant</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-notas-de-diseno" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          8. Notas de diseño
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Notas de diseño">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-productstoexcludefrommarkets-no-esta-conectada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          ¿Por qué <code>productsToExcludeFromMarkets</code> no está conectada?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#archivado-vs-borrado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Archivado vs. borrado
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imagenes-en-productscreatetransform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Imágenes en <code>ProductsCreateTransform</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navegación" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../wf-productos/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Procesos
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../wf-productos/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Productos
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:pim" class="md-tag">PIM</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:procesos" class="md-tag">Procesos</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:productos" class="md-tag">Productos</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:shopify" class="md-tag">Shopify</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:workflows" class="md-tag">Workflows</a>
+      
+    
+  </nav>
+
+
+
+<h1 id="wf-01-productos-detalle-completo">WF-01 — Productos: Detalle completo<a class="headerlink" href="#wf-01-productos-detalle-completo" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="indice">Índice<a class="headerlink" href="#indice" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#1-actividad-syncproducts">Actividad 1 — SyncProducts</a></li>
+<li><a href="#2-actividad-productswithimagesextract">Actividad 2 — ProductsWithImagesExtract</a></li>
+<li><a href="#3-actividad-productsrebuilddecision">Actividad 3 — ProductsRebuildDecision</a></li>
+<li><a href="#4-rama-crear-transform-load">Rama Crear: Transform + Load</a></li>
+<li><a href="#5-rama-actualizar-transform-load">Rama Actualizar: Transform + Load</a></li>
+<li><a href="#6-rama-eliminar-transform-load">Rama Eliminar: Transform + Load</a></li>
+<li><a href="#7-modelo-product-variant">Modelo Product / Variant</a></li>
+<li><a href="#8-notas-de-diseno">Notas de diseño</a></li>
+</ol>
+<hr />
+<h2 id="1-actividad-syncproducts">1. Actividad: <code>SyncProducts</code><a class="headerlink" href="#1-actividad-syncproducts" title="Permanent link">&para;</a></h2>
+<p><strong>Clase:</strong> <code>SyncProducts</code> <em>(Loaders.Shopify.Mirror — proyecto externo)</em>
+<strong>Tipo:</strong> Mirror</p>
+<p>Realiza una bulk query de Shopify para leer todos los <strong>Products</strong>, <strong>ProductVariants</strong> y sus <strong>ProductOptions</strong>, y los sincroniza en TransactionsDB. Construye la tabla <code>productOriginId ↔ shopifyProductId</code> y <code>variantOriginId ↔ shopifyVariantId</code>.</p>
+<p>Esta tabla es fundamental para las 3 ramas del workflow: sin ella no se pueden resolver los IDs de Shopify de los productos/variantes existentes.</p>
+<hr />
+<h2 id="2-actividad-productswithimagesextract">2. Actividad: <code>ProductsWithImagesExtract</code><a class="headerlink" href="#2-actividad-productswithimagesextract" title="Permanent link">&para;</a></h2>
+<p><strong>Clase:</strong> <code>ProductsWithImagesExtract</code>
+<strong>Fichero:</strong> <code>Extractors/ProductsWithImagesExtract.cs</code>
+<strong>Hereda de:</strong> <code>BaseActivity&lt;ProductsWithImagesExtract&gt;</code></p>
+<p>Lee el catálogo completo del canal PIM (<code>PIM:CanalSalida</code>, usando <code>SalesLayerClientService.GetService("CanalSalida")</code>).</p>
+<h3 id="proceso-de-construccion-de-productos">Proceso de construcción de productos<a class="headerlink" href="#proceso-de-construccion-de-productos" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart TD
+    A["GetInfoAsync() → SalonSpaceResponse\n(products + categories)"]
+    B["Productos Visibles + Obsoletos\n→ marcar como Invisibles"]
+    C["Sin CodigoAgrupacion:\ncrear Product simple\n(1 variante, OriginId = SKU)"]
+    D["Con CodigoAgrupacion:\nagrupar por CodigoAgrupacion\ncrear Product con variantes\n(OriginId = CodigoAgrupacion)"]
+    E["Eliminar IDs duplicados\n(log error por grupo)"]
+    F["Eliminar variantes duplicadas\n(log error por producto)"]
+    G["Output:\nProductsOutput = Box&amp;lt;IProduct&amp;gt;\nProductsImagesOutput = Box&amp;lt;IProductImage&amp;gt;"]
+
+    A --&gt; B --&gt; C --&gt; D --&gt; E --&gt; F --&gt; G</code></pre>
+<h3 id="outputs">Outputs<a class="headerlink" href="#outputs" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Tipo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>productos</code></td>
+<td><code>Box&lt;IProduct&gt;</code></td>
+<td>Todos los productos del PIM (simples y con variantes)</td>
+</tr>
+<tr>
+<td><em>(ignorado)</em></td>
+<td><code>Box&lt;IProductImage&gt;</code></td>
+<td>Imágenes — usadas en WF-06, descartadas aquí</td>
+</tr>
+</tbody>
+</table>
+<h3 id="logs-de-resultado">Logs de resultado<a class="headerlink" href="#logs-de-resultado" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Recuperados {N} productos del PIM con estados: Active (X), Inactive (Y), Deleted (Z).
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Recuperadas {V} variantes totales.
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Recuperadas {I} imágenes.
+</span></code></pre></div>
+<hr />
+<h2 id="3-actividad-productsrebuilddecision">3. Actividad: <code>ProductsRebuildDecision</code><a class="headerlink" href="#3-actividad-productsrebuilddecision" title="Permanent link">&para;</a></h2>
+<p><strong>Clase:</strong> <code>ProductsRebuildDecision</code>
+<strong>Fichero:</strong> <code>Decisions/ProductsRebuildDecision.cs</code>
+<strong>Hereda de:</strong> <code>BaseActivity&lt;ProductsRebuildDecision&gt;</code></p>
+<h3 id="shouldrunasync">ShouldRunAsync<a class="headerlink" href="#shouldrunasync" title="Permanent link">&para;</a></h3>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">ShouldRunAsync</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_productos</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Count</span><span class="p">:</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">};</span>
+</span></code></pre></div>
+<h3 id="proceso-interno">Proceso interno<a class="headerlink" href="#proceso-interno" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart TD
+    A["Descartar productos con &gt; 2048 variantes\n(log error)"]
+    B["Consultar TransactionsDB:\nproductos + variantes existentes"]
+    C["Para cada producto del PIM:"]
+    D{"Estado del producto"}
+    E["Status = Deleted\n¿Existe en DB?"]
+    F["→ productosArchivar"]
+    G["Status = Inactive\n¿No existe en DB?"]
+    H["Omitir"]
+    I{"¿Existe en DB?"}
+    J["→ productosCrear"]
+    K{"¿Cambiaron sus opciones?"}
+    L["→ rebuildProductOptions"]
+    M["→ productosActualizar\nProcesar variantes CRUD"]
+
+    A --&gt; B --&gt; C --&gt; D
+    D -- Deleted --&gt; E
+    E -- sí --&gt; F
+    E -- no --&gt; H
+    D -- Inactive --&gt; G
+    G -- sí --&gt; H
+    D -- Active --&gt; I
+    I -- no --&gt; J
+    I -- sí --&gt; K
+    K -- sí --&gt; L
+    K -- no --&gt; M</code></pre>
+<p><strong>Post-procesamiento de eliminaciones:</strong>
+- Productos en TransactionsDB pero ausentes en el PIM → <code>productosArchivar</code>
+- Variantes en TransactionsDB pero ausentes en el PIM → <code>variantesBorrar</code>
+- Si un producto tiene <strong>todas</strong> sus variantes en <code>variantesBorrar</code> → se mueve el producto a <code>productosBorrar</code> (borrado definitivo) o <code>productosArchivar</code>
+- Si el producto ya va a archivarse/borrarse → se suprimen las eliminaciones de sus variantes individuales</p>
+<h3 id="limite-de-variantes">Límite de variantes<a class="headerlink" href="#limite-de-variantes" title="Permanent link">&para;</a></h3>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">private</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MaxNumVariants</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2048</span><span class="p">;</span>
+</span></code></pre></div>
+<p>Productos con más de 2048 variantes se descartan antes de procesar. Shopify tiene este límite y procesar un producto que lo supera causaría errores en los loaders.</p>
+<h3 id="outputs-8">Outputs (8)<a class="headerlink" href="#outputs-8" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Tipo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>productosCrear</code></td>
+<td><code>Box&lt;IProduct&gt;</code></td>
+<td>Productos nuevos a crear</td>
+</tr>
+<tr>
+<td><code>productosActualizar</code></td>
+<td><code>Box&lt;IProduct&gt;</code></td>
+<td>Productos a actualizar</td>
+</tr>
+<tr>
+<td><code>productosArchivar</code></td>
+<td><code>Box&lt;string&gt;</code></td>
+<td>OriginIds de productos a archivar</td>
+</tr>
+<tr>
+<td><code>productosBorrar</code></td>
+<td><code>Box&lt;string&gt;</code></td>
+<td>OriginIds de productos a borrar</td>
+</tr>
+<tr>
+<td><code>variantesCrear</code></td>
+<td><code>Box&lt;IVariant&gt;</code></td>
+<td>Variantes nuevas de productos ya existentes</td>
+</tr>
+<tr>
+<td><code>variantesActualizar</code></td>
+<td><code>Box&lt;IVariant&gt;</code></td>
+<td>Variantes a actualizar</td>
+</tr>
+<tr>
+<td><code>variantesBorrar</code></td>
+<td><code>Box&lt;string&gt;</code></td>
+<td>OriginIds de variantes a eliminar</td>
+</tr>
+<tr>
+<td><code>rebuildProductOptionsDecision</code></td>
+<td><code>Box&lt;IProduct&gt;</code></td>
+<td>Productos cuyas opciones cambiaron</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-rama-crear-transform-load">4. Rama Crear: Transform + Load<a class="headerlink" href="#4-rama-crear-transform-load" title="Permanent link">&para;</a></h2>
+<h3 id="productscreatetransform"><code>ProductsCreateTransform</code><a class="headerlink" href="#productscreatetransform" title="Permanent link">&para;</a></h3>
+<p><strong>Fichero:</strong> <code>Transformers/Products/ProductsCreateTransform.cs</code></p>
+<p>Procesa <code>productosCrear</code> + <code>variantesCrear</code>. Para cada producto nuevo:
+- Mapea con <code>ProductosMappingTransforms</code> → <code>ProductCreateInput</code>
+- Descarta si no tiene ProductOptions
+- Mapea variantes → <code>ProductVariantsBulkInput[]</code> (sin imágenes aún)
+- Descarta variantes sin OptionValues</p>
+<p>Para variantes de productos ya existentes (<code>variantesCrear</code>):
+- Busca el <code>shopifyProductId</code> del padre en TransactionsDB
+- Mapea variantes → input</p>
+<p>Output: <code>ProductsWithVariantsCreateLoaderInput</code> con <code>{ Products, Variants, PublishProducts: true }</code></p>
+<h3 id="productswithvariantscreate"><code>ProductsWithVariantsCreate</code><a class="headerlink" href="#productswithvariantscreate" title="Permanent link">&para;</a></h3>
+<p>Loader externo. Ejecuta en Shopify:
+1. <code>productCreate</code> por cada producto nuevo (con variantes)
+2. <code>productVariantsBulkCreate</code> por cada grupo de variantes nuevas de productos existentes
+3. Registra los nuevos IDs en TransactionsDB</p>
+<hr />
+<h2 id="5-rama-actualizar-transform-load">5. Rama Actualizar: Transform + Load<a class="headerlink" href="#5-rama-actualizar-transform-load" title="Permanent link">&para;</a></h2>
+<h3 id="productsupdatetransform"><code>ProductsUpdateTransform</code><a class="headerlink" href="#productsupdatetransform" title="Permanent link">&para;</a></h3>
+<p><strong>Fichero:</strong> <code>Transformers/Products/ProductsUpdateTransform.cs</code></p>
+<p>La más compleja de las tres ramas. Gestiona:</p>
+<p><strong>Productos a actualizar (<code>productosActualizar</code>):</strong>
+- Mapea → <code>ProductUpdateInput</code> con Id Shopify resuelto</p>
+<p><strong>Variantes a actualizar (<code>variantesActualizar</code>):</strong>
+- Resuelve ShopifyId del producto padre y la variante
+- Busca las imágenes Shopify asociadas a la variante (via <code>TransactionsDB.Medias</code>) para actualizar la galería</p>
+<p><strong>Reconstrucción de opciones (<code>rebuildProductOptions</code>):</strong>
+- Para productos cuyas opciones cambiaron, mapea <strong>todas</strong> las variantes de nuevo con sus imágenes actuales
+- Agrupa por <code>shopifyProductId</code></p>
+<p><strong>Archivado (<code>productosArchivar</code>):</strong>
+- Llama a Shopify para leer el status actual del producto
+- Si ya está <code>ARCHIVED</code>, lo omite
+- Si no, genera un <code>ProductUpdateInput</code> con <code>Status = ARCHIVED</code> y un <code>Handle</code> único (añade fecha y número random para evitar colisiones)
+- Usa <code>UpsertProductToUpdate</code> para no duplicar productos en la lista</p>
+<p>Output: <code>ProductsWithVariantsUpdateLoaderInput</code> con <code>{ Products, Variants, RebuildProductOptions }</code></p>
+<h3 id="productswithvariantsupdate"><code>ProductsWithVariantsUpdate</code><a class="headerlink" href="#productswithvariantsupdate" title="Permanent link">&para;</a></h3>
+<p>Loader externo. Actualiza productos y variantes en Shopify. Para los productos en <code>RebuildProductOptions</code>, elimina y recrea las opciones y las variantes.</p>
+<hr />
+<h2 id="6-rama-eliminar-transform-load">6. Rama Eliminar: Transform + Load<a class="headerlink" href="#6-rama-eliminar-transform-load" title="Permanent link">&para;</a></h2>
+<h3 id="productsdeletetransform"><code>ProductsDeleteTransform</code><a class="headerlink" href="#productsdeletetransform" title="Permanent link">&para;</a></h3>
+<p><strong>Fichero:</strong> <code>Transformers/Products/ProductsDeleteTransform.cs</code></p>
+<p>Resuelve los ShopifyIds de productos y variantes a borrar:</p>
+<ul>
+<li><code>productosBorrar</code> OriginIds → ShopifyIds via TransactionsDB</li>
+<li><code>variantesBorrar</code> OriginIds → ShopifyIds + ShopifyId del producto padre via TransactionsDB</li>
+</ul>
+<p>Los elementos sin ShopifyId en TransactionsDB se descartan con <code>LogWarning</code>.</p>
+<p>Output: <code>ProductsWithVariantsDeleteLoaderInput</code> con <code>{ ProductsToDelete, VariantsToDelete }</code></p>
+<h3 id="productswithvariantsdelete"><code>ProductsWithVariantsDelete</code><a class="headerlink" href="#productswithvariantsdelete" title="Permanent link">&para;</a></h3>
+<p>Loader externo. Ejecuta <code>productDelete</code> y <code>productVariantsBulkDelete</code> en Shopify. Limpia las entradas correspondientes de TransactionsDB.</p>
+<hr />
+<h2 id="7-modelo-product-variant">7. Modelo: <code>Product</code> / <code>Variant</code><a class="headerlink" href="#7-modelo-product-variant" title="Permanent link">&para;</a></h2>
+<p><strong>Fichero:</strong> <code>Extractors/Models/Product.cs</code></p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Tipo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OriginId</code></td>
+<td><code>string</code></td>
+<td>Para productos simples = SKU. Para agrupados = <code>CodigoAgrupacion</code></td>
+</tr>
+<tr>
+<td><code>Status</code></td>
+<td><code>EntityStatus</code></td>
+<td>Se deriva de las variantes: Active &gt; Inactive &gt; Deleted</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Productos simples vs. con variantes:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>PIM</th>
+<th>OriginId</th>
+<th>Variantes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simple</td>
+<td><code>CodigoAgrupacion</code> vacío</td>
+<td>= SKU del producto</td>
+<td>1 variante con opciones <code>{ "Title": "Default Title" }</code></td>
+</tr>
+<tr>
+<td>Con variantes</td>
+<td><code>CodigoAgrupacion</code> definido</td>
+<td>= <code>CodigoAgrupacion</code></td>
+<td>N variantes, opciones del campo <code>Agrupacion</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-notas-de-diseno">8. Notas de diseño<a class="headerlink" href="#8-notas-de-diseno" title="Permanent link">&para;</a></h2>
+<h3 id="por-que-productstoexcludefrommarkets-no-esta-conectada">¿Por qué <code>productsToExcludeFromMarkets</code> no está conectada?<a class="headerlink" href="#por-que-productstoexcludefrommarkets-no-esta-conectada" title="Permanent link">&para;</a></h3>
+<p>La variable <code>productsToExcludeFromMarkets: PriceListsB2CLoaderInput</code> está definida en el workflow pero ninguna actividad la escribe ni la lee. Es un vestigio de una lógica de exclusión de productos de mercados B2C que quedó incompleta. No tiene efecto en el comportamiento actual.</p>
+<h3 id="archivado-vs-borrado">Archivado vs. borrado<a class="headerlink" href="#archivado-vs-borrado" title="Permanent link">&para;</a></h3>
+<p>El sistema diferencia entre archivar y borrar:
+- <strong>Archivar</strong> (<code>ARCHIVED</code>): el producto queda en Shopify pero invisible. Reversible. Se usa para productos que dejaron de estar en el PIM pero siguen existiendo en pedidos o histórico.
+- <strong>Borrar</strong> (delete): eliminación definitiva. Solo se usa cuando el producto tenía exactamente 1 variante con OriginId terminando en <code>-$</code> (indica que la variante fue creada como placeholder y el proceso de carga falló). En el resto de casos se archiva.</p>
+<h3 id="imagenes-en-productscreatetransform">Imágenes en <code>ProductsCreateTransform</code><a class="headerlink" href="#imagenes-en-productscreatetransform" title="Permanent link">&para;</a></h3>
+<p>Al crear productos, las variantes no incluyen imágenes en su <code>ProductVariantsBulkInput</code> porque las imágenes aún no existen en Shopify (las sube el workflow de <strong>Imágenes Shopify</strong>). Los campos de galería de variantes se rellenan en la siguiente ejecución de <code>ProductsUpdateTransform</code>, cuando el Mirror ya tiene los ShopifyIds de las medias.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../wf-productos/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Visión general">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Visión general
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../wf-productos-metodos/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Métodos y funciones">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Métodos y funciones
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.instant.progress", "navigation.instant.prefetch", "navigation.instant.preview", "navigation.indexes", "navigation.path", "navigation.tracking", "navigation.prune", "navigation.top", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.code.select", "content.action.edit", "content.action.view", "content.tabs.link", "content.tooltips", "header.autohide"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../assets/javascripts/reactflow/bundle.reactflow.js" defer></script>
+      
+        <script src="../assets/javascripts/mermaid-zoom.js" defer></script>
+      
+    
+  </body>
+</html>

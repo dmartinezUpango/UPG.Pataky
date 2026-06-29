@@ -1,0 +1,2877 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación técnica del sistema de integración ERP-PIM-Shopify">
+      
+      
+      
+      
+        <link rel="prev" href="../07-infraestructura/">
+      
+      
+        <link rel="next" href="../09-elsa-studio/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Configuración - UPG.Pataky — Guía de Estudio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#08-configuracion-del-sistema" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="UPG.Pataky — Guía de Estudio" class="md-header__button md-logo" aria-label="UPG.Pataky — Guía de Estudio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UPG.Pataky — Guía de Estudio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Configuración
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartir" aria-label="Compartir" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01-arquitectura-etl/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Arquitectura
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../wf-productos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Procesos
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../04-extractors/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Pipeline ETL
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../06-modelos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Sistema
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../mp-index/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Marketplaces
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="UPG.Pataky — Guía de Estudio" class="md-nav__button md-logo" aria-label="UPG.Pataky — Guía de Estudio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UPG.Pataky — Guía de Estudio
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../01-arquitectura-etl/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../wf-productos/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procesos
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../04-extractors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipeline ETL
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sistema
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sistema
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-modelos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelos de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-infraestructura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infraestructura y despliegue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En esta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En esta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Índice
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-elsa-motor-de-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. Elsa — motor de workflows
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Elsa — motor de workflows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-persistence-donde-guarda-elsa-su-estado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1.1 <code>Persistence</code> — dónde guarda Elsa su estado
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-identity-quien-puede-acceder-a-la-api-de-elsa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1.2 <code>Identity</code> — quién puede acceder a la API de Elsa
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 Identity — quién puede acceder a la API de Elsa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signingkey-la-llave-de-firma-de-los-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>SigningKey</code> — la llave de firma de los JWT
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles-que-permisos-tiene-cada-rol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>Roles</code> — qué permisos tiene cada rol
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#users-usuarios-que-pueden-hacer-login-con-usuariocontrasena" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>Users</code> — usuarios que pueden hacer login con usuario/contraseña
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications-clientes-de-api-que-se-autentican-con-api-key-o-client-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>Applications</code> — clientes de API que se autentican con API Key o Client Secret
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-transactions-bd-de-sincronizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. Transactions — BD de sincronización
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-shopifycredentials-acceso-a-la-tienda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3. ShopifyCredentials — acceso a la tienda
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. ShopifyCredentials — acceso a la tienda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-shopdomain-la-tienda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3.1 <code>ShopDomain</code> — la tienda
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-accesstokens-tokens-de-autenticacion-y-rate-limiting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3.2 <code>AccessTokens</code> — tokens de autenticación y rate limiting
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-locationid-la-ubicacion-de-inventario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3.3 <code>LocationId</code> — la ubicación de inventario
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-publicationid-el-canal-de-venta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3.4 <code>PublicationId</code> — el canal de venta
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-defaultpricelistid-la-tarifa-por-defecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3.5 <code>DefaultPriceListId</code> — la tarifa por defecto
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-leadprefix-prefijo-de-leads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3.6 <code>LeadPrefix</code> — prefijo de leads
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-agenttags-etiquetas-de-agentes-comerciales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3.7 <code>AgentTags</code> — etiquetas de agentes comerciales
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-pim-saleslayer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4. PIM — SalesLayer
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. PIM — SalesLayer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-canalsalida-lectura-del-catalogo-extractor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4.1 <code>CanalSalida</code> — lectura del catálogo (Extractor)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-canalentrada-escritura-de-imagenes-loader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4.2 <code>CanalEntrada</code> — escritura de imágenes (Loader)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ftpimages-servidor-de-imagenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5. FtpImages — servidor de imágenes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-provalliance-erp-middleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6. Provalliance — ERP middleware
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Provalliance — ERP middleware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-baseurl-el-endpoint-de-azure-api-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6.1 <code>BaseUrl</code> — el endpoint de Azure API Management
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-authentication-oauth2-client-credentials-azure-ad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6.2 <code>Authentication</code> — OAuth2 Client Credentials (Azure AD)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-subscriptionkey-la-segunda-capa-de-autenticacion-de-apim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6.3 <code>SubscriptionKey</code> — la segunda capa de autenticación de APIM
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-email-y-notificaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          7. Email y notificaciones
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Email y notificaciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#emailsettingsgraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>EmailSettingsGraph</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphclient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>GraphClient</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflowemailnotifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>WorkflowEmailNotifications</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-filterorders-filtro-de-pedidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          8. FilterOrders — filtro de pedidos
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-workflows-programacion-y-alertas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          9. Workflows — programación y alertas
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Workflows — programación y alertas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-name-nombre-identificativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          9.1 <code>Name</code> — nombre identificativo
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-cron-cuando-se-ejecuta-el-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          9.2 <code>Cron</code> — cuándo se ejecuta el workflow
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-incrementalcron-sincronizacion-incremental" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          9.3 <code>IncrementalCron</code> — sincronización incremental
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-notificationsrecipients-a-quien-se-notifica-y-con-que-nivel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          9.4 <code>Notifications.Recipients</code> — a quién se notifica y con qué nivel
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-relacion-entre-configuracion-y-arquitectura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Resumen: relación entre configuración y arquitectura
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#siguiente-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Siguiente paso
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentos-relacionados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Documentos relacionados
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-elsa-studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elsa Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Índice de etiquetas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../mp-index/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketplaces
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En esta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En esta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Índice
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-elsa-motor-de-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. Elsa — motor de workflows
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Elsa — motor de workflows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-persistence-donde-guarda-elsa-su-estado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1.1 <code>Persistence</code> — dónde guarda Elsa su estado
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-identity-quien-puede-acceder-a-la-api-de-elsa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1.2 <code>Identity</code> — quién puede acceder a la API de Elsa
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 Identity — quién puede acceder a la API de Elsa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signingkey-la-llave-de-firma-de-los-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>SigningKey</code> — la llave de firma de los JWT
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles-que-permisos-tiene-cada-rol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>Roles</code> — qué permisos tiene cada rol
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#users-usuarios-que-pueden-hacer-login-con-usuariocontrasena" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>Users</code> — usuarios que pueden hacer login con usuario/contraseña
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications-clientes-de-api-que-se-autentican-con-api-key-o-client-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>Applications</code> — clientes de API que se autentican con API Key o Client Secret
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-transactions-bd-de-sincronizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. Transactions — BD de sincronización
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-shopifycredentials-acceso-a-la-tienda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3. ShopifyCredentials — acceso a la tienda
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. ShopifyCredentials — acceso a la tienda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-shopdomain-la-tienda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3.1 <code>ShopDomain</code> — la tienda
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-accesstokens-tokens-de-autenticacion-y-rate-limiting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3.2 <code>AccessTokens</code> — tokens de autenticación y rate limiting
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-locationid-la-ubicacion-de-inventario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3.3 <code>LocationId</code> — la ubicación de inventario
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-publicationid-el-canal-de-venta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3.4 <code>PublicationId</code> — el canal de venta
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-defaultpricelistid-la-tarifa-por-defecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3.5 <code>DefaultPriceListId</code> — la tarifa por defecto
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-leadprefix-prefijo-de-leads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3.6 <code>LeadPrefix</code> — prefijo de leads
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-agenttags-etiquetas-de-agentes-comerciales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3.7 <code>AgentTags</code> — etiquetas de agentes comerciales
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-pim-saleslayer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4. PIM — SalesLayer
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. PIM — SalesLayer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-canalsalida-lectura-del-catalogo-extractor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4.1 <code>CanalSalida</code> — lectura del catálogo (Extractor)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-canalentrada-escritura-de-imagenes-loader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4.2 <code>CanalEntrada</code> — escritura de imágenes (Loader)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ftpimages-servidor-de-imagenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5. FtpImages — servidor de imágenes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-provalliance-erp-middleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6. Provalliance — ERP middleware
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Provalliance — ERP middleware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-baseurl-el-endpoint-de-azure-api-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6.1 <code>BaseUrl</code> — el endpoint de Azure API Management
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-authentication-oauth2-client-credentials-azure-ad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6.2 <code>Authentication</code> — OAuth2 Client Credentials (Azure AD)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-subscriptionkey-la-segunda-capa-de-autenticacion-de-apim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6.3 <code>SubscriptionKey</code> — la segunda capa de autenticación de APIM
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-email-y-notificaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          7. Email y notificaciones
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Email y notificaciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#emailsettingsgraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>EmailSettingsGraph</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphclient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>GraphClient</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflowemailnotifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>WorkflowEmailNotifications</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-filterorders-filtro-de-pedidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          8. FilterOrders — filtro de pedidos
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-workflows-programacion-y-alertas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          9. Workflows — programación y alertas
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Workflows — programación y alertas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-name-nombre-identificativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          9.1 <code>Name</code> — nombre identificativo
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-cron-cuando-se-ejecuta-el-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          9.2 <code>Cron</code> — cuándo se ejecuta el workflow
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-incrementalcron-sincronizacion-incremental" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          9.3 <code>IncrementalCron</code> — sincronización incremental
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-notificationsrecipients-a-quien-se-notifica-y-con-que-nivel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          9.4 <code>Notifications.Recipients</code> — a quién se notifica y con qué nivel
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-relacion-entre-configuracion-y-arquitectura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Resumen: relación entre configuración y arquitectura
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#siguiente-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Siguiente paso
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentos-relacionados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Documentos relacionados
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navegación" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../06-modelos/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Sistema
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:configuración" class="md-tag">Configuración</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:erp" class="md-tag">ERP</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:elsa" class="md-tag">Elsa</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:shopify" class="md-tag">Shopify</a>
+      
+    
+  </nav>
+
+
+
+<h1 id="08-configuracion-del-sistema">08 — Configuración del sistema<a class="headerlink" href="#08-configuracion-del-sistema" title="Permanent link">&para;</a></h1>
+<p>Toda la configuración del sistema vive en <code>ElsaServer/appsettings.json</code> y sus variantes por entorno (<code>appsettings.Development.json</code>, <code>appsettings.Production.SalonSpace.json</code>). ASP.NET Core fusiona estos ficheros en tiempo de arranque: el base pone los defaults, cada variante de entorno sobreescribe solo lo que cambia.</p>
+<p>Las variables de entorno del contenedor también pueden sobreescribir cualquier valor usando la notación <code>Seccion__SubSeccion__Campo</code> (doble guion bajo = separador jerárquico).</p>
+<hr />
+<h2 id="indice">Índice<a class="headerlink" href="#indice" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#1-elsa-motor-de-workflows">Elsa — motor de workflows</a></li>
+<li><a href="#2-transactions-bd-de-sincronizacion">Transactions — BD de sincronización</a></li>
+<li><a href="#3-shopifycredentials-acceso-a-la-tienda">ShopifyCredentials — acceso a la tienda</a></li>
+<li><a href="#4-pim-saleslayer">PIM — SalesLayer</a></li>
+<li><a href="#5-ftpimages-servidor-de-imagenes">FtpImages — servidor de imágenes</a></li>
+<li><a href="#6-provalliance-erp-middleware">Provalliance — ERP middleware</a></li>
+<li><a href="#7-email-y-notificaciones">Email y notificaciones</a></li>
+<li><a href="#8-filterorders-filtro-de-pedidos">FilterOrders — filtro de pedidos</a></li>
+<li><a href="#9-workflows-programacion-y-alertas">Workflows — programación y alertas</a></li>
+</ol>
+<hr />
+<h2 id="1-elsa-motor-de-workflows">1. Elsa — motor de workflows<a class="headerlink" href="#1-elsa-motor-de-workflows" title="Permanent link">&para;</a></h2>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&quot;Elsa&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;Persistence&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Host=localhost;Port=36220;Database=elsa-provalliance;...&quot;</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;DatabaseProvider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PostgreSql&quot;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">&quot;Identity&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">&quot;SigningKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sufficiently-large-secret-signing-key&quot;</span><span class="p">,</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">&quot;Roles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;admin&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Permissions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;*&quot;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="p">],</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&quot;Users&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;admin&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;password&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Roles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;admin&quot;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="p">],</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="nt">&quot;Applications&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">      </span><span class="p">{</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="nt">&quot;Id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="nt">&quot;Roles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;admin&quot;</span><span class="w"> </span><span class="p">],</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">        </span><span class="nt">&quot;ClientId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">        </span><span class="nt">&quot;HashedApiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="nt">&quot;HashedApiKeySalt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">        </span><span class="nt">&quot;HashedClientSecret&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">        </span><span class="nt">&quot;HashedClientSecretSalt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="11-persistence-donde-guarda-elsa-su-estado">1.1 <code>Persistence</code> — dónde guarda Elsa su estado<a class="headerlink" href="#11-persistence-donde-guarda-elsa-su-estado" title="Permanent link">&para;</a></h3>
+<p>Elsa necesita persistir todo lo que ocurre en los workflows: las definiciones, las instancias en ejecución, el historial, las variables, los triggers programados. Por defecto usa SQLite en memoria, pero en producción se configura PostgreSQL.</p>
+<p><strong><code>ConnectionString</code>:</strong> cadena de conexión estándar de Npgsql (el driver de PostgreSQL para .NET).</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Host=&lt;IP_SERVIDOR&gt;;           ← IP o nombre del servidor PostgreSQL
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Port=5432;                ← puerto (5432 es el default)
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Database=elsa;            ← nombre de la BD lógica
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Username=postgres;        ← usuario
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Password=&lt;DB_PASSWORD&gt;;   ← contraseña
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Timeout=1024;             ← timeout de conexión en segundos
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>CommandTimeout=1024;      ← timeout de comandos SQL en segundos
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>MaxPoolSize=30;           ← máximo de conexiones simultáneas en el pool
+</span></code></pre></div>
+<p>Los <code>Timeout</code> y <code>CommandTimeout</code> altísimos (1024 segundos) son deliberados: algunas operaciones de sincronización masiva pueden tardar mucho y no deben abortarse por timeout.</p>
+<p><code>MaxPoolSize=30</code> limita las conexiones concurrentes al servidor de BD. Importante en producción para no saturar PostgreSQL cuando varios workflows corren en paralelo.</p>
+<p><strong><code>DatabaseProvider</code>:</strong> siempre <code>"PostgreSql"</code>. Le dice a Elsa qué provider de Entity Framework usar internamente para sus propias tablas (historial de ejecución, definiciones de workflow, variables, etc.).</p>
+<blockquote>
+<p>En el <code>docker-compose.yml</code> de desarrollo, esta cadena de conexión se sobreescribe mediante variable de entorno <code>Elsa__Persistence__ConnectionString</code>, apuntando al contenedor <code>pataky-postgres</code> de Docker.</p>
+</blockquote>
+<hr />
+<h3 id="12-identity-quien-puede-acceder-a-la-api-de-elsa">1.2 <code>Identity</code> — quién puede acceder a la API de Elsa<a class="headerlink" href="#12-identity-quien-puede-acceder-a-la-api-de-elsa" title="Permanent link">&para;</a></h3>
+<p>La API de Elsa está protegida. Cualquier llamada sin autenticar (incluyendo las del Elsa Studio) recibe un 401. El sistema de identidad tiene tres conceptos:</p>
+<h4 id="signingkey-la-llave-de-firma-de-los-jwt"><code>SigningKey</code> — la llave de firma de los JWT<a class="headerlink" href="#signingkey-la-llave-de-firma-de-los-jwt" title="Permanent link">&para;</a></h4>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&quot;SigningKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;ELSA_SIGNING_KEY&gt;&quot;</span>
+</span></code></pre></div>
+<p>Elsa usa <strong>JWT (JSON Web Tokens)</strong> para la autenticación. Cuando un usuario hace login, Elsa genera un JWT firmado con esta llave. Cada petición posterior incluye ese JWT, y Elsa verifica la firma usando la misma llave.</p>
+<p>Requisitos de la llave:
+- Mínimo <strong>256 bits</strong> (32 bytes). En base64 o ASCII eso son al menos 32 caracteres.
+- Debe ser un secreto: si alguien la conoce, puede generar tokens válidos sin pasar por el login.
+- En el <code>appsettings.json</code> base está como <code>"sufficiently-large-secret-signing-key"</code> (placeholder), que se sobreescribe en producción con una clave real larga y aleatoria.
+- En el <code>docker-compose.yml</code> de desarrollo, esta llave también puede inyectarse como variable de entorno: <code>Elsa__Identity__SigningKey</code>.</p>
+<h4 id="roles-que-permisos-tiene-cada-rol"><code>Roles</code> — qué permisos tiene cada rol<a class="headerlink" href="#roles-que-permisos-tiene-cada-rol" title="Permanent link">&para;</a></h4>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&quot;Roles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;admin&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Permissions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;*&quot;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">]</span>
+</span></code></pre></div>
+<p>Solo existe el rol <code>"admin"</code> con permisos <code>"*"</code> (todo). No hay distinción de roles granulares — o tienes acceso completo o no tienes acceso. Los permisos se implementan internamente en Elsa como strings que identifican operaciones específicas de la API, pero con <code>"*"</code> se acepta todo.</p>
+<p>El rol <code>"admin"</code> se carga desde esta configuración por <code>ConfigurationBasedRoleProvider</code> (clase en <code>AutenticacionAutorizacion.cs</code>). Cada rol usa su propio <code>Name</code> como <code>Id</code> (en lugar de un GUID generado), para que la configuración sea determinista entre reinicios.</p>
+<h4 id="users-usuarios-que-pueden-hacer-login-con-usuariocontrasena"><code>Users</code> — usuarios que pueden hacer login con usuario/contraseña<a class="headerlink" href="#users-usuarios-que-pueden-hacer-login-con-usuariocontrasena" title="Permanent link">&para;</a></h4>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&quot;Users&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;admin&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;password&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Roles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;admin&quot;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">]</span>
+</span></code></pre></div>
+<p>En desarrollo hay un usuario <code>admin</code> / <code>password</code>. En producción está sobreescrito con credenciales reales (<code>provalliance</code> / <code>&lt;ELSA_ADMIN_PASSWORD&gt;</code>).</p>
+<p>El flujo de autenticación de un usuario:
+1. El Elsa Studio hace <code>POST /elsa/api/identity/login</code> con <code>{ username, password }</code>.
+2. Elsa verifica la contraseña usando <strong>PBKDF2-SHA256</strong> con 10.000 iteraciones (implementado en <code>CustomSecretHasher</code>).
+3. Si es correcta, devuelve un JWT firmado con la <code>SigningKey</code>.
+4. El Studio incluye ese JWT en la cabecera <code>Authorization: Bearer {token}</code> de todas las peticiones.</p>
+<h4 id="applications-clientes-de-api-que-se-autentican-con-api-key-o-client-secret"><code>Applications</code> — clientes de API que se autentican con API Key o Client Secret<a class="headerlink" href="#applications-clientes-de-api-que-se-autentican-con-api-key-o-client-secret" title="Permanent link">&para;</a></h4>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&quot;Applications&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="p">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">&quot;Id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">&quot;Roles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;admin&quot;</span><span class="w"> </span><span class="p">],</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nt">&quot;ClientId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nt">&quot;HashedApiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="nt">&quot;HashedApiKeySalt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="nt">&quot;HashedClientSecret&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="nt">&quot;HashedClientSecretSalt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="p">]</span>
+</span></code></pre></div>
+<p>Permite registrar aplicaciones externas (no usuarios) que acceden a la API de Elsa. Una aplicación puede autenticarse con:
+- <strong>API Key</strong>: clave estática incluida en la cabecera <code>x-api-key</code>.
+- <strong>Client Secret</strong>: flujo OAuth2 con <code>client_id</code> y <code>client_secret</code>.</p>
+<p>Los valores están hasheados con PBKDF2 (igual que las contraseñas de usuario) para que no queden en texto plano. En la configuración actual están todos vacíos — no se usan aplicaciones externas.</p>
+<hr />
+<h2 id="2-transactions-bd-de-sincronizacion">2. Transactions — BD de sincronización<a class="headerlink" href="#2-transactions-bd-de-sincronizacion" title="Permanent link">&para;</a></h2>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">&quot;Transactions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Host=localhost;Port=36220;Database=transactions-provalliance;...&quot;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>La cadena de conexión a la segunda base de datos: <code>transactions-provalliance</code>. Esta BD la gestiona Entity Framework Core a través de <code>TransactionsService</code> y contiene todos los pares <code>OriginId ↔ DestinoId</code> (ver apartado 06 para la estructura completa de las tablas).</p>
+<p>El formato es idéntico al de <code>Elsa:Persistence:ConnectionString</code>. En producción también lleva <code>MaxPoolSize=30</code>.</p>
+<p>No hay más configuración para esta BD — no tiene usuarios propios ni roles. Usa las mismas credenciales que la BD de Elsa porque comparten el mismo servidor PostgreSQL.</p>
+<hr />
+<h2 id="3-shopifycredentials-acceso-a-la-tienda">3. ShopifyCredentials — acceso a la tienda<a class="headerlink" href="#3-shopifycredentials-acceso-a-la-tienda" title="Permanent link">&para;</a></h2>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">&quot;ShopifyCredentials&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">&quot;ShopDomain&quot;</span><span class="p">:</span><span class="w">        </span><span class="s2">&quot;https://&lt;TIENDA&gt;.myshopify.com&quot;</span><span class="p">,</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="nt">&quot;AccessTokens&quot;</span><span class="p">:</span><span class="w">      </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;&lt;SHOPIFY_ACCESS_TOKEN&gt;&quot;</span><span class="w"> </span><span class="p">],</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="nt">&quot;LocationId&quot;</span><span class="p">:</span><span class="w">        </span><span class="s2">&quot;gid://shopify/Location/68298375246&quot;</span><span class="p">,</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="nt">&quot;PublicationId&quot;</span><span class="p">:</span><span class="w">     </span><span class="s2">&quot;gid://shopify/Publication/111380496462&quot;</span><span class="p">,</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="nt">&quot;DefaultPriceListId&quot;</span><span class="p">:</span><span class="s2">&quot;gid://shopify/PriceList/18238865486&quot;</span><span class="p">,</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="nt">&quot;LeadPrefix&quot;</span><span class="p">:</span><span class="w">        </span><span class="s2">&quot;LEAD#&quot;</span><span class="p">,</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">  </span><span class="nt">&quot;AgentTags&quot;</span><span class="p">:</span><span class="w">         </span><span class="p">[</span><span class="s2">&quot;agente&quot;</span><span class="p">]</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="31-shopdomain-la-tienda">3.1 <code>ShopDomain</code> — la tienda<a class="headerlink" href="#31-shopdomain-la-tienda" title="Permanent link">&para;</a></h3>
+<p>La URL completa del dominio de Shopify en formato <code>https://{nombre}.myshopify.com</code>. Todas las llamadas a la API GraphQL de Shopify se dirigen a <code>{ShopDomain}/api/2024-10/graphql.json</code> (o la versión de API configurada).</p>
+<p>Nunca usar el dominio personalizado (ej: <code>www.provalliance.com</code>) — siempre el dominio <code>.myshopify.com</code> interno.</p>
+<hr />
+<h3 id="32-accesstokens-tokens-de-autenticacion-y-rate-limiting">3.2 <code>AccessTokens</code> — tokens de autenticación y rate limiting<a class="headerlink" href="#32-accesstokens-tokens-de-autenticacion-y-rate-limiting" title="Permanent link">&para;</a></h3>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">&quot;AccessTokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="s2">&quot;&lt;SHOPIFY_ACCESS_TOKEN&gt;&quot;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="p">]</span>
+</span></code></pre></div>
+<p>Son los <strong>Custom App Access Tokens</strong> de Shopify. Cada token se genera en el panel de administración de Shopify al crear una "Custom App" y tiene los permisos que se le asignaron al crearla (lectura/escritura de productos, inventario, clientes, pedidos, etc.).</p>
+<p><strong>Por qué puede haber más de uno — el LeakyBucket:</strong></p>
+<p>Shopify tiene un sistema de rate limiting llamado <strong>Leaky Bucket</strong> para su API GraphQL. Cada tienda tiene un bucket con capacidad de 1.000 puntos de coste. Cada query GraphQL consume un número de puntos según su complejidad. El bucket se recarga a 50 puntos/segundo.</p>
+<p>El SDK de Shopify del proyecto usa <code>LeakyBucketExecutionPolicy</code>: antes de enviar cada request, comprueba cuántos puntos quedan y espera si es necesario.</p>
+<p>Cuando se tienen <strong>múltiples tokens</strong> (de múltiples Custom Apps registradas en la misma tienda), cada token tiene su propio bucket independiente. El SDK puede alternar entre tokens para multiplicar la capacidad efectiva:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Token A: 1.000 puntos → si se agota, pasa al Token B
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Token B: 1.000 puntos → si se agota, pasa al Token C
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>                         (mientras A se recarga)
+</span></code></pre></div>
+<p>En la configuración actual de producción solo hay un token. Si el sistema necesitara más throughput, se añadirían más tokens aquí.</p>
+<hr />
+<h3 id="33-locationid-la-ubicacion-de-inventario">3.3 <code>LocationId</code> — la ubicación de inventario<a class="headerlink" href="#33-locationid-la-ubicacion-de-inventario" title="Permanent link">&para;</a></h3>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">&quot;LocationId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gid://shopify/Location/68298375246&quot;</span>
+</span></code></pre></div>
+<p>Shopify gestiona el inventario por ubicación física (almacén, tienda, etc.). Cada ajuste de stock debe especificar en qué <code>Location</code> se modifica el inventario.</p>
+<p>Este campo guarda el GID de la <strong>única ubicación</strong> que usa el sistema. Se obtiene desde el panel de Shopify:
+- Ajustes → Sucursales → clic en la sucursal → copiar el ID numérico de la URL → construir el GID: <code>gid://shopify/Location/{ID}</code>.</p>
+<p><code>StockTransform</code> incluye este <code>LocationId</code> en cada <code>VariantStockUpdate</code> para que el loader sepa dónde actualizar el inventario.</p>
+<hr />
+<h3 id="34-publicationid-el-canal-de-venta">3.4 <code>PublicationId</code> — el canal de venta<a class="headerlink" href="#34-publicationid-el-canal-de-venta" title="Permanent link">&para;</a></h3>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">&quot;PublicationId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gid://shopify/Publication/111380496462&quot;</span>
+</span></code></pre></div>
+<p>En Shopify B2B, los productos no son visibles por defecto en todos los canales de venta. Se "publican" en una <code>Publication</code> específica. Este ID identifica en qué canal de venta deben publicarse los productos al crearlos.</p>
+<p>Para obtenerlo hay que hacer una query GraphQL desde el explorador GraphiQL de la tienda:</p>
+<div class="language-graphql highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span><span class="w"> </span><span class="n">publications</span><span class="p">(</span><span class="n">first</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">edges</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div>
+<p>Los productos nuevos se asocian automáticamente a esta publicación durante el proceso de creación (si <code>ExcludeNewProductsFromMarkets</code> es <code>false</code>) o se excluyen y se añaden manualmente.</p>
+<hr />
+<h3 id="35-defaultpricelistid-la-tarifa-por-defecto">3.5 <code>DefaultPriceListId</code> — la tarifa por defecto<a class="headerlink" href="#35-defaultpricelistid-la-tarifa-por-defecto" title="Permanent link">&para;</a></h3>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">&quot;DefaultPriceListId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gid://shopify/PriceList/18238865486&quot;</span>
+</span></code></pre></div>
+<p>En Shopify B2B, las <code>CompanyLocation</code> deben tener una tarifa asignada para que los clientes de esa sucursal puedan ver precios. Cuando se crea una nueva location en el workflow de clientes, se le asigna esta tarifa por defecto hasta que el workflow de tarifas asigne la correcta.</p>
+<p>Es el "precio de catálogo" estándar — el que ve un cliente que aún no tiene tarifa específica negociada.</p>
+<hr />
+<h3 id="36-leadprefix-prefijo-de-leads">3.6 <code>LeadPrefix</code> — prefijo de leads<a class="headerlink" href="#36-leadprefix-prefijo-de-leads" title="Permanent link">&para;</a></h3>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nt">&quot;LeadPrefix&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LEAD#&quot;</span>
+</span></code></pre></div>
+<p>Algunos pedidos de Shopify son "leads" (solicitudes de presupuesto, no pedidos reales). Se identifican porque su número de pedido empieza con este prefijo. El workflow de pedidos los filtra y no los envía al ERP.</p>
+<hr />
+<h3 id="37-agenttags-etiquetas-de-agentes-comerciales">3.7 <code>AgentTags</code> — etiquetas de agentes comerciales<a class="headerlink" href="#37-agenttags-etiquetas-de-agentes-comerciales" title="Permanent link">&para;</a></h3>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">&quot;AgentTags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;agente&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+<p>Los clientes de Shopify que son agentes comerciales internos (no clientes finales) tienen este tag asignado. El sistema los trata de forma especial: se crean en Shopify pero con el flag <code>IsAgent = true</code> en la BD de transacciones.</p>
+<hr />
+<h2 id="4-pim-saleslayer">4. PIM — SalesLayer<a class="headerlink" href="#4-pim-saleslayer" title="Permanent link">&para;</a></h2>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nt">&quot;PIM&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="nt">&quot;CanalEntrada&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="nt">&quot;ChannelId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CN36742H1755C11143&quot;</span><span class="p">,</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="nt">&quot;APIKey&quot;</span><span class="p">:</span><span class="w">    </span><span class="s2">&quot;&lt;SALESLAYER_API_KEY_ENTRADA&gt;&quot;</span><span class="p">,</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w">   </span><span class="s2">&quot;1.17&quot;</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">  </span><span class="nt">&quot;CanalSalida&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">    </span><span class="nt">&quot;ChannelId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CN36672H5814C11143&quot;</span><span class="p">,</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">    </span><span class="nt">&quot;APIKey&quot;</span><span class="p">:</span><span class="w">    </span><span class="s2">&quot;&lt;SALESLAYER_API_KEY_SALIDA&gt;&quot;</span><span class="p">,</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w">   </span><span class="s2">&quot;1.17&quot;</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>SalesLayer tiene una arquitectura de <strong>canales</strong> (channels). Cada canal es una vista o configuración del catálogo independiente, con sus propios permisos de lectura/escritura y sus propias API Keys.</p>
+<p>El sistema usa <strong>dos canales distintos</strong> para dos propósitos opuestos:</p>
+<h3 id="41-canalsalida-lectura-del-catalogo-extractor">4.1 <code>CanalSalida</code> — lectura del catálogo (Extractor)<a class="headerlink" href="#41-canalsalida-lectura-del-catalogo-extractor" title="Permanent link">&para;</a></h3>
+<p>El canal de salida es el que el sistema <strong>lee</strong> para obtener los productos. El <code>ProductsExtractor</code> hace peticiones a la API de SalesLayer usando este canal para descargar todos los <code>SalonSpaceProduct</code> con sus campos (nombre, EAN, imágenes, precios, metafields...).</p>
+<p>"Salida" desde la perspectiva de SalesLayer: los datos salen del PIM hacia el exterior (hacia este sistema).</p>
+<p><strong>Autenticación:</strong> API Key en la cabecera de la petición. La estructura de la URL es aproximadamente:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>GET https://api.saleslayer.com/...?channel_token={ChannelId}&amp;api_key={APIKey}&amp;version={version}
+</span></code></pre></div></p>
+<p><strong><code>version</code>:</strong> la versión del API de SalesLayer. <code>"1.17"</code> es la versión del contrato de la respuesta JSON que el sistema espera. Si SalesLayer actualiza su API, cambiar esta versión puede cambiar la estructura de la respuesta y romper la deserialización.</p>
+<h3 id="42-canalentrada-escritura-de-imagenes-loader">4.2 <code>CanalEntrada</code> — escritura de imágenes (Loader)<a class="headerlink" href="#42-canalentrada-escritura-de-imagenes-loader" title="Permanent link">&para;</a></h3>
+<p>El canal de entrada es el que el sistema <strong>escribe</strong> para enviar datos al PIM. Actualmente solo se usa en el workflow <code>ImagesToPIM</code>: el sistema carga imágenes desde el servidor FTP y las registra en SalesLayer a través de este canal.</p>
+<p>"Entrada" desde la perspectiva de SalesLayer: los datos entran al PIM desde el exterior.</p>
+<p>La separación en dos canales tiene ventajas:
+- <strong>Seguridad</strong>: el canal de solo lectura (<code>CanalSalida</code>) no puede escribir accidentalmente en el PIM aunque la API Key se filtre.
+- <strong>Auditoría</strong>: SalesLayer puede registrar qué modificaciones vinieron de qué canal.
+- <strong>Configuración independiente</strong>: el canal de entrada puede tener campos limitados (solo los necesarios para imágenes), mientras el de salida tiene acceso completo de lectura.</p>
+<hr />
+<h2 id="5-ftpimages-servidor-de-imagenes">5. FtpImages — servidor de imágenes<a class="headerlink" href="#5-ftpimages-servidor-de-imagenes" title="Permanent link">&para;</a></h2>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nt">&quot;FtpImages&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">  </span><span class="nt">&quot;Host&quot;</span><span class="p">:</span><span class="w">               </span><span class="s2">&quot;ftp.rutilliadolfo.com&quot;</span><span class="p">,</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span><span class="nt">&quot;Port&quot;</span><span class="p">:</span><span class="w">               </span><span class="mi">21</span><span class="p">,</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">  </span><span class="nt">&quot;Username&quot;</span><span class="p">:</span><span class="w">           </span><span class="s2">&quot;TheHairPro&quot;</span><span class="p">,</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">  </span><span class="nt">&quot;Password&quot;</span><span class="p">:</span><span class="w">           </span><span class="s2">&quot;&lt;FTP_PASSWORD&gt;&quot;</span><span class="p">,</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">  </span><span class="nt">&quot;RemoteFolders&quot;</span><span class="p">:</span><span class="w">      </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;/smartie/sync_erp/images/import/new&quot;</span><span class="w"> </span><span class="p">],</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">  </span><span class="nt">&quot;UsePassive&quot;</span><span class="p">:</span><span class="w">         </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">  </span><span class="nt">&quot;FileNameStartsWith&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Configuración del servidor FTP desde el que el workflow <code>ImagesToPIM</code> descarga los ficheros de imagen para subirlos al PIM.</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Host</code></td>
+<td>Hostname o IP del servidor FTP</td>
+</tr>
+<tr>
+<td><code>Port</code></td>
+<td>Puerto FTP. El 21 es el estándar</td>
+</tr>
+<tr>
+<td><code>Username</code> / <code>Password</code></td>
+<td>Credenciales de acceso</td>
+</tr>
+<tr>
+<td><code>RemoteFolders</code></td>
+<td>Lista de carpetas del FTP a escanear. El extractor descarga todos los ficheros de cada carpeta</td>
+</tr>
+<tr>
+<td><code>UsePassive</code></td>
+<td>Modo pasivo FTP. Con <code>true</code>, el servidor FTP abre el puerto de datos — necesario cuando el cliente está detrás de NAT o firewall</td>
+</tr>
+<tr>
+<td><code>FileNameStartsWith</code></td>
+<td>Lista de prefijos para filtrar ficheros. Si está vacío, descarga todos</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-provalliance-erp-middleware">6. Provalliance — ERP middleware<a class="headerlink" href="#6-provalliance-erp-middleware" title="Permanent link">&para;</a></h2>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nt">&quot;Provalliance&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="nt">&quot;Middleware&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="nt">&quot;BaseUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://apim-prod-hint-provalliance.azure-api.net&quot;</span><span class="p">,</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">    </span><span class="nt">&quot;Authentication&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">      </span><span class="nt">&quot;Url&quot;</span><span class="p">:</span><span class="w">          </span><span class="s2">&quot;https://login.microsoftonline.com/{tenantId}/oauth2/token&quot;</span><span class="p">,</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">      </span><span class="nt">&quot;ClientId&quot;</span><span class="p">:</span><span class="w">     </span><span class="s2">&quot;&lt;AZURE_CLIENT_ID&gt;&quot;</span><span class="p">,</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">      </span><span class="nt">&quot;ClientSecret&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;AZURE_CLIENT_SECRET&gt;&quot;</span><span class="p">,</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">      </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w">     </span><span class="s2">&quot;api://ba2bedaa-0dc2-4382-a1e5-77a801e2a775&quot;</span><span class="p">,</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">      </span><span class="nt">&quot;Scope&quot;</span><span class="p">:</span><span class="w">        </span><span class="s2">&quot;.default&quot;</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">    </span><span class="nt">&quot;SubscriptionKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;SUBSCRIPTION_KEY&gt;&quot;</span>
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Esta sección configura el acceso al ERP Provalliance (Sage X3). El ERP no está expuesto directamente a internet — está detrás de <strong>Azure API Management (APIM)</strong>, que actúa como proxy y gateway de seguridad. Acceder al ERP requiere dos capas de autenticación:</p>
+<h3 id="61-baseurl-el-endpoint-de-azure-api-management">6.1 <code>BaseUrl</code> — el endpoint de Azure API Management<a class="headerlink" href="#61-baseurl-el-endpoint-de-azure-api-management" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>https://apim-prod-hint-provalliance.azure-api.net
+</span></code></pre></div>
+<p>Todas las llamadas al ERP van a este endpoint de APIM, no directamente al servidor ERP. APIM enruta la petición internamente al ERP real.</p>
+<p>La URL tiene el prefijo <code>apim-prod-hint-</code> que indica: Azure API Management (<code>apim</code>), entorno de producción (<code>prod</code>), cliente Hint (<code>hint</code>), proyecto Provalliance.</p>
+<hr />
+<h3 id="62-authentication-oauth2-client-credentials-azure-ad">6.2 <code>Authentication</code> — OAuth2 Client Credentials (Azure AD)<a class="headerlink" href="#62-authentication-oauth2-client-credentials-azure-ad" title="Permanent link">&para;</a></h3>
+<p>El acceso al APIM requiere un <strong>token de acceso OAuth2</strong> de Azure Active Directory. El flujo es <code>client_credentials</code> (máquina a máquina, sin intervención del usuario):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>1. El sistema → Azure AD:
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>   POST https://login.microsoftonline.com/{tenantId}/oauth2/token
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>   Body: {
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>     grant_type:    &quot;client_credentials&quot;,
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>     client_id:     &quot;adde8fc4-...&quot;,
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>     client_secret: &quot;RJe8Q~huIA...&quot;,
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>     resource:      &quot;api://ba2bedaa-...&quot;,
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>     scope:         &quot;.default&quot;
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>   }
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>2. Azure AD → El sistema:
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>   { &quot;access_token&quot;: &quot;eyJ0eXAiOiJKV1Q...&quot;, &quot;expires_in&quot;: 3600 }
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>3. El sistema → APIM:
+</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>   GET https://apim-prod-hint-provalliance.azure-api.net/customers
+</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a>   Headers: {
+</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>     Authorization: &quot;Bearer eyJ0eXAiOiJKV1Q...&quot;,
+</span><span id="__span-21-18"><a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>     Ocp-Apim-Subscription-Key: &quot;&lt;APIM_SUBSCRIPTION_KEY&gt;&quot;
+</span><span id="__span-21-19"><a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a>   }
+</span></code></pre></div>
+<p><strong>Campos:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Url</code></td>
+<td>Endpoint de token de Azure AD. El <code>{tenantId}</code> es el ID del directorio de Azure de Provalliance (<code>81b27477-db1f-49f0-8aa5-3d60b9db5700</code>)</td>
+</tr>
+<tr>
+<td><code>ClientId</code></td>
+<td>ID de la aplicación registrada en Azure AD que representa este sistema de integración</td>
+</tr>
+<tr>
+<td><code>ClientSecret</code></td>
+<td>El secreto/contraseña de esa aplicación. Se genera en el portal de Azure y caduca periódicamente</td>
+</tr>
+<tr>
+<td><code>Resource</code></td>
+<td>La audiencia del token: identifica la API protegida a la que se quiere acceder. Es el App ID URI de la aplicación APIM registrada en Azure AD</td>
+</tr>
+<tr>
+<td><code>Scope</code></td>
+<td><code>.default</code> solicita todos los permisos que la aplicación tiene ya configurados en Azure AD (sin especificar scopes adicionales)</td>
+</tr>
+</tbody>
+</table>
+<p>El token devuelto por Azure AD es un JWT que APIM valida internamente para comprobar que el llamante está autorizado.</p>
+<p><strong>Caducidad del token:</strong> Azure AD devuelve tokens que duran 1 hora (<code>expires_in: 3600</code>). El extractor de Provalliance debe renovar el token cuando caduca. El mecanismo de caché y renovación está implementado en el extractor.</p>
+<hr />
+<h3 id="63-subscriptionkey-la-segunda-capa-de-autenticacion-de-apim">6.3 <code>SubscriptionKey</code> — la segunda capa de autenticación de APIM<a class="headerlink" href="#63-subscriptionkey-la-segunda-capa-de-autenticacion-de-apim" title="Permanent link">&para;</a></h3>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nt">&quot;SubscriptionKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;APIM_SUBSCRIPTION_KEY&gt;&quot;</span>
+</span></code></pre></div>
+<p>Azure API Management tiene dos mecanismos de autenticación independientes:</p>
+<ol>
+<li><strong>OAuth2</strong> (el Bearer token que hemos visto) — valida la identidad de la aplicación.</li>
+<li><strong>Subscription Key</strong> — valida que la aplicación está suscrita a ese producto de API concreto.</li>
+</ol>
+<p>La clave de suscripción va en la cabecera <code>Ocp-Apim-Subscription-Key</code> de cada petición. APIM rechaza la petición si falta o es incorrecta, incluso si el Bearer token es válido.</p>
+<p>Esta doble autenticación es una práctica habitual en Azure API Management para tener un control granular: puedes revocar el acceso de una aplicación rápidamente revocando su suscripción (la clave), sin tocar la configuración de Azure AD.</p>
+<hr />
+<h2 id="7-email-y-notificaciones">7. Email y notificaciones<a class="headerlink" href="#7-email-y-notificaciones" title="Permanent link">&para;</a></h2>
+<h3 id="emailsettingsgraph"><code>EmailSettingsGraph</code><a class="headerlink" href="#emailsettingsgraph" title="Permanent link">&para;</a></h3>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nt">&quot;EmailSettingsGraph&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">  </span><span class="nt">&quot;AuthType&quot;</span><span class="p">:</span><span class="w">      </span><span class="s2">&quot;APPLICATION_PERMISSIONS&quot;</span><span class="p">,</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">  </span><span class="nt">&quot;SenderId&quot;</span><span class="p">:</span><span class="w">      </span><span class="s2">&quot;dotnet@upango.es&quot;</span><span class="p">,</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">  </span><span class="nt">&quot;SaveToSentItems&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AuthType</code></td>
+<td><code>APPLICATION_PERMISSIONS</code> usa un token de app (sin usuario). <code>USERNAME_PASSWORD</code> usa credenciales de usuario</td>
+</tr>
+<tr>
+<td><code>SenderId</code></td>
+<td>Email desde el que se envían las notificaciones</td>
+</tr>
+<tr>
+<td><code>SaveToSentItems</code></td>
+<td>Si guardar los emails enviados en la carpeta "Enviados" del buzón</td>
+</tr>
+</tbody>
+</table>
+<h3 id="graphclient"><code>GraphClient</code><a class="headerlink" href="#graphclient" title="Permanent link">&para;</a></h3>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nt">&quot;GraphClient&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">  </span><span class="nt">&quot;ApiVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;v1.0&quot;</span><span class="p">,</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">  </span><span class="nt">&quot;Tenant&quot;</span><span class="p">:</span><span class="w">     </span><span class="s2">&quot;92b3ae0b-...&quot;</span><span class="p">,</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="w">  </span><span class="nt">&quot;ClientId&quot;</span><span class="p">:</span><span class="w">   </span><span class="s2">&quot;aace368c-...&quot;</span><span class="p">,</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">  </span><span class="nt">&quot;ApplicationPermissions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">    </span><span class="nt">&quot;ClientSecret&quot;</span><span class="p">:</span><span class="w">      </span><span class="s2">&quot;&lt;GRAPH_CLIENT_SECRET&gt;&quot;</span><span class="p">,</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="w">    </span><span class="nt">&quot;CertificateName&quot;</span><span class="p">:</span><span class="w">   </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="w">  </span><span class="nt">&quot;UsernamePassword&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;Username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="w">  </span><span class="nt">&quot;Organization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Configuración del cliente de <strong>Microsoft Graph API</strong> para enviar emails. Graph API es el API de Microsoft 365 que, entre otras cosas, permite enviar emails a través de Exchange Online.</p>
+<p>Usa el mismo flujo OAuth2 <code>client_credentials</code> que el ERP, pero en este caso la "resource" es <code>https://graph.microsoft.com/.default</code>. El <code>Tenant</code>, <code>ClientId</code> y <code>ClientSecret</code> son de una aplicación distinta registrada en el Azure AD de Upango (no el de Provalliance).</p>
+<h3 id="workflowemailnotifications"><code>WorkflowEmailNotifications</code><a class="headerlink" href="#workflowemailnotifications" title="Permanent link">&para;</a></h3>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nt">&quot;WorkflowEmailNotifications&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">  </span><span class="nt">&quot;SubjectPrefix&quot;</span><span class="p">:</span><span class="w">          </span><span class="s2">&quot;Provalliance&quot;</span><span class="p">,</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">  </span><span class="nt">&quot;MaxRetryAttempts&quot;</span><span class="p">:</span><span class="w">       </span><span class="mi">5</span><span class="p">,</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">  </span><span class="nt">&quot;RetryBaseDelaySeconds&quot;</span><span class="p">:</span><span class="w">  </span><span class="mi">15</span><span class="p">,</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">  </span><span class="nt">&quot;BufferRetentionMinutes&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SubjectPrefix</code></td>
+<td>Prefijo del asunto del email. Aparece como <code>"[Provalliance] Error en workflow Productos"</code></td>
+</tr>
+<tr>
+<td><code>MaxRetryAttempts</code></td>
+<td>Si el envío del email falla (ej: Graph API no disponible), reintenta hasta 5 veces</td>
+</tr>
+<tr>
+<td><code>RetryBaseDelaySeconds</code></td>
+<td>Espera inicial entre reintentos en segundos. Con backoff exponencial: 15s, 30s, 60s...</td>
+</tr>
+<tr>
+<td><code>BufferRetentionMinutes</code></td>
+<td>Los emails se guardan en un buffer en memoria. Si llevan más de 120 minutos sin enviarse, se descartan</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-filterorders-filtro-de-pedidos">8. FilterOrders — filtro de pedidos<a class="headerlink" href="#8-filterorders-filtro-de-pedidos" title="Permanent link">&para;</a></h2>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nt">&quot;FilterOrders&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">  </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tag_not:Sincronizado&quot;</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>El workflow de pedidos usa esta query de Shopify para filtrar qué pedidos descarga. La query <code>tag_not:Sincronizado</code> devuelve solo los pedidos que <strong>no tienen</strong> el tag <code>Sincronizado</code>.</p>
+<p>El flujo completo es:
+1. El extractor descarga pedidos con <code>tag_not:Sincronizado</code>.
+2. El loader los transforma y envía al ERP.
+3. Si el envío es exitoso, el loader añade el tag <code>Sincronizado</code> al pedido en Shopify.
+4. En la próxima ejecución, ese pedido ya no aparece en la query.</p>
+<p>Esta estrategia de idempotencia es simple y robusta: si el sistema cae a mitad de proceso, los pedidos sin tag se vuelven a procesar en la siguiente ejecución. No se usa un timestamp de "última sincronización" porque eso podría perder pedidos si el reloj tiene deriva o si un pedido se modifica retroactivamente.</p>
+<hr />
+<h2 id="9-workflows-programacion-y-alertas">9. Workflows — programación y alertas<a class="headerlink" href="#9-workflows-programacion-y-alertas" title="Permanent link">&para;</a></h2>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nt">&quot;Workflows&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">  </span><span class="nt">&quot;Products&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">    </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Productos&quot;</span><span class="p">,</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">    </span><span class="nt">&quot;Cron&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0 0 * * * *&quot;</span><span class="p">,</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">    </span><span class="nt">&quot;IncrementalCron&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">    </span><span class="nt">&quot;Notifications&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="w">      </span><span class="nt">&quot;Recipients&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;Email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dotnet@upango.es&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;MinSeverity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Warning&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="w">      </span><span class="p">]</span>
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-27-12"><a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a><span class="w">  </span><span class="nt">&quot;Stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-27-13"><a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a><span class="w">    </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Stock&quot;</span><span class="p">,</span>
+</span><span id="__span-27-14"><a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a><span class="w">    </span><span class="nt">&quot;Cron&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0 */10 4-21 * * *&quot;</span><span class="p">,</span>
+</span><span id="__span-27-15"><a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a><span class="w">    </span><span class="err">...</span>
+</span><span id="__span-27-16"><a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-27-17"><a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a><span class="w">  </span><span class="c1">// ... resto de workflows</span>
+</span><span id="__span-27-18"><a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Esta sección configura el comportamiento de cada uno de los 6 workflows del sistema.</p>
+<hr />
+<h3 id="91-name-nombre-identificativo">9.1 <code>Name</code> — nombre identificativo<a class="headerlink" href="#91-name-nombre-identificativo" title="Permanent link">&para;</a></h3>
+<p>El nombre en texto plano del workflow. Se usa en los emails de notificación (<code>"Error en workflow Productos"</code>) y en los logs. No afecta a la ejecución.</p>
+<hr />
+<h3 id="92-cron-cuando-se-ejecuta-el-workflow">9.2 <code>Cron</code> — cuándo se ejecuta el workflow<a class="headerlink" href="#92-cron-cuando-se-ejecuta-el-workflow" title="Permanent link">&para;</a></h3>
+<p>El cron usa el formato <strong>6 campos</strong> de Quartz.NET (no el estándar Unix de 5 campos):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>┌──────────── segundo (0-59)
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>│  ┌───────── minuto (0-59)
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>│  │  ┌────── hora (0-23)
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>│  │  │  ┌─── día del mes (1-31)
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>│  │  │  │  ┌── mes (1-12)
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>│  │  │  │  │  ┌─ día de la semana (0-6, 0=domingo)
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>│  │  │  │  │  │
+</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>0  0  *  *  *  *
+</span></code></pre></div>
+<p><strong>Crons de producción explicados:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Workflow</th>
+<th>Cron</th>
+<th>Lectura humana</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Productos</td>
+<td><code>0 0 * * * *</code></td>
+<td>En el segundo 0 del minuto 0 de cada hora → cada hora en punto (00:00, 01:00, 02:00...)</td>
+</tr>
+<tr>
+<td>ImagesToPIM</td>
+<td><code>0 * * * * *</code></td>
+<td>En el segundo 0 de cada minuto → cada minuto</td>
+</tr>
+<tr>
+<td>ImagesToShopify</td>
+<td><code>0 30 * * * *</code></td>
+<td>En el segundo 0 del minuto 30 de cada hora → cada hora y media (00:30, 01:30, 02:30...)</td>
+</tr>
+<tr>
+<td>Stock</td>
+<td><code>0 */10 4-21 * * *</code></td>
+<td>En el segundo 0, cada 10 minutos, solo entre las 4:00 y las 21:59</td>
+</tr>
+<tr>
+<td>Clientes</td>
+<td><code>0 15 * * * *</code></td>
+<td>En el segundo 0 del minuto 15 de cada hora → 00:15, 01:15, 02:15...</td>
+</tr>
+<tr>
+<td>Pedidos</td>
+<td><code>0 */5 * * * *</code></td>
+<td>En el segundo 0, cada 5 minutos, las 24 horas</td>
+</tr>
+</tbody>
+</table>
+<p><strong>El cron de Stock analizado:</strong> <code>0 */10 4-21 * * *</code></p>
+<ul>
+<li><code>0</code> → en el segundo 0 (inicio del minuto)</li>
+<li><code>*/10</code> → cada 10 minutos (0, 10, 20, 30, 40, 50)</li>
+<li><code>4-21</code> → solo en las horas entre las 4 y las 21 (4:00, 4:10, ..., 21:50)</li>
+<li><code>* * *</code> → cualquier día, mes y día de la semana</li>
+</ul>
+<p>El ERP actualiza el stock cada 10 minutos en el rango 6:04-21:44. El cron es más amplio (4:00-21:59) para garantizar cobertura cuando cambia la hora oficial (horario de verano/invierno). La sincronización fuera del horario del ERP simplemente no encontrará cambios y terminará rápido.</p>
+<p><strong>Si <code>Cron</code> es <code>null</code>:</strong> el workflow solo se puede lanzar manualmente desde Elsa Studio o mediante la API. Es la configuración en desarrollo y para workflows que aún no están en producción.</p>
+<hr />
+<h3 id="93-incrementalcron-sincronizacion-incremental">9.3 <code>IncrementalCron</code> — sincronización incremental<a class="headerlink" href="#93-incrementalcron-sincronizacion-incremental" title="Permanent link">&para;</a></h3>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="nt">&quot;IncrementalCron&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+</span></code></pre></div>
+<p>Actualmente <code>null</code> en todos los workflows. Está pensado para una futura implementación de <strong>sincronizaciones incrementales</strong>: en lugar de procesar todos los registros del ERP en cada ejecución, solo procesar los que han cambiado desde la última sincronización.</p>
+<p>Por ejemplo, <code>"Cron": "0 0 * * * *"</code> (completo cada hora) + <code>"IncrementalCron": "0 */5 * * * *"</code> (incremental cada 5 minutos) permitiría sincronizaciones frecuentes con bajo coste.</p>
+<hr />
+<h3 id="94-notificationsrecipients-a-quien-se-notifica-y-con-que-nivel">9.4 <code>Notifications.Recipients</code> — a quién se notifica y con qué nivel<a class="headerlink" href="#94-notificationsrecipients-a-quien-se-notifica-y-con-que-nivel" title="Permanent link">&para;</a></h3>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nt">&quot;Notifications&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">  </span><span class="nt">&quot;Recipients&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;Email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dotnet@upango.es&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;MinSeverity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Warning&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="w">  </span><span class="p">]</span>
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Cada workflow puede tener su propia lista de destinatarios de email. Cuando un workflow termina, se envía un email a cada destinatario cuyo <code>MinSeverity</code> sea igual o menor que la severidad real del resultado.</p>
+<p><strong><code>MinSeverity</code></strong> puede ser:
+- <code>"Information"</code> → recibe email siempre (tanto si todo fue bien como si hubo errores).
+- <code>"Warning"</code> → recibe email solo si hubo al menos un warning o un error.
+- <code>"Error"</code> → recibe email solo si hubo al menos un error.
+- <code>"Critical"</code> → recibe email solo en errores críticos (fallos que interrumpieron el workflow).</p>
+<p>En producción todos los workflows tienen <code>"MinSeverity": "Warning"</code>, lo que significa que el equipo técnico recibe un email cada vez que hay algo que investigar, pero no recibe notificaciones de ejecuciones limpias.</p>
+<p>Si <code>Recipients</code> está vacío <code>[]</code>, no se envía ningún email al terminar el workflow.</p>
+<hr />
+<h2 id="resumen-relacion-entre-configuracion-y-arquitectura">Resumen: relación entre configuración y arquitectura<a class="headerlink" href="#resumen-relacion-entre-configuracion-y-arquitectura" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>flowchart TD
+    CFG["appsettings.json"]
+
+    EL["Elsa:Persistence\nBD interna de Elsa"]
+    TR["Transactions\nBD de sincronización"]
+    SH["ShopifyCredentials\nShopify API GraphQL"]
+    PI["PIM:CanalSalida / CanalEntrada\nSalesLayer"]
+    FT["FtpImages\nServidor FTP de imágenes"]
+    PR["Provalliance:Middleware\nAzure APIM → ERP Sage X3"]
+    AU["Authentication\nAzure AD OAuth2\nclient_credentials"]
+    EG["EmailSettingsGraph\nMicrosoft Graph (emails)"]
+    GC["GraphClient\nAzure AD OAuth2 para Graph"]
+    WN["WorkflowEmailNotifications\nbuffer y reintentos"]
+    FO["FilterOrders\ntag Shopify filtro pedidos"]
+    WF["Workflows\ncrons + destinatarios"]
+
+    CFG --&gt; EL &amp; TR &amp; SH &amp; PI &amp; FT &amp; PR &amp; EG &amp; GC &amp; WN &amp; FO &amp; WF
+    PR --&gt; AU</code></pre>
+<hr />
+<h2 id="siguiente-paso">Siguiente paso<a class="headerlink" href="#siguiente-paso" title="Permanent link">&para;</a></h2>
+<p>→ <a href="../09-elsa-studio/"><code>09-elsa-studio.md</code></a> — La interfaz visual de Elsa Studio</p>
+<hr />
+<h2 id="documentos-relacionados">Documentos relacionados<a class="headerlink" href="#documentos-relacionados" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Documento</th>
+<th>Relación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../07-infraestructura/">07 — Infraestructura</a></td>
+<td>Los contenedores que leen estas variables de entorno</td>
+</tr>
+<tr>
+<td><a href="../02-elsa-workflows/">02 — El motor Elsa</a></td>
+<td>Sección <code>Elsa:Persistence</code> y <code>SchedulingWorkflow</code> con los crons</td>
+</tr>
+<tr>
+<td><a href="../04-extractors/">04 — Extractors</a></td>
+<td>Usan <code>ShopifyCredentials</code>, <code>PIM</code> y <code>Provalliance</code> de la configuración</td>
+</tr>
+<tr>
+<td><a href="../09-elsa-studio/">09 — Elsa Studio</a></td>
+<td>Lee <code>Elsa:Identity</code> para autenticación de la interfaz visual</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../07-infraestructura/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Infraestructura y despliegue">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Infraestructura y despliegue
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../09-elsa-studio/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Elsa Studio">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Elsa Studio
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.instant.progress", "navigation.instant.prefetch", "navigation.instant.preview", "navigation.indexes", "navigation.path", "navigation.tracking", "navigation.prune", "navigation.top", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.code.select", "content.action.edit", "content.action.view", "content.tabs.link", "content.tooltips", "header.autohide"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../assets/javascripts/reactflow/bundle.reactflow.js" defer></script>
+      
+        <script src="../assets/javascripts/mermaid-zoom.js" defer></script>
+      
+    
+  </body>
+</html>

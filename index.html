@@ -1,0 +1,1495 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación técnica del sistema de integración ERP-PIM-Shopify">
+      
+      
+      
+      
+      
+        <link rel="next" href="01-arquitectura-etl/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>UPG.Pataky — Guía de Estudio</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#upgpataky-guia-de-estudio" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="." title="UPG.Pataky — Guía de Estudio" class="md-header__button md-logo" aria-label="UPG.Pataky — Guía de Estudio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UPG.Pataky — Guía de Estudio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Inicio
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartir" aria-label="Compartir" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="01-arquitectura-etl/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Arquitectura
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="wf-productos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Procesos
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="04-extractors/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Pipeline ETL
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="06-modelos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Sistema
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="mp-index/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Marketplaces
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="UPG.Pataky — Guía de Estudio" class="md-nav__button md-logo" aria-label="UPG.Pataky — Guía de Estudio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UPG.Pataky — Guía de Estudio
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En esta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En esta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-este-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          ¿Qué es este proyecto?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indice-de-apartados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Índice de apartados
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Índice de apartados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-arquitectura-general-el-patron-etl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. Arquitectura general — el patrón ETL
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-el-motor-de-workflows-elsa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. El motor de workflows: Elsa
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-los-workflows-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3. Los workflows del sistema
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-los-extractors-como-se-leen-los-datos-del-origen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4. Los Extractors — cómo se leen los datos del origen
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-los-transformers-como-se-convierten-los-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5. Los Transformers — cómo se convierten los datos
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-los-modelos-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6. Los modelos de datos
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-infraestructura-y-despliegue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          7. Infraestructura y despliegue
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-configuracion-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          8. Configuración del sistema
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-elsa-studio-la-interfaz-visual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          9. Elsa Studio — la interfaz visual
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-loaders-y-mirror-la-escritura-y-la-reconciliacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          10. Loaders y Mirror — la escritura y la reconciliación
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-leer-esta-guia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cómo leer esta guía
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="01-arquitectura-etl/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="wf-productos/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procesos
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="04-extractors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipeline ETL
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="06-modelos/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sistema
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="mp-index/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketplaces
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En esta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En esta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-este-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          ¿Qué es este proyecto?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indice-de-apartados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Índice de apartados
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Índice de apartados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-arquitectura-general-el-patron-etl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. Arquitectura general — el patrón ETL
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-el-motor-de-workflows-elsa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. El motor de workflows: Elsa
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-los-workflows-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3. Los workflows del sistema
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-los-extractors-como-se-leen-los-datos-del-origen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4. Los Extractors — cómo se leen los datos del origen
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-los-transformers-como-se-convierten-los-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5. Los Transformers — cómo se convierten los datos
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-los-modelos-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6. Los modelos de datos
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-infraestructura-y-despliegue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          7. Infraestructura y despliegue
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-configuracion-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          8. Configuración del sistema
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-elsa-studio-la-interfaz-visual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          9. Elsa Studio — la interfaz visual
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-loaders-y-mirror-la-escritura-y-la-reconciliacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          10. Loaders y Mirror — la escritura y la reconciliación
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-leer-esta-guia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cómo leer esta guía
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="upgpataky-guia-de-estudio">UPG.Pataky — Guía de estudio<a class="headerlink" href="#upgpataky-guia-de-estudio" title="Permanent link">&para;</a></h1>
+<p>Bienvenido a la guía de estudio del proyecto <strong>UPG.Pataky</strong>. Esta serie de documentos te explicará paso a paso cómo funciona el sistema, desde el concepto general hasta los detalles de cada componente.</p>
+<hr />
+<h2 id="que-es-este-proyecto">¿Qué es este proyecto?<a class="headerlink" href="#que-es-este-proyecto" title="Permanent link">&para;</a></h2>
+<p><strong>UPG.Pataky</strong> es un sistema de integración que conecta dos plataformas empresariales:</p>
+<ul>
+<li><strong>Provalliance / SalesLayer</strong> (origen): el ERP y PIM donde viven los datos reales de la empresa — clientes, productos, stock, pedidos e imágenes.</li>
+<li><strong>Shopify B2B</strong> (destino): la tienda online donde esos datos tienen que aparecer sincronizados.</li>
+</ul>
+<p>El proyecto se encarga de que ambos sistemas estén siempre alineados, ejecutando sincronizaciones automáticas y programadas.</p>
+<hr />
+<h2 id="indice-de-apartados">Índice de apartados<a class="headerlink" href="#indice-de-apartados" title="Permanent link">&para;</a></h2>
+<p>Cada apartado tiene (o tendrá) su propio documento con la explicación detallada.</p>
+<h3 id="1-arquitectura-general-el-patron-etl">1. Arquitectura general — el patrón ETL<a class="headerlink" href="#1-arquitectura-general-el-patron-etl" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><a href="01-arquitectura-etl/"><code>01-arquitectura-etl.md</code></a></p>
+</blockquote>
+<p>Cómo está organizado el código siguiendo el patrón <strong>Extract → Transform → Load</strong>. Los tres proyectos principales del repo y cómo se relacionan entre sí.</p>
+<hr />
+<h3 id="2-el-motor-de-workflows-elsa">2. El motor de workflows: Elsa<a class="headerlink" href="#2-el-motor-de-workflows-elsa" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><a href="02-elsa-workflows/"><code>02-elsa-workflows.md</code></a></p>
+</blockquote>
+<p>Qué es <strong>Elsa</strong>, para qué sirve un motor de workflows, y cómo este proyecto lo utiliza para orquestar las sincronizaciones. Cómo se define un workflow con código C#.</p>
+<hr />
+<h3 id="3-los-workflows-del-sistema">3. Los workflows del sistema<a class="headerlink" href="#3-los-workflows-del-sistema" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><a href="03-workflows-detalle/"><code>03-workflows-detalle.md</code></a></p>
+</blockquote>
+<p>Descripción detallada de cada uno de los <strong>6 workflows</strong> disponibles:</p>
+<table>
+<thead>
+<tr>
+<th>Workflow</th>
+<th>Dirección</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Productos</strong></td>
+<td>PIM → Shopify</td>
+<td>Sincroniza el catálogo de productos</td>
+</tr>
+<tr>
+<td><strong>Stock</strong></td>
+<td>ERP → Shopify</td>
+<td>Actualiza el inventario disponible</td>
+</tr>
+<tr>
+<td><strong>Clientes</strong></td>
+<td>ERP → Shopify</td>
+<td>Sincroniza empresas, sucursales y contactos B2B</td>
+</tr>
+<tr>
+<td><strong>Pedidos</strong></td>
+<td>Shopify → ERP</td>
+<td>Envía pedidos de Shopify al ERP</td>
+</tr>
+<tr>
+<td><strong>Imágenes PIM</strong></td>
+<td>FTP → PIM</td>
+<td>Carga imágenes desde el FTP al PIM</td>
+</tr>
+<tr>
+<td><strong>Imágenes Shopify</strong></td>
+<td>PIM → Shopify</td>
+<td>Publica imágenes de productos en Shopify</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="4-los-extractors-como-se-leen-los-datos-del-origen">4. Los Extractors — cómo se leen los datos del origen<a class="headerlink" href="#4-los-extractors-como-se-leen-los-datos-del-origen" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><a href="04-extractors/"><code>04-extractors.md</code></a> — visión general
+<a href="04b-extractors-detalle/"><code>04b-extractors-detalle.md</code></a> — detalle completo campo a campo
+<a href="04c-extractors-metodos/"><code>04c-extractors-metodos.md</code></a> — métodos y funciones explicados paso a paso</p>
+</blockquote>
+<p>Cómo funciona la capa de extracción. Qué APIs consume (Provalliance, SalesLayer, FTP), cómo se autentica, y qué modelos de datos devuelve cada extractor con su estructura completa. El tercer documento explica cada método y función individualmente para poder seguir el código línea a línea.</p>
+<hr />
+<h3 id="5-los-transformers-como-se-convierten-los-datos">5. Los Transformers — cómo se convierten los datos<a class="headerlink" href="#5-los-transformers-como-se-convierten-los-datos" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><a href="05-transformers/"><code>05-transformers.md</code></a> — visión general
+<a href="05b-transformers-detalle/"><code>05b-transformers-detalle.md</code></a> — detalle completo campo a campo</p>
+</blockquote>
+<p>Cómo se mapean los datos del ERP al formato que entiende Shopify. El uso de <strong>AutoMapper</strong> y los perfiles de mapeo. Todos los metafields que se generan y cómo se calculan los descuentos, imágenes y direcciones.</p>
+<hr />
+<h3 id="6-los-modelos-de-datos">6. Los modelos de datos<a class="headerlink" href="#6-los-modelos-de-datos" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><a href="06-modelos/"><code>06-modelos.md</code></a></p>
+</blockquote>
+<p>Los modelos principales del sistema: <code>ClientResponseModel</code>, <code>LocationResponseModel</code>, <code>ICompany</code>, <code>ILocation</code>, <code>ICustomer</code>, <code>IProduct</code>... y cómo se relacionan entre sí.</p>
+<hr />
+<h3 id="7-infraestructura-y-despliegue">7. Infraestructura y despliegue<a class="headerlink" href="#7-infraestructura-y-despliegue" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><a href="07-infraestructura/"><code>07-infraestructura.md</code></a></p>
+</blockquote>
+<p>Cómo se despliega el sistema con <strong>Docker Compose</strong>. Los contenedores que lo componen (servidor Elsa, Elsa Studio, PostgreSQL), cómo se construyen las imágenes y qué variables de entorno necesitan.</p>
+<hr />
+<h3 id="8-configuracion-del-sistema">8. Configuración del sistema<a class="headerlink" href="#8-configuracion-del-sistema" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><a href="08-configuracion/"><code>08-configuracion.md</code></a></p>
+</blockquote>
+<p>Explicación de todos los bloques del fichero <code>appsettings.json</code>: credenciales de Shopify, conexión al middleware de Provalliance, configuración del PIM SalesLayer, FTP de imágenes, notificaciones por email y programación de los workflows (cron).</p>
+<hr />
+<h3 id="9-elsa-studio-la-interfaz-visual">9. Elsa Studio — la interfaz visual<a class="headerlink" href="#9-elsa-studio-la-interfaz-visual" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><a href="09-elsa-studio/"><code>09-elsa-studio.md</code></a></p>
+</blockquote>
+<p>Qué es <strong>Elsa Studio</strong>, cómo se accede a él, qué puedes hacer desde la interfaz: ver el estado de los workflows, lanzarlos manualmente, ver los logs de ejecución y depurar errores.</p>
+<hr />
+<h3 id="10-loaders-y-mirror-la-escritura-y-la-reconciliacion">10. Loaders y Mirror — la escritura y la reconciliación<a class="headerlink" href="#10-loaders-y-mirror-la-escritura-y-la-reconciliacion" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><a href="10-loaders/"><code>10-loaders.md</code></a></p>
+</blockquote>
+<p>La capa de escritura y la capa de reconciliación: cómo cada Loader escribe en Shopify y registra el resultado en la BD de transacciones, y cómo las actividades Mirror leen el estado real de Shopify para mantener la BD alineada antes de tomar decisiones.</p>
+<table>
+<thead>
+<tr>
+<th>Loader</th>
+<th>Qué gestiona</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ProductsWithVariantsCreate</code></td>
+<td>Creación de productos+variantes (variante <code>$</code> centinela, exclusión de mercados)</td>
+</tr>
+<tr>
+<td><code>ProductsWithVariantsUpdate</code></td>
+<td>Actualización (incluyendo <code>RebuildProductOptions</code> con variante centinela <code>$</code>)</td>
+</tr>
+<tr>
+<td><code>ProductsWithVariantsDelete</code></td>
+<td>Borrado inteligente: promueve a borrado de producto si es la última variante</td>
+</tr>
+<tr>
+<td><code>PriceListsB2B</code></td>
+<td>Catálogos + PriceLists + Publicaciones + QuantityPriceBreaks</td>
+</tr>
+<tr>
+<td><code>ProductsMedias</code></td>
+<td>Imágenes: crea/actualiza/borra/asocia/desasocia, incrusta OriginId en ALT</td>
+</tr>
+<tr>
+<td><code>SyncStock</code></td>
+<td>Stock en 2 fases: UpdateVariants + InventorySetQuantities (lotes de 250)</td>
+</tr>
+<tr>
+<td><code>CompaniesWithContactsLoader</code></td>
+<td>17 operaciones ordenadas: Company→Location→Contact→Role</td>
+</tr>
+<tr>
+<td><code>OrdersLoader</code></td>
+<td>Estado de pedidos: etiquetas, pagos, cancelaciones, fulfillments</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Mirror</th>
+<th>Qué reconcilia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SyncProductsV2</code></td>
+<td>Productos + variantes + opciones (usa índices en memoria)</td>
+</tr>
+<tr>
+<td><code>SyncProductMedias</code></td>
+<td>Imágenes de productos (recupera OriginId del ALT)</td>
+</tr>
+<tr>
+<td><code>SyncPriceLists</code></td>
+<td>PriceLists + variantes asociadas</td>
+</tr>
+<tr>
+<td><code>SyncCompanies</code></td>
+<td>Companies + Locations + Contacts + Roles + agentes + customers</td>
+</tr>
+<tr>
+<td><code>MirrorMediasLoad</code></td>
+<td>Asignación imagen↔variante usando datos del PIM</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="como-leer-esta-guia">Cómo leer esta guía<a class="headerlink" href="#como-leer-esta-guia" title="Permanent link">&para;</a></h2>
+<p>Se recomienda seguir el orden de los apartados la primera vez. Si ya tienes experiencia con algún concepto (por ejemplo, ya sabes qué es un motor de workflows), puedes saltar directamente al apartado que te interese.</p>
+<p>El apartado más importante para entender el conjunto es el <strong>1 (Arquitectura ETL)</strong> porque da el marco mental sobre el que se construye todo lo demás.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+        
+          
+          <a href="01-arquitectura-etl/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Arquitectura ETL">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Arquitectura ETL
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.instant.progress", "navigation.instant.prefetch", "navigation.instant.preview", "navigation.indexes", "navigation.path", "navigation.tracking", "navigation.prune", "navigation.top", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.code.select", "content.action.edit", "content.action.view", "content.tabs.link", "content.tooltips", "header.autohide"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="assets/javascripts/reactflow/bundle.reactflow.js" defer></script>
+      
+        <script src="assets/javascripts/mermaid-zoom.js" defer></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2725 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación técnica del sistema de integración ERP-PIM-Shopify">
+      
+      
+      
+      
+        <link rel="prev" href="../wf-scheduling/">
+      
+      
+        <link rel="next" href="../04b-extractors-detalle/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Visión general - UPG.Pataky — Guía de Estudio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#04-los-extractors" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="UPG.Pataky — Guía de Estudio" class="md-header__button md-logo" aria-label="UPG.Pataky — Guía de Estudio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UPG.Pataky — Guía de Estudio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Visión general
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartir" aria-label="Compartir" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01-arquitectura-etl/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Arquitectura
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../wf-productos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Procesos
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Pipeline ETL
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../06-modelos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Sistema
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../mp-index/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Marketplaces
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="UPG.Pataky — Guía de Estudio" class="md-nav__button md-logo" aria-label="UPG.Pataky — Guía de Estudio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UPG.Pataky — Guía de Estudio
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../01-arquitectura-etl/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../wf-productos/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procesos
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipeline ETL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pipeline ETL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extractors
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Extractors
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visión general
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visión general
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En esta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En esta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#como-se-autentica-cada-origen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cómo se autentica cada origen
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cómo se autentica cada origen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#autenticacion-con-provalliance-oauth2-con-client_credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Autenticación con Provalliance — OAuth2 con <code>client_credentials</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autenticacion-con-saleslayer-api-key-por-canal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Autenticación con SalesLayer — API Key por canal
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autenticacion-con-shopify-access-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Autenticación con Shopify — Access Token
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-1-productos-e-imagenes-del-pim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 1 — Productos e imágenes del PIM
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 1 — Productos e imágenes del PIM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-hace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué hace
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-logica-de-agrupacion-de-variantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          La lógica de agrupación de variantes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limpieza-de-datos-antes-de-entregar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Limpieza de datos antes de entregar
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#las-dos-salidas-independientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Las dos salidas independientes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-en-debug" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Caché en debug
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-2-clientes-del-erp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 2 — Clientes del ERP
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 2 — Clientes del ERP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-hace_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué hace
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paginacion-de-la-respuesta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Paginación de la respuesta
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtrado-de-leads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Filtrado de leads
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enriquecimiento-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Enriquecimiento de datos
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validacion-minima" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Validación mínima
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-3-stock-del-erp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 3 — Stock del ERP
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 3 — Stock del ERP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-hace_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué hace
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-4-pedidos-de-shopify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 4 — Pedidos de Shopify
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 4 — Pedidos de Shopify">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-hace_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué hace
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-que-vive-en-el-proyecto-compartido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Por qué vive en el proyecto compartido
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-5-imagenes-del-ftp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 5 — Imágenes del FTP
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 5 — Imágenes del FTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-hace_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué hace
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-csv-que-genera" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El CSV que genera
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtro-por-prefijo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Filtro por prefijo
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-6-traducciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 6 — Traducciones
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 6 — Traducciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-hace_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué hace
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-7-tarifas-de-precios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 7 — Tarifas de precios
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 7 — Tarifas de precios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-hace-actualmente-nada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué hace (actualmente: nada)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-8-migracion-desde-shopify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 8 — Migración desde Shopify
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 8 — Migración desde Shopify">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#para-que-existe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Para qué existe
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-hace_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué hace
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-que-lee-cada-extractor-y-de-donde" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Resumen: qué lee cada extractor y de dónde
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#siguiente-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Siguiente paso
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentos-relacionados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Documentos relacionados
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04b-extractors-detalle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Detalle completo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04c-extractors-metodos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Métodos y funciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../04d-decisions/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decisions
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../05-transformers/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transformers
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../10-loaders/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Loaders y Mirror
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../06-modelos/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sistema
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../mp-index/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketplaces
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En esta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En esta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#como-se-autentica-cada-origen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cómo se autentica cada origen
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cómo se autentica cada origen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#autenticacion-con-provalliance-oauth2-con-client_credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Autenticación con Provalliance — OAuth2 con <code>client_credentials</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autenticacion-con-saleslayer-api-key-por-canal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Autenticación con SalesLayer — API Key por canal
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autenticacion-con-shopify-access-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Autenticación con Shopify — Access Token
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-1-productos-e-imagenes-del-pim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 1 — Productos e imágenes del PIM
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 1 — Productos e imágenes del PIM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-hace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué hace
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-logica-de-agrupacion-de-variantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          La lógica de agrupación de variantes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limpieza-de-datos-antes-de-entregar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Limpieza de datos antes de entregar
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#las-dos-salidas-independientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Las dos salidas independientes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-en-debug" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Caché en debug
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-2-clientes-del-erp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 2 — Clientes del ERP
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 2 — Clientes del ERP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-hace_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué hace
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paginacion-de-la-respuesta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Paginación de la respuesta
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtrado-de-leads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Filtrado de leads
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enriquecimiento-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Enriquecimiento de datos
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validacion-minima" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Validación mínima
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-3-stock-del-erp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 3 — Stock del ERP
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 3 — Stock del ERP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-hace_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué hace
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-4-pedidos-de-shopify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 4 — Pedidos de Shopify
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 4 — Pedidos de Shopify">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-hace_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué hace
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-que-vive-en-el-proyecto-compartido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Por qué vive en el proyecto compartido
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-5-imagenes-del-ftp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 5 — Imágenes del FTP
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 5 — Imágenes del FTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-hace_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué hace
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-csv-que-genera" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          El CSV que genera
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtro-por-prefijo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Filtro por prefijo
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-6-traducciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 6 — Traducciones
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 6 — Traducciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-hace_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué hace
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-7-tarifas-de-precios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 7 — Tarifas de precios
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 7 — Tarifas de precios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-hace-actualmente-nada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué hace (actualmente: nada)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractor-8-migracion-desde-shopify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Extractor 8 — Migración desde Shopify
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extractor 8 — Migración desde Shopify">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#para-que-existe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Para qué existe
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-hace_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Qué hace
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-que-lee-cada-extractor-y-de-donde" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Resumen: qué lee cada extractor y de dónde
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#siguiente-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Siguiente paso
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentos-relacionados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Documentos relacionados
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navegación" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Pipeline ETL
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Extractors
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:erp" class="md-tag">ERP</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:extractors" class="md-tag">Extractors</a>
+      
+    
+      
+      
+      
+      
+        <a href="../tags/#tag:pim" class="md-tag">PIM</a>
+      
+    
+  </nav>
+
+
+
+<h1 id="04-los-extractors">04 — Los Extractors<a class="headerlink" href="#04-los-extractors" title="Permanent link">&para;</a></h1>
+<p>Los extractors son la primera capa del patrón ETL. Su única responsabilidad es <strong>leer datos del sistema origen</strong> y devolverlos en un modelo intermedio que el resto del sistema pueda procesar. No transforman, no deciden, no escriben.</p>
+<p>En este proyecto hay extractors que leen de tres orígenes distintos:
+- La <strong>API REST de Provalliance</strong> (middleware en Azure API Management)
+- El <strong>PIM SalesLayer</strong> (a través del conector UPG.Connector.SalesLayer)
+- <strong>Shopify</strong> (a través del ShopifySDK)
+- Un <strong>servidor FTP</strong> (para imágenes)</p>
+<blockquote>
+<p><strong>¿Quieres entender cómo funciona un método concreto?</strong>
+→ <a href="../04c-extractors-metodos/"><code>04c-extractors-metodos.md</code></a> — explicación paso a paso de cada función y método de esta capa.</p>
+</blockquote>
+<hr />
+<h2 id="como-se-autentica-cada-origen">Cómo se autentica cada origen<a class="headerlink" href="#como-se-autentica-cada-origen" title="Permanent link">&para;</a></h2>
+<p>Antes de ver cada extractor, conviene entender cómo se autentica cada sistema, porque es el primer paso que ocurre en cualquier llamada.</p>
+<h3 id="autenticacion-con-provalliance-oauth2-con-client_credentials">Autenticación con Provalliance — OAuth2 con <code>client_credentials</code><a class="headerlink" href="#autenticacion-con-provalliance-oauth2-con-client_credentials" title="Permanent link">&para;</a></h3>
+<p>La API de Provalliance está detrás de <strong>Azure API Management</strong>. Para acceder hay que obtener primero un token Bearer mediante el flujo OAuth2 <code>client_credentials</code>.</p>
+<p>Esto lo gestiona <a href="../04c-extractors-metodos/#3-provallianceauthenticationhelperservice"><code>ProvallianceAuthenticationHelperService</code></a>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. Primera llamada → POST a la URL de autenticación de Azure AD
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   con client_id, client_secret, resource y scope
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>2. Azure AD devuelve un token Bearer con tiempo de expiración (expires_on)
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>3. El servicio guarda el token en memoria (_authentication)
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>4. En cada petición posterior, comprueba si el token ha expirado:
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>   · Si no ha expirado → reutiliza el token
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>   · Si ha expirado → vuelve a autenticarse automáticamente
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>5. Añade el token como cabecera: Authorization: Bearer &lt;token&gt;
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>   Y también: Ocp-Apim-Subscription-Key: &lt;subscription_key&gt;
+</span></code></pre></div>
+<p>La segunda cabecera (<code>Ocp-Apim-Subscription-Key</code>) es el identificador de suscripción de Azure API Management, que permite identificar qué aplicación cliente está haciendo la petición.</p>
+<h3 id="autenticacion-con-saleslayer-api-key-por-canal">Autenticación con SalesLayer — API Key por canal<a class="headerlink" href="#autenticacion-con-saleslayer-api-key-por-canal" title="Permanent link">&para;</a></h3>
+<p>SalesLayer usa autenticación simple por <strong>API Key</strong>. El proyecto configura dos canales independientes:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&quot;PIM&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;CanalEntrada&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;ChannelId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;APIKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;CanalSalida&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;ChannelId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;APIKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<ul>
+<li><strong>CanalSalida</strong>: el que usan los extractors (leer datos del PIM).</li>
+<li><strong>CanalEntrada</strong>: el que usan los loaders (escribir datos en el PIM).</li>
+</ul>
+<h3 id="autenticacion-con-shopify-access-token">Autenticación con Shopify — Access Token<a class="headerlink" href="#autenticacion-con-shopify-access-token" title="Permanent link">&para;</a></h3>
+<p>Shopify usa tokens de acceso privados. Se configuran en <code>appsettings.json</code> bajo <code>ShopifyCredentials:AccessTokens</code> como una lista, para poder usar múltiples tokens y gestionar el throttling mediante el <code>LeakyBucketExecutionPolicy</code> del SDK.</p>
+<hr />
+<h2 id="extractor-1-productos-e-imagenes-del-pim">Extractor 1 — Productos e imágenes del PIM<a class="headerlink" href="#extractor-1-productos-e-imagenes-del-pim" title="Permanent link">&para;</a></h2>
+<p><strong>Clase</strong>: <code>ProductsWithImagesExtract</code>
+<strong>Fichero</strong>: <code>Extractors/ProductsWithImagesExtract.cs</code>
+<strong>Origen</strong>: SalesLayer (canal de salida)
+<strong>Usado en</strong>: Workflow de Productos, Workflow de Imágenes Shopify</p>
+<h3 id="que-hace">Qué hace<a class="headerlink" href="#que-hace" title="Permanent link">&para;</a></h3>
+<p>Llama al canal de salida de SalesLayer para obtener el catálogo completo de productos. A partir de la respuesta, construye dos listas independientes:
+- Una lista de <code>IProduct</code> (productos con sus variantes agrupadas)
+- Una lista de <code>IProductImage</code> (imágenes de todos los productos)</p>
+<h3 id="la-logica-de-agrupacion-de-variantes">La lógica de agrupación de variantes<a class="headerlink" href="#la-logica-de-agrupacion-de-variantes" title="Permanent link">&para;</a></h3>
+<p>SalesLayer devuelve todos los artículos "planos" como una lista. Los artículos con el mismo <code>CodigoAgrupacion</code> son variantes del mismo producto. El extractor los agrupa:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>SalesLayer devuelve:
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  · SKU: GHD001-NEGRO,   CodigoAgrupacion: GHD001
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  · SKU: GHD001-BLANCO,  CodigoAgrupacion: GHD001
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  · SKU: GHD002,         CodigoAgrupacion: (vacío)
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>El extractor produce:
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>  · Product(&quot;GHD001&quot;, variantes: [GHD001-NEGRO, GHD001-BLANCO])  ← producto con variantes
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>  · Product(&quot;GHD002&quot;, variantes: [GHD002])                        ← producto simple
+</span></code></pre></div>
+<h3 id="limpieza-de-datos-antes-de-entregar">Limpieza de datos antes de entregar<a class="headerlink" href="#limpieza-de-datos-antes-de-entregar" title="Permanent link">&para;</a></h3>
+<p>Antes de devolver la lista, el extractor aplica varias limpiezas:</p>
+<table>
+<thead>
+<tr>
+<th>Situación</th>
+<th>Acción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Producto <code>Visible</code> + <code>Obsoleto = true</code></td>
+<td>Se cambia a <code>Invisible</code></td>
+</tr>
+<tr>
+<td>Dos productos con el mismo <code>OriginId</code></td>
+<td>Se queda solo el primero, se loguea error</td>
+</tr>
+<tr>
+<td>Dos variantes con el mismo <code>OriginId</code> en un producto</td>
+<td>Se queda solo la primera, se loguea error</td>
+</tr>
+</tbody>
+</table>
+<h3 id="las-dos-salidas-independientes">Las dos salidas independientes<a class="headerlink" href="#las-dos-salidas-independientes" title="Permanent link">&para;</a></h3>
+<p>La actividad tiene dos outputs, y cada workflow usa solo el que necesita:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="na">[Output]</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">required</span><span class="w"> </span><span class="n">Output</span><span class="o">&lt;</span><span class="n">Box</span><span class="o">&lt;</span><span class="n">IProduct</span><span class="o">&gt;&gt;</span><span class="w">      </span><span class="n">ProductsOutput</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">init</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="na">[Output]</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">required</span><span class="w"> </span><span class="n">Output</span><span class="o">&lt;</span><span class="n">Box</span><span class="o">&lt;</span><span class="n">IProductImage</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">ProductsImagesOutput</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">init</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div>
+<p>El workflow de Productos ignora las imágenes. El workflow de Imágenes ignora los productos. Ambos llaman a SalesLayer una sola vez.</p>
+<h3 id="cache-en-debug">Caché en debug<a class="headerlink" href="#cache-en-debug" title="Permanent link">&para;</a></h3>
+<p>Tanto este extractor como otros usan <a href="../04c-extractors-metodos/#2-funcutilswithcachedrun-la-cache-de-desarrollo"><code>FuncUtils.WithCachedRun(...)</code></a>. En entorno de desarrollo, si ya existe el resultado de una llamada guardado en disco (<code>tmp/debug/...</code>), no vuelve a llamar a la API y devuelve el fichero cacheado. Esto ahorra tiempo y evita consumir cuota de la API durante el desarrollo.</p>
+<hr />
+<h2 id="extractor-2-clientes-del-erp">Extractor 2 — Clientes del ERP<a class="headerlink" href="#extractor-2-clientes-del-erp" title="Permanent link">&para;</a></h2>
+<p><strong>Clase</strong>: <code>CustomerExtract</code>
+<strong>Fichero</strong>: <code>Extractors/CustomerExtract.cs</code>
+<strong>Origen</strong>: API de Provalliance (vía <code>ProvallianceService</code>)
+<strong>Usado en</strong>: Workflow de Clientes</p>
+<h3 id="que-hace_1">Qué hace<a class="headerlink" href="#que-hace_1" title="Permanent link">&para;</a></h3>
+<p>Llama al endpoint <code>/clients/client</code> de la API de Provalliance para obtener la lista completa de clientes y los entrega como <code>ICompany</code>. El servicio <a href="../04c-extractors-metodos/#getclients"><code>ProvallianceService.GetClients()</code></a> gestiona la paginación automáticamente.</p>
+<h3 id="paginacion-de-la-respuesta">Paginación de la respuesta<a class="headerlink" href="#paginacion-de-la-respuesta" title="Permanent link">&para;</a></h3>
+<p>La API de Provalliance pagina los clientes en páginas de 50. El servicio itera hasta que una página devuelve menos de 50 resultados:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">PerformRequest</span><span class="p">(...,</span><span class="w"> </span><span class="n">endpoint</span><span class="p">);</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="n">companys</span><span class="p">.</span><span class="n">AddRange</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">ClientsList</span><span class="p">);</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="n">endpoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="n">NextPageLink</span><span class="p">.</span><span class="n">Substring</span><span class="p">(</span><span class="n">_baseUrl</span><span class="p">.</span><span class="n">Length</span><span class="p">);</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">ClientsList</span><span class="p">.</span><span class="n">Count</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">50</span><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="filtrado-de-leads">Filtrado de leads<a class="headerlink" href="#filtrado-de-leads" title="Permanent link">&para;</a></h3>
+<p>La configuración <code>ShopifyCredentials:LeadPrefix</code> (por defecto <code>"LEAD#"</code>) permite excluir del proceso a los registros que son leads comerciales y no clientes reales:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">clientes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clientes</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">=&gt;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="o">!</span><span class="n">c</span><span class="p">.</span><span class="n">OriginId</span><span class="p">.</span><span class="n">Trim</span><span class="p">().</span><span class="n">StartsWith</span><span class="p">(</span><span class="n">leadPrefix</span><span class="p">,</span><span class="w"> </span><span class="n">StringComparison</span><span class="p">.</span><span class="n">OrdinalIgnoreCase</span><span class="p">)</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">).</span><span class="n">ToList</span><span class="p">();</span>
+</span></code></pre></div>
+<h3 id="enriquecimiento-de-datos">Enriquecimiento de datos<a class="headerlink" href="#enriquecimiento-de-datos" title="Permanent link">&para;</a></h3>
+<p>Antes de entregar los clientes, el extractor hace dos enriquecimientos:</p>
+<ol>
+<li>
+<p><strong><code>LocationOriginId</code></strong>: cada dirección del cliente recibe un identificador compuesto: <code>{CodCliente}#{CodDireccion}</code>. Esto es necesario porque el código de dirección solo es único dentro de un cliente, no de forma global.</p>
+</li>
+<li>
+<p><strong><code>Crn</code></strong>: el número de IVA del cliente se copia en cada una de sus direcciones, para que esté disponible a nivel de sucursal (location) durante la transformación.</p>
+</li>
+</ol>
+<h3 id="validacion-minima">Validación mínima<a class="headerlink" href="#validacion-minima" title="Permanent link">&para;</a></h3>
+<p>Si la lista de clientes llega vacía, el extractor lanza una excepción que para el workflow completo. Esto evita que una respuesta vacía por un error de red se interprete como "no hay clientes" y archive todos los clientes de Shopify.</p>
+<hr />
+<h2 id="extractor-3-stock-del-erp">Extractor 3 — Stock del ERP<a class="headerlink" href="#extractor-3-stock-del-erp" title="Permanent link">&para;</a></h2>
+<p><strong>Clase</strong>: <code>StockExtract</code>
+<strong>Fichero</strong>: <code>Extractors/StockExtract.cs</code>
+<strong>Origen</strong>: API de Provalliance (vía <code>ProvallianceService</code>)
+<strong>Usado en</strong>: Workflow de Stock</p>
+<h3 id="que-hace_2">Qué hace<a class="headerlink" href="#que-hace_2" title="Permanent link">&para;</a></h3>
+<p>Es el extractor más sencillo del sistema. Llama al endpoint <code>/stock/shopify</code> y devuelve la lista de objetos <code>Stock</code> tal cual. No hay paginación, no hay filtros, no hay agrupaciones.</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">var</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">provallianceService</span><span class="p">.</span><span class="n">GetStock</span><span class="p">();</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">Output</span><span class="p">.</span><span class="n">Set</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">response</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Cada objeto <code>Stock</code> contiene el identificador de la variante en el sistema origen y la cantidad disponible. La transformación posterior se encargará de cruzar ese identificador con el de Shopify.</p>
+<hr />
+<h2 id="extractor-4-pedidos-de-shopify">Extractor 4 — Pedidos de Shopify<a class="headerlink" href="#extractor-4-pedidos-de-shopify" title="Permanent link">&para;</a></h2>
+<p><strong>Clase</strong>: <code>OrdersExtractor</code>
+<strong>Fichero</strong>: <code>Comunes/UPG.Pataky.Shared/Loaders/Shopify/Orders/OrdersExtractor.cs</code>
+<strong>Origen</strong>: Shopify (a través de <code>ShopifySDK</code>)
+<strong>Usado en</strong>: Workflow de Pedidos</p>
+<h3 id="que-hace_3">Qué hace<a class="headerlink" href="#que-hace_3" title="Permanent link">&para;</a></h3>
+<p>Lee pedidos de Shopify aplicando el filtro configurado en <code>appsettings.json</code>:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">&quot;FilterOrders&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tag_not:Sincronizado&quot;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>El SDK de Shopify recibe esa query directamente y devuelve solo los pedidos que la cumplen. En la práctica, esto significa todos los pedidos que <strong>aún no han sido enviados al ERP</strong>.</p>
+<h3 id="por-que-vive-en-el-proyecto-compartido">Por qué vive en el proyecto compartido<a class="headerlink" href="#por-que-vive-en-el-proyecto-compartido" title="Permanent link">&para;</a></h3>
+<p>A diferencia del resto de extractors (que viven en este repo porque son específicos de Provalliance), este extractor lee de Shopify — y la lógica de leer pedidos de Shopify es la misma para cualquier cliente de Upango. Por eso vive en el proyecto compartido <code>Loaders</code>.</p>
+<hr />
+<h2 id="extractor-5-imagenes-del-ftp">Extractor 5 — Imágenes del FTP<a class="headerlink" href="#extractor-5-imagenes-del-ftp" title="Permanent link">&para;</a></h2>
+<p><strong>Clase</strong>: <code>LocalImagesExtractor</code>
+<strong>Fichero</strong>: <code>Extractors/PicsLocalExtractor.cs</code>
+<strong>Origen</strong>: Servidor FTP
+<strong>Usado en</strong>: Workflow de Imágenes PIM</p>
+<h3 id="que-hace_4">Qué hace<a class="headerlink" href="#que-hace_4" title="Permanent link">&para;</a></h3>
+<p>Se conecta al servidor FTP configurado, lista todos los ficheros de las carpetas remotas configuradas y los convierte en objetos <code>NasFile</code>.</p>
+<p>Para cada fichero de imagen aplica una convención de nombrado: <code>REFERENCIA-ORDEN.ext</code>. Por ejemplo:
+- <code>GHD001-1.jpg</code> → referencia <code>GHD001</code>, orden <code>1</code>
+- <code>SECHE-VITE-2.png</code> → referencia <code>SECHE-VITE</code>, orden <code>2</code></p>
+<h3 id="el-csv-que-genera">El CSV que genera<a class="headerlink" href="#el-csv-que-genera" title="Permanent link">&para;</a></h3>
+<p>Además de listar los ficheros, genera un fichero <code>CSV_CargaImages.csv</code> con los nombres de todas las imágenes encontradas y lo sube al mismo FTP:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Imagen
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>GHD001-1.jpg
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>GHD001-2.jpg
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>SECHE-VITE-2.png
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>...
+</span></code></pre></div>
+<p>Este CSV es leído periódicamente por SalesLayer para actualizar las imágenes asociadas a cada referencia en el PIM.</p>
+<h3 id="filtro-por-prefijo">Filtro por prefijo<a class="headerlink" href="#filtro-por-prefijo" title="Permanent link">&para;</a></h3>
+<p>Si se configura <code>FileNameStartsWith</code> en <code>appsettings.json</code>, solo se procesan las imágenes cuyos nombres empiecen por alguno de esos prefijos. Útil para cuando el FTP contiene imágenes de varias marcas y solo se quieren procesar algunas.</p>
+<hr />
+<h2 id="extractor-6-traducciones">Extractor 6 — Traducciones<a class="headerlink" href="#extractor-6-traducciones" title="Permanent link">&para;</a></h2>
+<p><strong>Clase</strong>: <code>TranslationsExtract</code>
+<strong>Fichero</strong>: <code>Extractors/TranslationsExtract.cs</code>
+<strong>Origen</strong>: Lista de productos ya extraídos (no llama a ninguna API)
+<strong>Estado</strong>: Existe pero no está conectado a ningún workflow activo</p>
+<h3 id="que-hace_5">Qué hace<a class="headerlink" href="#que-hace_5" title="Permanent link">&para;</a></h3>
+<p>Recibe como input la lista de productos ya extraída por <code>ProductsWithImagesExtract</code> y filtra los que implementan la interfaz <code>ITranslatable</code>. Esos productos son los que tienen contenido que puede traducirse (nombre, descripción, etc.).</p>
+<p>No es un extractor en el sentido estricto porque no llama a ningún sistema externo — simplemente filtra una lista que ya existe en memoria. Sirve como paso previo a un posible workflow de traducciones que aún no está implementado.</p>
+<hr />
+<h2 id="extractor-7-tarifas-de-precios">Extractor 7 — Tarifas de precios<a class="headerlink" href="#extractor-7-tarifas-de-precios" title="Permanent link">&para;</a></h2>
+<p><strong>Clase</strong>: <code>ExtractTarifas</code>
+<strong>Fichero</strong>: <code>Extractors/PriceListExtract.cs</code>
+<strong>Estado</strong>: Stub — no implementado</p>
+<h3 id="que-hace-actualmente-nada">Qué hace (actualmente: nada)<a class="headerlink" href="#que-hace-actualmente-nada" title="Permanent link">&para;</a></h3>
+<p>Esta clase existe pero está vacía. Devuelve siempre una lista vacía de <code>IPriceList</code>. Los comentarios internos sugieren que debería leer tarifas del ERP, pero la implementación está pendiente o fue descartada.</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">PriceLists</span><span class="p">.</span><span class="n">Set</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;</span><span class="n">IPriceList</span><span class="o">&gt;</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">IPriceList</span><span class="o">&gt;</span><span class="p">()));</span>
+</span></code></pre></div>
+<p>La gestión de tarifas de precio en el sistema actual se hace de otra manera: las tarifas (<code>PriceList</code>) se sincronizan mediante las actividades <code>SyncPriceLists</code> del workflow de Clientes, que las leen directamente de Shopify.</p>
+<hr />
+<h2 id="extractor-8-migracion-desde-shopify">Extractor 8 — Migración desde Shopify<a class="headerlink" href="#extractor-8-migracion-desde-shopify" title="Permanent link">&para;</a></h2>
+<p><strong>Clase</strong>: <code>ShopifyExtract</code>
+<strong>Fichero</strong>: <code>Extractors/Migration/ShopifyExtract.cs</code>
+<strong>Origen</strong>: Shopify
+<strong>Estado</strong>: Herramienta de migración puntual — desactivada (<code>ShouldRunAsync() =&gt; false</code>)</p>
+<h3 id="para-que-existe">Para qué existe<a class="headerlink" href="#para-que-existe" title="Permanent link">&para;</a></h3>
+<p>Este extractor no forma parte del flujo de sincronización habitual. Es una <strong>herramienta de migración</strong> que se usó en la puesta en marcha del proyecto para poblar la base de datos de transacciones a partir del estado inicial de Shopify.</p>
+<h3 id="que-hace_6">Qué hace<a class="headerlink" href="#que-hace_6" title="Permanent link">&para;</a></h3>
+<p>Descarga todos los productos y variantes que ya existían en Shopify y los registra en la BD de transacciones, leyendo el metafield <code>originId</code> de cada uno para saber a qué referencia del ERP corresponde.</p>
+<p>Está permanentemente desactivado (<code>ShouldRunAsync() =&gt; false</code>) porque ya no es necesario: el sistema se mantiene sincronizado mediante los workflows normales. Se conserva en el código por si en algún momento se necesita repetir una migración inicial.</p>
+<hr />
+<h2 id="resumen-que-lee-cada-extractor-y-de-donde">Resumen: qué lee cada extractor y de dónde<a class="headerlink" href="#resumen-que-lee-cada-extractor-y-de-donde" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Extractor</th>
+<th>Sistema origen</th>
+<th>Autenticación</th>
+<th>Paginación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ProductsWithImagesExtract</code></td>
+<td>SalesLayer (PIM)</td>
+<td>API Key por canal</td>
+<td>No (descarga todo)</td>
+</tr>
+<tr>
+<td><code>CustomerExtract</code></td>
+<td>Provalliance API</td>
+<td>OAuth2 Bearer</td>
+<td>Sí (50 por página)</td>
+</tr>
+<tr>
+<td><code>StockExtract</code></td>
+<td>Provalliance API</td>
+<td>OAuth2 Bearer</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>OrdersExtractor</code></td>
+<td>Shopify</td>
+<td>Access Token</td>
+<td>No (filtra por tag)</td>
+</tr>
+<tr>
+<td><code>LocalImagesExtractor</code></td>
+<td>Servidor FTP</td>
+<td>Usuario/contraseña</td>
+<td>No (listado recursivo)</td>
+</tr>
+<tr>
+<td><code>TranslationsExtract</code></td>
+<td>Memoria (productos ya extraídos)</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>ExtractTarifas</code></td>
+<td>— (no implementado)</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>ShopifyExtract</code></td>
+<td>Shopify</td>
+<td>Access Token</td>
+<td>No (bulk)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="siguiente-paso">Siguiente paso<a class="headerlink" href="#siguiente-paso" title="Permanent link">&para;</a></h2>
+<p>Con los extractors claros, el siguiente documento explica la capa de Decisions: cómo se clasifican los datos extraídos en operaciones concretas (crear / actualizar / borrar) consultando la BD de transacciones.</p>
+<p>→ <a href="../04d-decisions/">04d — Los Decisions</a></p>
+<hr />
+<h2 id="documentos-relacionados">Documentos relacionados<a class="headerlink" href="#documentos-relacionados" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Documento</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../04b-extractors-detalle/"><code>04b-extractors-detalle.md</code></a></td>
+<td>Estructura campo a campo de cada objeto que produce cada extractor</td>
+</tr>
+<tr>
+<td><a href="../04c-extractors-metodos/"><code>04c-extractors-metodos.md</code></a></td>
+<td>Explicación paso a paso de cada método y función</td>
+</tr>
+<tr>
+<td><a href="../04d-decisions/"><code>04d-decisions.md</code></a></td>
+<td>La siguiente capa: clasificación de entidades para Shopify</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../wf-scheduling/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Scheduling">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Scheduling
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../04b-extractors-detalle/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Detalle completo">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Detalle completo
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.instant.progress", "navigation.instant.prefetch", "navigation.instant.preview", "navigation.indexes", "navigation.path", "navigation.tracking", "navigation.prune", "navigation.top", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.code.select", "content.action.edit", "content.action.view", "content.tabs.link", "content.tooltips", "header.autohide"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../assets/javascripts/reactflow/bundle.reactflow.js" defer></script>
+      
+        <script src="../assets/javascripts/mermaid-zoom.js" defer></script>
+      
+    
+  </body>
+</html>
