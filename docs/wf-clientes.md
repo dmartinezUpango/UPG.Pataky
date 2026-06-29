@@ -54,9 +54,9 @@ Sincronización de clientes B2B desde el ERP (Provalliance) hacia Shopify. El wo
         {"id":"shopify_src",  "type":"input",  "data":{"label":"Shopify B2B API"},               "position":{"x":540, "y":0}},
         {"id":"sync1",                         "data":{"label":"SyncCompanies"},                  "position":{"x":540, "y":110}},
         {"id":"sync2",                         "data":{"label":"SyncPriceLists"},                 "position":{"x":540, "y":220}},
-        {"id":"extract",                       "data":{"label":"CustomerExtract"},                "position":{"x":200, "y":340}},
+        {"id":"extract",                       "data":{"label":"CustomerExtract","url":"../wf-clientes-metodos/#1-customerextract-clase"},                "position":{"x":200, "y":340}},
         {"id":"decision",                      "data":{"label":"CustomerDecision"},               "position":{"x":200, "y":460}},
-        {"id":"transform",                     "data":{"label":"CustomerTransform"},              "position":{"x":200, "y":580}},
+        {"id":"transform",                     "data":{"label":"CustomerTransform","url":"../wf-clientes-metodos/#3-customertransform-clase"},              "position":{"x":200, "y":580}},
         {"id":"loader",                        "data":{"label":"CompaniesWithContactsLoader"},    "position":{"x":200, "y":700}},
         {"id":"shopify_dst",  "type":"output", "data":{"label":"Shopify B2B API"},               "position":{"x":200, "y":820}}
       ],

@@ -51,8 +51,8 @@ Env√≠o de pedidos B2B desde Shopify al ERP (Provalliance). Este workflow es el √
       "nodes": [
         {"id":"shopify_src",  "type":"input",  "data":{"label":"Shopify Pedidos B2B"},  "position":{"x":0,   "y":80}},
         {"id":"ex",                            "data":{"label":"OrdersExtractor"},       "position":{"x":220, "y":80}},
-        {"id":"tr",                            "data":{"label":"OrderTransform"},        "position":{"x":430, "y":80}},
-        {"id":"ld",                            "data":{"label":"LoadOrders"},            "position":{"x":640, "y":80}},
+        {"id":"tr",                            "data":{"label":"OrderTransform","url":"../wf-pedidos-metodos/#1-ordertransform-clase"},        "position":{"x":430, "y":80}},
+        {"id":"ld",                            "data":{"label":"LoadOrders","url":"../wf-pedidos-metodos/#3-loadorders-clase"},            "position":{"x":640, "y":80}},
         {"id":"upd",                           "data":{"label":"OrdersLoader"},          "position":{"x":850, "y":80}},
         {"id":"erp",          "type":"output", "data":{"label":"ERP Provalliance"},      "position":{"x":640, "y":240}},
         {"id":"shopify_dst",  "type":"output", "data":{"label":"Shopify (addTags)"},     "position":{"x":850, "y":240}}

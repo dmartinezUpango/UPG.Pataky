@@ -50,7 +50,7 @@ Sincronización de imágenes desde el servidor FTP hacia el PIM (SalesLayer). El
       "height": 260,
       "nodes": [
         {"id":"ftp",  "type":"input",  "data":{"label":"FTP Server"},           "position":{"x":0,   "y":80}},
-        {"id":"ex",                    "data":{"label":"LocalImagesExtractor"},  "position":{"x":220, "y":80}},
+        {"id":"ex",                    "data":{"label":"LocalImagesExtractor","url":"../wf-imagenes-pim-metodos/#1-localimagesextractor-clase"},  "position":{"x":220, "y":80}},
         {"id":"csv",                   "data":{"label":"CSV_CargaImages.csv"},   "position":{"x":460, "y":0}},
         {"id":"fin",  "type":"output", "data":{"label":"Finish"},                "position":{"x":460, "y":160}},
         {"id":"pim",  "type":"output", "data":{"label":"SalesLayer PIM"},        "position":{"x":700, "y":0}}

@@ -52,9 +52,9 @@ Sincronización de imágenes de producto desde el PIM (SalesLayer) hacia Shopify
         {"id":"pim",          "type":"input",  "data":{"label":"PIM SalesLayer"},           "position":{"x":0,   "y":0}},
         {"id":"shopify_src",  "type":"input",  "data":{"label":"Shopify ProductMedias"},     "position":{"x":530, "y":0}},
         {"id":"sync",                          "data":{"label":"SyncProductMedias"},         "position":{"x":530, "y":110}},
-        {"id":"extract",                       "data":{"label":"ProductsWithImagesExtract"}, "position":{"x":200, "y":240}},
+        {"id":"extract",                       "data":{"label":"ProductsWithImagesExtract","url":"../wf-productos-metodos/#1-productswithimagesextract-clase"}, "position":{"x":200, "y":240}},
         {"id":"decision",                      "data":{"label":"ImageDecision"},             "position":{"x":200, "y":370}},
-        {"id":"transform",                     "data":{"label":"ImagesTransform"},           "position":{"x":200, "y":500}},
+        {"id":"transform",                     "data":{"label":"ImagesTransform","url":"../wf-imagenes-shopify-metodos/#1-imagestransform-clase"},           "position":{"x":200, "y":500}},
         {"id":"loader",                        "data":{"label":"ProductsMedias"},            "position":{"x":200, "y":630}},
         {"id":"shopify_dst",  "type":"output", "data":{"label":"Shopify ProductMedias"},     "position":{"x":200, "y":760}}
       ],

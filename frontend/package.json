@@ -5,6 +5,7 @@
     "build": "vite build"
   },
   "dependencies": {
+    "@dagrejs/dagre": "^3.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "reactflow": "^11.9.0"

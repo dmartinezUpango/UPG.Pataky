@@ -71,3 +71,14 @@
 .mzoom-sizer {
   position: relative;
 }
+
+/* ── ReactFlow clickable nodes ───────────────────────────────────────────── */
+/* Nodes that link to a documentation section get a pointer cursor and a
+   highlighted outline on hover so users know they can be clicked. */
+.react-flow__node.rf-clickable {
+  cursor: pointer;
+}
+
+.react-flow__node.rf-clickable:hover {
+  box-shadow: 0 0 0 2px var(--md-accent-fg-color);
+}

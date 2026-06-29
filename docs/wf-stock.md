@@ -49,8 +49,8 @@ Actualización de niveles de inventario desde el ERP (Provalliance) hacia Shopif
     {
       "nodes": [
         {"id":"erp",       "type":"input",  "data":{"label":"ERP Provalliance"},  "position":{"x":0,   "y":80}},
-        {"id":"extract",                    "data":{"label":"StockExtract"},       "position":{"x":200, "y":80}},
-        {"id":"transform",                  "data":{"label":"StockTransform"},     "position":{"x":400, "y":80}},
+        {"id":"extract",                    "data":{"label":"StockExtract","url":"../wf-stock-metodos/#1-stockextract-clase"},       "position":{"x":200, "y":80}},
+        {"id":"transform",                  "data":{"label":"StockTransform","url":"../wf-stock-metodos/#3-stocktransform-clase"},     "position":{"x":400, "y":80}},
         {"id":"loader",                     "data":{"label":"SyncStock"},          "position":{"x":600, "y":80}},
         {"id":"shopify",   "type":"output", "data":{"label":"Shopify Inventory"},  "position":{"x":800, "y":80}}
       ],

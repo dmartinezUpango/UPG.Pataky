@@ -33,6 +33,7 @@ const _doMount = () => {
         nodes={data.nodes || []}
         edges={data.edges || []}
         height={data.height || 500}
+        direction={data.direction || "LR"}
       />
     );
   } catch (err) {
