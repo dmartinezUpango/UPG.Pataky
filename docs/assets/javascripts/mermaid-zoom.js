@@ -11,9 +11,8 @@
     if (!svg) return;
     wrapper.dataset.zoomReady = "1";
 
-    // Capture original viewBox once Mermaid has set it
-    const vb  = svg.viewBox.baseVal;
-    const ox  = vb.x, oy = vb.y, ow = vb.width, oh = vb.height;
+    const vb = svg.viewBox.baseVal;
+    const ox = vb.x, oy = vb.y, ow = vb.width, oh = vb.height;
     if (!ow || !oh) return;
 
     let scale = 1;
@@ -26,13 +25,12 @@
       );
     };
 
-    // Build toolbar
     const bar = document.createElement("div");
     bar.className = "mermaid-zoom-bar";
     bar.innerHTML = `
-      <button class="mermaid-zoom-btn" data-action="out"  title="Alejar">−</button>
+      <button class="mermaid-zoom-btn" data-action="out"   title="Alejar">−</button>
       <button class="mermaid-zoom-btn" data-action="reset" title="Restablecer">⟳</button>
-      <button class="mermaid-zoom-btn" data-action="in"   title="Acercar">+</button>
+      <button class="mermaid-zoom-btn" data-action="in"    title="Acercar">+</button>
     `;
     bar.addEventListener("click", (e) => {
       const btn = e.target.closest("[data-action]");
@@ -47,30 +45,22 @@
     wrapper.insertBefore(bar, wrapper.firstChild);
   }
 
-  function scanPage() {
-    document.querySelectorAll(".mermaid").forEach((el) => {
-      // Mermaid may not have rendered the SVG yet — observe until it does
-      if (el.querySelector("svg")) {
-        initZoom(el);
-      } else {
-        const mo = new MutationObserver(() => {
-          if (el.querySelector("svg")) { mo.disconnect(); initZoom(el); }
-        });
-        mo.observe(el, { childList: true, subtree: true });
-      }
+  // Global observer: fires whenever anything is added to the DOM.
+  // Catches Mermaid's async SVG injection regardless of timing.
+  const mo = new MutationObserver(() => {
+    document.querySelectorAll(".mermaid svg").forEach((svg) => {
+      const wrapper = svg.closest(".mermaid");
+      if (wrapper) initZoom(wrapper);
     });
-  }
+  });
+  mo.observe(document.body, { childList: true, subtree: true });
 
-  // Initial scan + instant-navigation hook
+  // Re-scan after instant navigation (MkDocs Material)
   if (typeof document$ !== "undefined") {
     document$.subscribe(() => {
-      // Reset zoom-ready flags so reinitialisation works after nav
       document.querySelectorAll(".mermaid[data-zoom-ready]").forEach(
         (el) => delete el.dataset.zoomReady
       );
-      setTimeout(scanPage, 300);
     });
   }
-
-  document.addEventListener("DOMContentLoaded", () => setTimeout(scanPage, 300));
 })();
